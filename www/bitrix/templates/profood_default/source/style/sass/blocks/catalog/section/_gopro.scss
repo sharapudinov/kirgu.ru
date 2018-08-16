@@ -1,0 +1,32 @@
+@import "gopro.showcase";
+@import "gopro.gallery";
+@import "gopro.table";
+
+.list-element {
+    position: relative;
+}
+
+.c-timers {
+    display: none;
+}
+
+.list-thead {
+    width: 100%;
+    border-top: 1px solid $table-border-color;
+    border-bottom: 1px solid $table-border-color;
+
+    &__tr {
+        @include mix-gopro-flex();
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+
+    &__td {
+        flex: 0 1 auto;
+        width: 50%;
+        color: $gray-text-color;
+        padding: $col-padding;
+        margin: auto;
+    }
+}

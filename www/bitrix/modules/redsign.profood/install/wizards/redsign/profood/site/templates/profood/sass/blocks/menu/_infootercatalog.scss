@@ -1,0 +1,62 @@
+.footer {
+	.catmenu {
+		margin-bottom: 15px;
+
+		&.ellipsisnames {
+			.item.depth_level1,
+			.item.depth_level2 {
+				a {
+					span {
+						display: block;
+						max-width: 100%;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						//zoom: 1;
+					}
+				}
+			}
+		}
+
+		.title {
+			margin-bottom: 6px;
+			text-transform: uppercase;
+		}
+
+		.item {
+			margin: 3px 0px;
+		}
+
+		.item.depth_level1 {
+			a {
+				color:#0077cb;
+				text-decoration:none;
+
+				&:hover,
+				&:hover span {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.item.depth_level2 {
+			a {
+				color: #666;
+				font-size: 12px;
+				text-decoration: none;
+
+				&:hover,
+				&:hover span {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:750px) and (min-width:481px){
+	body.adaptive .footer .catmenu .title{
+		text-align:center;
+	}
+}
+

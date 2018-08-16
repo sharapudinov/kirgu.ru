@@ -1,0 +1,22 @@
+.c-rating {
+	&__star {
+		position: relative;
+		top: -1px;
+
+		&.active {
+			.svg-icon {
+				fill: #fed200;
+			}
+		}
+
+		.svg-icon {
+			width: 9px;
+			height: 9px;
+			fill: #898886;
+		}
+	}
+
+	&__count {
+		color: $link-color;
+	}
+}

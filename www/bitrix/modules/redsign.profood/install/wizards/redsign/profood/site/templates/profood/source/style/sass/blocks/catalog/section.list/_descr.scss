@@ -1,0 +1,31 @@
+.catalog {
+	.prods {
+		.sectinfo {
+			width: 100%;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			border-top: 1px solid #E5E5E5;
+
+			.img {
+				width: 20%;
+				float: left;
+				padding: 0px 24px 0 0;
+			}
+
+			.description {
+				width: 80%;
+				float: left;
+
+				&.no_img_descr {
+					width: auto;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width:605px){
+	body.adaptive .catalog .prods .sectinfo{
+		display:none;
+	}
+}

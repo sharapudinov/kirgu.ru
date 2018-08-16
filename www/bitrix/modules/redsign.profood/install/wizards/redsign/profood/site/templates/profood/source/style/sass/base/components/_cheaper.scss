@@ -1,0 +1,37 @@
+$selector-cheaper: '.c-cheaper' !default;
+
+#{$selector-cheaper} {
+	&:hover {
+        text-decoration: none;
+
+        #{$selector-cheaper} {
+            &__title {
+                border-color: transparent;
+            }
+        }
+    }
+
+    &__icon {
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        padding: 2px;
+        border: 1px solid #9e9e9c;
+        border-radius: 13px;
+
+        &-in {
+            display: inline-block;
+            padding: 2px 5px;
+            font-size: 15px;
+            font-stretch: ultra-expanded;
+            color: #fff;
+            background-color: #bb2d1f;
+            border-radius: 11px;
+        }
+    }
+
+    &__title {
+        margin-left: 5px;
+        border-bottom: 1px dashed $default-link-color;
+    }
+}

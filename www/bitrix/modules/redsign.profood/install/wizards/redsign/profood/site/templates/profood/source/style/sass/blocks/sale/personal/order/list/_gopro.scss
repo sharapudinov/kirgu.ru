@@ -1,0 +1,81 @@
+.body {
+	.sale-order-list-container {
+		@include mix-table-tbody-td($default-border-color);
+
+		margin: 0;
+		border-top: 1px solid $default-border-color;
+		transition: all .15s linear;
+		z-index: 100;
+
+		&:hover {
+			box-shadow: $primary-shadow;
+			z-index: 110;
+		}
+	}
+
+	.sale-order-list-container + .sale-order-list-container {
+		border-top: transparent;
+	}
+
+	.sale-order-list-title-container,
+	.sale-order-list-accomplished-title-container {
+		background: transparent;
+	}
+	.sale-order-list-title,
+	.sale-order-list-accomplished-title {
+		font: inherit;
+		margin: 0 0 15px 0;
+	}
+
+	.sale-order-list-inner-container,
+	.sale-order-list-inner-accomplished,
+	.sale-order-list-accomplished-date,
+	.sale-order-list-accomplished-date-number {
+		padding-top: 0;
+		padding-bottom: 0;
+		margin: 0;
+		border: none;
+	}
+
+	.sale-order-list-inner-title-line,
+	.sale-order-list-inner-title-line,
+	.sale-order-list-inner-row {
+		display: none;
+	}
+
+	.sale-order-list-inner-row {
+		&:last-of-type {
+			display: block;
+		}
+	}
+
+	.sale-order-list-top-border {
+		display: none;
+	}
+
+	.sale-order-list-about-link {
+		font: inherit;
+	}
+
+	.sale-order-list-repeat-container,
+	.sale-order-list-cancel-container {
+		text-align: right;
+	}
+
+	.sale-order-list-shipment-button,
+	.sale-order-list-repeat-link,
+	.sale-order-list-cancel-link,
+	.sale-order-list-about-link,
+	.sale-order-list-change-payment {
+		color: $default-link-color;
+
+		&:hover {
+			color: $default-link-color-hover;
+		}
+	}
+
+	.sale-order-list-accomplished-date-number {
+		font: inherit;
+		color: $gray-text-color;
+	}
+}

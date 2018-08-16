@@ -1,0 +1,46 @@
+$selector-compare: '.c-compare' !default;
+
+#{$selector-compare} {
+	&.in {
+        .svg-icon {
+            fill: black;
+        }
+        
+        #{$selector-compare} {
+            &__title {
+                display: none;
+
+                &-in {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+
+        #{$selector-compare} {
+            &__title,
+            &__title-in {
+                border-color: transparent;
+            }
+        }
+    }
+
+    &__title,
+    &__title-in {
+        margin-left: 5px;
+        border-bottom: 1px dashed $default-link-color;
+    }
+
+    &__title-in {
+        display: none;
+    }
+
+    .svg-icon {
+        width: 16px;
+        height: 16px;
+        fill: #91918f;
+    }
+}

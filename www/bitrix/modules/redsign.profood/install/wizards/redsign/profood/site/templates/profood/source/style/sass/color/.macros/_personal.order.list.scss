@@ -1,0 +1,22 @@
+/* personal.order.list */
+.orderlist {
+  .item {
+    &:hover {
+      border-color: $primary-border-color;
+    }
+  }
+  
+  .switch {
+    a {
+      &.selected {
+        color: $btn1-text-color;
+        background-color: $btn1-bg-color;
+      }
+      
+      &:hover {
+        color: $btn1-text-color-hover;
+        background-color: $btn1-bg-color-hover;
+      }
+    }
+  }
+}

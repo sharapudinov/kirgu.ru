@@ -1,0 +1,67 @@
+.rstuning__selectbox {
+  position: relative; }
+  .rstuning__selectbox input[type="text"] {
+    position: absolute;
+    left: -9999px;
+    opacity: 0; }
+
+.rstuning__selectbox__select {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  min-width: 135px; }
+  .rstuning__selectbox__select.open {
+    z-index: 5; }
+    .rstuning__selectbox__select.open .rstuning__selectbox__option {
+      z-index: 6; }
+      .rstuning__selectbox__select.open .rstuning__selectbox__option:hover, .rstuning__selectbox__select.open .rstuning__selectbox__option.active {
+        z-index: 7; }
+    .rstuning__selectbox__select.open .rstuning__selectbox__arrow {
+      z-index: 7; }
+
+.rstuning__selectbox__option {
+  position: relative;
+  display: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0 35px 0 20px;
+  margin-top: -1px;
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px; }
+  .rstuning__selectbox__option::first-child {
+    margin-top: 0; }
+
+.rstuning__selectbox-name {
+  color: #414243;
+  font-size: 14px;
+  font-weight: 300;
+  margin-right: 7px; }
+
+.rstuning__selectbox__option, .rstuning__selectbox-name {
+  line-height: 38px; }
+
+.rstuning__selectbox__select.open .rstuning__selectbox__option.active,
+.rstuning__selectbox__select:not(.open):hover .rstuning__selectbox__option, .rstuning__selectbox__option:hover {
+  border: 1px solid #444c7d; }
+
+.rstuning__selectbox__select.open .rstuning__selectbox__option, .rstuning__selectbox__option.active {
+  display: block; }
+
+.rstuning__selectbox__arrow {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  display: block;
+  height: 22px;
+  float: right;
+  cursor: pointer;
+  padding-left: 8px;
+  border-left: 1px solid #d2d2d2; }
+  .rstuning__selectbox__arrow svg {
+    position: relative;
+    bottom: 2px;
+    width: 15px;
+    height: 18px;
+    fill: #636363;
+    transform: rotate(90deg); }

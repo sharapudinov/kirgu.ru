@@ -1,0 +1,160 @@
+.product {
+
+  /*BOX DELIVERY block*/
+  &-delivery {
+    border: 2px solid $primary-border-color;
+    clear: left;
+    padding: 7px 10px;
+    margin-bottom: 15px;
+
+    &__block {
+      transition: .5s;
+      height: 54px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    &__pic {
+      min-width: 100px;
+      text-align: center;
+      vertical-align: middle;
+      width: 10%;
+
+      svg {
+        width: 40px;
+        height: 40px;
+        fill: $gray-light;
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      font-family: Arial;
+      margin-bottom: 7px;
+    }
+
+    &__body {
+      padding: 0 5px;
+    }
+
+    &__list {
+      padding: 0;
+      width: 100%;
+
+      &:last-child {
+          margin-bottom: 0;
+      }
+
+      li {
+        line-height: 18px;
+      }
+    }
+  }
+  &-east {
+
+    .icon-east.right {
+      float: right;
+    }
+  }
+
+  &-actions {
+    float: left;
+  }
+
+  /*BOX DELIVERY block*/
+
+}
+
+/* Delivery tab */
+.p-delivery {
+
+  & &__guarantee {
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.3);
+    display: inline-block;
+  }
+
+  & &__guarantee-icon {
+    display: inline-block;
+    padding: 20px 0 30px 15px;
+    width: 30%;
+
+    img {
+      max-width: 80%;
+    }
+  }
+
+  & &__guarantee-text {
+    display: inline-block;
+    margin-left: -4px;
+    vertical-align: middle;
+    max-width: 475px;
+    width: 70%;
+  }
+
+  & &__delivery-point,
+  & &__delivery-time {
+    padding-top: 105px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+  & &__delivery-time {
+    width: 40%;
+    font-size: 16px;
+    text-align: center;
+    max-width: 205px;
+    margin-right: 10%;
+  }
+  & &__delivery-point {
+    margin: -4px;
+    width: 50%;
+  }
+  & &__delivery-point:before,
+  & &__delivery-time:before {
+    font-family: PeIcon7Stroke;
+    position: absolute;
+    top: 0;
+    font-size: 64px;
+  }
+  & &__delivery-time:before {
+    content: "\e67e";
+    left: 0;
+    right: 0;
+  }
+  & &__delivery-point:before {
+    content: "\e673";
+    left: 0;
+  }
+  & &__table-wrap .table tr td:nth-child(1),
+  & &__table-wrap .table tr th:nth-child(1) {
+    width: auto;
+  }
+
+  & &__picture {
+    padding: 8px;
+
+    > img {
+      max-width: 90px;
+    }
+  }
+
+  @media(max-width: 767) {
+    & &__delivery-point,
+    & &__delivery-time {
+      display: block;
+      margin: auto;
+      width: auto;
+    }
+    & &__delivery-point {
+      max-width: 250px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    & &__delivery-point:before {
+      left: 0;
+      right: 0;
+    }
+  }
+}
+/* /Delivery tab */

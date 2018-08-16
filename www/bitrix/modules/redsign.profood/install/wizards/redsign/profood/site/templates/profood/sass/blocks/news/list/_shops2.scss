@@ -1,0 +1,51 @@
+.shops2 {
+	margin-top: 25px;
+    margin-bottom: 15px;
+
+	& &-panel {
+		input.form-control {
+			width: 100%;
+		}
+
+		.btn1 {
+			padding: 11px 14px;
+
+			&.active {
+				background-color: $btn1-bg-color-hover;
+			}
+		}
+	}
+
+	&__list {
+		height: 350px;
+		padding: 15px;
+		border: 1px solid $gray-lighter;
+		overflow-y: auto;
+	}
+
+	@media (max-width: $screen-sm-max) {
+		&__list {
+			height: 200px;
+			margin: 15px 0;
+		}
+	}
+
+	&-item {
+		cursor: pointer;
+		margin-bottom: 9px;
+		
+		&:hover {
+			.shops2 {
+				&-item {
+					&__name {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		&__name {
+			font-weight: bold;
+		}
+	}
+}

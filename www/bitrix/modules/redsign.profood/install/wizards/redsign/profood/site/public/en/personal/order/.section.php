@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Checkout";
+$arDirProperties = array(
+
+);
+?>

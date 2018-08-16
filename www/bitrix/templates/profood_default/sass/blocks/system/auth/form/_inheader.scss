@@ -1,0 +1,35 @@
+.authinhead {
+	display:inline-block;
+	padding-top:16px;
+	text-align:right;
+
+	.guest {
+		.svg-icon {
+			width: 12px;
+			height: 12px;
+			margin: 0 3px 3px 0;
+		}
+	}
+
+	.logged {
+		.svg-icon {
+			width: 10px;
+			height: 10px;
+			margin: 0 5px 3px 15px;
+			transform: scale(-1, 1);
+		}
+	}
+
+	.svg-icon {
+		fill: #0c4da2;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body.adaptive {
+		.authinhead{
+			display: block;
+			float: right;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "name": "GoPro",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "yargs": "^5.0.0",
+    "gulp-change": "^1.0.0",
+    "gulp-rename": "^1.0.0",
+    "gulp-copy": "^1.0.0"
+  }
+}

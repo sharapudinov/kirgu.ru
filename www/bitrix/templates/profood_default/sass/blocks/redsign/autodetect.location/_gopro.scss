@@ -1,0 +1,126 @@
+.locationbig {
+	.title {
+		margin-bottom: 15px;
+		text-transform: uppercase;
+	}
+
+	.items {
+		margin-bottom:20px;
+	}
+
+	.item,
+	.ajaxlocation {
+		label {
+			color: #214496;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.item {
+		display: block;
+		float: left;
+		width: 14%;
+		padding-right: 20px;
+	}
+
+	.ajaxlocation {
+		.line {
+			width: 100%;
+			height: 1px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			background-color: #F2F2F2;
+		}
+
+		.cominput {
+			input {
+				width: 60%;
+				float: left;
+			}
+		}
+	}
+
+	.btn.btn1 {
+		margin-left: 10px;
+		padding: 11px 14px;
+	}
+}
+
+.fancybox-container {
+	.locationbig {
+		.items {
+			max-height: 200px;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+			overflow-scrolling: touch;
+		}
+
+		.item {
+			width: 20%;
+		}
+
+		.ajaxlocation {
+			.line {
+				position: relative;
+				left: -20px;
+				padding: 0px 20px;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width:1260px) and (min-width:876px){
+	body.adaptive .locationbig .item{
+		width:20%;
+	}
+	body.adaptive .fancybox-container .locationbig .item{
+		width:25%;
+	}
+}
+@media screen and (max-width:875px) and (min-width:676px){
+	body.adaptive .locationbig .item{
+		width:25%;
+	}
+	body.adaptive .fancybox-container .locationbig .item{
+		width:33%;
+	}
+}
+@media screen and (max-width:675px) and (min-width:526px){
+	body.adaptive .locationbig .item{
+		width:33%;
+	}
+	body.adaptive .fancybox-container .locationbig .item{
+		width:50%;
+	}
+}
+@media screen and (max-width:525px) and (min-width:481px){
+	body.adaptive .locationbig .item{
+		width:50%;
+	}
+	body.adaptive .fancybox-container .locationbig .item{
+		width:100%;
+	}
+	body.adaptive .fancybox-container .locationbig .ajaxlocation .cominput input{
+		width:100%;
+	}
+	body.adaptive .fancybox-container .locationbig .btn.btn1{
+		margin-top:10px;
+		margin-left:0px;
+	}
+}
+@media screen and (max-width:480px){
+	body.adaptive .locationbig .item{
+		width:100%;
+	}
+	body.adaptive .locationbig .ajaxlocation .cominput input{
+		width:100%;
+	}
+	body.adaptive .locationbig .btn.btn1{
+		margin-top:10px;
+		margin-left:0px;
+	}
+}

@@ -1,0 +1,224 @@
+$selector-table:                    '.list-table' !default;
+
+$col-padding-top:                   15px !default;
+$col-padding-right:                 26px !default;
+$col-padding-bottom:                15px !default;
+$col-padding-left:                  26px !default;
+$col-padding:                       $col-padding-top $col-padding-right $col-padding-bottom $col-padding-left !default;
+
+$table-element-hover-box-shadow:    $primary-shadow;
+
+#{$selector-table} {
+    &__element {
+        width: 100%;
+
+        &:hover {
+            #{$selector-table} {
+                &__inner {
+                    box-shadow: $table-element-hover-box-shadow;
+                    z-index: 110;
+                }
+            }
+        }
+    }
+
+    &__inner {
+        border-bottom: 1px solid $table-border-color;
+        transition: $primary-transition;
+
+        > .row > [class*='col-'] {
+            margin: auto 0;
+        }
+    }
+
+    &__name-article {
+        
+    }
+
+    &__name {
+        max-height: 37px;
+        overflow: hidden;
+    }
+
+    &__article {
+        margin-top: 7px;
+    }
+
+    &__prices {
+        
+    }
+
+    &__pay-stores {
+        
+    }
+
+    &__pay {
+        .b-pay {
+            &__inner {
+                @include mix-gopro-flex();
+            }
+
+            &__quantity,
+            &__buttons {
+                width: 50%;
+            }
+        }
+
+        .bx-catalog-subscribe-button {
+            &.in {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &__stores {
+        display: block;
+        padding-top: 2px;
+    }
+
+    &__solo-quantity-more {
+        
+    }
+    &__solo-quantity {
+        
+    }
+    &__solo-quantity,
+    &__more {
+        
+    }
+}
+
+.list-thead.list-table__thead {
+    .list-thead {
+        &__td {
+            text-align: center;
+
+            &.name {
+                text-align: left;
+                margin: auto 0;
+            }
+
+            &.quantity,
+            &.pay {
+                flex: auto;
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    #{$selector-table} {
+        &__name-article {
+            min-height: 90px;
+            padding: $col-padding;
+        }
+
+        &__prices {
+            .c-prices {
+                @include mix-gopro-flex();
+                height: 100%;
+                text-align: center;
+                -webkit-flex-wrap: nowrap;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+
+                &__price {
+                    flex: 0 1 auto;
+                    width: 50%;
+                    margin: auto;
+                }
+
+                &__name {
+                    display: none;
+                }
+
+                &__value {
+                    width: 100%;
+                }
+            }
+        }
+
+        &__pay-stores {
+            text-align: center;
+            padding: $col-padding-top 0 $col-padding-bottom;
+        }
+
+        &__pay {
+            .b-pay {
+                &__inner {
+                    @include mix-gopro-flex();
+                }
+    
+                &__quantity,
+                &__buttons {
+                    width: 50%;
+                    text-align: center;
+                }
+            }
+        }
+
+        &__stores {
+            width: 50%;
+            text-align: center;
+        }
+
+        &__solo-quantity-more {
+            @include mix-gopro-flex();
+            height: 100%;
+            text-align: center;
+            -webkit-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        }
+        &__solo-quantity {
+            max-height: 31px;
+        }
+        &__solo-quantity,
+        &__more {
+            flex: 0 1 auto;
+            width: 50%;
+            margin: auto;
+        }
+    }
+}
+
+@media (max-width: $screen-sm-max) {
+    #{$selector-table} {
+        border-top: 1px solid $table-border-color;
+
+        &__inner {
+            padding: 15px;
+        }
+
+        &__name-article,
+        &__prices .c-prices {
+            margin-bottom: 15px;
+        }
+
+        &__prices {
+            .c-prices {
+                &__price {
+                    display: block;
+                }
+            }
+        }
+
+        &__pay {
+            .b-pay {
+                &__quantity {
+                    display: none;
+                }
+
+                &__button {
+                    margin-right: 15px;
+                }
+            }
+        }
+
+        &__pay,
+        &__stores {
+            display: inline-block;
+        }
+    }
+}

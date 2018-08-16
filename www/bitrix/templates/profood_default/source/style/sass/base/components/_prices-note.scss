@@ -1,0 +1,11 @@
+$selector-prices-note: '.c-prices-note' !default;
+
+#{$selector-prices-note} {
+    &__value {
+        display: inline-block;
+        color: $gray-text-color;
+        font-style: italic;
+        padding: 3px 10px 5px;
+        background-color: #eaf2fd;
+    }
+}

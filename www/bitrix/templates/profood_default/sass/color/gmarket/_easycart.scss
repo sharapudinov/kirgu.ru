@@ -1,0 +1,22 @@
+body #rs_easycart .rsec_headers a.rsec_online,
+body #rs_easycart .rsec_headers span.rsec_color {
+    color: $color1;
+}
+
+body #rs_easycart .rsec_headers a.rsec_online span.rsec_name {
+    border-color: $color1;
+}
+
+body #rs_easycart .rsec_btn1,
+body #rs_easycart table.rsec_table tr:hover td.rsec_hov,
+body #rs_easycart .rsec_btn1 {
+    background-color: $color1;
+}
+
+body #rs_easycart .rsec_content .rsec_tyanya .rsec_close .svg-icon,
+body #rs_easycart .rsec_thistab_compare .rsec_delete .svg-icon,
+body #rs_easycart .rsec_thistab_favorite .rsec_delete .svg-icon,
+body #rs_easycart .rsec_thistab_basket .rsec_delete .svg-icon,
+body #rs_easycart .rsec_headers a.rsec_online .svg-icon {
+    fill: $color1;
+}

@@ -1,0 +1,136 @@
+$quantity-width: 120px !default;
+$quantity-height: 31px !default;
+
+$quantity-core-padding: 5px;
+$quantity-buttons-padding: ($quantity-core-padding + 9) ($quantity-core-padding + 10) ($quantity-core-padding + 10) ($quantity-core-padding + 9) !default;
+$quantity-input-padding: ($quantity-core-padding + 2) 0 ($quantity-core-padding + 2) !default;
+$quantity-measure-padding: ($quantity-core-padding) 0 ($quantity-core-padding + 1) !default;
+
+$quantity-border-color: $default-border-color;
+$quantity-border-radius: 4px;
+
+@mixin mix-quantity-quantity() {
+    display: inline-block;
+    width: $quantity-width;
+    height: $quantity-height;
+    overflow: hidden;
+}
+
+@mixin mix-quantity-inner() {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: $quantity-height;
+    background-color: #FFF;
+}
+
+@mixin mix-quantity-buttons() {
+    position: relative;
+    display: inline-block;
+    float: left;
+    text-decoration: none;
+    cursor: pointer;
+    padding: $quantity-buttons-padding;
+    background: #F3F3F3;
+    border: 1px solid $quantity-border-color;
+    border-radius: $quantity-border-radius;
+
+    &:before,
+    &:after {
+        position: absolute;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        content: ' ';
+        background-color: black;
+    }
+
+    &:hover {
+        background-color: #e0e0e0;
+    }
+
+    &:active {
+        background-color: #cdcdcd;
+    }
+}
+@mixin mix-quantity-buttons-disable() {
+    cursor: default;
+
+    &:hover {
+        background-color: #F3F3F3;
+    }
+
+    &:active {
+        background-color: #F3F3F3;
+    }
+}
+
+@mixin mix-quantity-buttons-minus() {
+    &:before {
+        top: 14px;
+        left: 8px;
+        width: 13px;
+        height: 1px;
+        content: ' ';
+        background-color: black;
+    }
+
+    &:after {
+        content: none;
+    }
+}
+
+@mixin mix-quantity-buttons-plus() {
+    &:before {
+        top: 14px;
+        left: 8px;
+        width: 13px;
+        height: 1px;
+    }
+
+    &:after {
+        top: 8px;
+        left: 14px;
+        width: 1px;
+        height: 13px;
+    }
+}
+
+@mixin mix-quantity-input() {
+    display: inline-block;
+    float: left;
+    width: 29px;
+    text-align: center;
+    padding: $quantity-input-padding;
+    background-color: #FFF;
+    border: 1px solid $quantity-border-color;
+    border-right: none;
+    border-radius: $quantity-border-radius 0 0 $quantity-border-radius;
+    box-shadow: none;
+
+    &:hover,
+    &:hover:focus,
+    &:focus {
+        border-color: $quantity-border-color;
+        box-shadow: none;
+    }
+}
+@mixin mix-quantity-input-disable() {
+    cursor: default;
+}
+
+@mixin mix-quantity-measure() {
+    display: inline-block;
+    float: left;
+    width: 29px;
+    line-height: 18px;
+    text-align: center;
+    padding: $quantity-measure-padding;
+    background-color: #FFF;
+    border: 1px solid $quantity-border-color;
+    border-left: none;
+    border-radius: 0 $quantity-border-radius $quantity-border-radius 0;
+}
+@mixin mix-quantity-measure-disable() {
+    cursor: default;
+}

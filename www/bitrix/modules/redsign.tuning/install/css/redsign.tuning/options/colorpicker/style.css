@@ -1,0 +1,206 @@
+.rstuning__option__color-picker__hide-me {
+  position: absolute;
+  left: -9999px;
+  opacity: 0; }
+
+.rstuning__colorpicker__sets .rstuning__option__alone-color {
+  float: left;
+  width: 38px;
+  margin-right: 14px;
+  margin-bottom: 10px; }
+
+#rstuning .rstuning__colorpicker__sets .rstuning__option__alone-color a {
+  margin-bottom: 0; }
+
+#rstuning .rstuning__option__alone-color a {
+  position: relative;
+  display: inline-block;
+  min-height: 38px;
+  color: #555;
+  vertical-align: top;
+  margin-bottom: 10px; }
+
+#rstuning .rstuning__option__alone-color a:before {
+  display: inline-block;
+  min-height: inherit;
+  height: 100%;
+  vertical-align: middle;
+  content: ' '; }
+
+#rstuning .rstuning__option__color-picker__before-paint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 38px;
+  height: 38px;
+  margin: 0 14px 7px 0;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: border-color .4s ease-out; }
+
+#rstuning .rstuning__option__alone-color.active .rstuning__option__color-picker__before-paint {
+  border: 1px solid #444c7d; }
+
+#rstuning .rstuning__option__color-picker__incircle {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px; }
+
+#rstuning .rstuning__option__color-picker-name {
+  display: inline-block;
+  max-width: 135px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.2;
+  padding-left: 52px;
+  vertical-align: middle; }
+
+#rstuning .rstuning__colorpicker__arrow {
+  position: relative;
+  top: 8px;
+  right: 8px;
+  float: right;
+  width: 18px;
+  height: 18px;
+  fill: #555555; }
+
+#rstuning .rstuning__colorpicker__values__multiple.open .rstuning__colorpicker__arrow {
+  transform: rotate(90deg); }
+
+#rstuning .rstuning__colorpicker__values__multiple {
+  position: relative;
+  height: 33px;
+  z-index: 4; }
+
+#rstuning .rstuning__colorpicker__values__multiple-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5; }
+
+#rstuning .rstuning__colorpicker__values__multiple.open .rstuning__option__alone-color {
+  display: block; }
+
+#rstuning .rstuning__colorpicker__values__multiple .rstuning__option__alone-color {
+  display: none;
+  float: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  background-color: #313034;
+  border: 1px solid #555555; }
+
+#rstuning .rstuning__colorpicker__values__multiple .rstuning__option__alone-color.active {
+  display: block; }
+
+#rstuning .rstuning__colorpicker__values__multiple .rstuning__option__alone-color.active a div {
+  border-color: transparent; }
+
+#rstuning .rstuning__colorpicker__values__multiple .rstuning__option__alone-color a {
+  display: block;
+  line-height: 31px;
+  padding: 0 5px;
+  color: #fff; }
+
+#rstuning .rstuning__colorpicker__values__multiple.open .rstuning__option__alone-color.active a,
+#rstuning .rstuning__colorpicker__values__multiple .rstuning__option__alone-color a:hover {
+  background-color: #3f3d42; }
+
+#rstuning .rstuning__colorpicker__values__multiple .rstuning__option__alone-color a div {
+  float: left;
+  margin: 2px 4px 0 0; }
+
+/* colorpicker */
+#rstuning .colorpickerHolder {
+  float: left;
+  margin-left: -12px; }
+
+#rstuning .colorpickerHolder .colorpicker_new_color,
+#rstuning .colorpickerHolder .colorpicker_current_color,
+#rstuning .colorpickerHolder .colorpicker_hex,
+#rstuning .colorpickerHolder .colorpicker_field,
+#rstuning .colorpickerHolder .colorpicker_submit {
+  display: none; }
+
+#rstuning .colorpickerHolder .colorpicker {
+  width: 204px;
+  background: url("/bitrix/images/redsign.tuning/options/colorpicker/colorpicker_background_new.png"); }
+
+#rstuning .colorPickerValues {
+  float: left;
+  padding-top: 7px; }
+
+#rstuning .colorPickerValues .field {
+  padding: 3px 0 3px 0; }
+
+#rstuning .colorPickerValues .field.hex {
+  padding-top: 14px; }
+
+#rstuning .colorPickerValues .name {
+  display: inline-block;
+  min-width: 12px;
+  padding-right: 3px; }
+
+#rstuning .colorPickerValues .field,
+#rstuning .colorPickerValues input {
+  color: #555555;
+  font-size: 14px; }
+
+#rstuning .colorPickerValues input {
+  max-width: 80px;
+  font-size: 14px;
+  padding: 2px 7px;
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 0;
+  box-shadow: none; }
+  #rstuning .colorPickerValues input:focus {
+    border: 1px solid #444c7d; }
+
+#rstuning .colorPickerValues .field.hex input {
+  padding: 9px 7px 8px 7px; }
+
+/* /colorpicker */
+/* spectrum */
+#rstuning .rstuning__spectrum {
+  float: left;
+  margin-left: -12px; }
+
+#rstuning .rstuning__spectrum.sp-container {
+  padding: 0px;
+  margin-right: 10px;
+  border: none;
+  background-color: transparent;
+  z-index: 995; }
+
+#rstuning .rstuning__spectrum .sp-picker-container {
+  width: 209px; }
+
+#rstuning .rstuning__spectrum .sp-color,
+#rstuning .rstuning__spectrum .sp-hue,
+#rstuning .rstuning__spectrum .sp-clear,
+#rstuning .rstuning__spectrum .sp-slider {
+  border: 1px solid #d2d2d2; }
+
+@media (max-device-width: 480px) {
+  #rstuning .rstuning__spectrum.sp-container {
+    margin-right: 0; }
+  #rstuning .rstuning__spectrum .sp-color {
+    right: 20%; }
+  #rstuning .rstuning__spectrum .sp-fill {
+    padding-top: 80%; }
+  #rstuning .rstuning__spectrum .sp-hue {
+    left: 84%; } }
+
+/* /spectrum */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .rstuning input[type="text"] {
+    /* remove inner shadow on iOS input */
+    -webkit-appearance: none; } }

@@ -1,0 +1,15 @@
+.row,
+.col,
+.row *,
+.col *,
+*:before,
+*:after,
+.centeringin,
+.gopro-banners,
+.gopro-banners * {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}

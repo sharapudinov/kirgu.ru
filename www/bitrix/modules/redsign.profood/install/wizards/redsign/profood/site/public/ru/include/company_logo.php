@@ -1,0 +1,1 @@
+<img src="#SITE_DIR#include/logo.png" srcset="#SITE_DIR#include/logo_retina.png 2x">

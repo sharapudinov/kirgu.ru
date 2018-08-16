@@ -1,0 +1,12 @@
+/* main */
+$color1:                        #aabf6b;
+$color1-darken:                   darken($color1, 10%);
+$color2:                        #fed85e;
+$color2-darken:                   darken($color2, 10%);
+$color3:                        #899CC7;
+$color3-darken:                   darken($color3, 10%);
+$default-color:                 #ebebeb;
+$stable-color:                  #efefef;
+$link-color:                    #3389c4 !default;
+
+@import "../all";

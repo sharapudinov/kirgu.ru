@@ -1,0 +1,25 @@
+.rsbreadcrumb {
+  padding: 26px 0px 1px;
+  margin-bottom: 0;
+
+  &__free {
+    color: $default-link-color;
+    padding: 0 7px 0;
+  }
+    
+  li {
+    display: inline;
+    
+    &:last-of-type {
+      color: $gray-text-color;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

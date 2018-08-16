@@ -1,0 +1,88 @@
+.hamburger {
+    display: inline-block;
+    overflow: visible;
+    margin: 0;
+    padding: 12px 14px 10px 14px;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: .15s;
+    transition-property: opacity, filter, background-color, color, fill;
+    text-transform: none;
+    color: inherit;
+    border: 0;
+    background-color: #f3f3f3;
+
+    &.is-active {
+        color: $btn1-text-color;
+        background-color: $btn1-bg-color;
+
+        .hamburger {
+            &-inner {
+                background-color: $btn1-text-color;
+                transform: translate3d(0, 5px, 0) rotate(45deg);
+
+                &:before {
+                    background-color: $btn1-text-color;
+                    transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+                    opacity: 0;
+                }
+
+                &:after {
+                    background-color: $btn1-text-color;
+                    transform: translate3d(0, -10px, 0) rotate(-90deg);
+                }
+            }
+
+            &-name {
+                color: $btn1-text-color-hover;
+            }
+        }
+    }
+
+    &-box {
+        position: relative;
+        top: 2px;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+    }
+
+    &-inner {
+        &,
+        &:after,
+        &:before {
+            position: absolute;
+            width: 14px;
+            height: 2px;
+            transition-timing-function: ease;
+            transition-duration: .15s;
+            transition-property: transform;
+            border-radius: 4px;
+            background-color: #000;
+        }
+
+        &:after,
+        &:before {
+            display: block;
+            content: "";
+        }
+
+        &:before {
+            top: 5px;
+            transition-timing-function: ease;
+            transition-duration: .15s;
+            transition-property: transform, opacity;
+        }
+
+        &:after {
+            top: 10px;
+        }
+    }
+
+    &-name {
+        position: relative;
+        top: -2px;
+        color: #91918f;
+        margin-left: 18px;
+    }
+}

@@ -1,0 +1,3 @@
+<?php
+$MESS['LANDING_TPL_CREATE_FOLDER'] = 'Создать папку';
+$MESS['LANDING_TPL_CREATE_FOLDER_ACTION'] = 'Создать';

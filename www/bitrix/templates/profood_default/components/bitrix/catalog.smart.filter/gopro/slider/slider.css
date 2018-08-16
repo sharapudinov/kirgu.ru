@@ -1,0 +1,94 @@
+.smartfilter .bx_ui_slider_track{
+	position:relative;
+	height:6px;
+	margin:28px 25px 10px 25px;
+	background: url('trackbar_full.png') 0px 0px no-repeat;
+}
+.smartfilter .bx_ui_slider_part{
+	position:absolute;
+	top:-6px;
+	width:1px;
+	height:17px;
+	background:#a2bfc7;
+}
+.smartfilter .bx_ui_slider_part.p1{left:-1px;}
+.smartfilter .bx_ui_slider_part.p2{left:25%;}
+.smartfilter .bx_ui_slider_part.p3{left:50%;}
+.smartfilter .bx_ui_slider_part.p4{left:75%;}
+.smartfilter .bx_ui_slider_part.p5{right:-1px;}
+.smartfilter .bx_ui_slider_part span{
+	font-size:11px;
+	font-weight: bold;
+	position:absolute;
+	top:-16px;
+	left:50%;
+	display:block;
+	width:100px;
+	margin-left:-50px;
+	text-align:center;
+	color:#000;
+}
+.smartfilter .bx_ui_slider_part.p2 span,
+.smartfilter .bx_ui_slider_part.p3 span,
+.smartfilter .bx_ui_slider_part.p4 span{color:#6b8086;}
+
+.smartfilter .bx_ui_slider_range,
+.smartfilter .bx_ui_slider_pricebar,
+.smartfilter .bx_ui_slider_pricebar_VD,
+.smartfilter .bx_ui_slider_pricebar_VN,
+.smartfilter .bx_ui_slider_pricebar_V{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.smartfilter .bx_ui_slider_range{
+	z-index:100;
+}
+.smartfilter .bx_ui_slider_pricebar{
+	z-index:100;
+}
+
+.smartfilter .bx_ui_slider_pricebar_VD{
+	background:#849da4;
+	z-index:60;
+}
+.smartfilter .bx_ui_slider_pricebar_VN{
+	background: url('trackbar_full.png') 0px 0px no-repeat;
+	z-index:70;
+}
+.smartfilter .bx_ui_slider_pricebar_V{
+	background: #f4ab41;
+	z-index:80;
+}
+.smartfilter .bx_ui_slider_handle{
+	position:absolute;
+	top:-6px;
+	width:22px;
+	height:22px;
+}
+.smartfilter .bx_ui_slider_handle:hover{
+	-webkit-cursor:grab;
+	-ms-cursor:grab;
+	-o-cursor:grab;
+	cursor:grab;
+}
+.smartfilter .bx_ui_slider_handle:active{
+	-webkit-cursor:grabbing;
+	-ms-cursor:grabbing;
+	-o-cursor:grabbing;
+	cursor:grabbing;
+}
+.smartfilter .bx_ui_slider_handle.left{
+	left:0;
+	margin-left:-9px;
+	background-position:0px -647px;
+}
+.smartfilter .bx_ui_slider_handle.right{
+	right:0;
+	margin-right:-9px;
+	background-position: 0px -647px;
+}

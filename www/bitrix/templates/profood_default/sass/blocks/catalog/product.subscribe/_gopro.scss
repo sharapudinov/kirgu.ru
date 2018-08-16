@@ -1,0 +1,118 @@
+/* Button */
+.bx-catalog-popup-content {
+  width: 90%;
+  max-width: 280px;
+}
+/* Subscribe popup */
+.bx-catalog-subscribe-form-container-label {
+  font-size:13px;
+  color: #5a6c77;
+  padding-bottom: 2px;
+}
+.bx-filter-param-label {
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+.bx-catalog-subscribe-form-container-input {
+  position: relative;
+}
+.bx-catalog-subscribe-form-container-input input[type="text"] {
+  width: 100%;
+}
+.bx-catalog-subscribe-form-star-required {
+  color: #d93333;
+}
+.bx-catalog-subscribe-form-container .bx-captcha {
+  margin-bottom: 10px;
+}
+.bx-catalog-popup-message {
+  font-weight: bold;
+  min-width: 240px;
+  margin: 0 0 0;
+}
+
+/* Alert style */
+.bx-catalog-subscribe-alert {
+  background-color: #edf6fc;
+  color: #000;
+  font-size: 15px;
+  min-height: 45px;
+  text-align: center;
+  padding: 12px 40px 12px 60px;
+  position: relative;
+  width: 280px;
+}
+.bx-catalog-subscribe-aligner {
+  display: inline-block;
+  height: 45px;
+  margin-left: -1px;
+  vertical-align: middle;
+  width: 1px;
+}
+.bx-catalog-subscribe-alert-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+.bx-catalog-subscribe-alert-footer {
+  text-align: center;
+}
+.bx-catalog-subscribe-alert-popup {
+  background-color: #edf6fc !important;
+  border: 1px solid #edf6fc !important;
+  border-radius: 3px !important;
+  -webkit-box-shadow: 0 19px 24px rgba(88, 112, 118, 0.17) !important;
+  box-shadow: 0 19px 24px rgba(88, 112, 118, 0.17) !important;
+}
+
+.popup-window {
+  text-align: left;
+}
+.popup-window.popup-window-with-titlebar {
+  padding: 0 0 20px 0;
+}
+.popup-window-titlebar {
+  height: auto;
+}
+.popup-window-titlebar-text {
+  width: 300px;
+  padding: 20px;
+  color: #444;
+  font-family: Opensanslight,Arial,Helvetica,sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  white-space: nowrap;
+  line-height: 1;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #F2F2F2;
+  visibility: visible;
+  overflow: hidden;
+  text-shadow: none;
+}
+.popup-window-close-icon {
+  position: absolute;
+  top: 8px;
+  right: 1px;
+  margin: 20px 25px;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  background-position: 0px -91px;
+  background-image: url(../img/icons.png?v100);
+  z-index: 8050;
+}
+
+.popup-window-overlay {
+  background-color: rgba(0,0,0, 0.6);
+  opacity: 1;
+}
+
+.popup-window-buttons {
+  padding: 0 0 10px;
+}
+
+#bx-catalog-subscribe-form-notify {
+  margin-bottom: 15px;
+}

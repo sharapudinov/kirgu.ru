@@ -1,0 +1,193 @@
+
+/* detail ext_pictures */
+.body div.sale-order-detail-payment-options-methods-template,
+.body .sale-paysystem-wrapper,
+.body .fichi__inner,
+.body .c-attributes.view-buttons .c-attributes__option:not(.disabled):hover,
+.body .c-attributes.view-buttons .c-attributes__option:not(.disabled).selected,
+.body .filtren .lvl2 .smartf-div:not(.disabled) label.pic:hover,
+.body .filtren .cwpal .lvl2 .smartf-div:not(.disabled):hover label.pic,
+.body .filtren .cwp .lvl2 .smartf-div:not(.disabled):hover label.pic,
+.body .filtren .dd.open > .lvl2 .smartf-div:not(.disabled),
+.body .filtren .dd.wpal.open > .lvl2 .smartf-div:not(.disabled),
+.body .filtren .lvl2 .active label.pic,
+.body .bx_ordercart .bx_item_detail_scu_small_noadaptive .bx_scu ul > .sku_prop:hover > a,
+.body .bx_ordercart .bx_item_detail_scu_small_noadaptive .bx_scu ul > .sku_prop.bx_active > a,
+.body .c-attributes.view-list .c-attributes__prop.open .c-attributes__current-value__pseudo-option {
+	border-color: $primary-border-color;
+}
+
+.body .filtren .dd .dropdown > .dropdown,
+.body .c-attributes.view-list .c-attributes__options {
+	border-bottom-color: $primary-border-color;
+}
+
+/* titles */
+.primary-color,
+.brandslist span,
+.sorter_and_name .name,
+.brandslist.mainstyles .title a,
+.brandslistimg.mainstyles .title a,
+.mods h3.title2,
+.bigdata h3.title2,
+.detailcollection h3.title2,
+.detailtabs .contents .content .switcher,
+.sections a.parent,
+.mainsections .title,
+.presscentermainn .title,
+.sorter_and_name .name,
+.brandslistimgowl1.mainstyles .title a,
+.mainsections a.parent,
+.mainsections__show-more,
+.presscentermainn .item .blockname a,
+.presscentermainn .item a.blockname,
+.catalogmenu2 a.sub,
+.price.new,
+.table .full.name,
+.acc_title,
+.sale-personal-account-wallet-currency-item,
+.nice-title,
+.body #bx-soa-order .bx-soa-cart-total-line.bx-soa-cart-total-line-highlighted .bx-soa-cart-d {
+  color: $color-title;
+}
+
+/* jScroll */
+.body,
+.fancybox-container,
+.rsgppopup {
+	.jspDrag,
+	.sale-paysystem-yandex-button-item {
+    	background-color: $btn1-bg-color;
+	}
+}
+.body,
+.fancybox-container,
+.rsgppopup {
+	.jspDrag.jspHover,
+	.jspDrag.jspActive {
+    	background-color: $btn1-bg-color-hover;
+	}
+}
+
+body.rsgopro {
+	.js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border,
+	.js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border-top,
+	.js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border-right,
+	.js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border-bottom,
+	.js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border-left,
+	.js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border,
+	.js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border-top,
+	.js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border-right,
+	.js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border-bottom,
+	.js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border-left {
+		border-color: $primary-border-color;
+	}
+}
+
+/* svg-icons */
+.rsfavorite .svg-icon,
+.artables.view_gallery table.products .add2basketform .submit .svg-icon,
+.artables.view_gallery table.products .add2basketform .inbasket .svg-icon,
+.artables.view_gallery .add2basketform .tick,
+.artables.view_table table.products .add2basketform .submit .svg-icon,
+.artables.view_table table.products .add2basketform .inbasket .svg-icon,
+.artables.view_table .add2basketform .tick,
+.footer .line1 .contacts .recall .svg-icon,
+.footer .line1 .contacts .feedback .svg-icon,
+.picslider.horizontal a:hover .svg-icon,
+.elementdetail .prices a:hover .svg-icon,
+.picslider.vertical a:hover .svg-icon,
+.elementdetail .zoom .svg-icon,
+.body .set .js-element .plusik .svg-icon,
+.body .basket a.delete .svg-icon,
+.body .basket a.delay .svg-icon,
+.body .basket a.add .svg-icon {
+	fill: $color1;
+}
+.artables table.products .add2basketform .add2subscribe .svg-icon {
+	fill: $icon-color;
+}
+
+/* smart.filter */
+.filtren .dd .lvl2:not(.selected) div.active label {
+	color: #fff;
+	background-color: $btn1-bg-color;
+}
+
+.c-prices {
+	&__value-old {
+		&:after {
+			background-color: $color1;
+		}
+	}
+
+    &__more-link {
+        color: $color1;
+    }
+}
+
+.b-stores {
+	.svg-icon.empty {
+		fill: $color1;
+	}
+}
+
+.num-404-error {
+	color: $color1;
+}
+/*********************************************/
+
+/* additional styles
+BACKGROUND COLOR*/
+.pmenu a:hover,
+.light .js-element .buy .go2detail,
+.catalogsorter .dropdownin a:hover,
+.catalogsorter .dropdownin a.selected:hover,
+.comparelist a:hover {
+	color: $btn1-text-color-hover !important;
+	background-color: $btn1-bg-color-hover !important;
+}
+.catalogsorter .dropdownin a.selected,
+.propvision1 .offer_prop .div_options .div_option.selected,
+.propvision1 .offer_prop .div_options .div_option.selected span {
+	color: $btn1-text-color !important;
+	background-color: $btn1-bg-color !important;
+}
+.propvision1 .offer_prop .div_options .div_option:hover:not(.disabled),
+.propvision1 .offer_prop .div_options .div_option:hover:not(.disabled) span {
+  background-color: $btn1-bg-color-hover !important;
+}
+
+.filtren .modef .data a {
+	color: #fff !important;
+}
+
+/*additional styles
+ACTIVE BACKGROUND COLOR*/
+.body .pmenu a:hover {
+	background-color: $btn1-bg-color-hover;
+}
+.body .pmenu a.selected,
+.body .pmenu a.selected:active,
+.body .pmenu a:active {
+	background-color: $btn1-bg-color;
+}
+
+/* slider of filter BACKGROUND LINEAR GRADIENT */
+.ui-slider .ui-slider-range,
+.smartfilter .bx_ui_slider_handle,
+.smartfilter .bx_ui_slider_pricebar_V {
+	background-color: $btn1-bg-color !important;
+}
+
+.erorpage .errorbutton a {
+	color: $btn1-text-color !important;
+	background: $btn1-bg-color;
+}
+
+@media screen and (max-width: 480px) {
+	body.adaptive .detailtabs .content.selected .switcher {
+		color: $btn1-text-color !important;
+		background-color: $btn1-bg-color !important;
+	}
+}

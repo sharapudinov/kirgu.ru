@@ -1,0 +1,4 @@
+<?
+$MESS["LANDING_TPL_CREATE_FOLDER"] = "Create folder";
+$MESS["LANDING_TPL_CREATE_FOLDER_ACTION"] = "Create";
+?>

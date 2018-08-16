@@ -1,0 +1,928 @@
+/* main */
+/* buttons */
+/* forms */
+/* links */
+/* text */
+/* grid */
+/** -- hard color color.scss -- **/
+/* main */
+/* buttons */
+/* forms */
+/* links */
+/* text */
+/* grid */
+/** /-- hard color color.scss -- **/
+/**************************************
+label_description_start
+**************************************/
+.nothinSelectorJustColorTheme {
+  /* color1 - $color1 - GOPRO_QQ#COLOR_1_1#GOPRO_ZZ */
+  color: ##COLOR_1_1#;
+  /* darken color1 - $btn1-bg-color-hover - GOPRO_QQ#COLOR_1_1_DARKEN_10_PERSENT#GOPRO_ZZ */
+  color: ##COLOR_1_1_DARKEN_10_PERSENT#;
+  /* color2 - $color2 - GOPRO_QQ#COLOR_1_2#GOPRO_ZZ */
+  color: ##COLOR_1_2#;
+  /* darken color2 - $btn2-bg-color-hover - GOPRO_QQ#COLOR_1_2_DARKEN_10_PERSENT#GOPRO_ZZ */
+  color: ##COLOR_1_2_DARKEN_10_PERSENT#; }
+
+/**************************************
+label_description_finish
+**************************************/
+/**************************************
+label_macros_file_start
+**************************************/
+.rsgopro .body .bx-basket .basket-item-property-scu-image .basket-item-scu-item:hover,
+.rsgopro .body .bx-basket .basket-item-property-scu-image .basket-item-scu-item.selected,
+.rsgopro .body .bx-basket .basket-item-property-scu-text .basket-item-scu-item:hover,
+.rsgopro .body .bx-basket .basket-item-property-scu-text .basket-item-scu-item.selected {
+  border-color: ##COLOR_1_1#; }
+
+.brandbig .item .name {
+  color: ##COLOR_1_1#; }
+
+.rsgopro .btn1, .rsgopro .btn-primary,
+.rsgopro .menu-sidebar li a:hover,
+.rsgopro .shops2 .shops2-panel .btn1.active {
+  color: #fff;
+  background-color: ##COLOR_1_1#;
+  border-color: ##COLOR_1_1#;
+  border-bottom-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+  .rsgopro .btn1:hover, .rsgopro .btn-primary:hover,
+  .rsgopro .menu-sidebar li a:hover:hover,
+  .rsgopro .shops2 .shops2-panel .btn1.active:hover {
+    color: #fff;
+    background-color: ##COLOR_1_1_DARKEN_10_PERSENT#;
+    border-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.rsgopro .btn1-darken, .rsgopro .btn-primary-darken {
+  color: #fff;
+  background-color: ##COLOR_1_1_DARKEN_10_PERSENT#;
+  border-color: ##COLOR_1_1_DARKEN_10_PERSENT#;
+  border-bottom-color: ##COLOR_1_1#; }
+  .rsgopro .btn1-darken:hover, .rsgopro .btn-primary-darken:hover {
+    color: #fff;
+    background-color: ##COLOR_1_1#;
+    border-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.rsgopro .btn2, .rsgopro .btn-default {
+  color: #fff;
+  background-color: ##COLOR_1_2#;
+  border-color: ##COLOR_1_2#;
+  border-bottom-color: ##COLOR_1_2_DARKEN_10_PERSENT#; }
+  .rsgopro .btn2:hover, .rsgopro .btn-default:hover {
+    color: #fff;
+    background-color: ##COLOR_1_2_DARKEN_10_PERSENT#;
+    border-color: ##COLOR_1_2_DARKEN_10_PERSENT#; }
+
+.rsgopro .btn3 {
+  color: #fff;
+  background-color: #899CC7;
+  border-color: #899CC7;
+  border-bottom-color: #5570ae; }
+  .rsgopro .btn3:hover {
+    color: #fff;
+    background-color: #5570ae;
+    border-color: #5570ae; }
+
+.rsgopro .body .sale-acountpay-fixedpay-item,
+.rsgopro .body .bx_profile .btn-md.main-profile-submit,
+.rsgopro .body .sale-profile-detail-form .btn-md:first-of-type,
+.rsgopro .body .bx-soa-more-btn .btn.btn-default,
+.rsgopro .body .bx-soa-sidebar .bx-soa-cart-total .btn.btn-default,
+.rsgopro .body #bx-soa-order #bx-soa-orderSave .btn.btn-default,
+.rsgopro .body #bx-soa-order .bx-soa-sidebar .bx-soa-cart-total .btn.btn-default,
+.rsgopro .body #bx-soa-order .bx-authform .btn-default,
+.rsgopro .body .bx_ordercart .bx_ordercart_order_pay .bx_ordercart_order_pay_center .checkout,
+.rsgopro .body .bx-basket.bx-blue .btn.btn-default {
+  color: #fff;
+  background-color: ##COLOR_1_1#;
+  border-color: ##COLOR_1_1#;
+  border-bottom-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+  .rsgopro .body .sale-acountpay-fixedpay-item:hover,
+  .rsgopro .body .bx_profile .btn-md.main-profile-submit:hover,
+  .rsgopro .body .sale-profile-detail-form .btn-md:first-of-type:hover,
+  .rsgopro .body .bx-soa-more-btn .btn.btn-default:hover,
+  .rsgopro .body .bx-soa-sidebar .bx-soa-cart-total .btn.btn-default:hover,
+  .rsgopro .body #bx-soa-order #bx-soa-orderSave .btn.btn-default:hover,
+  .rsgopro .body #bx-soa-order .bx-soa-sidebar .bx-soa-cart-total .btn.btn-default:hover,
+  .rsgopro .body #bx-soa-order .bx-authform .btn-default:hover,
+  .rsgopro .body .bx_ordercart .bx_ordercart_order_pay .bx_ordercart_order_pay_center .checkout:hover,
+  .rsgopro .body .bx-basket.bx-blue .btn.btn-default:hover {
+    color: #fff;
+    background-color: ##COLOR_1_1_DARKEN_10_PERSENT#;
+    border-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.rsgopro .body .sale-order-detail .sale-order-detail-about-order-inner-container-repeat-button,
+.rsgopro .body .sale-order-detail .sale-order-detail-payment-options-methods-button-element,
+.rsgopro .body .bx_my_order_cancel input[type="submit"],
+.rsgopro .body .bx_profile .btn-md,
+.rsgopro .body .sale-profile-detail-form .btn-md,
+.rsgopro .body #bx-soa-orderSave .btn.btn-default,
+.rsgopro .body .bx-soa-more-btn .btn.btn-default:first-child,
+.rsgopro .body .bx-soa-sidebar .bx-soa-cart-total .btn.btn-default,
+.rsgopro .body #bx-soa-order .bx-soa-more-btn .btn.btn-default,
+.rsgopro .body #bx-soa-order .bx-soa-reg-block .btn-default,
+.rsgopro .body .bx_ordercart .bx_ordercart_order_pay .bx_ordercart_coupon .bx_bt_button {
+  color: #fff;
+  background-color: ##COLOR_1_2#;
+  border-color: ##COLOR_1_2#;
+  border-bottom-color: ##COLOR_1_2_DARKEN_10_PERSENT#; }
+  .rsgopro .body .sale-order-detail .sale-order-detail-about-order-inner-container-repeat-button:hover,
+  .rsgopro .body .sale-order-detail .sale-order-detail-payment-options-methods-button-element:hover,
+  .rsgopro .body .bx_my_order_cancel input[type="submit"]:hover,
+  .rsgopro .body .bx_profile .btn-md:hover,
+  .rsgopro .body .sale-profile-detail-form .btn-md:hover,
+  .rsgopro .body #bx-soa-orderSave .btn.btn-default:hover,
+  .rsgopro .body .bx-soa-more-btn .btn.btn-default:first-child:hover,
+  .rsgopro .body .bx-soa-sidebar .bx-soa-cart-total .btn.btn-default:hover,
+  .rsgopro .body #bx-soa-order .bx-soa-more-btn .btn.btn-default:hover,
+  .rsgopro .body #bx-soa-order .bx-soa-reg-block .btn-default:hover,
+  .rsgopro .body .bx_ordercart .bx_ordercart_order_pay .bx_ordercart_coupon .bx_bt_button:hover {
+    color: #fff;
+    background-color: ##COLOR_1_2_DARKEN_10_PERSENT#;
+    border-color: ##COLOR_1_2_DARKEN_10_PERSENT#; }
+
+.rsgopro .body .sale-personal-account-wallet-currency-item {
+  color: ##COLOR_1_1#; }
+
+.rsgopro .body .sale-acountpay-pp-company.bx-selected .sale-acountpay-pp-company-graf-container {
+  border-color: ##COLOR_1_1#; }
+
+/* catalog.element */
+.detail__prices__title {
+  color: ##COLOR_1_1#; }
+
+.detail__previewtext__go-to__link {
+  color: ##COLOR_1_1#; }
+  .detail__previewtext__go-to__link:hover {
+    color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.detail__pic__dots .owl-dot:hover, .detail__pic__dots .owl-dot.active {
+  border-color: ##COLOR_1_1#; }
+
+.body .scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar {
+  background-color: ##COLOR_1_1#; }
+
+.body .scrollbar-inner > .scroll-element .scroll-bar:hover {
+  background-color: ##COLOR_1_1#; }
+
+.body .set .js-element:hover {
+  border-color: ##COLOR_1_1#; }
+
+.body .set .fullpanel .block.myset .svg-icon {
+  fill: ##COLOR_1_1#; }
+
+.list-showcase__preview-text__more a {
+  color: ##COLOR_1_1#; }
+
+/* catalog.sorter */
+.b-sorter__block-name {
+  color: ##COLOR_1_1#; }
+
+.b-sorter__template a.selected,
+.b-sorter__shortsort a.selected {
+  color: #fff;
+  background-color: ##COLOR_1_1#;
+  border-color: ##COLOR_1_1#; }
+
+.b-sorter__template a.selected {
+  border-bottom-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.b-sorter__template a.selected:hover,
+.b-sorter__template a:hover,
+.b-sorter__shortsort a.selected:hover,
+.b-sorter__shortsort a:hover {
+  color: #fff;
+  background-color: ##COLOR_1_1_DARKEN_10_PERSENT#;
+  border-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.b-sorter__dropdown.hover > a,
+.b-sorter__dropdown:hover > a {
+  border-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.b-sorter__dropdown-in {
+  border-bottom-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+body #rs_easycart .rsec_headers a.rsec_online,
+body #rs_easycart .rsec_headers span.rsec_color {
+  color: ##COLOR_1_1#; }
+
+body #rs_easycart .rsec_headers a.rsec_online span.rsec_name {
+  border-color: ##COLOR_1_1#; }
+
+body #rs_easycart .rsec_btn1,
+body #rs_easycart table.rsec_table tr:hover td.rsec_hov,
+body #rs_easycart .rsec_btn1 {
+  background-color: ##COLOR_1_1#; }
+
+body #rs_easycart .rsec_content .rsec_tyanya .rsec_close .svg-icon,
+body #rs_easycart .rsec_thistab_compare .rsec_delete .svg-icon,
+body #rs_easycart .rsec_thistab_favorite .rsec_delete .svg-icon,
+body #rs_easycart .rsec_thistab_basket .rsec_delete .svg-icon,
+body #rs_easycart .rsec_headers a.rsec_online .svg-icon {
+  fill: ##COLOR_1_1#; }
+
+.body input[type="text"],
+.body input[type="password"],
+.body textarea,
+.body select,
+.footer input[type="text"],
+.footer input[type="password"],
+.footer textarea,
+.footer select,
+.fancybox-container input[type="text"],
+.fancybox-container input[type="password"],
+.fancybox-container textarea,
+.fancybox-container select,
+.popup-window input[type="text"],
+.popup-window input[type="password"],
+.popup-window textarea,
+.popup-window select,
+.rsgppopup input[type="text"],
+.rsgppopup input[type="password"],
+.rsgppopup textarea,
+.rsgppopup select,
+.rs_easycart input[type="text"],
+.rs_easycart input[type="password"],
+.rs_easycart textarea,
+.rs_easycart select,
+.gopro-subscribe-window input[type="text"],
+.gopro-subscribe-window input[type="password"],
+.gopro-subscribe-window textarea,
+.gopro-subscribe-window select {
+  border-color: #ebebeb; }
+  .body input[type="text"]:hover,
+  .body input[type="password"]:hover,
+  .body textarea:hover,
+  .body select:hover,
+  .footer input[type="text"]:hover,
+  .footer input[type="password"]:hover,
+  .footer textarea:hover,
+  .footer select:hover,
+  .fancybox-container input[type="text"]:hover,
+  .fancybox-container input[type="password"]:hover,
+  .fancybox-container textarea:hover,
+  .fancybox-container select:hover,
+  .popup-window input[type="text"]:hover,
+  .popup-window input[type="password"]:hover,
+  .popup-window textarea:hover,
+  .popup-window select:hover,
+  .rsgppopup input[type="text"]:hover,
+  .rsgppopup input[type="password"]:hover,
+  .rsgppopup textarea:hover,
+  .rsgppopup select:hover,
+  .rs_easycart input[type="text"]:hover,
+  .rs_easycart input[type="password"]:hover,
+  .rs_easycart textarea:hover,
+  .rs_easycart select:hover,
+  .gopro-subscribe-window input[type="text"]:hover,
+  .gopro-subscribe-window input[type="password"]:hover,
+  .gopro-subscribe-window textarea:hover,
+  .gopro-subscribe-window select:hover {
+    border-color: ##COLOR_1_1#; }
+  .body input[type="text"]:hover:focus, .body input[type="text"]:focus,
+  .body input[type="password"]:hover:focus,
+  .body input[type="password"]:focus,
+  .body textarea:hover:focus,
+  .body textarea:focus,
+  .body select:hover:focus,
+  .body select:focus,
+  .footer input[type="text"]:hover:focus,
+  .footer input[type="text"]:focus,
+  .footer input[type="password"]:hover:focus,
+  .footer input[type="password"]:focus,
+  .footer textarea:hover:focus,
+  .footer textarea:focus,
+  .footer select:hover:focus,
+  .footer select:focus,
+  .fancybox-container input[type="text"]:hover:focus,
+  .fancybox-container input[type="text"]:focus,
+  .fancybox-container input[type="password"]:hover:focus,
+  .fancybox-container input[type="password"]:focus,
+  .fancybox-container textarea:hover:focus,
+  .fancybox-container textarea:focus,
+  .fancybox-container select:hover:focus,
+  .fancybox-container select:focus,
+  .popup-window input[type="text"]:hover:focus,
+  .popup-window input[type="text"]:focus,
+  .popup-window input[type="password"]:hover:focus,
+  .popup-window input[type="password"]:focus,
+  .popup-window textarea:hover:focus,
+  .popup-window textarea:focus,
+  .popup-window select:hover:focus,
+  .popup-window select:focus,
+  .rsgppopup input[type="text"]:hover:focus,
+  .rsgppopup input[type="text"]:focus,
+  .rsgppopup input[type="password"]:hover:focus,
+  .rsgppopup input[type="password"]:focus,
+  .rsgppopup textarea:hover:focus,
+  .rsgppopup textarea:focus,
+  .rsgppopup select:hover:focus,
+  .rsgppopup select:focus,
+  .rs_easycart input[type="text"]:hover:focus,
+  .rs_easycart input[type="text"]:focus,
+  .rs_easycart input[type="password"]:hover:focus,
+  .rs_easycart input[type="password"]:focus,
+  .rs_easycart textarea:hover:focus,
+  .rs_easycart textarea:focus,
+  .rs_easycart select:hover:focus,
+  .rs_easycart select:focus,
+  .gopro-subscribe-window input[type="text"]:hover:focus,
+  .gopro-subscribe-window input[type="text"]:focus,
+  .gopro-subscribe-window input[type="password"]:hover:focus,
+  .gopro-subscribe-window input[type="password"]:focus,
+  .gopro-subscribe-window textarea:hover:focus,
+  .gopro-subscribe-window textarea:focus,
+  .gopro-subscribe-window select:hover:focus,
+  .gopro-subscribe-window select:focus {
+    border-color: ##COLOR_1_1#; }
+
+.body .bx-sls .dropdown-block,
+.body .bx-slst .dropdown-block,
+.footer .bx-sls .dropdown-block,
+.footer .bx-slst .dropdown-block,
+.fancybox-container .bx-sls .dropdown-block,
+.fancybox-container .bx-slst .dropdown-block,
+.popup-window .bx-sls .dropdown-block,
+.popup-window .bx-slst .dropdown-block,
+.rsgppopup .bx-sls .dropdown-block,
+.rsgppopup .bx-slst .dropdown-block,
+.rs_easycart .bx-sls .dropdown-block,
+.rs_easycart .bx-slst .dropdown-block,
+.gopro-subscribe-window .bx-sls .dropdown-block,
+.gopro-subscribe-window .bx-slst .dropdown-block {
+  border-color: 1px solid #ebebeb; }
+  .body .bx-sls .dropdown-block.focus,
+  .body .bx-slst .dropdown-block.focus,
+  .footer .bx-sls .dropdown-block.focus,
+  .footer .bx-slst .dropdown-block.focus,
+  .fancybox-container .bx-sls .dropdown-block.focus,
+  .fancybox-container .bx-slst .dropdown-block.focus,
+  .popup-window .bx-sls .dropdown-block.focus,
+  .popup-window .bx-slst .dropdown-block.focus,
+  .rsgppopup .bx-sls .dropdown-block.focus,
+  .rsgppopup .bx-slst .dropdown-block.focus,
+  .rs_easycart .bx-sls .dropdown-block.focus,
+  .rs_easycart .bx-slst .dropdown-block.focus,
+  .gopro-subscribe-window .bx-sls .dropdown-block.focus,
+  .gopro-subscribe-window .bx-slst .dropdown-block.focus {
+    border-color: ##COLOR_1_1#; }
+
+.body [type="checkbox"]:checked + label:after,
+.body [type="checkbox"]:checked + .label:after,
+.body a.checkbox.in > label:after,
+.body a.checkbox.in > .label:after,
+.body #bx-soa-orderSave [type="checkbox"]:checked + a:after,
+.body .form-group .soa-property-container [type="checkbox"]:checked:after,
+.body .bx-authform [type="checkbox"]:checked:after,
+.footer [type="checkbox"]:checked + label:after,
+.footer [type="checkbox"]:checked + .label:after,
+.footer a.checkbox.in > label:after,
+.footer a.checkbox.in > .label:after,
+.footer #bx-soa-orderSave [type="checkbox"]:checked + a:after,
+.footer .form-group .soa-property-container [type="checkbox"]:checked:after,
+.footer .bx-authform [type="checkbox"]:checked:after,
+.fancybox-container [type="checkbox"]:checked + label:after,
+.fancybox-container [type="checkbox"]:checked + .label:after,
+.fancybox-container a.checkbox.in > label:after,
+.fancybox-container a.checkbox.in > .label:after,
+.fancybox-container #bx-soa-orderSave [type="checkbox"]:checked + a:after,
+.fancybox-container .form-group .soa-property-container [type="checkbox"]:checked:after,
+.fancybox-container .bx-authform [type="checkbox"]:checked:after,
+.popup-window [type="checkbox"]:checked + label:after,
+.popup-window [type="checkbox"]:checked + .label:after,
+.popup-window a.checkbox.in > label:after,
+.popup-window a.checkbox.in > .label:after,
+.popup-window #bx-soa-orderSave [type="checkbox"]:checked + a:after,
+.popup-window .form-group .soa-property-container [type="checkbox"]:checked:after,
+.popup-window .bx-authform [type="checkbox"]:checked:after,
+.rsgppopup [type="checkbox"]:checked + label:after,
+.rsgppopup [type="checkbox"]:checked + .label:after,
+.rsgppopup a.checkbox.in > label:after,
+.rsgppopup a.checkbox.in > .label:after,
+.rsgppopup #bx-soa-orderSave [type="checkbox"]:checked + a:after,
+.rsgppopup .form-group .soa-property-container [type="checkbox"]:checked:after,
+.rsgppopup .bx-authform [type="checkbox"]:checked:after,
+.rs_easycart [type="checkbox"]:checked + label:after,
+.rs_easycart [type="checkbox"]:checked + .label:after,
+.rs_easycart a.checkbox.in > label:after,
+.rs_easycart a.checkbox.in > .label:after,
+.rs_easycart #bx-soa-orderSave [type="checkbox"]:checked + a:after,
+.rs_easycart .form-group .soa-property-container [type="checkbox"]:checked:after,
+.rs_easycart .bx-authform [type="checkbox"]:checked:after,
+.gopro-subscribe-window [type="checkbox"]:checked + label:after,
+.gopro-subscribe-window [type="checkbox"]:checked + .label:after,
+.gopro-subscribe-window a.checkbox.in > label:after,
+.gopro-subscribe-window a.checkbox.in > .label:after,
+.gopro-subscribe-window #bx-soa-orderSave [type="checkbox"]:checked + a:after,
+.gopro-subscribe-window .form-group .soa-property-container [type="checkbox"]:checked:after,
+.gopro-subscribe-window .bx-authform [type="checkbox"]:checked:after {
+  border-color: ##COLOR_1_1#;
+  background-color: ##COLOR_1_1#; }
+
+.body [type="checkbox"]:not(:checked) + label:hover:after,
+.body [type="checkbox"]:not(:checked) + .label:hover:after,
+.body a.checkbox > label:hover:after,
+.body a.checkbox > .label:hover:after,
+.body #bx-soa-orderSave [type="checkbox"]:not(:checked) + a:hover:after,
+.body .form-group .soa-property-container [type="checkbox"]:not(:checked):hover:after,
+.body .bx-authform [type="checkbox"]:not(:checked):hover:after,
+.footer [type="checkbox"]:not(:checked) + label:hover:after,
+.footer [type="checkbox"]:not(:checked) + .label:hover:after,
+.footer a.checkbox > label:hover:after,
+.footer a.checkbox > .label:hover:after,
+.footer #bx-soa-orderSave [type="checkbox"]:not(:checked) + a:hover:after,
+.footer .form-group .soa-property-container [type="checkbox"]:not(:checked):hover:after,
+.footer .bx-authform [type="checkbox"]:not(:checked):hover:after,
+.fancybox-container [type="checkbox"]:not(:checked) + label:hover:after,
+.fancybox-container [type="checkbox"]:not(:checked) + .label:hover:after,
+.fancybox-container a.checkbox > label:hover:after,
+.fancybox-container a.checkbox > .label:hover:after,
+.fancybox-container #bx-soa-orderSave [type="checkbox"]:not(:checked) + a:hover:after,
+.fancybox-container .form-group .soa-property-container [type="checkbox"]:not(:checked):hover:after,
+.fancybox-container .bx-authform [type="checkbox"]:not(:checked):hover:after,
+.popup-window [type="checkbox"]:not(:checked) + label:hover:after,
+.popup-window [type="checkbox"]:not(:checked) + .label:hover:after,
+.popup-window a.checkbox > label:hover:after,
+.popup-window a.checkbox > .label:hover:after,
+.popup-window #bx-soa-orderSave [type="checkbox"]:not(:checked) + a:hover:after,
+.popup-window .form-group .soa-property-container [type="checkbox"]:not(:checked):hover:after,
+.popup-window .bx-authform [type="checkbox"]:not(:checked):hover:after,
+.rsgppopup [type="checkbox"]:not(:checked) + label:hover:after,
+.rsgppopup [type="checkbox"]:not(:checked) + .label:hover:after,
+.rsgppopup a.checkbox > label:hover:after,
+.rsgppopup a.checkbox > .label:hover:after,
+.rsgppopup #bx-soa-orderSave [type="checkbox"]:not(:checked) + a:hover:after,
+.rsgppopup .form-group .soa-property-container [type="checkbox"]:not(:checked):hover:after,
+.rsgppopup .bx-authform [type="checkbox"]:not(:checked):hover:after,
+.rs_easycart [type="checkbox"]:not(:checked) + label:hover:after,
+.rs_easycart [type="checkbox"]:not(:checked) + .label:hover:after,
+.rs_easycart a.checkbox > label:hover:after,
+.rs_easycart a.checkbox > .label:hover:after,
+.rs_easycart #bx-soa-orderSave [type="checkbox"]:not(:checked) + a:hover:after,
+.rs_easycart .form-group .soa-property-container [type="checkbox"]:not(:checked):hover:after,
+.rs_easycart .bx-authform [type="checkbox"]:not(:checked):hover:after,
+.gopro-subscribe-window [type="checkbox"]:not(:checked) + label:hover:after,
+.gopro-subscribe-window [type="checkbox"]:not(:checked) + .label:hover:after,
+.gopro-subscribe-window a.checkbox > label:hover:after,
+.gopro-subscribe-window a.checkbox > .label:hover:after,
+.gopro-subscribe-window #bx-soa-orderSave [type="checkbox"]:not(:checked) + a:hover:after,
+.gopro-subscribe-window .form-group .soa-property-container [type="checkbox"]:not(:checked):hover:after,
+.gopro-subscribe-window .bx-authform [type="checkbox"]:not(:checked):hover:after {
+  border-color: ##COLOR_1_1#; }
+
+.body [type="radio"]:checked + label:before,
+.body [type="radio"]:checked + .label:before,
+.body [type="radio"]:checked + label:after,
+.body [type="radio"]:checked + .label:after,
+.body [type="radio"]:not(:checked) + label:hover:before,
+.body [type="radio"]:not(:checked) + .label:hover:before,
+.body [type="radio"]:not(:checked) + label:hover:after,
+.body [type="radio"]:not(:checked) + .label:hover:after,
+.body .bx_soa_location .radio-inline label [type="radio"]:checked:before,
+.body .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.body .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:before,
+.body .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:after,
+.body .form-group .soa-property-container label [type="radio"]:checked:before,
+.body .form-group .soa-property-container label [type="radio"]:checked:after,
+.body .form-group .soa-property-container label [type="radio"]:not(:checked):hover:before,
+.body .form-group .soa-property-container label [type="radio"]:not(:checked):hover:after,
+.footer [type="radio"]:checked + label:before,
+.footer [type="radio"]:checked + .label:before,
+.footer [type="radio"]:checked + label:after,
+.footer [type="radio"]:checked + .label:after,
+.footer [type="radio"]:not(:checked) + label:hover:before,
+.footer [type="radio"]:not(:checked) + .label:hover:before,
+.footer [type="radio"]:not(:checked) + label:hover:after,
+.footer [type="radio"]:not(:checked) + .label:hover:after,
+.footer .bx_soa_location .radio-inline label [type="radio"]:checked:before,
+.footer .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.footer .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:before,
+.footer .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:after,
+.footer .form-group .soa-property-container label [type="radio"]:checked:before,
+.footer .form-group .soa-property-container label [type="radio"]:checked:after,
+.footer .form-group .soa-property-container label [type="radio"]:not(:checked):hover:before,
+.footer .form-group .soa-property-container label [type="radio"]:not(:checked):hover:after,
+.fancybox-container [type="radio"]:checked + label:before,
+.fancybox-container [type="radio"]:checked + .label:before,
+.fancybox-container [type="radio"]:checked + label:after,
+.fancybox-container [type="radio"]:checked + .label:after,
+.fancybox-container [type="radio"]:not(:checked) + label:hover:before,
+.fancybox-container [type="radio"]:not(:checked) + .label:hover:before,
+.fancybox-container [type="radio"]:not(:checked) + label:hover:after,
+.fancybox-container [type="radio"]:not(:checked) + .label:hover:after,
+.fancybox-container .bx_soa_location .radio-inline label [type="radio"]:checked:before,
+.fancybox-container .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.fancybox-container .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:before,
+.fancybox-container .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:after,
+.fancybox-container .form-group .soa-property-container label [type="radio"]:checked:before,
+.fancybox-container .form-group .soa-property-container label [type="radio"]:checked:after,
+.fancybox-container .form-group .soa-property-container label [type="radio"]:not(:checked):hover:before,
+.fancybox-container .form-group .soa-property-container label [type="radio"]:not(:checked):hover:after,
+.popup-window [type="radio"]:checked + label:before,
+.popup-window [type="radio"]:checked + .label:before,
+.popup-window [type="radio"]:checked + label:after,
+.popup-window [type="radio"]:checked + .label:after,
+.popup-window [type="radio"]:not(:checked) + label:hover:before,
+.popup-window [type="radio"]:not(:checked) + .label:hover:before,
+.popup-window [type="radio"]:not(:checked) + label:hover:after,
+.popup-window [type="radio"]:not(:checked) + .label:hover:after,
+.popup-window .bx_soa_location .radio-inline label [type="radio"]:checked:before,
+.popup-window .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.popup-window .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:before,
+.popup-window .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:after,
+.popup-window .form-group .soa-property-container label [type="radio"]:checked:before,
+.popup-window .form-group .soa-property-container label [type="radio"]:checked:after,
+.popup-window .form-group .soa-property-container label [type="radio"]:not(:checked):hover:before,
+.popup-window .form-group .soa-property-container label [type="radio"]:not(:checked):hover:after,
+.rsgppopup [type="radio"]:checked + label:before,
+.rsgppopup [type="radio"]:checked + .label:before,
+.rsgppopup [type="radio"]:checked + label:after,
+.rsgppopup [type="radio"]:checked + .label:after,
+.rsgppopup [type="radio"]:not(:checked) + label:hover:before,
+.rsgppopup [type="radio"]:not(:checked) + .label:hover:before,
+.rsgppopup [type="radio"]:not(:checked) + label:hover:after,
+.rsgppopup [type="radio"]:not(:checked) + .label:hover:after,
+.rsgppopup .bx_soa_location .radio-inline label [type="radio"]:checked:before,
+.rsgppopup .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.rsgppopup .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:before,
+.rsgppopup .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:after,
+.rsgppopup .form-group .soa-property-container label [type="radio"]:checked:before,
+.rsgppopup .form-group .soa-property-container label [type="radio"]:checked:after,
+.rsgppopup .form-group .soa-property-container label [type="radio"]:not(:checked):hover:before,
+.rsgppopup .form-group .soa-property-container label [type="radio"]:not(:checked):hover:after,
+.rs_easycart [type="radio"]:checked + label:before,
+.rs_easycart [type="radio"]:checked + .label:before,
+.rs_easycart [type="radio"]:checked + label:after,
+.rs_easycart [type="radio"]:checked + .label:after,
+.rs_easycart [type="radio"]:not(:checked) + label:hover:before,
+.rs_easycart [type="radio"]:not(:checked) + .label:hover:before,
+.rs_easycart [type="radio"]:not(:checked) + label:hover:after,
+.rs_easycart [type="radio"]:not(:checked) + .label:hover:after,
+.rs_easycart .bx_soa_location .radio-inline label [type="radio"]:checked:before,
+.rs_easycart .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.rs_easycart .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:before,
+.rs_easycart .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:after,
+.rs_easycart .form-group .soa-property-container label [type="radio"]:checked:before,
+.rs_easycart .form-group .soa-property-container label [type="radio"]:checked:after,
+.rs_easycart .form-group .soa-property-container label [type="radio"]:not(:checked):hover:before,
+.rs_easycart .form-group .soa-property-container label [type="radio"]:not(:checked):hover:after,
+.gopro-subscribe-window [type="radio"]:checked + label:before,
+.gopro-subscribe-window [type="radio"]:checked + .label:before,
+.gopro-subscribe-window [type="radio"]:checked + label:after,
+.gopro-subscribe-window [type="radio"]:checked + .label:after,
+.gopro-subscribe-window [type="radio"]:not(:checked) + label:hover:before,
+.gopro-subscribe-window [type="radio"]:not(:checked) + .label:hover:before,
+.gopro-subscribe-window [type="radio"]:not(:checked) + label:hover:after,
+.gopro-subscribe-window [type="radio"]:not(:checked) + .label:hover:after,
+.gopro-subscribe-window .bx_soa_location .radio-inline label [type="radio"]:checked:before,
+.gopro-subscribe-window .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.gopro-subscribe-window .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:before,
+.gopro-subscribe-window .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:after,
+.gopro-subscribe-window .form-group .soa-property-container label [type="radio"]:checked:before,
+.gopro-subscribe-window .form-group .soa-property-container label [type="radio"]:checked:after,
+.gopro-subscribe-window .form-group .soa-property-container label [type="radio"]:not(:checked):hover:before,
+.gopro-subscribe-window .form-group .soa-property-container label [type="radio"]:not(:checked):hover:after {
+  border-color: ##COLOR_1_1#; }
+
+.body [type="radio"]:checked + label:after,
+.body [type="radio"]:checked + .label:after,
+.body .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.body .form-group .soa-property-container label [type="radio"]:checked:after,
+.footer [type="radio"]:checked + label:after,
+.footer [type="radio"]:checked + .label:after,
+.footer .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.footer .form-group .soa-property-container label [type="radio"]:checked:after,
+.fancybox-container [type="radio"]:checked + label:after,
+.fancybox-container [type="radio"]:checked + .label:after,
+.fancybox-container .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.fancybox-container .form-group .soa-property-container label [type="radio"]:checked:after,
+.popup-window [type="radio"]:checked + label:after,
+.popup-window [type="radio"]:checked + .label:after,
+.popup-window .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.popup-window .form-group .soa-property-container label [type="radio"]:checked:after,
+.rsgppopup [type="radio"]:checked + label:after,
+.rsgppopup [type="radio"]:checked + .label:after,
+.rsgppopup .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.rsgppopup .form-group .soa-property-container label [type="radio"]:checked:after,
+.rs_easycart [type="radio"]:checked + label:after,
+.rs_easycart [type="radio"]:checked + .label:after,
+.rs_easycart .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.rs_easycart .form-group .soa-property-container label [type="radio"]:checked:after,
+.gopro-subscribe-window [type="radio"]:checked + label:after,
+.gopro-subscribe-window [type="radio"]:checked + .label:after,
+.gopro-subscribe-window .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+.gopro-subscribe-window .form-group .soa-property-container label [type="radio"]:checked:after {
+  background-color: ##COLOR_1_1#; }
+
+.body .tline {
+  background-color: ##COLOR_1_1#; }
+
+.body .tpanel__menu2 a .svg-icon {
+  fill: ##COLOR_1_1#; }
+
+.body .header-basket .svg-icon {
+  fill: ##COLOR_1_1#; }
+
+.body .header__circle.js-more-than-zero {
+  background-color: ##COLOR_1_2#; }
+
+.body .b-mmenu.navbar-default {
+  background-color: ##COLOR_1_1#; }
+  .body .b-mmenu.navbar-default .b-mmenu__toggle,
+  .body .b-mmenu.navbar-default .navbar-nav > li.other > a {
+    color: #fff;
+    background-color: ##COLOR_1_1#; }
+  .body .b-mmenu.navbar-default .search-bar .search-btn.svg-icon:hover,
+  .body .b-mmenu.navbar-default .b-mmenu__toggle:hover,
+  .body .b-mmenu.navbar-default .navbar-nav > li.lvl1:hover > a,
+  .body .b-mmenu.navbar-default .navbar-nav > li.lvl1 > a:hover,
+  .body .b-mmenu.navbar-default .navbar-nav > li.other:hover > a,
+  .body .b-mmenu.navbar-default .navbar-nav > li.other > a:hover,
+  .body .b-mmenu.navbar-default .navbar-nav > .active > a,
+  .body .b-mmenu.navbar-default .navbar-nav > .active > a:hover,
+  .body .b-mmenu.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+  .body .b-mmenu.navbar-default .dropdown-menu {
+    border-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+  .body .b-mmenu.navbar-default .searchinhead {
+    border-color: ##COLOR_1_1#; }
+    .body .b-mmenu.navbar-default .searchinhead .search-btn:hover .svg-icon {
+      fill: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.body .b-mmenu .dropdown-menu {
+  border-bottom-color: ##COLOR_1_1#; }
+
+.body .gopro-banners__text1.product:after {
+  background-color: ##COLOR_1_1#; }
+
+.body .gopro-banners__text2 {
+  color: ##COLOR_1_1#; }
+
+.body .owl-dots .owl-dot:hover, .body .owl-dots .owl-dot.active:hover {
+  background-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.body .owl-dots .owl-dot.active {
+  background-color: ##COLOR_1_1#; }
+
+.body .hamburger.is-active {
+  background-color: ##COLOR_1_1#; }
+
+.header-fly {
+  border-top-color: ##COLOR_1_1#; }
+  .header-fly__panel {
+    border-bottom-color: ##COLOR_1_1#; }
+
+@media (max-width: 991px) {
+  .authinhead2 .authorized .authinhead2__icon {
+    border-color: ##COLOR_1_1#; } }
+
+@media (max-width: 768px) {
+  .body .b-mmenu.navbar-default .dropdown-menu > li > a {
+    color: #fff;
+    background-color: ##COLOR_1_1#; }
+  .body .menu .b-mmenu .dropdown-menu > li > a,
+  .body .menu .b-mmenu .navbar-nav > li > a {
+    color: #fff;
+    background-color: ##COLOR_1_1#; } }
+
+/* detail ext_pictures */
+.body div.sale-order-detail-payment-options-methods-template,
+.body .sale-paysystem-wrapper,
+.body .fichi__inner,
+.body .c-attributes.view-buttons .c-attributes__option:not(.disabled):hover,
+.body .c-attributes.view-buttons .c-attributes__option:not(.disabled).selected,
+.body .filtren .lvl2 .smartf-div:not(.disabled) label.pic:hover,
+.body .filtren .cwpal .lvl2 .smartf-div:not(.disabled):hover label.pic,
+.body .filtren .cwp .lvl2 .smartf-div:not(.disabled):hover label.pic,
+.body .filtren .dd.open > .lvl2 .smartf-div:not(.disabled),
+.body .filtren .dd.wpal.open > .lvl2 .smartf-div:not(.disabled),
+.body .filtren .lvl2 .active label.pic,
+.body .bx_ordercart .bx_item_detail_scu_small_noadaptive .bx_scu ul > .sku_prop:hover > a,
+.body .bx_ordercart .bx_item_detail_scu_small_noadaptive .bx_scu ul > .sku_prop.bx_active > a,
+.body .c-attributes.view-list .c-attributes__prop.open .c-attributes__current-value__pseudo-option {
+  border-color: ##COLOR_1_1#; }
+
+.body .filtren .dd .dropdown > .dropdown,
+.body .c-attributes.view-list .c-attributes__options {
+  border-bottom-color: ##COLOR_1_1#; }
+
+/* titles */
+.primary-color,
+.brandslist span,
+.sorter_and_name .name,
+.brandslist.mainstyles .title a,
+.brandslistimg.mainstyles .title a,
+.mods h3.title2,
+.bigdata h3.title2,
+.detailcollection h3.title2,
+.detailtabs .contents .content .switcher,
+.sections a.parent,
+.mainsections .title,
+.presscentermainn .title,
+.sorter_and_name .name,
+.brandslistimgowl1.mainstyles .title a,
+.mainsections a.parent,
+.mainsections__show-more,
+.presscentermainn .item .blockname a,
+.presscentermainn .item a.blockname,
+.catalogmenu2 a.sub,
+.price.new,
+.table .full.name,
+.acc_title,
+.sale-personal-account-wallet-currency-item,
+.nice-title,
+.body #bx-soa-order .bx-soa-cart-total-line.bx-soa-cart-total-line-highlighted .bx-soa-cart-d {
+  color: ##COLOR_1_1#; }
+
+/* jScroll */
+.body .jspDrag,
+.body .sale-paysystem-yandex-button-item,
+.fancybox-container .jspDrag,
+.fancybox-container .sale-paysystem-yandex-button-item,
+.rsgppopup .jspDrag,
+.rsgppopup .sale-paysystem-yandex-button-item {
+  background-color: ##COLOR_1_1#; }
+
+.body .jspDrag.jspHover,
+.body .jspDrag.jspActive,
+.fancybox-container .jspDrag.jspHover,
+.fancybox-container .jspDrag.jspActive,
+.rsgppopup .jspDrag.jspHover,
+.rsgppopup .jspDrag.jspActive {
+  background-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border,
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border-top,
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border-right,
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border-bottom,
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-focus .js-pseudo-border-left,
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border,
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border-top,
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border-right,
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border-bottom,
+body.rsgopro .js-pseudo-focus-blur.js-pseudo-border .js-pseudo-border-left {
+  border-color: ##COLOR_1_1#; }
+
+/* svg-icons */
+.rsfavorite .svg-icon,
+.artables.view_gallery table.products .add2basketform .submit .svg-icon,
+.artables.view_gallery table.products .add2basketform .inbasket .svg-icon,
+.artables.view_gallery .add2basketform .tick,
+.artables.view_table table.products .add2basketform .submit .svg-icon,
+.artables.view_table table.products .add2basketform .inbasket .svg-icon,
+.artables.view_table .add2basketform .tick,
+.footer .line1 .contacts .recall .svg-icon,
+.footer .line1 .contacts .feedback .svg-icon,
+.picslider.horizontal a:hover .svg-icon,
+.elementdetail .prices a:hover .svg-icon,
+.picslider.vertical a:hover .svg-icon,
+.elementdetail .zoom .svg-icon,
+.body .set .js-element .plusik .svg-icon,
+.body .basket a.delete .svg-icon,
+.body .basket a.delay .svg-icon,
+.body .basket a.add .svg-icon {
+  fill: ##COLOR_1_1#; }
+
+.artables table.products .add2basketform .add2subscribe .svg-icon {
+  fill: ##COLOR_1_2#; }
+
+/* smart.filter */
+.filtren .dd .lvl2:not(.selected) div.active label {
+  color: #fff;
+  background-color: ##COLOR_1_1#; }
+
+.c-prices__value-old:after {
+  background-color: ##COLOR_1_1#; }
+
+.c-prices__more-link {
+  color: ##COLOR_1_1#; }
+
+.b-stores .svg-icon.empty {
+  fill: ##COLOR_1_1#; }
+
+.num-404-error {
+  color: ##COLOR_1_1#; }
+
+/*********************************************/
+/* additional styles
+BACKGROUND COLOR*/
+.pmenu a:hover,
+.light .js-element .buy .go2detail,
+.catalogsorter .dropdownin a:hover,
+.catalogsorter .dropdownin a.selected:hover,
+.comparelist a:hover {
+  color: #fff !important;
+  background-color: ##COLOR_1_1_DARKEN_10_PERSENT# !important; }
+
+.catalogsorter .dropdownin a.selected,
+.propvision1 .offer_prop .div_options .div_option.selected,
+.propvision1 .offer_prop .div_options .div_option.selected span {
+  color: #fff !important;
+  background-color: ##COLOR_1_1# !important; }
+
+.propvision1 .offer_prop .div_options .div_option:hover:not(.disabled),
+.propvision1 .offer_prop .div_options .div_option:hover:not(.disabled) span {
+  background-color: ##COLOR_1_1_DARKEN_10_PERSENT# !important; }
+
+.filtren .modef .data a {
+  color: #fff !important; }
+
+/*additional styles
+ACTIVE BACKGROUND COLOR*/
+.body .pmenu a:hover {
+  background-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.body .pmenu a.selected,
+.body .pmenu a.selected:active,
+.body .pmenu a:active {
+  background-color: ##COLOR_1_1#; }
+
+/* slider of filter BACKGROUND LINEAR GRADIENT */
+.ui-slider .ui-slider-range,
+.smartfilter .bx_ui_slider_handle,
+.smartfilter .bx_ui_slider_pricebar_V {
+  background-color: ##COLOR_1_1# !important; }
+
+.erorpage .errorbutton a {
+  color: #fff !important;
+  background: ##COLOR_1_1#; }
+
+@media screen and (max-width: 480px) {
+  body.adaptive .detailtabs .content.selected .switcher {
+    color: #fff !important;
+    background-color: ##COLOR_1_1# !important; } }
+
+/* personal.order.list */
+.orderlist .item:hover {
+  border-color: ##COLOR_1_1#; }
+
+.orderlist .switch a.selected {
+  color: #fff;
+  background-color: ##COLOR_1_1#; }
+
+.orderlist .switch a:hover {
+  color: #fff;
+  background-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+.product-delivery {
+  border-color: ##COLOR_1_1#; }
+
+.body #bx-soa-order .bx-soa-section.bx-selected,
+.body #bx-soa-order .bx-soa-pp-company.bx-selected .bx-soa-pp-company-graf-container,
+.body #bx-soa-order .bx-sls .form-control.dropdown-block.focus,
+.body #bx-soa-order .form-group .form-control:focus:focus,
+.body #bx-soa-order .bx-soa-coupon-input input[type=text].form-control:focus {
+  border-color: ##COLOR_1_1#; }
+
+.body .searchinhead__btn {
+  border-color: ##COLOR_1_2#;
+  background-color: ##COLOR_1_2#; }
+  .body .searchinhead__btn:hover {
+    color: #fff;
+    border-color: ##COLOR_1_2_DARKEN_10_PERSENT#;
+    background-color: ##COLOR_1_2_DARKEN_10_PERSENT#; }
+  .body .searchinhead__btn .svg-icon {
+    fill: #fff; }
+
+.body .searchinhead__zoom:hover .svg-icon {
+  fill: #94ac4b; }
+
+.body .searchinhead__zoom .svg-icon {
+  fill: ##COLOR_1_1#; }
+
+.body .searchinhead__enter {
+  border-color: ##COLOR_1_2#;
+  background-color: ##COLOR_1_2#; }
+  .body .searchinhead__enter:hover {
+    border-color: ##COLOR_1_2_DARKEN_10_PERSENT#;
+    background-color: ##COLOR_1_2_DARKEN_10_PERSENT#; }
+
+.menu_horizontal1 .menu .searchinhead__btn {
+  border-color: ##COLOR_1_1#;
+  background-color: ##COLOR_1_1#; }
+  .menu_horizontal1 .menu .searchinhead__btn:hover {
+    border-color: ##COLOR_1_1_DARKEN_10_PERSENT#;
+    background-color: ##COLOR_1_1_DARKEN_10_PERSENT#; }
+
+/******************************************************/
+/******************************************************/
+/******************************************************/
+.title-search-result {
+  border-color: ##COLOR_1_1#; }
+  .title-search-result .stitle .title {
+    color: ##COLOR_1_1#; }
+
+.stitle .title {
+  color: ##COLOR_1_1#; }
+
+.stitle .iblock .catitem:hover .name,
+.stitle .iblock .catitem:hover .prs {
+  background-color: #899CC7; }
+
+/**************************************
+label_macros_file_finish
+**************************************/
+
+/*# sourceMappingURL=macros.css.map */

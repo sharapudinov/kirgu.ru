@@ -1,0 +1,83 @@
+.iblockdetail{
+	line-height:18px;
+}
+.iblockdetail .pic{
+	width:25%;
+	min-width:90px;
+	float:left;
+	padding:0px 20px 10px 0px;
+}
+.iblockdetail .text{
+	width:75%;
+	float:left;
+	text-align:justify;
+}
+.iblockdetail .bot{
+	margin-top:15px;
+	padding-top:15px;
+	border-top:1px solid #F2F2F2;
+}
+.iblockdetail .bot .back{
+	float:left;
+}
+.iblockdetail .bot .date{
+	float:right;
+	color:#666666;
+	font-style:italic;
+}
+
+/* content */
+/*.iblockdetail table{
+	display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+.iblockdetail table,
+.iblockdetail td{
+	margin: auto;
+    padding: 1px;
+    border: 1px solid gray;
+}*/
+.iblockdetail table {
+	width: 100%;
+	margin: 20px 0;
+}
+.iblockdetail table tr {
+	border-top: 1px solid #eeeeee;
+	border-left: 1px solid #eeeeee;
+}
+.iblockdetail table td, .iblockdetail table th {
+	border-right: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	padding: 5px 15px;
+}
+.iblockdetail table th {
+	background: #f8f8f8;
+}
+.iblockdetail li {
+	list-style-type: disc;
+    padding-bottom: 7px;
+}
+.iblockdetail ul {
+	margin: 20px 0px 20px 20px;
+}
+
+@media screen and (max-width:480px){
+	body.adaptive .iblockdetail .pic{
+		width:100%;
+		text-align:center;
+		padding: 0px 0px 10px 0px;
+	}
+	body.adaptive .iblockdetail .text{
+		width: 100%;
+	}
+	body.adaptive .iblockdetail .bot{
+		margin-top:5px;
+		padding-top:5px;
+	}
+	body.adaptive .iblockdetail .bot .back,
+	body.adaptive .iblockdetail .bot .date{
+		float:none;
+		margin:3px 0px;
+	}
+}
