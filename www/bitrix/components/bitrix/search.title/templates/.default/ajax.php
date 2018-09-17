@@ -16,11 +16,11 @@ if(!empty($arResult["CATEGORIES"])):?>
 				<?endif?>
 
 				<?if($category_id === "all"):?>
-					<td class="title-search-all"><a href="<?echo $arItem["URL"]?>"><?echo $arItem["NAME"]?></a></td>
+					<td class="title-search-all"><a href="<?echo $arItem["URL"]?>"><?echo $arItem["NAME"]?></td>
 				<?elseif(isset($arItem["ICON"])):?>
-					<td class="title-search-item"><a href="<?echo $arItem["URL"]?>"><img src="<?echo $arItem["ICON"]?>"><?echo $arItem["NAME"]?></a></td>
+					<td class="title-search-item"><a href="<?echo $arItem["URL"]?>"><img src="<?echo $arItem["ICON"]?>"><?echo $arItem["NAME"]?></td>
 				<?else:?>
-					<td class="title-search-more"><a href="<?echo $arItem["URL"]?>"><?echo $arItem["NAME"]?></a></td>
+					<td class="title-search-more"><a href="<?echo $arItem["URL"]?>"><?echo $arItem["NAME"]?></td>
 				<?endif;?>
 			</tr>
 			<?endforeach;?>

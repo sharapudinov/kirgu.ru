@@ -1,7 +1,7 @@
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"brands",
-	Array(
+	"bitrix:news.list", 
+	"brands_owl", 
+	array(
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_PICTURE" => "Y",
@@ -15,8 +15,14 @@
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER2" => "ASC",
 		"FILTER_NAME" => "",
-		"FIELD_CODE" => array(),
-		"PROPERTY_CODE" => array("BRAND"),
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "BRAND",
+			1 => "",
+		),
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
@@ -49,10 +55,25 @@
 		"SECTIONS_CODE" => "SECTIONS",
 		"CATALOG_FILTER_NAME" => "arrFilter",
 		"CATALOG_IBLOCK_ID" => "24",
-		"CATALOG_BRAND_CODE" => "BRAND",
+		"CATALOG_BRAND_CODE" => "-",
 		"SHOW_BOTTOM_SECTIONS" => "Y",
 		"ADD_STYLES_FOR_MAIN" => "Y",
 		"COUNT_ITEMS" => "0",
+		"COMPONENT_TEMPLATE" => "brands_owl",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"SHOW_404" => "N",
+		"MESSAGE_404" => "",
+		"RSGOPRO_CHANGE_SPEED" => "2000",
+		"RSGOPRO_CHANGE_DELAY" => "8000",
+		"USE_LAZYLOAD" => "N"
 	),
-false
+	false
 );?>

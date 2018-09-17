@@ -16,7 +16,7 @@ if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/search.start.php', 
 	<?$arElements = $APPLICATION->IncludeComponent(
 		"bitrix:search.page",
 		"gopro_catalog",
-		Array(
+		array(
 			"RESTART" => $arParams["RESTART"],
 			"NO_WORD_LOGIC" => $arParams["NO_WORD_LOGIC"],
 			"USE_LANGUAGE_GUESS" => $arParams["USE_LANGUAGE_GUESS"],
@@ -35,6 +35,12 @@ if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/search.start.php', 
 			"PAGER_TITLE" => "",
 			"PAGER_SHOW_ALWAYS" => "N",
 			"PAGER_TEMPLATE" => "N",
+
+			"PAGE_RESULT_COUNT" => !empty($arParams["SEARCH_PAGE_RESULT_COUNT"]) ? $arParams["SEARCH_PAGE_RESULT_COUNT"] : "50",
+			"RESTART" => !empty($arParams["SEARCH_RESTART"]) ? $arParams["SEARCH_RESTART"] : "N",
+			"NO_WORD_LOGIC" => !empty($arParams["SEARCH_NO_WORD_LOGIC"]) ? $arParams["SEARCH_NO_WORD_LOGIC"] : "Y",
+			"USE_LANGUAGE_GUESS" => !empty($arParams["SEARCH_USE_LANGUAGE_GUESS"]) ? $arParams["SEARCH_USE_LANGUAGE_GUESS"] : "Y",
+			"CHECK_DATES" => !empty($arParams["SEARCH_CHECK_DATES"]) ? $arParams["SEARCH_CHECK_DATES"] : "Y",
 		),
 		$component,
 		array('HIDE_ICONS' => 'Y')

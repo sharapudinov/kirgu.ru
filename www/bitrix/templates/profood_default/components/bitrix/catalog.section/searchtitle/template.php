@@ -1,7 +1,6 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
-
 $this->setFrameMode(false);
 
 if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0):

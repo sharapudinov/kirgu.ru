@@ -51,13 +51,18 @@ if (\Bitrix\Main\Loader::includeModule('iblock')) {
 ?>
 
 <div class="catalog clearfix" id="catalog">
-	<?php if ( $arParams['SECTIONS_VIEW_MODE'] == 'VIEW_SECTIONS' && (($arCurSection['RIGHT_MARGIN'] - $arCurSection['LEFT_MARGIN']) > 1)): ?>
+	<?php if ($arParams['SECTIONS_VIEW_MODE'] == 'VIEW_SECTIONS' && (($arCurSection['RIGHT_MARGIN'] - $arCurSection['LEFT_MARGIN']) > 1)): ?>
 
 <?php
 if ($arParams['SECTIONS_DESCRIPTION_POSITION'] == 'top'):
 	$APPLICATION->ShowViewContent('catalog_section_list_descr');
-	?><hr><?
 endif;
+?>
+
+<?php
+if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/section.before.section.list.php', $getTemplatePathPartParams))) {
+    include($path);
+}
 ?>
 
 <?$APPLICATION->IncludeComponent(
@@ -80,22 +85,34 @@ endif;
     array('HIDE_ICONS'=>'Y')
 );?>
 
+<?php
+if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/section.after.section.list.php', $getTemplatePathPartParams))) {
+    include($path);
+}
+?>
+
 <?php if ($arParams['SECTIONS_DESCRIPTION_POSITION'] == 'bottom'):
-        $APPLICATION->ShowViewContent('catalog_section_list_descr');
+	$APPLICATION->ShowViewContent('catalog_section_list_descr');
 endif; ?>
 
 	<?php else: // VIEW_MODE ?>
 		
         <?php
-        $IS_AJAX_CATALOG = false;
-        // isset($_SERVER['HTTP_X_REQUESTED_WITH'])
+        $isAjaxCatalog = false;
         if ($_REQUEST['AJAX_CALL'] == 'Y' && $_REQUEST['get'] == 'catalog') {
             $APPLICATION->RestartBuffer();
-            $IS_AJAX_CATALOG = true;
+            $isAjaxCatalog = true;
         }
         ?>
         
 		<div class="sidebar">
+
+<?php
+if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/section.before.section.list.lines.php', $getTemplatePathPartParams))) {
+    include($path);
+}
+?>
+
 <?$APPLICATION->IncludeComponent(
     'bitrix:catalog.section.list',
     'lines',
@@ -114,6 +131,18 @@ endif; ?>
     $component,
     array('HIDE_ICONS'=>'Y')
 );?>
+
+<?php
+if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/section.after.section.list.lines.php', $getTemplatePathPartParams))) {
+    include($path);
+}
+?>
+
+<?php
+if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/section.before.smart.filter.php', $getTemplatePathPartParams))) {
+    include($path);
+}
+?>
 
 		<?php if ($arParams['USE_FILTER'] == 'Y'): ?>
 			<?$APPLICATION->IncludeComponent(
@@ -160,16 +189,20 @@ endif; ?>
     			array('HIDE_ICONS'=>'Y')
 			);?>
 		<?php endif; ?>
-        
+
+<?php
+if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/section.after.smart.filter.php', $getTemplatePathPartParams))) {
+    include($path);
+}
+?>
+
 		</div>
 		
 		<div class="prods" id="prods">
 <?php
-//$frame = $this->createFrame('prods',false)->begin('<img class="ajax_loader" src="'.SITE_TEMPLATE_PATH.'/img/ajax-loader.gif" />');
-//\Bitrix\Main\Page\Frame::getInstance()->startDynamicWithID('prods');
-if ($arParams['SECTION_DESCRIPTION_POSITION'] == 'top'):
+if ($arParams['SECTION_DESCRIPTION_POSITION'] == 'top') {
 	$APPLICATION->ShowViewContent('catalog_section_list_descr');
-endif;
+}
 ?>
 			<div class="mix clearfix">
                 <?php if ($arParams['USE_COMPARE'] == 'Y' && 1==2): ?>
@@ -367,7 +400,7 @@ if ($IS_AJAXPAGES == 'Y' || $IS_SORTERCHANGE == 'Y') {
 			endif; ?>
 		</div>
 <?php
-if ($IS_AJAX_CATALOG) {
+if ($isAjaxCatalog) {
 	die();
 }
 	endif; //VIEW_MODE

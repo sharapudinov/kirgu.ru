@@ -76,7 +76,7 @@ if(!empty($arResult['CATEGORIES']))
 									"OFFERS_LIMIT" => "0",
 									"SECTION_ID" => "",
 									"SECTION_CODE" => "",
-									"SECTION_URL" => "",
+									"SECTION_URL" => "/",
 									"DETAIL_URL" => "",
 									"CONVERT_CURRENCY" => $arParams["CONVERT_CURRENCY"],
 									"CURRENCY_ID" => $arParams["CURRENCY_ID"],

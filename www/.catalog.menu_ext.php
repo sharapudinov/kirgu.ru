@@ -25,7 +25,7 @@ if (CModule::IncludeModule('iblock')) {
       
 			$aMenuLinksExt = $APPLICATION->IncludeComponent("bitrix:menu.sections", "", array(
 				"IS_SEF" => "Y",
-				"SEF_BASE_URL" => "/catalog/",
+				"SEF_BASE_URL" => "",
 				"SECTION_PAGE_URL" => $arIBlock['SECTION_PAGE_URL'],
 				"DETAIL_PAGE_URL" => $arIBlock['DETAIL_PAGE_URL'],
 				"IBLOCK_TYPE" => $arIBlock['IBLOCK_TYPE_ID'],

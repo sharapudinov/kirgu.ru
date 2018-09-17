@@ -259,17 +259,6 @@ function JCTitleSearch(arParams)
 		_this.running = false;
 	};
 
-	this.onScroll = function ()
-	{
-		if(BX.type.isElementNode(_this.RESULT)
-			&& _this.RESULT.style.display !== "none"
-			&& _this.RESULT.innerHTML !== ''
-		)
-		{
-			_this.adjustResultNode();
-		}
-	};
-
 	this.UnSelectAll = function()
 	{
 		var tbl = BX.findChild(_this.RESULT, {'tag':'table','class':'title-search-result'}, true);
@@ -332,29 +321,29 @@ function JCTitleSearch(arParams)
 
 	this.adjustResultNode = function()
 	{
-		if(!(BX.type.isElementNode(_this.RESULT)
-			&& BX.type.isElementNode(_this.CONTAINER))
-		)
+		var pos;
+		var fixedParent = BX.findParent(_this.CONTAINER, BX.is_fixed);
+		if(!!fixedParent)
 		{
-			return { top: 0, right: 0, bottom: 0, left: 0, width: 0, height: 0 };
+			_this.RESULT.style.position = 'fixed';
+			_this.RESULT.style.zIndex = BX.style(fixedParent, 'z-index') + 2;
+			pos = BX.pos(_this.CONTAINER, true);
 		}
-
-		var pos = BX.pos(_this.CONTAINER);
-
-		_this.RESULT.style.position = 'absolute';
+		else
+		{
+			_this.RESULT.style.position = 'absolute';
+			pos = BX.pos(_this.CONTAINER);
+		}
+		pos.width = pos.right - pos.left;
 		_this.RESULT.style.top = (pos.bottom + 2) + 'px';
 		_this.RESULT.style.left = pos.left + 'px';
 		_this.RESULT.style.width = pos.width + 'px';
-
 		return pos;
 	};
 
 	this._onContainerLayoutChange = function()
 	{
-		if(BX.type.isElementNode(_this.RESULT)
-			&& _this.RESULT.style.display !== "none"
-			&& _this.RESULT.innerHTML !== ''
-		)
+		if(_this.RESULT.style.display !== "none" && _this.RESULT.innerHTML !== '')
 		{
 			_this.adjustResultNode();
 		}
@@ -364,8 +353,8 @@ function JCTitleSearch(arParams)
 		this.CONTAINER = document.getElementById(this.arParams.CONTAINER_ID);
 		BX.addCustomEvent(this.CONTAINER, "OnNodeLayoutChange", this._onContainerLayoutChange);
 
-		this.RESULT = this.CONTAINER.appendChild(document.createElement("DIV"));
-		this.RESULT.className = 'searchautocomplete-placeholder';
+		this.RESULT = document.body.appendChild(document.createElement("DIV"));
+		this.RESULT.className = 'title-search-result';
 		this.INPUT = document.getElementById(this.arParams.INPUT_ID);
 		this.startText = this.oldValue = this.INPUT.value;
 		BX.bind(this.INPUT, 'focus', function() {_this.onFocusGain()});
@@ -384,12 +373,6 @@ function JCTitleSearch(arParams)
 		}
 
 		BX.bind(this.INPUT, 'bxchange', function() {_this.onChange()});
-
-		var fixedParent = BX.findParent(this.CONTAINER, BX.is_fixed);
-		if(BX.type.isElementNode(fixedParent))
-		{
-			BX.bind(window, 'scroll', BX.throttle(this.onScroll, 100, this));
-		}
 	};
 	BX.ready(function (){_this.Init(arParams)});
 }

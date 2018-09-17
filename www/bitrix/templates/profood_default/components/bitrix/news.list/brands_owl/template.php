@@ -1,7 +1,6 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 	die();
-
 $this->setFrameMode(true);
 
 if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0) {
@@ -23,7 +22,8 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0) {
 					?><div class="item" id="<?=$this->GetEditAreaId($arItem['ID']);?>"><?
 						?><div class="in"><?
 							?><div class="pic"><?
-								?><a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?
+							if (!$arParams['HIDE_LINK_WHEN_NO_DETAIL'] || ($arItem['DETAIL_TEXT'] && $arResult['USER_HAVE_ACCESS'])):
+								?><a class="brandslistimgowl1__block" href="<?=$arItem['DETAIL_PAGE_URL']?>"><?
 									?><img <?
 										?>class="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? ' owl-lazy lazy-animation' : '')?>" <?
 										?>src="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? $arResult['LAZY_PHOTO']['src'] : $arItem['PREVIEW_PICTURE']['SRC'])?>" <?
@@ -32,6 +32,17 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0) {
 										?>title="<?=$arItem['PREVIEW_PICTURE']['TITLE']?>" <?
 									?>/><?
 								?></a><?
+							else:
+								?><span class="brandslistimgowl1__block"><?
+									?><img <?
+										?>class="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? ' owl-lazy lazy-animation' : '')?>" <?
+										?>src="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? $arResult['LAZY_PHOTO']['src'] : $arItem['PREVIEW_PICTURE']['SRC'])?>" <?
+										?>data-src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" <?
+										?>alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>" <?
+										?>title="<?=$arItem['PREVIEW_PICTURE']['TITLE']?>" <?
+									?>/><?
+								?></span><?
+							endif;
 							?></div><?
 						?></div><?
 					?></div><?

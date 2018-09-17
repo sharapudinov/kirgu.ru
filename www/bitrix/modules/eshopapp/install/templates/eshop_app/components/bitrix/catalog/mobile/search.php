@@ -58,7 +58,7 @@
 			"PAGER_DESC_NUMBERING" => $arParams["PAGER_DESC_NUMBERING"],
 			"PAGER_DESC_NUMBERING_CACHE_TIME" => $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"],
 			"PAGER_SHOW_ALL" => $arParams["PAGER_SHOW_ALL"],
-			"FILTER_NAME" => "searchFilter",
+			"FILTER_NAME" => "arrSearchFilter",
 			"SECTION_ID" => "",
 			"SECTION_CODE" => "",
 			"SECTION_USER_FIELDS" => array(),

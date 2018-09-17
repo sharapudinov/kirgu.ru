@@ -1,6 +1,6 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty('NOT_SHOW_NAV_CHAIN', 'Y');
-$APPLICATION->SetTitle('Главная');
+$APPLICATION->SetTitle("Главная");
 $APPLICATION->SetPageProperty('title', 'Главная');
 
 $tuning = \Redsign\Tuning\TuningCore::getInstance();
@@ -46,7 +46,7 @@ $showblockShops = $instanceOptionManager->get('SWITCH_SHOPS');
 <!-- /banner -->
 
 <!-- section.list -->
-<?$APPLICATION->IncludeComponent(
+<?/*$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
 	array(
@@ -58,9 +58,24 @@ $showblockShops = $instanceOptionManager->get('SWITCH_SHOPS');
 	array(
 		"ACTIVE_COMPONENT" => ($showblockNewsAndSection == 'Y' ? 'Y' : 'N')
 	)
-);?>
+);*/?>
 <!-- /section.list -->
+<!-- best.offers -->
+<?$APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    array(
+        "AREA_FILE_SHOW" => "file",
+        "PATH" => SITE_DIR."include/index/best.offers.php",
+        "EDIT_TEMPLATE" => ""
+    ),
+    false,
+    array(
+        "ACTIVE_COMPONENT" => ($showblockBestProducts == 'Y' ? 'Y' : 'N')
+    )
+);?>
 
+<!-- /best.offers -->
 <!-- news -->
 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
@@ -76,22 +91,6 @@ $showblockShops = $instanceOptionManager->get('SWITCH_SHOPS');
 	)
 );?>
 <!-- /news -->
-
-<!-- best.offers -->
-<?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
-	array(
-		"AREA_FILE_SHOW" => "file",
-		"PATH" => SITE_DIR."include/index/best.offers.php",
-		"EDIT_TEMPLATE" => ""
-	),
-	false,
-	array(
-		"ACTIVE_COMPONENT" => ($showblockBestProducts == 'Y' ? 'Y' : 'N')
-	)
-);?>
-<!-- /best.offers -->
 
 <!-- brands -->
 <?$APPLICATION->IncludeComponent(

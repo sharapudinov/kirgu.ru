@@ -1,8 +1,5 @@
-<?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section.list", 
-	"main", 
-	array(
-		"IBLOCK_TYPE" => "catalog",
+<?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "main", array(
+	"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => "4",
 		"SECTION_ID" => "",
 		"SECTION_CODE" => "",

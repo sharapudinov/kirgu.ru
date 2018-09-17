@@ -16,19 +16,19 @@ include(Application::getDocumentRoot().SITE_TEMPLATE_PATH.'/extended/pathes.php'
 
 // check module include
 if (!Loader::includeModule(GOPRO_MODULE_ID)) {
-	ShowError(Loc::getMessage('RSGOPRO.ERROR_NOT_INSTALLED_MODULE'), array('#MODULE#' => GOPRO_MODULE_ID));
+	ShowError(Loc::getMessage('RSGOPRO.ERROR_NOT_INSTALLED_MODULE', array('#MODULE#' => GOPRO_MODULE_ID)));
 	die();
 }
 
 if (!Loader::includeModule('redsign.devfunc')) {
-    ShowError(Loc::getMessage('RSGOPRO.ERROR_NOT_INSTALLED_MODULE'), array('#MODULE#' => 'redsign.devfunc'));
+    ShowError(Loc::getMessage('RSGOPRO.ERROR_NOT_INSTALLED_MODULE', array('#MODULE#' => 'redsign.devfunc')));
     die();
 } else {
     RSDevFunc::Init(array('jsfunc'));
 }
 
 if (!Loader::includeModule('redsign.tuning')) {
-    ShowError(Loc::getMessage('RSGOPRO.ERROR_NOT_INSTALLED_MODULE'), array('#MODULE#' => 'redsign.tuning'));
+    ShowError(Loc::getMessage('RSGOPRO.ERROR_NOT_INSTALLED_MODULE', array('#MODULE#' => 'redsign.tuning')));
     die();
 }
 
@@ -127,9 +127,9 @@ $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/jquery.maskedinput.min.js');
 $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/owl2-2.2.1/owl.carousel.min.js');
 // $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/jscrollpane/jquery.jscrollpane.min.js');
 $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/scrollbar/jquery.scrollbar.min.js');
-$asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/jssor/jssor.core.js');
-$asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/jssor/jssor.utils.js');
-$asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/jssor/jssor.slider.min.js');
+// $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/jssor/jssor.core.js');
+// $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/jssor/jssor.utils.js');
+// $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/jssor/jssor.slider.min.js');
 $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/fancybox3/jquery.fancybox.min.js');
 $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/scrollto/jquery.scrollTo.min.js');
 $asset->addJs(SITE_TEMPLATE_PATH.'/assets/lib/smoothscroll/SmoothScroll.js');
@@ -207,11 +207,11 @@ if (!empty($arModuleVersion['VERSION'])) {
 		"LICENSE_WORK_LINK_PART2": '<?=CUtil::JSEscape(Loc::getMessage('RSGOPRO.LICENSE_WORK_LINK_PART2'))?>',
 	});
     </script>
-    <?$APPLICATION->IncludeFile(
-        SITE_DIR."include/header/head_end.php",
-        array(),
-        array("MODE"=>"html")
-    );?>
+<?$APPLICATION->IncludeFile(
+	SITE_DIR."include/header/head_end.php",
+	array(),
+	array("MODE"=>"html")
+);?>
 </head>
 <body class="<?
 	?>rsgopro <?
@@ -242,7 +242,7 @@ if (!empty($arModuleVersion['VERSION'])) {
 			?><?php require_once (EXTENDED_PATH_HEADERS.'/fly.php'); ?><?
 		?><?php endif; ?>
 
-		<?=($headerType == 'type2' ? '<div class="hidden-xs">' : '')?>
+		<?=($headerType == 'type2' ? '<div class="b-over-header hidden-xs">' : '')?>
 
 		<?php require_once (EXTENDED_PATH_HEADERS.'/'.$tpanelType.'.php'); ?>
 
@@ -271,6 +271,12 @@ if (!empty($arModuleVersion['VERSION'])) {
 		<div id="content" class="content">
 			<div class="centering">
 				<div class="centeringin clearfix">
+
+<?$APPLICATION->IncludeFile(
+	SITE_DIR."include/header/header.after.php",
+	array(),
+	array("MODE"=>"html")
+);?>
 
 <?php
 if ($isAjax) {

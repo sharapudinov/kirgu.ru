@@ -9,7 +9,6 @@ $params = array(
     'VIEW' => ($params['VIEW'] == 'list' ? 'list' : 'buttons'),
     'HIDE_NAME' => ($params['HIDE_NAME'] != 'Y' ? false : true),
 );
-
 $svgArrowDown = '<svg class="c-attributes__arrow svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-linear-down"></use></svg>';
 ?>
 

@@ -1,4 +1,4 @@
-<?$APPLICATION->IncludeComponent(
+<?/*$APPLICATION->IncludeComponent(
 	"bitrix:menu",
 	"infootercatalog",
 	array(
@@ -19,4 +19,4 @@
 		"ELLIPSIS_NAMES" => "Y"
 	),
 	false
-);?>
+);*/?>

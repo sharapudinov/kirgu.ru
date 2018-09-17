@@ -37,12 +37,12 @@ if (!empty($arResult)) {
             }
         }
     }
-    
+
 	if (is_array($arResult['OFFERS']) && count($arResult['OFFERS']) > 0) {
 		// Get sorted properties
 		$arResult['OFFERS_EXT'] = RSDevFuncOffersExtension::GetSortedProperties($arResult['OFFERS'],$arParams['PROPS_ATTRIBUTES']);
 	}
-	
+
 	// compare URL fix
 	$arResult['COMPARE_URL'] = htmlspecialcharsbx($APPLICATION->GetCurPageParam('action=ADD_TO_COMPARE_LIST&id='.$arItem['ID'], array('action', 'id', 'ajaxpages', 'ajaxpagesid')));
 	if ($arParams['USE_PRICE_COUNT']) {
@@ -262,11 +262,33 @@ if (is_array($arParams['PROPS_TABS']) && count($arParams['PROPS_TABS']) > 0) {
 }
 
 // social icons
-$shareIcons = "";
-foreach ($arParams["SOC_SHARE_ICON"] as $arShare) {
-	$shareIcons .= $arShare.",";
+$shareIcons = '';
+foreach ($arParams['SOC_SHARE_ICON'] as $arShare) {
+	$shareIcons .= $arShare.',';
 }
-$arResult["SHARE_SOC"] = $shareIcons;
+$arResult['SHARE_SOC'] = $shareIcons;
+
+// brands
+if (!empty($arParams['PROP_BRAND']) && !empty($arResult['PROPERTIES'][$arParams['PROP_BRAND']]['VALUE'])) {
+	$IBLOCK_BRANDS = (float) $arParams['BRAND_IBLOCK_BRANDS'];
+	if ($arParams['BRAND_DETAIL_SHOW_LOGO'] == 'Y' && $IBLOCK_BRANDS > 0 && !empty($arParams['BRAND_IBLOCK_BRANDS_PROP_BRAND'])) {
+		$arFilter = array(
+			'IBLOCK_ID' => $IBLOCK_BRANDS,
+			'ACTIVE' => 'Y',
+			'=PROPERTY_'.$arParams['BRAND_IBLOCK_BRANDS_PROP_BRAND'] => $arResult['PROPERTIES'][$arParams['PROP_BRAND']]['VALUE'],
+		);
+		$arSelect = array('ID', 'IBLOCK_ID', 'ACTIVE', 'NAME', 'PREVIEW_PICTURE', 'PROPERTY_'.$arParams['BRAND_IBLOCK_BRANDS_PROP_BRAND']);
+		$resBrands = \CIBlockElement::GetList(array(), $arFilter, false, array('nTopCount' => 1), $arSelect);
+		if ($arBrandFields = $resBrands->GetNext()) {
+			$arResult['RS_GOPRO_BRAND_IMAGE'] = \CFile::ResizeImageGet(
+				$arBrandFields['PREVIEW_PICTURE'],
+				array('width' => 50, 'height' => 50),
+				BX_RESIZE_IMAGE_PROPORTIONAL,
+				true
+			);
+		}
+	}
+}
 
 // add cache keys
 $cp = $this->__component;
