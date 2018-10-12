@@ -2,9 +2,13 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
 
+
 $params = array(
     'PAGE' => ($params['PAGE'] == 'detail' ? 'detail' : 'list'),
 );
+if($params['PAGE'] == 'detail'){
+/*    test_dump($arResult);*/
+}
 ?>
 
 <?php if (!empty($arParams['PROP_STORE_REPLACE_SECTION']) && $arItem['DISPLAY_PROPERTIES'][$arParams['PROP_STORE_REPLACE_SECTION']]['DISPLAY_VALUE'] != ''): ?>

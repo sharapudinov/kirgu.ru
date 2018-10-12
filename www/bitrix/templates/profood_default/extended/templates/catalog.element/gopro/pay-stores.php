@@ -6,7 +6,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
 <!-- pay && stores -->
 <div class="detail__pay-stores">
-    <div class="detail__pay">
+    <div class="detail__pay hidden-print">
     <?php
     // pay
     $params = array(

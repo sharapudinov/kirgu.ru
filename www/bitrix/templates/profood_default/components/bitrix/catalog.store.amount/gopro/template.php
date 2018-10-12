@@ -54,7 +54,7 @@ $postfix = ($arParams['PAGE'] == 'detail' ? '.DETAIL' : '');
 					?><span class="js-stores__title"><?=Loc::getMessage('GOPRO.STORES.QUANTITY'.$postfix)?></span><?
 				?><?php endif;
 			}
-			?><<?=$tag?> class="b-stores__genamount<?=($tag == 'a' ? ' js-easy-scroll' : '')?>" href="#stocks" title="" data-es-offset="-135" data-src="#stores_<?=$arParams['~ELEMENT_ID']?>"><?
+			?><<?=$tag?> class="b-stores__genamount<?=($tag == 'a' ? ' js-easy-scroll' : '')?>" <?=($tag == 'a' ? 'href="#stocks"' : 'data-href="#stocks"')?> title="" data-es-offset="-135" data-src="#stores_<?=$arParams['~ELEMENT_ID']?>"><?
 				?><?php if ($arParams['GOPRO_USE_MIN_AMOUNT'] == 'Y'): ?><?
 					?><?php if ($arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']] < 1): ?><?
 						?><span class="js-stores__value"><?=Loc::getMessage('GOPRO.STORES.QUANTITY.EMPTY'.$postfix, array('#ICON#' => $arParams['ICONS']['EMPTY']))?></span><?
@@ -80,7 +80,7 @@ $postfix = ($arParams['PAGE'] == 'detail' ? '.DETAIL' : '');
 					?><span class="js-stores__title"><?=Loc::getMessage('GOPRO.STORES.QUANTITY'.$postfix)?></span><?
 				?><?php endif;
 			}
-			?><<?=$tag?> class="b-stores__genamount<?=($tag == 'a' ? ' js-easy-scroll' : '')?>" href="#stocks" title="" data-es-offset="-135"><?
+			?><<?=$tag?> class="b-stores__genamount<?=($tag == 'a' ? ' js-easy-scroll' : '')?>" <?=($tag == 'a' ? 'href="#stocks"' : 'data-href="#stocks"')?> title="" data-es-offset="-135"><?
 				?><?php if ($arParams['GOPRO_USE_MIN_AMOUNT'] == 'Y'): ?><?
 					?><?php if ($arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']] < 1): ?><?
 						?><span class="js-stores__value"><?=Loc::getMessage('GOPRO.STORES.QUANTITY.EMPTY'.$postfix, array('#ICON#' => $arParams['ICONS']['EMPTY']))?></span><?

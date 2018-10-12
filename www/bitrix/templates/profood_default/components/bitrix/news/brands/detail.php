@@ -61,9 +61,7 @@ global $APPLICATION, $JSON;
 		'COUNT_ITEMS'				=>	$arParams['COUNT_ITEMS'],
 		'CATALOG_FILTER_NAME'		=> $arParams['CATALOG_FILTER_NAME'],
 		'CATALOG_IBLOCK_ID'			=> $arParams['CATALOG_IBLOCK_ID'],
-		'CATALOG_BRAND_CODE'		=> $arParams['BRAND_CODE'],
         // custom
-        'CATALOG_FILTER_NAME' => $arParams['CATALOG_FILTER_NAME'],
         'CATALOG_BRAND_CODE' => $arParams['CATALOG_BRAND_CODE'],
 	),
 	$component

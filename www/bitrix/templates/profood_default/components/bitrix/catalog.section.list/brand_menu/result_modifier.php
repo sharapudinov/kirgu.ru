@@ -6,7 +6,7 @@ if(is_array($arResult['SECTIONS']) && count($arResult['SECTIONS'])>0) {
 		{
 			unset($arResult['SECTIONS'][$key]);
 		} elseif( $arParams['FILTER_CONTROL_NAME']!='' ) {
-			$arResult['SECTIONS'][$key]['SECTION_PAGE_URL'] = $arSection['SECTION_PAGE_URL'].'?'.$arParams['FILTER_CONTROL_NAME'];
+			$arResult['SECTIONS'][$key]['SECTION_PAGE_URL'] = $arSection['SECTION_PAGE_URL'].$arParams['FILTER_CONTROL_NAME'];
 		}
 	}
 }
