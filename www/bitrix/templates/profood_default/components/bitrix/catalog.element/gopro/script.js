@@ -7,9 +7,9 @@ function RSGoProDetailShowFancyGallery() {
 		elementId = $product.data('elementid'),
 		offerId = $product.find('.js-add2basketpid').val() ? $product.find('.js-add2basketpid').val() : $product.data('productid'),
 		fancyImages = [],
-		elementCount = Object.keys(RSGoPro_Pictures[elementId]).length,
-		imageElementCount = Object.keys(RSGoPro_Pictures[elementId][elementId]).length,
-		imageOfferCount = Object.keys(RSGoPro_Pictures[elementId][offerId]).length,
+		elementCount = (!!RSGoPro_Pictures[elementId] ? Object.keys(RSGoPro_Pictures[elementId]).length : 0),
+		imageElementCount = (!!RSGoPro_Pictures[elementId] ? Object.keys(RSGoPro_Pictures[elementId][elementId]).length : 0),
+		imageOfferCount = (!!RSGoPro_Pictures[elementId] ? Object.keys(RSGoPro_Pictures[elementId][offerId]).length : 0),
 		imageCount = imageElementCount + imageOfferCount,
 		images,
 		owlViewPicSrc = $('.js-picslider').find('.owl-item.active').find('.js-picslide-a').attr('href'),
@@ -148,6 +148,7 @@ $(document).on('rsGoPro.document.ready', function(){
 	// change offer handler
 	$(document).on('RSGoProOnOfferChange', function(e, elementObj){
 		RSGoProDetailPictures();
+		BX.onCustomEvent('rs_delivery_update');
 	});
 
 	// activate first tab

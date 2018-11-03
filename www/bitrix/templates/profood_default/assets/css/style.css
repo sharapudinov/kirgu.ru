@@ -4165,7 +4165,9 @@ __name {
 .c-attributes__option {
     color: #308ac4;
     cursor: pointer;
+    /*
     white-space: nowrap;
+    */
     padding: 4px;
     background: 0 0;
     border: none
@@ -8581,7 +8583,9 @@ body .popup-window-close-icon:hover:after {
 }
 
 .list-table__name {
+    /*
     max-height: 37px;
+    */
     overflow: hidden
 }
 

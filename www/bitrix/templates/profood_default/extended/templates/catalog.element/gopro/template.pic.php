@@ -10,7 +10,7 @@ use \Bitrix\Main\Application;
     <div class="detail__stickers">
     <?php
     // stickers
-    include(EXTENDED_PATH_COMPONENTS.'/stickers.php');
+    include(EXTENDED_PATH_COMPONENTS.'/action-stickers.php');
     ?>
     </div>
     <div class="detail__pic__inner">

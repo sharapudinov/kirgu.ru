@@ -1,7 +1,6 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
-
 use Bitrix\Main\Loader,
 	Bitrix\Main\Application,
 	Bitrix\Main\ModuleManager;
@@ -38,6 +37,7 @@ $componentElementParams = array(
 	'CACHE_TIME' => $arParams['CACHE_TIME'],
 	'CACHE_GROUPS' => $arParams['CACHE_GROUPS'],
 	'SET_TITLE' => $arParams['SET_TITLE'],
+	'SET_LAST_MODIFIED' => $arParams['SET_LAST_MODIFIED'],
 	'SET_STATUS_404' => $arParams['SET_STATUS_404'],
 	'PRICE_CODE' => $arParams['PRICE_CODE'],
 	'USE_PRICE_COUNT' => $arParams['USE_PRICE_COUNT'],
@@ -81,7 +81,6 @@ $componentElementParams = array(
 	'PROP_MORE_PHOTO' => $arParams['PROP_MORE_PHOTO'],
 	'HIGHLOAD' => $arParams['HIGHLOAD'],
 	'PROP_ARTICLE' => $arParams['PROP_ARTICLE'],
-	'PROP_BRAND' => $arParams['PROP_BRAND'],
 	'PROP_PRICES_NOTE' => $arParams['PROP_PRICES_NOTE'],
 	'OFF_BUY1CLICK' => $arParams['OFF_BUY1CLICK'],
 	'USE_FAVORITE' => $arParams['USE_FAVORITE'],
@@ -105,6 +104,11 @@ $componentElementParams = array(
 	'DELIVERY_CURRENCY_ID' => ($arParams['CONVERT_CURRENCY'] == 'Y' ? $arParams['CURRENCY_ID'] : ''),
 	'DELIVERY_COST_PAY_LINK' => $arParams['DELIVERY_COST_PAY_LINK'],
 	'DELIVERY_COST_DELIVERY_LINK' => $arParams['DELIVERY_COST_DELIVERY_LINK'],
+	// brands
+	'PROP_BRAND' => $arParams['PROP_BRAND'],
+	'BRAND_DETAIL_SHOW_LOGO' => $arParams['BRAND_DETAIL_SHOW_LOGO'],
+	'BRAND_IBLOCK_BRANDS' => $arParams['BRAND_IBLOCK_BRANDS'],
+	'BRAND_IBLOCK_BRANDS_PROP_BRAND' => $arParams['BRAND_IBLOCK_BRANDS_PROP_BRAND'],
 	// store
 	'STORES_TEMPLATE' => $arParams['STORES_TEMPLATE'],
 	'USE_STORE' => $arParams['USE_STORE'],
@@ -259,8 +263,8 @@ if (is_array($arParams['PRICE_CODE']) && count($arParams['PRICE_CODE']) > 1)
 		// +++++++++++++++++++++++++++++++ add2basket +++++++++++++++++++++++++++++++ //
 		global $APPLICATION, $JSON;
         
-		$ProductID = IntVal($_REQUEST[$arParams["PRODUCT_ID_VARIABLE"]]);
-		$QUANTITY = doubleval($_REQUEST[$arParams["PRODUCT_QUANTITY_VARIABLE"]]);
+		$ProductID = (int) $_REQUEST[$arParams['PRODUCT_ID_VARIABLE']];
+		$QUANTITY = (float) $_REQUEST[$arParams['PRODUCT_QUANTITY_VARIABLE']];
 
 		$params = array(
 			'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],
@@ -275,17 +279,28 @@ if (is_array($arParams['PRICE_CODE']) && count($arParams['PRICE_CODE']) > 1)
 			'PARTIAL_PRODUCT_PROPERTIES' => (isset($arParams['PARTIAL_PRODUCT_PROPERTIES']) ? $arParams['PARTIAL_PRODUCT_PROPERTIES'] : ''),
 			'OFFERS_CART_PROPERTIES' => $arParams['OFFERS_CART_PROPERTIES'],
 		);
-        unset($_REQUEST[$arParams["ACTION_VARIABLE"]]);
+        unset($_REQUEST[$arParams['ACTION_VARIABLE']]);
 		$restat = RSDF_EasyAdd2Basket($ProductID, $QUANTITY, $params);
-        ?>
-		<?$APPLICATION->IncludeComponent(
-            'bitrix:sale.basket.basket.line',
-            'json',
-            array(),
-			$component,
-			array('HIDE_ICONS' => 'Y')
-        );?>
-		<?php
+		if ($ex = $APPLICATION->GetException())
+			$strError = $ex->GetString();
+		else
+			$strError = 'CATALOG_ERROR2BASKET';
+
+		if (!$restat) {
+			$JSON = array(
+				'TYPE' => 'ERROR',
+				'MESSAGE' => $strError,
+			);
+		} else {
+			$APPLICATION->IncludeComponent(
+				'bitrix:sale.basket.basket.line',
+				'json',
+				array(),
+				$component,
+				array('HIDE_ICONS' => 'Y')
+			);
+		}
+
         $APPLICATION->RestartBuffer();
 
 		if (SITE_CHARSET != 'utf-8') {
@@ -294,7 +309,7 @@ if (is_array($arParams['PRICE_CODE']) && count($arParams['PRICE_CODE']) > 1)
 			$json_str = $APPLICATION->ConvertCharset($json_str_utf, 'utf-8', SITE_CHARSET);
 			echo $json_str;
 		} else {
-			echo json_encode( $JSON );
+			echo json_encode($JSON);
 		}
 		die();
         ?>
@@ -418,7 +433,7 @@ if ($_REQUEST['ajaxpages'] == 'Y' && $_REQUEST['ajaxpagesid'] == 'ajaxpages_mods
 					'SET_TITLE' => 'N',
 					'SET_STATUS_404' => 'N',
 					'DISPLAY_COMPARE' => 'N',
-					'PAGE_ELEMENT_COUNT' => '100',
+					'PAGE_ELEMENT_COUNT' => (intval($arParams['MODS_ELEMENT_COUNT']) > 0 ? intval($arParams['MODS_ELEMENT_COUNT']) : 100),
 					'LINE_ELEMENT_COUNT' => $arParams['LINE_ELEMENT_COUNT'],
 					'PRICE_CODE' => $arParams['PRICE_CODE'],
 					'USE_PRICE_COUNT' => $arParams['USE_PRICE_COUNT'],
@@ -717,7 +732,7 @@ require_once (Application::getDocumentRoot().SITE_DIR."include/sorter/catalog_el
 <!-- bigdata -->
 <?php if ($arParams['USE_BIG_DATA'] == 'Y'): ?>
 <!-- bigdata -->
-<div class="bigdata js-bigdata" style="display: none;">
+<div class="bigdata js-bigdata hidden-print" style="display: none;">
 	<?php
 	global $alfaCTemplate, $alfaCSortType, $alfaCSortToo, $alfaCOutput;
 	?>
@@ -909,6 +924,8 @@ require_once (Application::getDocumentRoot().SITE_DIR."include/sorter/catalog_el
 		'COLUMNS5' => 'Y',
 		// multiregionality
 		'SITE_LOCATION_ID' => SITE_LOCATION_ID,
+		// bigdata
+		'BIG_DATA_ELEMENT_COUNT' => $arParams['BIG_DATA_ELEMENT_COUNT'],
 	),
 	$component,
 	array("HIDE_ICONS" => "Y")

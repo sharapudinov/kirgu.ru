@@ -10,11 +10,8 @@ if (!Loader::includeModule('redsign.devfunc'))
     return;
 
 // multiregionality
-if (Loader::includeModule('redsign.devfunc'))
-{
-	\Redsign\DevFunc\Sale\Location\Region::editCatalogResult($arResult);
-	\Redsign\DevFunc\Sale\Location\Region::editCatalogItem($arResult);
-}
+\Redsign\DevFunc\Sale\Location\Region::editCatalogResult($arResult);
+\Redsign\DevFunc\Sale\Location\Region::editCatalogItem($arResult);
 
 $arElementsIDs = array($arResult['ID']);
 

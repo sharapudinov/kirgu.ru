@@ -37,12 +37,10 @@ if (!empty($arResult)) {
             }
         }
     }
-
 	if (is_array($arResult['OFFERS']) && count($arResult['OFFERS']) > 0) {
 		// Get sorted properties
-		$arResult['OFFERS_EXT'] = RSDevFuncOffersExtension::GetSortedProperties($arResult['OFFERS'],$arParams['PROPS_ATTRIBUTES']);
+		$arResult['OFFERS_EXT'] = RSDevFuncOffersExtension::GetSortedPropertiesExt($arResult['OFFERS'],$arParams['PROPS_ATTRIBUTES']);
 	}
-
 	// compare URL fix
 	$arResult['COMPARE_URL'] = htmlspecialcharsbx($APPLICATION->GetCurPageParam('action=ADD_TO_COMPARE_LIST&id='.$arItem['ID'], array('action', 'id', 'ajaxpages', 'ajaxpagesid')));
 	if ($arParams['USE_PRICE_COUNT']) {
@@ -290,6 +288,34 @@ if (!empty($arParams['PROP_BRAND']) && !empty($arResult['PROPERTIES'][$arParams[
 	}
 }
 
+//action-stikers from hiloadblock
+
+
+$HLiB_name=$arResult['PROPERTIES']['AKTSII']['USER_TYPE_SETTINGS']['TABLE_NAME'];
+$XML_ID=$arResult['PROPERTIES']['AKTSII']['VALUE'];
+
+if(CModule::IncludeModule('highloadblock')) {
+    $rsData = \Bitrix\Highloadblock\HighloadBlockTable::getList(array('filter' => array('TABLE_NAME' => $HLiB_name)));
+    if (!($hldata = $rsData->fetch())) {
+        //          echo 'Инфоблок не найден';
+    } else {
+        $hlentity = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
+        $hlDataClass = $hldata['NAME'] . 'Table';
+        $res = $hlDataClass::getList(array(
+                'filter' => array(
+                    'UF_XML_ID' => $XML_ID,
+                ),
+                'select' => array("*"),
+                'order' => array(
+                    'UF_NAME' => 'asc'
+                ),
+            )
+        );
+        while ($row = $res->fetch()) {
+            $arResult['PROPERTIES']['AKTSII']['VALUE_EXT'][$row['UF_XML_ID']] = $row;
+        }
+    }
+}
 // add cache keys
 $cp = $this->__component;
 if (is_object($cp)) {

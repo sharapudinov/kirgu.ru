@@ -144,6 +144,7 @@ $APPLICATION->IncludeComponent(
 		"PROPS_ATTRIBUTES" => array(
 		),
 		"PROPS_ATTRIBUTES_COLOR" => array(
+			0 => "TSVET_2",
 		),
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SHOW_DEACTIVATED" => "N",

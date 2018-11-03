@@ -9,7 +9,6 @@ Loc::loadMessages(__FILE__);
 
 $this->setFrameMode(true);
 
-$arParams['COL_XS_6'] = 'Y';
 $colClassElementMobile = ' col-xs-12';
 if ($arParams['COL_XS_6'] == 'Y') {
 	$colClassElementMobile = ' col-xs-6';
@@ -52,6 +51,7 @@ foreach ($arResult['ITEMS'] as $key1 => $arItem):
 		?>list-showcase__hide-hover-popup <?
 	}
 	?><?=$colClassElement?> <?
+	?><?=(count($arResult['PRICES']) < 2 ? 'mod-short' : '')?><?
 	?>" <?
 	?>data-elementid="<?=$arItem['ID']?>" <?
 	?>id="<?=$strMainID?>" <?

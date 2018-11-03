@@ -17,7 +17,7 @@ use \Bitrix\Main\Application,
 	<div class="list-showcase__stickers">
 	<?php
 	// stickers
-	include(EXTENDED_PATH_COMPONENTS.'/stickers.php');
+	include(EXTENDED_PATH_COMPONENTS.'/action-stickers.php');
 	?>
 	</div>
 </div>

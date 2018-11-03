@@ -76,7 +76,7 @@ switch ($arParams['VIEW']) {
 			foreach ($arResult['ITEMS'] as $key1 => $arItem) {
 				if (is_array($arItem['OFFERS']) && count($arItem['OFFERS']) > 0) {
 					// Get sorted properties
-					$arResult['ITEMS'][$key1]['OFFERS_EXT'] = RSDevFuncOffersExtension::GetSortedProperties($arItem['OFFERS'], $arParams['PROPS_ATTRIBUTES']);
+					$arResult['ITEMS'][$key1]['OFFERS_EXT'] = RSDevFuncOffersExtension::GetSortedPropertiesExt($arItem['OFFERS'], $arParams['PROPS_ATTRIBUTES']);
 				}
 				// compare URL fix
 				$arResult['ITEMS'][$key1]['COMPARE_URL'] = htmlspecialcharsbx($APPLICATION->GetCurPageParam('action=ADD_TO_COMPARE_LIST&id='.$arItem['ID'], array('action', 'id', 'ajaxpages', 'ajaxpagesid')));
@@ -153,6 +153,33 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0) {
             }
         }
         $arResult['ITEMS'][$key1]['DATA_QUANTITY'] = $arQuantity;
+
+
+        $HLiB_name=$arItem['PROPERTIES']['AKTSII']['USER_TYPE_SETTINGS']['TABLE_NAME'];
+        $XML_ID=$arItem['PROPERTIES']['AKTSII']['VALUE'];
+
+        if(CModule::IncludeModule('highloadblock')) {
+            $rsData = \Bitrix\Highloadblock\HighloadBlockTable::getList(array('filter' => array('TABLE_NAME' => $HLiB_name)));
+            if (!($hldata = $rsData->fetch())) {
+                //          echo 'Инфоблок не найден';
+            } else {
+                $hlentity = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
+                $hlDataClass = $hldata['NAME'] . 'Table';
+                $res = $hlDataClass::getList(array(
+                        'filter' => array(
+                            'UF_XML_ID' => $XML_ID,
+                        ),
+                        'select' => array("*"),
+                        'order' => array(
+                            'UF_NAME' => 'asc'
+                        ),
+                    )
+                );
+                while ($row = $res->fetch()) {
+                    $arResult['ITEMS'][$key1]['PROPERTIES']['AKTSII']['VALUE_EXT'][$row['UF_XML_ID']] = $row;
+                }
+            }
+        }
 	}
 }
 // /QB and DA2

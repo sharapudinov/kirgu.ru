@@ -175,6 +175,184 @@ class RSDevFuncOffersExtension
 
         return $arrReturn;
     }
+    public static function GetJSONElementExt($arElement, $arProps = array(), $arPrices = array(), $params = array())
+    {
+        $arrReturn = array();
+        $arElementsIDs = array($arElement['ID']);
+        $ELEMENT_ID = $arElement['ID'];
+        $arrElement = array();
+
+        $defaultParams = array(
+            'SIZES' => array('WIDTH' => '200', 'HEIGHT' => '150'),
+            'MORE_PHOTO_CODE' => 'MORE_PHOTO',
+            'SKU_MORE_PHOTO_CODE' => 'MORE_PHOTO',
+            'SKU_ARTICLE_CODE' => 'CML2_ARTICLE',
+        );
+
+        foreach ($defaultParams as $key => $value) {
+            if (!array_key_exists($key, $params)) {
+                $params[$key] = $value;
+            }
+        }
+
+        if (is_array($arElement['OFFERS']) && count($arElement['OFFERS']) > 0) {
+            $arSizes = $params['SIZES'];
+            $arOffersJs = array();
+            $arrSortProps = array();
+            foreach ($arElement['OFFERS'] as $arOffer) {
+                if (!isset($arOffersJs[$arOffer['ID']])) {
+                    $arElementsIDs[] = $arOffer['ID'];
+                    // offer
+
+                    $arOfferJs = array(
+                        'ID' => $arOffer['ID'],
+                        'NAME' => $arOffer['NAME'],
+                        'IMAGES' => self::getPictures(
+                            $arSizes,
+                            $arOffer,
+                            array(
+                                'MORE_PHOTO_CODE' => $params['SKU_MORE_PHOTO_CODE']
+                            )
+                        ),
+                        'PROPERTIES' => array(),
+                        'DISPLAY_PROPERTIES' => $arOffer['DISPLAY_PROPERTIES'],
+                        'PRICES' => array(),
+                        'CAN_BUY' => $arOffer['CAN_BUY'],
+                        'ADD_URL' => $arOffer['ADD_URL'],
+                        'CATALOG_MEASURE_RATIO' => $arOffer['CATALOG_MEASURE_RATIO'],
+                        'CATALOG_MEASURE_NAME' => $arOffer['CATALOG_MEASURE_NAME'],
+                    );
+                    // article
+                    if ($arOffer['PROPERTIES'][$params['SKU_ARTICLE_CODE']]['VALUE'] != '') {
+                        $arOfferJs['ARTICLE'] = $arOffer['PROPERTIES'][$params['SKU_ARTICLE_CODE']]['VALUE'];
+                    }
+                    // properties
+                    foreach ($arProps as $propCode) {
+                        if ($arOffer['DISPLAY_PROPERTIES'][$propCode]['DISPLAY_VALUE'] != '') {
+                            if (!in_array($propCode, $arrSortProps))
+                                $arrSortProps[] = $propCode;
+                            $arOfferJs['PROPERTIES'][$propCode] = $arOffer['DISPLAY_PROPERTIES'][$propCode]['DISPLAY_VALUE'];
+                        }
+                    }
+                    // PRICE_MATRIX
+                    if ($params['USE_PRICE_COUNT']) {
+                        RSDevFunc::getPriceMatrixEx($arOffer, 0, $params['FILTER_PRICE_TYPES'], 'Y', $params['CURRENCY_PARAMS']);
+                        $arOfferJs['PRICE_MATRIX'] = $arOffer['PRICE_MATRIX'];
+                    } else {
+                        // prices
+                        foreach ($arPrices as $priceCode) {
+                            if (isset($arOffer['PRICES'][$priceCode])) {
+                                $arOfferJs['PRICES'][$priceCode] = array(
+                                    'VALUE' => $arOffer['PRICES'][$priceCode]['VALUE'],
+                                    'PRINT_VALUE' => $arOffer['PRICES'][$priceCode]['PRINT_VALUE'],
+                                    'DISCOUNT_VALUE' => $arOffer['PRICES'][$priceCode]['DISCOUNT_VALUE'],
+                                    'PRINT_DISCOUNT_VALUE' => $arOffer['PRICES'][$priceCode]['PRINT_DISCOUNT_VALUE'],
+                                    'DISCOUNT_DIFF' => $arOffer['PRICES'][$priceCode]['DISCOUNT_DIFF'],
+                                    'PRINT_DISCOUNT' => $arOffer['PRICES'][$priceCode]['PRINT_DISCOUNT_DIFF'],
+                                );
+                            }
+                            // min price
+                            if (isset($arOffer['MIN_PRICE'])) {
+                                $arOfferJs['MIN_PRICE'] = $arOffer['MIN_PRICE'];
+                            }
+                        }
+                    }
+
+                    // add ratio min price
+                    CIBlockPriceTools::setRatioMinPrice($arOffer, false);
+
+                    $arOffersJs[$arOffer['ID']] = $arOfferJs;
+                    //RSDevFunc::GetDataForProductItem($arOffersJs,$params);
+                }
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            $iTime = ConvertTimeStamp(time(), 'FULL');
+            // add quickbuy
+            if (CModule::IncludeModule('redsign.quickbuy')) {
+                $arFilter = array(
+                    'DATE_FROM' => $iTime,
+                    'DATE_TO' => $iTime,
+                    'QUANTITY' => 0,
+                    'ELEMENT_ID' => $arElementsIDs,
+                );
+                $dbRes = CRSQUICKBUYElements::GetList(array('ID' => 'SORT'), $arFilter);
+                while ($arData = $dbRes->Fetch()) {
+                    if ($arData['ELEMENT_ID'] == $ELEMENT_ID) {
+                        $arrElement['QUICKBUY'] = $arData;
+                        $arrElement['QUICKBUY']['TIMER'] = CRSQUICKBUYMain::GetTimeLimit($arData);
+                    } elseif (isset($arOffersJs[$arData['ELEMENT_ID']])) {
+                        $arOffersJs[$arData['ELEMENT_ID']]['QUICKBUY'] = $arData;
+                        $arOffersJs[$arData['ELEMENT_ID']]['QUICKBUY']['TIMER'] = CRSQUICKBUYMain::GetTimeLimit($arData);
+                    }
+                }
+            }
+            // /add quickbuy
+            // add da2
+            if (CModule::IncludeModule('redsign.daysarticle2')) {
+                $arFilter = array(
+                    'DATE_FROM' => $iTime,
+                    'DATE_TO' => $iTime,
+                    'QUANTITY' => 0,
+                    'ELEMENT_ID' => $arElementsIDs,
+                );
+                $dbRes = CRSDA2Elements::GetList(array('ID' => 'SORT'), $arFilter);
+                while ($arData = $dbRes->Fetch()) {
+                    if ($arData['ELEMENT_ID'] == $ELEMENT_ID) {
+                        $arrElement['DAYSARTICLE2'] = $arData;
+                        $arrElement['DAYSARTICLE2']['DINAMICA_EX'] = CRSDA2Elements::GetDinamica($arData);
+                    } elseif (isset($arOffersJs[$arData['ELEMENT_ID']])) {
+                        $arOffersJs[$arData['ELEMENT_ID']]['DAYSARTICLE2'] = $arData;
+                        $arOffersJs[$arData['ELEMENT_ID']]['DAYSARTICLE2']['DINAMICA_EX'] = CRSDA2Elements::GetDinamica($arData);
+                    }
+                }
+            }
+
+        }
+
+        if ($params['USE_PRICE_COUNT']) {
+            RSDevFunc::getPriceMatrixEx($arElement, 0, $params['FILTER_PRICE_TYPES'], 'Y', $params['CURRENCY_PARAMS']);
+            $arrElement['PRICE_MATRIX'] = $arElement['PRICE_MATRIX'];
+
+            // add ratio min price
+            CIBlockPriceTools::setRatioMinPrice($arElement, false);
+        }
+
+        $select_offer_by_name = false;
+        $dbSec=CIBlockElement::GetElementGroups(
+            $ELEMENT_ID, true, array("ID","IBLOCK_SECTION_ID")
+        );
+        $section=$dbSec->GetNext();
+
+        $nav = CIBlockSection::GetNavChain(
+            0,
+            $section['ID'],
+            array("ID")
+        );
+        while ($arSection = $nav->GetNext()) {
+            $arFilter['ID'][] = $arSection['ID'];
+        }
+        $arFilter["IBLOCK_ID"] = CIBlockElement::GetByID($ELEMENT_ID)->GetNext()['IBLOCK_ID'];
+        $dbRes = CIBlockSection::GetList(
+            array(),
+            $arFilter,
+            false,
+            array("UF_VIEW_SKU_SELECTOR")
+        );
+        while ($arSection = $dbRes->GetNext()) {
+            if (isset($arSection['UF_VIEW_SKU_SELECTOR']) && $arSection['UF_VIEW_SKU_SELECTOR'] == 1)
+                $select_offer_by_name = true;
+        }
+
+        $arrReturn = array(
+            'ELEMENT' => $arrElement,
+            'SORT_PROPS' => $arrSortProps,
+            'OFFERS' => $arOffersJs,
+            'SELECT_OFFER_BY_NAME'=>$select_offer_by_name
+        );
+
+        return $arrReturn;
+    }
 
     // get sorted properties
     public static function GetSortedProperties($arOffers, $arProps=array(), $params=array())
@@ -360,6 +538,194 @@ class RSDevFuncOffersExtension
 
         return $arrReturn;
     }
+    //get sorted properties with offers names
+    public static function GetSortedPropertiesExt($arOffers, $arProps=array(), $params=array())
+    {
+        if (!isset($params['OFFERS_SELECTED'])) {
+            $params['OFFERS_SELECTED'] = 0;
+        }
+
+        if (
+            CModule::IncludeModule('iblock') &&
+            is_array($arOffers) && count($arOffers) > 0 &&
+            is_array($arProps) && count($arProps) > 0 &&
+            intval($arOffers[$params['OFFERS_SELECTED']]['IBLOCK_ID']) > 0
+        ) {
+            $separator = '__';
+            $arrReturn = array();
+            $arKeys = array();
+            $arProperties = array();
+            $arParamsProps = $arProps;
+            $arProps = array();
+            $arrPropData = array();
+            $propRes = CIBlockProperty::GetList(
+                array(
+                    'SORT' => 'ASC',
+                    'ID' => 'ASC'
+                ),
+                array(
+                    'IBLOCK_ID'=>$arOffers[$params['OFFERS_SELECTED']]['IBLOCK_ID'],
+                    'ACTIVE'=>'Y',
+                    'MULTIPLE'=>'N'
+                )
+            );
+
+            while ($propInfo = $propRes->Fetch()) {
+
+                if (
+                    in_array($propInfo['CODE'], $arParamsProps) &&
+                    isset($arOffers[$params['OFFERS_SELECTED']]['DISPLAY_PROPERTIES'][$propInfo['CODE']])
+                ) {
+
+                    if (isset($arOffers[$params['OFFERS_SELECTED']]['DISPLAY_PROPERTIES'][$propInfo['CODE']])) {
+                        $arProps[] = $propInfo['CODE'];
+                    }
+                    $arPropData = $propInfo;
+
+                    if ($arPropData['PROPERTY_TYPE'] == 'S' && $arPropData['USER_TYPE'] == 'directory') {
+                        RSDevFunc::getHighloadBlockValues($arPropData);
+                    } elseif($arPropData['PROPERTY_TYPE'] == 'L') {
+                        // list
+                        $arPropData['VALUES'] = self::GetSortedPropertiesValues($arPropData);
+                    }
+                    $arrPropData[$propInfo['CODE']] = $arPropData;
+                }
+            }
+
+            // prepare properties
+            $arrForFirst = array();
+            foreach ($arOffers as $key1 => $arOffer) {
+                $compilKey = array();
+                if (is_array($arOffer['DISPLAY_PROPERTIES']) && count($arOffer['DISPLAY_PROPERTIES']) > 0) {
+                    foreach ($arProps as $propCode) {
+                        $arPropData = $arrPropData[$propCode];
+                        $arProperty = $arOffer['DISPLAY_PROPERTIES'][$propCode];
+                        $arProperties[$propCode][$arProperty['DISPLAY_VALUE']] = array(
+                            'VALUE' => $arProperty['DISPLAY_VALUE'],
+                            'FIRST_OFFER' => ($arProperty['DISPLAY_VALUE'] === $arOffers[$params['OFFERS_SELECTED']]['DISPLAY_PROPERTIES'][$propCode]['DISPLAY_VALUE'] ? 'Y' : 'N'),
+                            'DISABLED_FOR_FIRST' => 'Y',
+                        );
+
+                        if ($arProperty['DISPLAY_VALUE'] === $arOffers[$params['OFFERS_SELECTED']]['DISPLAY_PROPERTIES'][$propCode]['DISPLAY_VALUE']) {
+                            $arrForFirst[$propCode] = $arProperty['DISPLAY_VALUE'];
+                        }
+                        $compilKey[] = $arProperty['DISPLAY_VALUE'];
+                        $arPropsData[$propCode] = array(
+                            'ID' => $arProperty['ID'],
+                            'NAME' => $arProperty['NAME'],
+                            'CODE' => $arProperty['CODE'],
+                            'HINT' => $arProperty['HINT'],
+                        );
+                    }
+
+                    $compilKeyStr = implode($separator,$compilKey);
+                    $arKeys[$compilKeyStr] = array(
+                        'KEY' => $key1,
+                        'OFFER_ID' => $arOffer['ID'],
+                        'NAME' => $arOffer['NAME']
+                    );
+                }
+            }
+
+            // take data for hl and lists
+            foreach ($arProps as $propCode) {
+
+                if (
+                    (
+                        $arrPropData[$propCode]['PROPERTY_TYPE'] == 'S' &&
+                        $arrPropData[$propCode]['USER_TYPE'] == 'directory'
+                    ) ||
+                    $arrPropData[$propCode]['PROPERTY_TYPE'] == 'L'
+                ) {
+                    $arSKUPropVALUEs = array_keys($arProperties[$propCode]);
+                    $arProperties[$propCode] = array();
+                    foreach ($arrPropData[$propCode]['VALUES'] as $arValue) {
+                        if (self::_inArray($arValue['NAME'], $arSKUPropVALUEs))
+                        {
+                            $arProperties[$propCode][] = array(
+                                'VALUE' => $arValue['NAME'],
+                                'FIRST_OFFER' => ($arValue['NAME'] === $arOffers[$params['OFFERS_SELECTED']]['DISPLAY_PROPERTIES'][$propCode]['DISPLAY_VALUE'] ? 'Y' : 'N'),
+                                'DISABLED_FOR_FIRST' => 'Y',
+                                'PICT' => $arValue['PICT'],
+                            );
+                        }
+                    }
+                }
+            }
+
+            // sort properties
+            if(is_array($params['PROP_FOR_SORT']) && count($params['PROP_FOR_SORT'])>0)
+            {
+                foreach($arProperties as $code => $arProperty)
+                {
+                    if (in_array($code, $params['PROP_FOR_SORT']))
+                    {
+                        ksort($arProperty);
+                        $arProperties[$code] = $arProperty;
+                    }
+                }
+            }
+
+            // set enabled props for first offer
+            $arrProps = array();
+            $arrEnables = array();
+            foreach($arProps as $key1 => $propCode)
+            {
+                if( $key1 != ( count($arProps)-1 ) )
+                {
+                    $arrProps[] = $propCode;
+                    $next_code = $arProps[($key1+1)];
+                    foreach($arOffers as $key2 => $arOffer)
+                    {
+                        $all_prop_true2 = true;
+                        foreach($arrProps as $key3 => $propCode2)
+                        {
+                            if($arOffer['DISPLAY_PROPERTIES'][$propCode2]['DISPLAY_VALUE']!=$arrForFirst[$propCode2])
+                            {
+                                $all_prop_true2 = false;
+                                break;
+                            }
+                        }
+                        if($all_prop_true2)
+                        {
+                            $arrEnables[$next_code][] = $arOffer['DISPLAY_PROPERTIES'][$next_code]['DISPLAY_VALUE'];
+                        }
+                    }
+                }
+            }
+
+            $index = 0;
+            foreach($arProperties as $code => $arProperty)
+            {
+                if ($index == 0) {
+                    foreach($arProperty as $key1 => $arProp)
+                        $arProperties[$code][$key1]['DISABLED_FOR_FIRST'] = 'N';
+                } else {
+                    if(is_array($arrEnables))
+                    {
+                        foreach($arProperty as $key1 => $arProp)
+                        {
+                            if( in_array($arProp['VALUE'],$arrEnables[$code]) )
+                            {
+                                $arProperties[$code][$key1]['DISABLED_FOR_FIRST'] = 'N';
+                            }
+                        }
+                    }
+                }
+                $index++;
+            }
+
+            $arrReturn = array(
+                'PROPS' => $arPropsData,
+                'PROPERTIES' => $arProperties,
+                'KEYS' => $arKeys,
+            );
+        }
+
+        return $arrReturn;
+    }
+
+
 
     // "in_array" replacement
     public static function _inArray($find='',$array=array()) {
