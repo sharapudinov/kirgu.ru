@@ -226,6 +226,7 @@ function SelectOfferByName( $optionObj){
     $optionObj.parents(".js-attributes__prop").find(".js-attributes__option").removeClass("selected");
     $optionObj.addClass("selected");
     $optionObj.parents('.js-attributes__prop').find('.js-attributes__curent-value span span').html($optionObj.html());
+    $optionObj.parents('.js-attributes__prop').removeClass('opene').addClass('close');
     RSGoPro_OffersExt_ChangeHTML($optionObj.parents(".js-element"),$optionObj)
 
 };
@@ -236,7 +237,7 @@ function RSGoPro_OffersExt_PropChanged($optionObj) {
 
     if (RSGoPro_OFFERS[element_id] && !$optionObj.hasClass('disabled')) {
         // change styles
-        $optionObj.parents('.js-attributes__prop').removeClass('opened').addClass('closed');
+        $optionObj.parents('.js-attributes__prop').removeClass('open').addClass('close');
         $optionObj.parents('.js-attributes__prop').find('.js-attributes__option').removeClass('selected');
         $optionObj.addClass('selected');
 
