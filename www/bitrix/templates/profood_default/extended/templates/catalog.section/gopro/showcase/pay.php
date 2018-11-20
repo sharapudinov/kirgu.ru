@@ -7,7 +7,7 @@ use \Bitrix\Main\Application,
 
 ?>
 
-<div class="list-showcase__pay<?=($haveOffers ? ' hidden-xs hidden-sm' : '')?>">
+<div class="list-showcase__pay<?=($haveOffers ? ' hidden-xs hidden-sm' : '')?> hidden-print">
 <?php
 $arParams['USE_PRODUCT_QUANTITY'] = 'N';
 // pay

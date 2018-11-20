@@ -6,36 +6,11 @@ $MESS['RSGOPRO_VIEW_MODE'] = 'Вид отображения каталога';
 // additional
 $MESS['PROP_MORE_PHOTO'] = 'Свойство с доп. изображениями товаров';
 $MESS['USE_FAVORITE'] = 'Использовать избранное';
-$MESS['USE_SHARE'] = 'Использовать расшаривание материалов';
-$MESS["SOC_SHARE_ICON"] = "В каких соцсетях можно поделится";
-    $MESS["MSG_SHARE-collections"] = "Яндекс коллекции";
-    $MESS["MSG_SHARE-vkontakte"] = "Вконтакте";
-    $MESS["MSG_SHARE-facebook"] = "Facebook";
-    $MESS["MSG_SHARE-odnoklassniki"] = "Одноклассники";
-    $MESS["MSG_SHARE-moimir"] = "Мой мир";
-    $MESS["MSG_SHARE-gplus"] = "Google +";
-    $MESS["MSG_SHARE-twitter"] = "Twitter";
-    $MESS["MSG_SHARE-blogger"] = "Blogger";
-    $MESS["MSG_SHARE-delicious"] = "Delicious";
-    $MESS["MSG_SHARE-digg"] = "Digg";
-    $MESS["MSG_SHARE-reddit"] = "Reddit";
-    $MESS["MSG_SHARE-evernote"] = "Evernote";
-    $MESS["MSG_SHARE-linkedin"] = "LinkedIn";
-    $MESS["MSG_SHARE-lj"] = "Livejournal";
-    $MESS["MSG_SHARE-pocket"] = "Pocket";
-    $MESS["MSG_SHARE-qzone"] = "Qzone";
-    $MESS["MSG_SHARE-renren"] = "Renren";
-    $MESS["MSG_SHARE-sinaWeibo"] = "Sina Weibo";
-    $MESS["MSG_SHARE-surfingbird"] = "Surfingbird";
-    $MESS["MSG_SHARE-tencentWeibo"] = "Tencent Weibo";
-    $MESS["MSG_SHARE-tumblr"] = "Tumblr";
-    $MESS["MSG_SHARE-viber"] = "Viber";
-    $MESS["MSG_SHARE-whatsapp"] = "WhatsApp";
-    $MESS["MSG_SHARE-skype"] = "Skype";
-    $MESS["MSG_SHARE-telegram"] = "Telegram";
-$MESS['OFF_MEASURE_RATION'] = 'Выключить отображение ед. изм.';
 $MESS['STICKERS_PROPS'] = 'Свойства-стикеры';
 $MESS['STICKERS_DISCOUNT_VALUE'] = 'Показывать стикер с величиной скидки';
+// price
+$MESS['OFF_MEASURE_RATION'] = 'Выключить отображение ед. изм.';
+// rating
 $MESS["USE_RATING"] = "[Рейтинг] Показывать рейтинг";
 // sections
 $MESS['RSGOPRO.SECTIONS_DESCRIPTION_POSITION'] = 'Позиция описания раздела в списке разделов';
@@ -62,14 +37,41 @@ $MESS['DETAIL_SKU_VIEW'] = 'Вид харак-к в списке товаров'
 $MESS['PROPS_TABS'] = 'Свойства-вкладки';
 $MESS['USE_CHEAPER'] = 'Показывать кнопку "Хотите дешевле"';
 $MESS['USE_BLOCK_MODS'] = 'Показывать блок "Модификации"';
-$MESS['SHOW_PREVIEW_TEXT'] = 'Показывать в блок с текстом анонса';
+$MESS['SHOW_PREVIEW_TEXT'] = 'Показывать блок с текстом анонса';
 $MESS["USE_CUSTOM_COLLECTION"] = "Использовать кастомные коллекции";
 $MESS['PROP_ARTICLE'] = 'Свойство с артикулом товара';
 $MESS['USE_DELIVERY_COST_BLOCK'] = 'Показывать краткий-блок со стоимостью доставки';
 $MESS['USE_DELIVERY_COST_TAB'] = 'Показывать вкладку со стоимостью доставки';
 $MESS['PROP_BRAND'] = 'Свойство с наименованием производителя товара';
-$MESS['PROP_PRICES_NOTE'] = 'Свойство подписью к цене';
+$MESS['PROP_PRICES_NOTE'] = 'Свойство с подписью к цене';
 $MESS['OFF_BUY1CLICK'] = 'Выключить кнопку покупки в 1 клик';
+$MESS['USE_SHARE'] = '[Поделиться] Использовать расшаривание материалов';
+$MESS["SOC_SHARE_ICON"] = "[Поделиться] В каких соцсетях можно поделится";
+    $MESS["MSG_SHARE-collections"] = "Яндекс коллекции";
+    $MESS["MSG_SHARE-vkontakte"] = "Вконтакте";
+    $MESS["MSG_SHARE-facebook"] = "Facebook";
+    $MESS["MSG_SHARE-odnoklassniki"] = "Одноклассники";
+    $MESS["MSG_SHARE-moimir"] = "Мой мир";
+    $MESS["MSG_SHARE-gplus"] = "Google +";
+    $MESS["MSG_SHARE-twitter"] = "Twitter";
+    $MESS["MSG_SHARE-blogger"] = "Blogger";
+    $MESS["MSG_SHARE-delicious"] = "Delicious";
+    $MESS["MSG_SHARE-digg"] = "Digg";
+    $MESS["MSG_SHARE-reddit"] = "Reddit";
+    $MESS["MSG_SHARE-evernote"] = "Evernote";
+    $MESS["MSG_SHARE-linkedin"] = "LinkedIn";
+    $MESS["MSG_SHARE-lj"] = "Livejournal";
+    $MESS["MSG_SHARE-pocket"] = "Pocket";
+    $MESS["MSG_SHARE-qzone"] = "Qzone";
+    $MESS["MSG_SHARE-renren"] = "Renren";
+    $MESS["MSG_SHARE-sinaWeibo"] = "Sina Weibo";
+    $MESS["MSG_SHARE-surfingbird"] = "Surfingbird";
+    $MESS["MSG_SHARE-tencentWeibo"] = "Tencent Weibo";
+    $MESS["MSG_SHARE-tumblr"] = "Tumblr";
+    $MESS["MSG_SHARE-viber"] = "Viber";
+    $MESS["MSG_SHARE-whatsapp"] = "WhatsApp";
+    $MESS["MSG_SHARE-skype"] = "Skype";
+    $MESS["MSG_SHARE-telegram"] = "Telegram";
 // filter
 $MESS['FILTER_PROP_SCROLL'] = 'Свойства, в которых используется скролл';
 $MESS['FILTER_PROP_SEARCH'] = 'Свойства, в которых используется поиск';
@@ -83,6 +85,7 @@ $MESS['FILTER_DISABLED_PIC_EFFECT'] = 'Эффект для недоступны�
     $MESS['FILTER_DISABLED_PIC_EFFECT_hide'] = 'скрыть';
 // bigdata
 $MESS['CP_BC_TPL_USE_BIG_DATA'] = 'Показывать персональные рекомендации';
+$MESS['BIG_DATA_ELEMENT_COUNT'] = 'Кол-во выводимых элементов';
 
 /* if offers IBLOCK_ID */
 $MESS['PROP_SKU_MORE_PHOTO'] = 'Свойство с доп. изображениями торговых предложений';
@@ -109,10 +112,14 @@ $MESS["HIDE_AJAXPAGES_LINK"] = "Скрыть кнопку \"Загрузить �
 
 /* detail */
 $MESS['PROP_MODS_ARTICLE'] = '[Модификации] Свойство с артикулом торговых предложений';
+$MESS['MODS_ELEMENT_COUNT'] = '[Модификации] Кол-во выводимых элементов';
 
-/* delivery cost */
+/* catalog.element */
 $MESS['DELIVERY_COST_PAY_LINK'] = 'Ссылка на страницу с информацией по оплате';
 $MESS['DELIVERY_COST_DELIVERY_LINK'] = 'Ссылка на страницу с информацией по доставке';
+$MESS['BRAND_DETAIL_SHOW_LOGO'] = 'Показывать лого вместо наименования бренда';
+$MESS['BRAND_IBLOCK_BRANDS'] = 'Инфоблок с брендами';
+$MESS['BRAND_IBLOCK_BRANDS_PROP_BRAND'] = 'Свойство с брендами в инфоблоке с брендами';
 
 /* review */
 $MESS['DETAIL_REVIEW_SHOW_COUNT'] = 'Показывать кол-во отзывов в имени вкладки';
@@ -127,3 +134,10 @@ $MESS["CP_BC_TPL_BIG_DATA_RCM_TYPE"] = "Тип рекомендации";
     $MESS["CP_BC_TPL_RCM_SIMILAR_ANY"] = "Продаваемые/Просматриваемые/Похожие товары";
     $MESS["CP_BC_TPL_RCM_PERSONAL_WBEST"] = "Самые продаваемые/Персональные";
     $MESS["CP_BC_TPL_RCM_RAND"] = "Любая рекомендация";
+
+// search
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_PAGE_RESULT_COUNT"] = "Количество результатов на странице";
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_RESTART"] = "Искать без учета морфологии (при отсутствии результата поиска)";
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_NO_WORD_LOGIC"] = "Отключить обработку слов как логических операторов";
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_USE_LANGUAGE_GUESS"] = "Включить автоопределение раскладки клавиатуры";
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_CHECK_DATES"] = "Искать только в активных по дате документах";

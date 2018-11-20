@@ -13,21 +13,20 @@ function RSGoProListPictures(elementObj) {
 		$picture = $product.find('.js-list-picture'),
 		elementId = $product.data('elementid'),
 		offerId = $product.find('.js-add2basketpid').val() ? $product.find('.js-add2basketpid').val() : $product.data('productid');
-	var elementCount = Object.keys(RSGoPro_Pictures[elementId]).length,
-		imageElementCount = Object.keys(RSGoPro_Pictures[elementId][elementId]).length,
+	var imageElementCount = Object.keys(RSGoPro_Pictures[elementId][elementId]).length,
 		imageOfferCount = Object.keys(RSGoPro_Pictures[elementId][offerId]).length,
 		imageCount = imageElementCount + imageOfferCount,
 		images;
 
 	if ($picture.length > 0 && imageCount > 0) {
-		if (imageElementCount) {
-			images = RSGoPro_Pictures[elementId][elementId];
+		if (imageOfferCount && offerId != elementId) {
+			images = RSGoPro_Pictures[elementId][offerId];
 			for (var key in images) {
 				$picture.attr('src', images[key].SRC);
 				return;
 			}
-		} else if (imageOfferCount && offerId != elementId) {
-			images = RSGoPro_Pictures[elementId][offerId];
+		} else if (imageElementCount) {
+			images = RSGoPro_Pictures[elementId][elementId];
 			for (var key in images) {
 				$picture.attr('src', images[key].SRC);
 				return;

@@ -30,7 +30,15 @@ if (($arParams['CATALOG_IBLOCK_ID']) > 0 && $arParams['CATALOG_ACTION_CODE'] != 
 	$arFilter = array('ACTIVE' => 'Y', 'IBLOCK_ID' => $arParams['CATALOG_IBLOCK_ID'], 'CODE' => $arParams['CATALOG_ACTION_CODE']);
 	$propRes = CIBlockProperty::GetList($arOrder, $arFilter);
 	if ($arFields = $propRes->GetNext()) {
-		$arResult['PROP'] = $arFields;
+		$arResult['ACTION_PROP'] = $arFields;
+	}
+}
+if (($arParams['CATALOG_IBLOCK_ID']) > 0 && $arParams['CATALOG_RASSROCHKA_CODE'] != '') {
+	$arOrder = array('SORT' => 'ASC','ID' => 'DESC');
+	$arFilter = array('ACTIVE' => 'Y', 'IBLOCK_ID' => $arParams['CATALOG_IBLOCK_ID'], 'CODE' => $arParams['CATALOG_RASSROCHKA_CODE']);
+	$propRes = CIBlockProperty::GetList($arOrder, $arFilter);
+	if ($arFields = $propRes->GetNext()) {
+		$arResult['RASSROCHKA_PROP'] = $arFields;
 	}
 }
 /*if ($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['MULTIPLE'] != 'Y') {
@@ -51,14 +59,22 @@ if ($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['MULTIPLE'] != 'Y') {
         $arResult['FILTER_CONTROL_NAME'] .= 'filter/'.htmlspecialcharsbx(strtolower($arParams['ACTION_CODE']).'-is-'.implode('-or-',$arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'])).'/apply/';
     }
 }
-if (!empty($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'])) {
+if ($arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['MULTIPLE'] != 'Y') {
+    $arResult['FILTER_CONTROL_NAME'] = htmlspecialcharsbx('filter/'.strtolower($arResult['PROP']['CODE']).'-is-'.$arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']).'/apply/';
+} else {
+    if (is_array($arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']) && count($arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']) > 0) {
+        $arResult['FILTER_CONTROL_NAME'] .= 'filter/'.htmlspecialcharsbx(strtolower($arParams['RASSROCHKA_CODE']).'-is-'.implode('-or-',$arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE'])).'/apply/';
+    }
+}
+if (!empty($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'])||$arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']) {
     $arResult['CATALOG_FILTER'] = array();
-    
-    $filterKey = "=PROPERTY_".$arResult['PROP']['ID'];
-    
-    $arResult['CATALOG_FILTER'][$filterKey] = $arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'];
-    
-    $this->__component->arResult["CATALOG_FILTER"] = $arResult['CATALOG_FILTER']; 
+
+    $arrrfilter=array(
+        "=PROPERTY_".$arResult['ACTION_PROP']['ID']=> $arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'],
+        "=PROPERTY_".$arResult['RASSROCHKA_PROP']['ID']=>$arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']
+
+    );
+    $this->__component->arResult["CATALOG_FILTER"] =array_merge($arResult['CATALOG_FILTER'],$arrrfilter);
 }
 
 $this->__component->SetResultCacheKeys(array("CATALOG_FILTER"));

@@ -14,7 +14,7 @@ $params = array(
 	'VIEW' => 'list',
 	'SHOW_MORE' => 'Y',
 	'USE_ALONE' => 'Y',
-	'SHOW_OLD_PRICE' => (!empty($arParams['PRICE_CODE']) && count($arParams['PRICE_CODE']) == 1 ? 'Y' : 'N'),
+	'SHOW_OLD_PRICE' => 'Y'/*(!empty($arParams['PRICE_CODE']) && count($arParams['PRICE_CODE']) == 1 ? 'Y' : 'N'),*/
 );
 include(EXTENDED_PATH_COMPONENTS.'/prices.php');
 ?>

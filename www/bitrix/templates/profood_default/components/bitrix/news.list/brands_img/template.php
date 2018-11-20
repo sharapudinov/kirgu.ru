@@ -22,7 +22,7 @@ if (count($arResult['ITEMS']) > 0) {
 				?><div class="item" id="<?=$this->GetEditAreaId($arItem['ID']);?>"><?
 					?><div class="pic"><?
 						if (!$arParams['HIDE_LINK_WHEN_NO_DETAIL'] || ($arItem['DETAIL_TEXT'] && $arResult['USER_HAVE_ACCESS'])) {
-							?><a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?
+							?><a class="brandslistimg__block" href="<?=$arItem['DETAIL_PAGE_URL']?>"><?
 								?><img <?
 									?>class="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? ' js-lazy lazy-animation' : '')?>" <?
 									?>src="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? $arResult['LAZY_PHOTO']['src'] : $arItem['PREVIEW_PICTURE']['SRC'])?>" <?
@@ -32,13 +32,15 @@ if (count($arResult['ITEMS']) > 0) {
 								?>/><?
 							?></a><?
 						} else {
-							?><img <?
-								?>class="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? ' js-lazy lazy-animation' : '')?>" <?
-								?>src="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? $arResult['LAZY_PHOTO']['src'] : $arItem['PREVIEW_PICTURE']['SRC'])?>" <?
-								?>data-src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" <?
-								?>alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>" <?
-								?>title="<?=$arItem['PREVIEW_PICTURE']['TITLE']?>" <?
-							?>/><?
+							?><span class="brandslistimg__block"><?
+								?><img <?
+									?>class="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? ' js-lazy lazy-animation' : '')?>" <?
+									?>src="<?=($arParams['USE_LAZYLOAD'] == 'Y' ? $arResult['LAZY_PHOTO']['src'] : $arItem['PREVIEW_PICTURE']['SRC'])?>" <?
+									?>data-src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" <?
+									?>alt="<?=$arItem['PREVIEW_PICTURE']['ALT']?>" <?
+									?>title="<?=$arItem['PREVIEW_PICTURE']['TITLE']?>" <?
+								?>/><?
+							?></span><?
 						}
 					?></div><?
 				?></div><?

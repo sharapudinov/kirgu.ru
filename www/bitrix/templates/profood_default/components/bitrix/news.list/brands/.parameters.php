@@ -1,16 +1,17 @@
-<?if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
+	die();
 
-if(!CModule::IncludeModule('iblock'))
+if (!CModule::IncludeModule('iblock'))
 	return;
-if(!CModule::IncludeModule('redsign.devfunc'))
+if (!CModule::IncludeModule('redsign.devfunc'))
 	return;
 
 $listProp = RSDevFuncParameters::GetTemplateParamsPropertiesList($arCurrentValues['IBLOCK_ID']);
 
 $arIBlock=array();
 $rsIBlock = CIBlock::GetList(array("sort" => "asc"), array("ACTIVE"=>"Y"));
-while($arr=$rsIBlock->Fetch())
-{
+while ($arr=$rsIBlock->Fetch()) {
 	$arIBlock[$arr["ID"]] = "[".$arr["ID"]."] ".$arr["NAME"];
 }
 

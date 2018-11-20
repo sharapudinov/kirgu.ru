@@ -6,7 +6,7 @@ use Bitrix\Main\Localization\Loc;
 ?>
 
 <!-- header fly -->
-<div id="header-fly" class="header-fly js-header-fly text-left b-mmenu">
+<div id="header-fly" class="header-fly js-header-fly text-left b-mmenu hidden-print">
 	<!-- fly__shadow --><div class="header-fly__shadow">
 		
 	<div class="centering header-fly__white-bg"><div class="centeringin clearfix"><div class="header-fly__panel">

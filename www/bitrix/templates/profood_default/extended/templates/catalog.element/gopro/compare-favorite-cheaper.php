@@ -8,7 +8,7 @@ use \Bitrix\Main\Application,
 ?>
 
 <!-- compare && favorite && cheaper -->
-<div class="detail__compare-favorite-cheaper">
+<div class="detail__compare-favorite-cheaper hidden-print">
 
     <?php if ($arParams['USE_COMPARE'] == 'Y'): ?>
     <span class="detail__compare">

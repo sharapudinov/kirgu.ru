@@ -125,8 +125,6 @@ foreach ($arResult['ITEMS'] as $key1 => $arItem):
 
 		</div>
 
-
-
 	</div>
 </div>
 <!-- /element -->

@@ -7,7 +7,7 @@ use \Bitrix\Main\Application;
 
 <?php if ($arParams['USE_DELIVERY_COST_BLOCK'] == 'Y' || $arParams['USE_DELIVERY_COST_TAB'] == 'Y'): ?>
 <!-- delivery cost -->
-<div class="detail__delivery-cost">
+<div class="detail__delivery-cost hidden-print">
 <?$APPLICATION->IncludeComponent(
     "redsign:delivery.calculator",
     "block",

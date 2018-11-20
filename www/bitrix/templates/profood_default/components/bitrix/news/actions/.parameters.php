@@ -207,6 +207,12 @@ $arTemplateParameters = array(
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['HL'],
 	),
+    'RASSROCHKA_CODE' => array(
+        'PARENT' => 'BASE',
+		'NAME' => GetMessage('RASSROCHKA_CODE'),
+		'TYPE' => 'LIST',
+		'VALUES' => $listProp['HL'],
+	),
 	'SECTIONS_CODE' => array(
         'PARENT' => 'BASE',
 		'NAME' => GetMessage('SECTIONS_CODE'),
@@ -224,6 +230,12 @@ $arTemplateParameters = array(
 	'CATALOG_ACTION_CODE' => array(
 		'PARENT' => 'BASE',
 		'NAME' => GetMessage('CATALOG_ACTION_CODE'),
+		'TYPE' => 'LIST',
+		'VALUES' => $listPropCatalog['HL'],
+	),
+    'CATALOG_RASSROCHKA_CODE' => array(
+		'PARENT' => 'BASE',
+		'NAME' => GetMessage('CATALOG_RASSROCHKA_CODE'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listPropCatalog['HL'],
 	),

@@ -289,7 +289,8 @@ if (!empty($arParams['PROP_BRAND']) && !empty($arResult['PROPERTIES'][$arParams[
 }
 
 //action-stikers from hiloadblock
-
+$arResult['PROPERTIES']['RASSROCHKA']['VALUE_EXT']=array();
+$arResult['PROPERTIES']['AKTSII']['VALUE_EXT']=array();
 
 $HLiB_name=$arResult['PROPERTIES']['AKTSII']['USER_TYPE_SETTINGS']['TABLE_NAME'];
 $XML_ID=$arResult['PROPERTIES']['AKTSII']['VALUE'];
@@ -312,7 +313,61 @@ if(CModule::IncludeModule('highloadblock')) {
             )
         );
         while ($row = $res->fetch()) {
+
+            $el_Filter= [
+                'IBLOCK_CODE' => 'action',
+                'PROPERTY_ACTION' => $row['UF_XML_ID']
+            ];
+
+            $el_Select= [ 'IBLOCK_ID', 'ID', 'CODE', 'PROPERTY_ACTION' ];
+
+            $el_res= CIBlockElement::GetList( false, $el_Filter, false, $el_Nav, $el_Select );
+            while ( $el_arr= $el_res->Fetch() ) {
+
+                    $row['UF_LINK']="/action/".$el_arr['CODE']."/";
+            }
             $arResult['PROPERTIES']['AKTSII']['VALUE_EXT'][$row['UF_XML_ID']] = $row;
+
+        }
+    }
+}
+$HLiB_name=$arResult['PROPERTIES']['RASSROCHKA']['USER_TYPE_SETTINGS']['TABLE_NAME'];
+$XML_ID=$arResult['PROPERTIES']['RASSROCHKA']['VALUE'];
+
+if(CModule::IncludeModule('highloadblock')) {
+    $rsData = \Bitrix\Highloadblock\HighloadBlockTable::getList(array('filter' => array('TABLE_NAME' => $HLiB_name)));
+    if (!($hldata = $rsData->fetch())) {
+        //          echo 'Инфоблок не найден';
+    } else {
+        $hlentity = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
+        $hlDataClass = $hldata['NAME'] . 'Table';
+        $res = $hlDataClass::getList(array(
+                'filter' => array(
+                    'UF_XML_ID' => $XML_ID,
+                ),
+                'select' => array("*"),
+                'order' => array(
+                    'UF_NAME' => 'asc'
+                ),
+            )
+        );
+        while ($row = $res->fetch()) {
+            $el_Filter= [
+                'IBLOCK_CODE' => 'action',
+                'PROPERTY_RASSROCHKA' =>  $row['UF_XML_ID']
+            ];
+
+            $el_Select= [ 'IBLOCK_ID', 'ID', 'CODE', 'PROPERTY_RASSROCHKA' ];
+
+            $el_res= CIBlockElement::GetList( false, $el_Filter, false, $el_Nav, $el_Select );
+            while ( $el_arr= $el_res->Fetch() ) {
+                if($row['UF_XML_ID']==$XML_ID){
+                    $row['UF_LINK']="/action/".$el_arr['CODE']."/";
+                    break;
+                }
+            }
+            $arResult['PROPERTIES']['RASSROCHKA']['VALUE_EXT'][$row['UF_XML_ID']] = $row;
+
         }
     }
 }

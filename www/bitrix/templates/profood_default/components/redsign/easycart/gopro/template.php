@@ -7,7 +7,7 @@ global $compareName, $compareIblockId;
 $compareName = $arParams['COMPARE_NAME'];
 $compareIblockId = $arParams['COMPARE_IBLOCK_ID'];
 
-?><div id="rs_easycart" class="rs_easycart <?=$arParams['TEMPLATE_THEME']?><?if($arParams['ADD_BODY_PADDING']=='Y'):?> addbodypadding<?endif;?>" <?
+?><div id="rs_easycart" class="rs_easycart <?=$arParams['TEMPLATE_THEME']?><?if($arParams['ADD_BODY_PADDING']=='Y'):?> addbodypadding<?endif;?> hidden-print" <?
 	?>style='z-index:<?=$arParams['Z_INDEX']?>;' <?
 	?>data-serviceurl="<?=$arParams['SERVICE_URL']?>"><?
 	if ($_REQUEST['rsec_ajax_post'] != 'Y') {

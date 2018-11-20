@@ -6,7 +6,7 @@ use \Bitrix\Main\Localization\Loc;
 ?>
 
 <!-- menu horizontal1 -->
-<div id="menu" class="menu js-menu">
+<div id="menu" class="menu js-menu hidden-print">
 	<div class="centering">
 		<div class="centeringin clearfix">
 			<div class="row">

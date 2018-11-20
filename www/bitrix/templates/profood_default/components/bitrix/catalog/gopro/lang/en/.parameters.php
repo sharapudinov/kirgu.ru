@@ -6,36 +6,11 @@ $MESS['RSGOPRO_VIEW_MODE'] = 'Catalog view';
 // additional
 $MESS['PROP_MORE_PHOTO'] = 'Property with ext. images product';
 $MESS['USE_FAVORITE'] = 'Use favorite';
-$MESS['USE_SHARE'] = 'Use sharing';
-$MESS["SOC_SHARE_ICON"] = "Sharing social list";
-    $MESS["MSG_SHARE-collections"] = "Yadex collection";
-    $MESS["MSG_SHARE-vkontakte"] = "Vkontakte";
-    $MESS["MSG_SHARE-facebook"] = "Facebook";
-    $MESS["MSG_SHARE-odnoklassniki"] = "Odnoklassniki";
-    $MESS["MSG_SHARE-moimir"] = "MoMir";
-    $MESS["MSG_SHARE-gplus"] = "Google +";
-    $MESS["MSG_SHARE-twitter"] = "Twitter";
-    $MESS["MSG_SHARE-blogger"] = "Blogger";
-    $MESS["MSG_SHARE-delicious"] = "Delicious";
-    $MESS["MSG_SHARE-digg"] = "Digg";
-    $MESS["MSG_SHARE-reddit"] = "Reddit";
-    $MESS["MSG_SHARE-evernote"] = "Evernote";
-    $MESS["MSG_SHARE-linkedin"] = "LinkedIn";
-    $MESS["MSG_SHARE-lj"] = "Livejournal";
-    $MESS["MSG_SHARE-pocket"] = "Pocket";
-    $MESS["MSG_SHARE-qzone"] = "Qzone";
-    $MESS["MSG_SHARE-renren"] = "Renren";
-    $MESS["MSG_SHARE-sinaWeibo"] = "Sina Weibo";
-    $MESS["MSG_SHARE-surfingbird"] = "Surfingbird";
-    $MESS["MSG_SHARE-tencentWeibo"] = "Tencent Weibo";
-    $MESS["MSG_SHARE-tumblr"] = "Tumblr";
-    $MESS["MSG_SHARE-viber"] = "Viber";
-    $MESS["MSG_SHARE-whatsapp"] = "WhatsApp";
-    $MESS["MSG_SHARE-skype"] = "Skype";
-    $MESS["MSG_SHARE-telegram"] = "Telegram";
-$MESS['OFF_MEASURE_RATION'] = 'Hide measure ration';
 $MESS['STICKERS_PROPS'] = 'Property-sticker';
 $MESS['STICKERS_DISCOUNT_VALUE'] = 'Show sticker with discount';
+// price
+$MESS['OFF_MEASURE_RATION'] = 'Hide measure ration';
+// rating
 $MESS["USE_RATING"] = "[Rating] Use rating";
 // sections
 $MESS['RSGOPRO.SECTIONS_DESCRIPTION_POSITION'] = 'Section description position in section list';
@@ -70,6 +45,33 @@ $MESS['USE_DELIVERY_COST_TAB'] = 'Show tab with delivery coast';
 $MESS['PROP_BRAND'] = 'Property with product brand name';
 $MESS['PROP_PRICES_NOTE'] = 'Property with prices note';
 $MESS['OFF_BUY1CLICK'] = 'Off buy 1 click from';
+$MESS['USE_SHARE'] = 'Use sharing';
+$MESS["SOC_SHARE_ICON"] = "Sharing social list";
+    $MESS["MSG_SHARE-collections"] = "Yadex collection";
+    $MESS["MSG_SHARE-vkontakte"] = "Vkontakte";
+    $MESS["MSG_SHARE-facebook"] = "Facebook";
+    $MESS["MSG_SHARE-odnoklassniki"] = "Odnoklassniki";
+    $MESS["MSG_SHARE-moimir"] = "MoMir";
+    $MESS["MSG_SHARE-gplus"] = "Google +";
+    $MESS["MSG_SHARE-twitter"] = "Twitter";
+    $MESS["MSG_SHARE-blogger"] = "Blogger";
+    $MESS["MSG_SHARE-delicious"] = "Delicious";
+    $MESS["MSG_SHARE-digg"] = "Digg";
+    $MESS["MSG_SHARE-reddit"] = "Reddit";
+    $MESS["MSG_SHARE-evernote"] = "Evernote";
+    $MESS["MSG_SHARE-linkedin"] = "LinkedIn";
+    $MESS["MSG_SHARE-lj"] = "Livejournal";
+    $MESS["MSG_SHARE-pocket"] = "Pocket";
+    $MESS["MSG_SHARE-qzone"] = "Qzone";
+    $MESS["MSG_SHARE-renren"] = "Renren";
+    $MESS["MSG_SHARE-sinaWeibo"] = "Sina Weibo";
+    $MESS["MSG_SHARE-surfingbird"] = "Surfingbird";
+    $MESS["MSG_SHARE-tencentWeibo"] = "Tencent Weibo";
+    $MESS["MSG_SHARE-tumblr"] = "Tumblr";
+    $MESS["MSG_SHARE-viber"] = "Viber";
+    $MESS["MSG_SHARE-whatsapp"] = "WhatsApp";
+    $MESS["MSG_SHARE-skype"] = "Skype";
+    $MESS["MSG_SHARE-telegram"] = "Telegram";
 // filter
 $MESS['FILTER_PROP_SCROLL'] = 'Property with scroll';
 $MESS['FILTER_PROP_SEARCH'] = 'Property with search';
@@ -78,6 +80,7 @@ $MESS['FILTER_USE_AJAX'] = 'Use filter AJAX';
 $MESS['FILTER_HIDE_PROP_COUNT'] = 'Hide count products on one attribute';
 // bigdata
 $MESS["CP_BC_TPL_USE_BIG_DATA"] = "Display personal recommendations";
+$MESS["BIG_DATA_ELEMENT_COUNT"] = "Elements count";
 
 /* if offers IBLOCK_ID */
 $MESS['PROP_SKU_MORE_PHOTO'] = 'Property with ext. images SKU';
@@ -104,10 +107,14 @@ $MESS["HIDE_AJAXPAGES_LINK"] = "Hide button \"Load more\"";
 
 /* detail */
 $MESS['PROP_MODS_ARTICLE'] = '[Mods] Property with SKU article';
+$MESS['MODS_ELEMENT_COUNT'] = '[Mods] Elements count';
 
-/* delivery cost */
+/* catalog.element */
 $MESS['DELIVERY_COST_PAY_LINK'] = 'List on page with pay info';
 $MESS['DELIVERY_COST_DELIVERY_LINK'] = 'List on page with delivery info';
+$MESS['BRAND_DETAIL_SHOW_LOGO'] = 'Show brand logo';
+$MESS['BRAND_IBLOCK_BRANDS'] = 'IBlock with brands';
+$MESS['BRAND_IBLOCK_BRANDS_PROP_BRAND'] = 'Property with brands in iblock with brands';
 
 /* review */
 $MESS['DETAIL_REVIEW_SHOW_COUNT'] = 'Show review count in tab name';
@@ -122,3 +129,10 @@ $MESS["CP_BC_TPL_BIG_DATA_RCM_TYPE"] = "Recommendation type";
     $MESS["CP_BC_TPL_RCM_SIMILAR_ANY"] = "Also purchased/Also viewed/Similar products";
     $MESS["CP_BC_TPL_RCM_PERSONAL_WBEST"] = "Top selling/Personal";
     $MESS["CP_BC_TPL_RCM_RAND"] = "Any recommendation";
+
+// search
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_PAGE_RESULT_COUNT"] = "Results per page";
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_RESTART"] = "Try to search without morphology support (if no search results found)";
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_NO_WORD_LOGIC"] = "Disable processing of common words as logical operators";
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_USE_LANGUAGE_GUESS"] = "Autodetect Keyboard Layout";
+$MESS["RS_GOPRO_CP_BC_TPL_SEARCH_CHECK_DATES"] = "Search only in documents active on date of search";

@@ -12,7 +12,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 		<div class="row tpanel__flex">
 			<div class="col-xs-4 col-sm-6 col-md-7 col-lg-7 left-part link-dashed">
-<span class="tpanel__block location2">
+<span class="tpanel__block location2 hidden-print">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
@@ -48,7 +48,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	false
 );?>
 </span>
-<span class="tpanel__block callback">
+<span class="tpanel__block callback hidden-print">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
@@ -61,7 +61,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 );?>
 </span>
 			</div>
-			<div class="col-xs-8 col-sm-6 col-md-5 col-lg-5 text-right right-part">
+			<div class="col-xs-8 col-sm-6 col-md-5 col-lg-5 text-right right-part hidden-print">
 <span class="tpanel__block auth">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",

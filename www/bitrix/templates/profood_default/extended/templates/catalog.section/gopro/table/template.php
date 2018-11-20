@@ -39,6 +39,8 @@ $getTemplatePathPartParams = array('SHOW_HELP' => $arParams['CACHE_GROUPS'] == '
 		<?php
 		$i = 1;
 		foreach ($arResult['PRICES'] as $priceCode => $arPriceInfo):
+			if (!$arPriceInfo['CAN_VIEW'])
+				continue;
 			if ($i > $pricesParams['MAX_SHOW'])
 				break;
 			?>

@@ -20,7 +20,13 @@ if ($isAjax) {
 			</div>
 		</div><!-- /content -->
 	</div><!-- /body -->
-	
+
+<?$APPLICATION->IncludeFile(
+	SITE_DIR."include/header/footer.before.php",
+	array(),
+	array("MODE"=>"html")
+);?>
+
 	<div id="footer" class="footer"><!-- footer -->
 		<div class="centering">
 			<div class="centeringin line1 clearfix">
@@ -57,21 +63,21 @@ if ($isAjax) {
 						</div>
 					</div>
 				</div>
-				<div class="block two">
+				<div class="block two hidden-print">
 					<?$APPLICATION->IncludeFile(
 						SITE_DIR."include/footer/catalog_menu.php",
 						Array(),
 						Array("MODE"=>"html")
 					);?>
 				</div>
-				<div class="block three">
+				<div class="block three hidden-print">
 					<?$APPLICATION->IncludeFile(
 						SITE_DIR."include/footer/menu.php",
 						Array(),
 						Array("MODE"=>"html")
 					);?>
 				</div>
-				<div class="block four">
+				<div class="block four hidden-print">
 					<div class="sovservice">
 						<?$APPLICATION->IncludeFile(
 							SITE_DIR."include/footer/socservice.php",
@@ -90,7 +96,7 @@ if ($isAjax) {
 			</div>
 		</div>
 
-		<div class="line2">
+		<div class="line2 hidden-print">
 			<div class="centering">
 				<div class="centeringin clearfix">
 					<div class="sitecopy">
@@ -106,38 +112,44 @@ if ($isAjax) {
 						/* #REDSIGN_COPYRIGHT# */
 						/****************************************************************************************/
 						?><?
-						?>Powered by <a href="https://www.redsign.ru/templates/store/<?=GOPRO_MODULE_ID?>/" target="_blank">ALFA Systems</a><?
+						?>Powered by <a href="https://www.redsign.ru/templates/store/<?=GOPRO_MODULE_ID?>/" target="_blank" rel="nofollow">ALFA Systems</a><?
 					?></div>
 				</div>
 			</div>
 		</div>
 	</div><!-- /footer -->
 
-	<?$APPLICATION->IncludeFile(
-		SITE_DIR."include/footer/easycart.php",
-		Array(),
-		Array("MODE"=>"html")
-	);?>
+<?$APPLICATION->IncludeFile(
+	SITE_DIR."include/header/footer.after.php",
+	array(),
+	array("MODE"=>"html")
+);?>
 
-	<?php include(EXTENDED_PATH.'/footer_inc.php'); ?>
+<?$APPLICATION->IncludeFile(
+	SITE_DIR."include/footer/easycart.php",
+	Array(),
+	Array("MODE"=>"html")
+);?>
 
-	<script type="text/javascript">RSGoPro_SetSet();</script>
+<?php include(EXTENDED_PATH.'/footer_inc.php'); ?>
 
-	<div style="display:none;">AlfaSystems GoPro GP261D21</div>
+<script type="text/javascript">RSGoPro_SetSet();</script>
 
-    <script>$('#svg-icons').setHtmlByUrl({url:SITE_TEMPLATE_PATH + '/assets/img/icons.svg?v404'});</script>
+<div style="display:none;">AlfaSystems GoPro GP261D21</div>
 
-	<?$APPLICATION->IncludeFile(
-		SITE_DIR."include/tuning/component.php",
-		Array(),
-		Array("MODE"=>"html")
-	);?>
+<script>$('#svg-icons').setHtmlByUrl({url:SITE_TEMPLATE_PATH + '/assets/img/icons.svg?v404'});</script>
 
-    <?$APPLICATION->IncludeFile(
-        SITE_DIR."include/footer/body_end.php",
-        Array(),
-        Array("MODE"=>"html")
-    );?>
-    
+<?$APPLICATION->IncludeFile(
+	SITE_DIR."include/tuning/component.php",
+	Array(),
+	Array("MODE"=>"html")
+);?>
+
+<?$APPLICATION->IncludeFile(
+	SITE_DIR."include/footer/body_end.php",
+	Array(),
+	Array("MODE"=>"html")
+);?>
+
 </body>
 </html>

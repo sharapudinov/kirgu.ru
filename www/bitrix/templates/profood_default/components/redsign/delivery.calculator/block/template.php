@@ -9,7 +9,6 @@ Loc::loadMessages(__FILE__);
 $prefix = $arParams['PREFIX'];
 
 $arJSONResult = array();
-
 ?>
 
 <?php if ($arParams['AJAX_CALL'] != 'Y'): ?>
@@ -21,16 +20,26 @@ $arJSONResult = array();
     );
     $ajaxPath = $templateFolder.'/ajax.php';
 ?>
-<script>
 
+<script>
 BX.addCustomEvent('rs_delivery_update', function(productId, quantity, beforeFn, afterFn) {
     var params = <?=CUtil::PhpToJSObject($arAjaxParams); ?>;
     params.arParams.ELEMENT_ID = productId || params.arParams.ELEMENT_ID;
     params.arParams.QUANTITY = quantity || params.arParams.QUANTITY;
     beforeFn = beforeFn || function() {};
     afterFn = afterFn || function() {};
+    
+    var ajaxLoading = '<div class="product-delivery__title"><?=CUtil::JSEscape(Loc::getMessage('RSDC_TEMPLATE_DELIVERY'))?></div>' +
+                '<ul class="product-delivery__list">' +
+                    '<li><?=CUtil::JSEscape(Loc::getMessage('RSDC_TEMPLATE_LOADING'))?></li>' +
+                '</ul>';
 
     beforeFn();
+
+    var deliveryBlock = BX("<?=$prefix?>delivery_block");
+    if (deliveryBlock) {
+        deliveryBlock.innerHTML = ajaxLoading;
+    }
 
     BX.ajax.post('<?=$ajaxPath?>', params, function(result) {
         var json = BX.parseJSON(result);
@@ -58,8 +67,8 @@ BX.addCustomEvent('rs_delivery_update', function(productId, quantity, beforeFn, 
     });
 });
 BX.onCustomEvent('rs_delivery_update');
-
 </script>
+
 <?php elseif ($arParams['AJAX_CALL'] == 'Y'): ?>
     <?php $APPLICATION->RestartBuffer(); ?>
     <?php if ($arParams['BLOCK_DELIVERY'] == 'Y'): ?>
@@ -158,9 +167,9 @@ BX.onCustomEvent('rs_delivery_update');
     <div class="media-body product-delivery__body">
         <?php if ($arParams['AJAX_CALL'] != 'Y'): ?>
             <div id="<?=$prefix?>delivery_block" class="product-delivery__block">
-                <div class="product-delivery__title"><?=Loc::getMessage('RSDC_TEMPLATE_DELIVERY'); ?></div>
+                <div class="product-delivery__title"><?=Loc::getMessage('RSDC_TEMPLATE_DELIVERY')?></div>
                 <ul class="product-delivery__list">
-                    <li><?=Loc::getMessage('RSDC_TEMPLATE_LOADING'); ?></li>
+                    <li><?=Loc::getMessage('RSDC_TEMPLATE_LOADING')?></li>
                 </ul>
             </div>
         <?php endif; ?>

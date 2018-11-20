@@ -45,7 +45,8 @@ if (isset($arParams['IS_AJAX']) && $arParams['IS_AJAX'] == 'Y') {
             template: '<?=CUtil::JSEscape($signedTemplate)?>',
             ajaxId: '<?=CUtil::JSEscape($arParams['AJAX_ID'])?>',
             parameters: '<?=CUtil::JSEscape($signedParams)?>',
-            container: '<?=$containerName?>'
+            container: '<?=$containerName?>',
+            elementCount: <?=CUtil::PhpToJSObject($arParams['BIG_DATA_ELEMENT_COUNT'])?>,
         };
         bigDataLoad(params);
     </script>

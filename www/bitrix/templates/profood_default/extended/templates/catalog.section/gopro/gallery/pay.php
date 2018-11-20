@@ -7,7 +7,7 @@ use \Bitrix\Main\Application,
 
 ?>
 
-<div class="list-gallery__pay">
+<div class="list-gallery__pay hidden-print">
 <?php
 $arParams['USE_PRODUCT_QUANTITY'] = 'N';
 // pay

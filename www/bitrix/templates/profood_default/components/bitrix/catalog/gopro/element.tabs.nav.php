@@ -10,7 +10,7 @@ use Bitrix\Main\Loader,
 <div class="clear"></div>
 
 <!-- tab navs -->
-<ul class="nav nav-tabs js-detail-tabs" role="tablist">
+<ul class="nav nav-tabs js-detail-tabs hidden-print" role="tablist">
 
 	<?php $APPLICATION->ShowViewContent('TABS_HTML_HEADERS'); ?>
 

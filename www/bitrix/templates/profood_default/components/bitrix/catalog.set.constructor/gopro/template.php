@@ -153,7 +153,7 @@ if (!function_exists('SetConstruktorShowItem')){
 			?><div class="block buyset"><?
 				?><noindex><form><?
 					?><a rel="nofollow" class="btn1 massadd2basket nowrap" href="#"><?=GetMessage('CATALOG_SET_ADD2BASKET')?></a><?
-					?><a rel="nofollow" class="btn2 buy1click set nowrap fancyajax fancybox.ajax" href="<?=SITE_DIR?>buy1click/" title="<?=GetMessage('CATALOG_SET_BUY1CLICK')?>"><?=GetMessage('CATALOG_SET_BUY1CLICK')?></a><?
+					?><!--a rel="nofollow" class="btn2 buy1click set nowrap fancyajax fancybox.ajax" href="<?=SITE_DIR?>include/popup/buy1click/" title="<?=GetMessage('CATALOG_SET_BUY1CLICK')?>"><?=GetMessage('CATALOG_SET_BUY1CLICK')?></a--><?
 				?></form><noindex><?
 			?></div><?
 		} else {

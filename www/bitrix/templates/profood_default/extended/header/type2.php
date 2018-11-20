@@ -23,7 +23,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 );?><?
 ?></a>
 </div>
-<div class="col-sm-6 col-md-9 col-lg-9 hidden-xs text-right">
+<div class="col-sm-6 col-md-9 col-lg-9 hidden-xs text-right hidden-print">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",

@@ -12,7 +12,7 @@ use \Bitrix\Main\Application,
 <div class="detail__previewtext hidden-xs"><?
     ?><?=$arResult['PREVIEW_TEXT']?><?
     if ($arResult['TABS']['DETAIL_TEXT']) {
-        ?><div class="detail__previewtext__go-to"><a class="detail__previewtext__go-to__link js-easy-scroll" href="#detailtext" data-es-offset="-135"><?=Loc::getMessage('GO2DETAILFROMPREVIEW')?></a></div><?
+        ?><div class="detail__previewtext__go-to hidden-print"><a class="detail__previewtext__go-to__link js-easy-scroll" href="#detailtext" data-es-offset="-135"><?=Loc::getMessage('GO2DETAILFROMPREVIEW')?></a></div><?
     }
 ?></div>
 <?php endif; ?>

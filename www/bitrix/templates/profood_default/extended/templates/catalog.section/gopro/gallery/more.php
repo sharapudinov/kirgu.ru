@@ -7,7 +7,7 @@ use \Bitrix\Main\Application,
 
 ?>
 
-<div class="list-gallery__more"><?
+<div class="list-gallery__more hidden-print"><?
 ?><?php if ($arParams['DONT_SHOW_LINKS'] != 'Y'): ?><?
 	?><a class="btn-primary" href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=Loc::getMessage('GOPRO.MORE')?></a><?
 ?><?php endif; ?><?

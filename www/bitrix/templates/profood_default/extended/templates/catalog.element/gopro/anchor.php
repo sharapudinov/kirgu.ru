@@ -6,6 +6,7 @@ use \Bitrix\Main\Application;
 
 // anchor
 $esOffset = '-135';
+
 $this->SetViewTarget('TABS_HTML_HEADERS_ANCHOR');
 if ($arResult['TABS']['DETAIL_TEXT']) {
     ?><a class="detail__anchor__link link-dashed js-easy-scroll" href="#detailtext" data-es-offset="<?=$esOffset?>"><?=GetMessage('TABS_DETAIL_TEXT')?></a><?
@@ -48,7 +49,7 @@ if ($arResult['TABS']['STOCKS']) {
 $this->EndViewTarget();
 ?>
 
-<div class="detail__anchor js-detail-anchor hidden-xs">
+<div class="detail__anchor js-detail-anchor hidden-xs hidden-print">
 <?php
 echo $APPLICATION->GetViewContent('TABS_HTML_HEADERS_ANCHOR');
 ?>

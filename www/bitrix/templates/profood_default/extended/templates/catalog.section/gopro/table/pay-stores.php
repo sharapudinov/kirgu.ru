@@ -9,7 +9,7 @@ use \Bitrix\Main\Application,
 
 <div class="list-table__pay-stores">
     <div class="list-table__pay-stores__inner">
-        <div class="list-table__pay">
+        <div class="list-table__pay hidden-print">
         <?php
         // pay
         if (file_exists($path = rsGoProGetTemplatePathPart(EXTENDED_PATH_BLOCKS.'/pay.php', $getTemplatePathPartParams))) {

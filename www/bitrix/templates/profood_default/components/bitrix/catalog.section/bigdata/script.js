@@ -12,7 +12,7 @@ function bigDataLoad(params) {
 				bigData: 'Y',
 				items: result && result.items || [],
 				rid: result && result.id,
-				count: params.bigData.params.count,
+				count: (!!params.elementCount ? params.elementCount : params.bigData.params.count),
                 shownIds: params.bigData.shownIds
 			});
 		// } else {

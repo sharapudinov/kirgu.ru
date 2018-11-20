@@ -1,11 +1,13 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
+
+$id = 'inheadauthform_'.$this->randString();
 ?>
 
-<span class="authinhead2" id="inheadauthform">
+<span class="authinhead2" id="<?=$id?>">
     <?php
-	$frame = $this->createFrame('inheadauthform',false)->begin();
+	$frame = $this->createFrame($id, false)->begin();
 	$frame->setBrowserStorage(true);
     ?>
         <?php if ($arResult["FORM_TYPE"] == 'login'): ?>

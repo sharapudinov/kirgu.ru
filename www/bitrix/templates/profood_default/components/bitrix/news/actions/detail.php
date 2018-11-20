@@ -55,14 +55,18 @@ global $APPLICATION, $JSON;
 		'ADD_ELEMENT_CHAIN'			=> (isset($arParams['ADD_ELEMENT_CHAIN']) ? $arParams['ADD_ELEMENT_CHAIN'] : ''),
 		'ADD_STYLES_FOR_MAIN'		=> $arParams['ADD_STYLES_FOR_MAIN'],
 		'ACTION_CODE'				=> $arParams['ACTION_CODE'],
-		'SECTIONS_CODE'				=> $arParams['SECTIONS_CODE'],
+        'RASSROCHKA_CODE' => $arParams['RASSROCHKA_CODE'],
+
+        'SECTIONS_CODE'				=> $arParams['SECTIONS_CODE'],
 		'SHOW_BOTTOM_SECTIONS'		=> $arParams['SHOW_BOTTOM_SECTIONS'],
 		'COUNT_ITEMS'				=>	$arParams['COUNT_ITEMS'],
 		'CATALOG_FILTER_NAME'		=> $arParams['CATALOG_FILTER_NAME'],
 		'CATALOG_IBLOCK_ID'			=> $arParams['CATALOG_IBLOCK_ID'],
         // custom
         'CATALOG_ACTION_CODE' => $arParams['CATALOG_ACTION_CODE'],
-	),
+        'CATALOG_RASSROCHKA_CODE' => $arParams['CATALOG_RASSROCHKA_CODE'],
+
+    ),
 	$component
 );?>
     </div>
@@ -72,7 +76,8 @@ global $APPLICATION, $JSON;
 
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-<?php if (!empty($arParams['ACTION_CODE']) && !empty($arParams['CATALOG_ACTION_CODE']) && $arParams['ACTION_CODE'] != '' && $arParams['CATALOG_ACTION_CODE'] != ''): ?>
+<?php if (!empty($arParams['ACTION_CODE']) && !empty($arParams['CATALOG_ACTION_CODE']) && $arParams['ACTION_CODE'] != '' && $arParams['CATALOG_ACTION_CODE'] != '' ||
+    !empty($arParams['RASSROCHKA_CODE']) && !empty($arParams['CATALOG_RASSROCHKA_CODE']) && $arParams['RASSROCHKA_CODE'] != '' && $arParams['CATALOG_RASSROCHKA_CODE'] != ''): ?>
 <div class="catalog brands">
     <div class="prods" id="prods">
 <?php

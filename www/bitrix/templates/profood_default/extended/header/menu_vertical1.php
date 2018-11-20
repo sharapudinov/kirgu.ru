@@ -4,7 +4,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 ?>
 
 <!-- menu vertical1 -->
-<div id="menu" class="menu js-menu">
+<div id="menu" class="menu js-menu hidden-print">
 	<div class="centering">
 		<div class="centeringin clearfix">
 			<div class="b-mmenu type1">

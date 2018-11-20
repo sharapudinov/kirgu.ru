@@ -4,7 +4,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
 if (!is_array($arItem['OFFERS_EXT']['PROPERTIES']) || empty($arItem['OFFERS_EXT']['PROPERTIES']))
     return;
-
 $select_offer_by_name = false;
 $nav = CIBlockSection::GetNavChain(
     $arItem["IBLOCK_ID"],

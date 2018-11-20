@@ -2,7 +2,8 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
 
-use \Bitrix\Main\Application;
+use \Bitrix\Main\Application,
+    \Bitrix\Main\Localization\loc;
 ?>
 
 <?php
@@ -10,19 +11,19 @@ use \Bitrix\Main\Application;
 $this->SetViewTarget('TABS_HTML_HEADERS');
 
 if ($arResult['TABS']['DETAIL_TEXT']) {
-    ?><li role="presentation"><a href="#detailtext" aria-controls="home" role="tab" data-toggle="tab"><?=GetMessage('TABS_DETAIL_TEXT')?></a></li><?
+    ?><li role="presentation"><a href="#detailtext" aria-controls="home" role="tab" data-toggle="tab"><?=loc::getMessage('TABS_DETAIL_TEXT')?></a></li><?
 }
 
 if ($arResult['TABS']['DISPLAY_PROPERTIES']) {
-    ?><li role="presentation"><a href="#properties" aria-controls="home" role="tab" data-toggle="tab"><?=GetMessage('TABS_PROPERTIES')?></a></li><?
+    ?><li role="presentation"><a href="#properties" aria-controls="home" role="tab" data-toggle="tab"><?=loc::getMessage('TABS_PROPERTIES')?></a></li><?
 }
 
 if ($arResult['TABS']['DELIVERY_COST']) {
-    ?><li role="presentation"><a href="#deliverycost" aria-controls="home" role="tab" data-toggle="tab"><?=GetMessage('TABS_DELIVERY_COST')?></a></li><?
+    ?><li role="presentation"><a href="#deliverycost" aria-controls="home" role="tab" data-toggle="tab"><?=loc::getMessage('TABS_DELIVERY_COST')?></a></li><?
 }
 
 if ($arResult['TABS']['SET']) {
-    ?><li role="presentation"><a href="#set" aria-controls="home" role="tab" data-toggle="tab"><?=GetMessage('TABS_SET')?></a></li><?
+    ?><li role="presentation"><a href="#set" aria-controls="home" role="tab" data-toggle="tab"><?=loc::getMessage('TABS_SET')?></a></li><?
 }
 
 if ($arResult['TABS']['PROPS_TABS']) {
@@ -50,7 +51,7 @@ if ($arResult['TABS']['PROPS_TABS']) {
 }
 
 if ($arResult['TABS']['STOCKS']) {
-    ?><li role="presentation"><a href="#stocks" aria-controls="home" role="tab" data-toggle="tab"><?=GetMessage('TABS_STOCKS')?></a></li><?
+    ?><li role="presentation"><a href="#stocks" aria-controls="home" role="tab" data-toggle="tab"><?=loc::getMessage('TABS_STOCKS')?></a></li><?
 }
 
 $this->EndViewTarget();
@@ -61,8 +62,9 @@ $this->EndViewTarget();
 $this->SetViewTarget('TABS_HTML_CONTENTS');
 
 if ($arResult['TABS']['DETAIL_TEXT']) {
-    ?><div role="tabpanel" class="tab-pane active" id="detailtext"><?
+    ?><div class="tab-pane active tabpanel-show-on-print" role="tabpanel" id="detailtext"><?
         ?><div class="tab-pane-in"><?
+            ?><div class="b-print__tab-name clearfix"><div class="b-sorter__block-name visible-print-block"><?=loc::getMessage('TABS_DETAIL_TEXT')?></div></div><?
             ?><div class="tab-pane-in2"><?
                 ?><?=$arResult['DETAIL_TEXT']?><?
             ?></div><?
@@ -71,8 +73,9 @@ if ($arResult['TABS']['DETAIL_TEXT']) {
 }
 
 if ($arResult['TABS']['DISPLAY_PROPERTIES']) {
-    ?><div role="tabpanel" class="tab-pane active" id="properties"><?
+    ?><div class="tab-pane active tabpanel-show-on-print" role="tabpanel" id="properties"><?
         ?><div class="tab-pane-in"><?
+            ?><div class="b-print__tab-name clearfix"><div class="b-sorter__block-name visible-print-block"><?=loc::getMessage('TABS_PROPERTIES')?></div></div><?
             ?><div class="tab-pane-in2"><?
                 $arDiff = array();
                 if (!empty($arParams['PROP_BRAND']))
@@ -112,17 +115,18 @@ if ($arResult['TABS']['DISPLAY_PROPERTIES']) {
 }
 
 if ($arResult['TABS']['DELIVERY_COST']) {
-    ?><div role="tabpanel" class="tab-pane active" id="deliverycost"><?
+    ?><div class="tab-pane active tabpanel-show-on-print" role="tabpanel" id="deliverycost"><?
         ?><div class="tab-pane-in"><?
+            ?><div class="b-print__tab-name clearfix"><div class="b-sorter__block-name visible-print-block"><?=loc::getMessage('TABS_DELIVERY_COST')?></div></div><?
             ?><div class="tab-pane-in2"><?
-                ?><div id="delivery-tab"><?=GetMessage('TABS_DELIVERY_COST_LOADING')?></div><?
+                ?><div id="delivery-tab"><?=loc::getMessage('TABS_DELIVERY_COST_LOADING')?></div><?
             ?></div><?
         ?></div><?
     ?></div><?
 }
 
 if ($arResult['TABS']['SET']) {
-    ?><div role="tabpanel" class="tab-pane active" id="set"><?
+    ?><div class="tab-pane active" role="tabpanel" id="set"><?
         ?><div class="tab-pane-in"><?
             ?><div class="tab-pane-in2"><?
                 ?><div class="set"><?
@@ -185,7 +189,7 @@ if ($arResult['TABS']['PROPS_TABS']) {
             count($arResult['PROPERTIES'][$sPropCode]['VALUE']) > 0
         )
         { // binds to elements
-            ?><div role="tabpanel" class="tab-pane active" id="prop<?=$sPropCode?>"><?
+            ?><div class="tab-pane active" role="tabpanel" id="prop<?=$sPropCode?>"><?
                 ?><div class="tab-pane-in"><?
                     ?><div class="tab-pane-in2"><?
                         $lightFilter = array(
@@ -300,7 +304,7 @@ if ($arResult['TABS']['PROPS_TABS']) {
             is_array($arResult['PROPERTIES'][$sPropCode]['VALUE']) &&
             count($arResult['PROPERTIES'][$sPropCode]['VALUE'])>0
         ) { // files
-            ?><div role="tabpanel" class="tab-pane active" id="prop<?=$sPropCode?>"><?
+            ?><div class="tab-pane active" role="tabpanel" id="prop<?=$sPropCode?>"><?
                 ?><div class="tab-pane-in"><?
                     ?><div class="tab-pane-in2"><?
                         $index = 1;
@@ -319,7 +323,7 @@ if ($arResult['TABS']['PROPS_TABS']) {
                 ?></div><?
             ?></div><?
         } elseif ($sPropCode != '' && isset($arResult['DISPLAY_PROPERTIES'][$sPropCode]['DISPLAY_VALUE'])) { // else
-            ?><div role="tabpanel" class="tab-pane active" id="prop<?=$sPropCode?>"><?
+            ?><div class="tab-pane active" role="tabpanel" id="prop<?=$sPropCode?>"><?
                 ?><div class="tab-pane-in"><?
                     ?><div class="tab-pane-in2"><?
                         ?><?

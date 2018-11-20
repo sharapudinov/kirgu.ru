@@ -38,7 +38,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 );?>
 				</div>
 			</div>
-			<div class="callback column1 nowrap">
+			<div class="callback column1 nowrap hidden-print">
 				<div class="column1inner">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
@@ -52,7 +52,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 );?>
 				</div>
 			</div>
-			<div class="favorite column1 nowrap">
+			<div class="favorite column1 nowrap hidden-print">
 				<div class="column1inner">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
@@ -66,7 +66,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 );?>
 				</div>
 			</div>
-			<div class="basket column1 nowrap">
+			<div class="basket column1 nowrap hidden-print">
 				<div class="column1inner">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",

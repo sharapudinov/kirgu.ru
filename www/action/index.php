@@ -116,8 +116,8 @@ $APPLICATION->IncludeComponent(
 		),
 		"CATALOG_OFFERS_LIMIT" => "5",
 		"PRICE_CODE" => array(
-			0 => "Розничная",
-			1 => "РРЦ",
+			0 => "РРЦ",
+			1 => "Розничная",
 			2 => "СпецЦена",
 		),
 		"USE_PRICE_COUNT" => "N",
@@ -144,7 +144,6 @@ $APPLICATION->IncludeComponent(
 		"PROPS_ATTRIBUTES" => array(
 		),
 		"PROPS_ATTRIBUTES_COLOR" => array(
-			0 => "TSVET_2",
 		),
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SHOW_DEACTIVATED" => "N",
@@ -153,6 +152,8 @@ $APPLICATION->IncludeComponent(
 		"ACTION_CODE" => "ACTION",
 		"CATALOG_ACTION_CODE" => "AKTSII",
 		"COMPARE_NAME" => "CATALOG_COMPARE_LIST",
+		"RASSROCHKA_CODE" => "RASSROCHKA",
+		"CATALOG_RASSROCHKA_CODE" => "RASSROCHKA",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",

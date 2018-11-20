@@ -9,7 +9,7 @@ use \Bitrix\Main\Application,
 
 <!-- social -->
 <?php if ($arParams['USE_SHARE'] == 'Y' && !empty($arParams["SOC_SHARE_ICON"]) && $arParams['GOPRO']['OFF_YANDEX'] != 'Y'): ?>
-<div class="detail__social">
+<div class="detail__social hidden-print">
     <div class="share">
         <div class="ya-share2"
             data-services="<?=implode(',', $arParams['SOC_SHARE_ICON'])?>"

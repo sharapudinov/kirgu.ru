@@ -9,6 +9,5 @@ global ${$filterName};
 if (!is_array(${$filterName})) {
 	${$filterName} = array();
 }
-
 ${$filterName} = array_merge(${$filterName}, $arResult['CATALOG_FILTER']);
 

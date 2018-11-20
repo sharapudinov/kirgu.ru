@@ -17,10 +17,10 @@ $uniqTabPrefix = 'tab'.$uniqPrefix;
 <div class="b-tab-component">
 
 <ul class="nav nav-tabs js-tabs" role="tablist" id="<?=$uniqTabPrefix?>" data-ajax-load="<?=$arParams['AJAX_LOAD']?>">
-	<li role="presentation"><a class="js-tab-loaded" href="#<?=$uniqTabPrefix?>__main" aria-controls="home" role="tab" data-toggle="tab"><?=$arParams['MAIN_TAB_NAME']?></a></li>
+	<li role="presentation"><a class="js-tab-loaded" href="#<?=$uniqTabPrefix?>__main" role="tab" data-toggle="tab"><?=$arParams['MAIN_TAB_NAME']?></a></li>
 	<?php if ($extTabCount > 0): ?>
 		<?php for ($i = 0; $i < $extTabCount; $i++): ?>
-		<li role="presentation"><a href="#<?=$uniqTabPrefix?>__<?=$i?>" aria-controls="home" role="tab" data-toggle="tab" data-tab-path="<?=$arParams['TAB_PATH_N'.$i]?>"><?=$arParams['TAB_NAME_N'.$i]?></a></li>
+		<li role="presentation"><a href="#<?=$uniqTabPrefix?>__<?=$i?>" role="tab" data-toggle="tab" data-tab-path="<?=$arParams['TAB_PATH_N'.$i]?>"><?=$arParams['TAB_NAME_N'.$i]?></a></li>
 		<?php endfor; ?>
 	<?php endif; ?>
 </ul>

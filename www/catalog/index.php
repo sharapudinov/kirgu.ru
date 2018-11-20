@@ -3909,8 +3909,9 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"LIST_META_DESCRIPTION" => "-",
 		"LIST_BROWSER_TITLE" => "-",
 		"LIST_OFFERS_FIELD_CODE" => array(
-			0 => "PREVIEW_TEXT",
-			1 => "NAME",
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "",
 		),
 		"LIST_OFFERS_PROPERTY_CODE" => array(
 			0 => "RAZMER",
@@ -5963,7 +5964,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"PROP_SKU_MORE_PHOTO" => "MORE_PHOTO",
 		"PROP_SKU_ARTICLE" => "CML2_ARTICLE",
 		"PROPS_ATTRIBUTES" => array(
-			0 => "OSNOVANIE_ORTOPEDICHESKOE",
+/*			0 => "OSNOVANIE_ORTOPEDICHESKOE",*/
 			1 => "RAZMER",
 			2 => "TSVET",
 			3 => "TSVET_1",
@@ -5992,9 +5993,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 			3 => "telegram",
 		),
 		"OFF_MEASURE_RATION" => "N",
-		"STICKERS_PROPS" => array(
-		    0=>"STICKER_HIT"
-		),
+		"STICKERS_PROPS" => array(),
 		"STICKERS_DISCOUNT_VALUE" => "Y",
 		"USE_RATING" => "N",
 		"USE_LAZYLOAD" => "Y",
@@ -6024,9 +6023,9 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"OFF_BUY1CLICK" => "N",
 		"CUSTOM_COLLECTION_PROPERTY" => "-",
 		"PROP_MODS_ARTICLE" => "CML2_ARTICLE",
-		"USE_GIFTS_DETAIL" => "N",
-		"USE_GIFTS_SECTION" => "N",
-		"USE_GIFTS_MAIN_PR_SECTION_LIST" => "N",
+		"USE_GIFTS_DETAIL" => "Y",
+		"USE_GIFTS_SECTION" => "Y",
+		"USE_GIFTS_MAIN_PR_SECTION_LIST" => "Y",
 		"GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => "4",
 		"GIFTS_DETAIL_HIDE_BLOCK_TITLE" => "N",
 		"GIFTS_DETAIL_BLOCK_TITLE" => "Выберите один из подарков",

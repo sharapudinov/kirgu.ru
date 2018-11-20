@@ -2,7 +2,12 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 	die();
 
+use \Bitrix\Main\Application;
+
 $this->setFrameMode(true);
+
+if (!is_array($arResult['SECTIONS']) || count($arResult['SECTIONS']) < 1)
+	return;
 ?>
 
 <?php $this->SetViewTarget('iblock_description'); ?>
@@ -37,58 +42,36 @@ $this->setFrameMode(true);
 	<?php endif; ?>
 <?php $this->EndViewTarget(); ?>
 
-<?php if (is_array($arResult["SECTIONS"]) && count($arResult["SECTIONS"]) > 0): ?>
-	<div class="sections clearfix">
-		<?php
-		if ($arParams['SECTIONS_DESCRIPTION_POSITION'] == 'top') {
-			echo $APPLICATION->GetViewContent('iblock_description');
-		}
-		?>
-		<ul class="row list-unstyled"><?
-			$previousLevel = 0;
-			$index1 = 1;
-			foreach ($arResult["SECTIONS"] as $arSection) {
-				if ($arSection["DEPTH_LEVEL"] > $arResult['LEVELING']['SECOND_LEVEL'])
-					continue;
-				
-				if ($previousLevel && $arSection["DEPTH_LEVEL"] < $previousLevel) {
-					echo str_repeat("</ul></li>", ($previousLevel - $arSection["DEPTH_LEVEL"]));
-				}
-				
-				if ($arSection["DEPTH_LEVEL"] == $arResult['LEVELING']['FIRST_LEVEL']) {
-					$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT"));
-					$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
-					?><li class="section col-xs-6 col-md-6 col-md-4 col-lg-5rs" id="<?=$this->GetEditAreaId($arSection["ID"]);?>"><?
-						?><a class="psection" href="<?=$arSection["SECTION_PAGE_URL"]?>"><img src="<?
-						if(empty($arSection["PICTURE"]["SRC"]))
-							echo $arResult["NO_PHOTO"]["src"];
-						else
-							echo $arSection["PICTURE"]["SRC"];
-						?>" alt="<?=$arSection["PICTURE"]["ALT"]?>" title="<?=$arSection["PICTURE"]["TITLE"]?>" /></a><?
-						?><a class="parent" href="<?=$arSection["SECTION_PAGE_URL"]?>" title="<?=$arSection["NAME"]?>"><?=$arSection["NAME"]?></a><?
-						if( ($arSection["RIGHT_MARGIN"]-$arSection["LEFT_MARGIN"])>1 && $arParams['SHOW_COUNT_LVL2']>0 && $arParams['TOP_DEPTH']>1 ) // is_parent
-						{
-							?><ul class="subsections" id="<?=$arSection["ID"]?>"><?
-						}
-					$index1++;
-					$index2 = 1;
-				} else {
-					if($index2>$arParams["SHOW_COUNT_LVL2"])
-						continue;
-					?><li><a href="<?=$arSection["SECTION_PAGE_URL"]?>" title="<?=$arSection["NAME"]?>"><?=$arSection["NAME"]?></a></li><?
-					$index2++;
-				}
-				$previousLevel = $arSection["DEPTH_LEVEL"];
-			}
+<div class="b-section-list clearfix">
+	<?php
+	if ($arParams['SECTIONS_DESCRIPTION_POSITION'] == 'top') {
+		echo $APPLICATION->GetViewContent('iblock_description');
+	}
+	?>
 
-			if ($previousLevel > 1) {
-				echo str_repeat("</ul></li>", ($previousLevel-1) );
-			}
-		?></ul>
+	<ul class="row list-unstyled">
 		<?php
-		if ($arParams['SECTIONS_DESCRIPTION_POSITION'] == 'bottom') {
-			echo $APPLICATION->GetViewContent('iblock_description');
-		}
-		?>
-	</div>
-<?php endif; ?>
+		foreach ($arResult['SECTIONS'] as $key => $arSection):
+			if ($arSection['DEPTH_LEVEL'] > $arResult['LEVELING']['FIRST_LEVEL'])
+				continue;
+
+			$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT"));
+			$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')));
+			?>
+			<li class="section col-xs-4 col-md-3 col-lg-5rs" id="<?=$this->GetEditAreaId($arSection['ID']);?>">
+				<?php
+				$img = $arSection['PICTURE']['SRC'];
+				if (empty($arSection['PICTURE']['SRC']))
+					$img = $arResult['NO_PHOTO']['src'];
+				?>
+				<a class="around_image" href="<?=$arSection['SECTION_PAGE_URL']?>"><img src="<?=$img?>" alt="<?=$arSection['PICTURE']['ALT']?>" title="<?=$arSection['PICTURE']['TITLE']?>" /></a>
+				<a class="parent" href="<?=$arSection['SECTION_PAGE_URL']?>" title="<?=$arSection['NAME']?>"><?=$arSection['NAME']?></a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php
+	if ($arParams['SECTIONS_DESCRIPTION_POSITION'] == 'bottom') {
+		echo $APPLICATION->GetViewContent('iblock_description');
+	}
+	?>
+</div>

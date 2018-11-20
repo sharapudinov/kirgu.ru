@@ -4,7 +4,6 @@ var RSGoPro_OffersExt_timeout_id = 0,
 
 function RSGoPro_OffersExt_ChangeHTML($product) {
 	var element_id = $product.data('elementid');
-
 	if (RSGoPro_OFFERS[element_id] ) {
 		// get all selected values
 		var arrFullChosed = new Object();
@@ -144,7 +143,7 @@ function RSGoPro_OffersExt_ChangeHTML($product) {
 				priceCount++;
 			}
 		}
-		
+
 		if (priceCountShowed < 2 && params.USE_ALONE == 'Y') {
 			$prices.addClass('product-alone');
 		} else {
@@ -162,7 +161,7 @@ function RSGoPro_OffersExt_ChangeHTML($product) {
       		$product.find('.js-changelable-props-val__' + SKUProp).html(SKUProps[SKUProp].DISPLAY_VALUE);
 		}
 		// /changelable props
-		
+
 		// daysarticle & quickbuy
 		$product.removeClass('qb da2');
 		$product.find('.timers .timer').hide();
@@ -184,12 +183,12 @@ function RSGoPro_OffersExt_ChangeHTML($product) {
 				$product.find('.timers .da2.js-timer_id'+finedOfferID).css('display', 'inline-block');
 			}
 		}
-		
+
 		// change buy product id
 		$product.find('.js-add2basketpid').val(finedOfferID);
 		$product.find('.js-buy1click').data('insertdata', {RS_ORDER_IDS: finedOfferID});
 		// /change buy product id
-		
+
 		// change can buy (canbuy)
 		if (RSGoPro_OFFERS[element_id].OFFERS[finedOfferID].CAN_BUY) {
 			$product.find('.js-pay__form').removeClass('cantbuy');
@@ -202,7 +201,7 @@ function RSGoPro_OffersExt_ChangeHTML($product) {
 		$product.find('.js-product-subscribe').attr('data-item', finedOfferID);
 		$product.find('.js-product-subscribe').data('item', finedOfferID);
 		// /change product subscribe
-		
+
 		// stores
 		if ($product.find('.js-stores').length > 0 && finedOfferID > 0) {
 			if (RSGoPro_STOCK[element_id]) {
@@ -232,10 +231,10 @@ function RSGoPro_OffersExt_ChangeHTML($product) {
 						$store.show();
 					}
 				}
-        
+
 				// change general
 				if (RSGoPro_STOCK[element_id].QUANTITY[element_id]) {
-          
+
 					var quantity = parseInt( RSGoPro_STOCK[element_id].QUANTITY[finedOfferID] );
 					if (RSGoPro_STOCK[element_id].USE_MIN_AMOUNT == true) {
 						if (quantity < 1) {
@@ -245,7 +244,7 @@ function RSGoPro_OffersExt_ChangeHTML($product) {
 						} else {
 							$product.find('.js-stores__value').html(RSGoPro_STOCK[element_id].MESSAGE_ISSET);
 						}
-            
+
 					} else {
 						if (quantity < 1){
 							$product.find('.js-stores__value').html('0');
@@ -258,40 +257,44 @@ function RSGoPro_OffersExt_ChangeHTML($product) {
 				console.warn( 'OffersExt_ChangeHTML -> store not found' );
 			}
 		}
-		
+
 		// set buttons "in basket" and "not in basket"
 		RSGoPro_SetInBasket();
 
-		// event
-		$(document).trigger('RSGoProOnOfferChange',[$product]);
+        // event
+        $(document).trigger('RSGoProOnOfferChange', [$product]);
 
-		BX.onCustomEvent('rs.gopro.after.offerChange', [{product: $product, elementId: element_id, offerId: finedOfferID}]);
+        BX.onCustomEvent("rs.gopro.after.offerChange", [{
+            product: $product,
+            elementId: element_id,
+            offerId: finedOfferID
+        }])
 
-	}
+    }
 }
 
 function RSGoPro_OffersExt_PropChanged($optionObj) {
 	var element_id = $optionObj.parents('.js-element').data('elementid'),
       CURRENT_PROP_CODE = $optionObj.parents('.js-attributes__prop').data('code'),
       value = $optionObj.data('value');
-  
+
 	if (RSGoPro_OFFERS[element_id] && !$optionObj.hasClass('disabled') ) {
 		// change styles
 		$optionObj.parents('.js-attributes__prop').removeClass('open').addClass('close');
 		$optionObj.parents('.js-attributes__prop').find('.js-attributes__option').removeClass('selected');
 		$optionObj.addClass('selected');
-		
+
 		// set current value
 		$optionObj.parents('.js-attributes__prop').find('.js-attributes__set-value-text').html(value);
 		if ($optionObj.parents('.js-attributes__prop').hasClass('js-pic')) {
 			console.log($optionObj.data('value-pic'));
 			$optionObj.parents('.js-attributes__prop').find('.js-attributes__set-value-pic').css('backgroundImage', "url('" + $optionObj.data('value-pic') + "')");
 		}
-		
+
 		var next_index = 0,
 			NEXT_PROP_CODE = '',
 			PROP_CODE = '';
-		
+
 		// get current values
 		var arCurrentValues = new Object();
 		for (index in RSGoPro_OFFERS[element_id].SORT_PROPS) {
@@ -356,7 +359,7 @@ function RSGoPro_OffersExt_PropChanged($optionObj) {
 function RSGoPro_SetPrice($product) {
   var element_id = $product.data('elementid'),
       iOfferId = $product.find('.js-add2basketpid').val();
-  
+
   if (RSGoPro_OFFERS[element_id]) {
 		if (
 				!!RSGoPro_OFFERS[element_id].OFFERS[iOfferId] &&
@@ -392,12 +395,12 @@ function RSGoPro_SetPriceMatrix($product, matrix) {
 	}
 $prices.find('.js-prices__more').addClass('c-prices__hide');
 
-	for (var row in matrix.ROWS) {
+    for (var row in matrix.ROWS) {
 
-		if (
-				(matrix.ROWS[row].QUANTITY_FROM == 0 || matrix.ROWS[row].QUANTITY_FROM <= iQuantity) &&
-				(matrix.ROWS[row].QUANTITY_TO == 0 || matrix.ROWS[row].QUANTITY_TO >= iQuantity)
-		) {
+        if (
+            (matrix.ROWS[row].QUANTITY_FROM == 0 || matrix.ROWS[row].QUANTITY_FROM <= iQuantity) &&
+            (matrix.ROWS[row].QUANTITY_TO == 0 || matrix.ROWS[row].QUANTITY_TO >= iQuantity)
+        ) {
 
 			PRICES = matrix.COLS;
 			basePricesCount = Object.keys(PRICES).length;
@@ -411,17 +414,17 @@ $prices.find('.js-prices__more').addClass('c-prices__hide');
 					if ($curPrice.length < 1) {
 						continue;
 					}
-	
+
 					$curPrice.removeClass('c-prices__empty');
 
 					if (priceCount >= params.MAX_SHOW && params.PAGE == 'list' && params.VIEW == 'line') {
 						break;
 					}
-	
+
 					if (priceCountShowed < params.MAX_SHOW) {
 						$curPrice.removeClass('c-prices__hide');
 					}
-	
+
 					// console.log('price code = ' + PRICE_CODE);
 
 					if ($product.find('.js-prices_pdv_' + PRICE_CODE)) {
@@ -470,7 +473,7 @@ $prices.find('.js-prices__more').addClass('c-prices__hide');
 $(document).on('click', '.js-attributes__option', function(e){
   e.stopPropagation();
   clearTimeout(RSGoPro_OffersExt_timeout_id);
-  
+
   var $option = $(this),
 			$product = $option.closest('.js-element'),
 			$animashkaDom = $product.find('.js-element__shadow'),
@@ -507,77 +510,77 @@ $(document).on('click', '.js-attributes__option', function(e){
   return false;
 });
 
-$(document).on('change', '.js-element .js-quantity.js-use_count', function() {
-  clearTimeout(RSGoPro_OffersExt_timeout_id);
-  clearTimeout(RSGoPro_ajaxTimeout);
+$(document).on('change', '.js-element .js-quantity.js-use_count', function () {
+    clearTimeout(RSGoPro_OffersExt_timeout_id);
+    clearTimeout(RSGoPro_ajaxTimeout);
 
-  var $input = $(this),
-      $product = $input.closest('.js-element'),
-      url_begin = $product.data('detail'),
-      element_id = $product.data('elementid');
-  
-  if (element_id > 0) {
-       
-    if (RSGoPro_OFFERS[element_id]) {
+    var $input = $(this),
+        $product = $input.closest('.js-element'),
+        url_begin = $product.data('detail'),
+        element_id = $product.data('elementid');
 
-			var iOfferId = $product.find('.js-add2basketpid').val();
+    if (element_id > 0) {
 
-			if (
-					!!RSGoPro_OFFERS[element_id].OFFERS[iOfferId] &&
-					!!RSGoPro_OFFERS[element_id].OFFERS[iOfferId].PRICE_MATRIX
-			) {
-				RSGoPro_SetPriceMatrix($product, RSGoPro_OFFERS[element_id].OFFERS[iOfferId].PRICE_MATRIX);
-			} else if (!!RSGoPro_OFFERS[element_id].ELEMENT.PRICE_MATRIX) {
-				RSGoPro_SetPriceMatrix($product, RSGoPro_OFFERS[element_id].ELEMENT.PRICE_MATRIX);
-			}
+        if (RSGoPro_OFFERS[element_id]) {
 
-			// event
-			$(document).trigger('RSGoProOnChangeQuantity',[$product]);
-
-    } else {
-      var url = url_begin + '?AJAX_CALL=Y&' + rsGoProActionVariableName + '=get_element_json&' + rsGoProProductIdVariableName + '=' + element_id;
-      
-      RSGoPro_ajaxTimeout = setTimeout(function(){
-        RSGoPro_Area2Darken($product, 'animashka');
-        
-        $.ajax({
-          type: 'POST',
-          url: url,
-          dataType: 'json',
-          success: function(json) {
-
-            RSGoPro_OFFERS[element_id] = json;
-            
             var iOfferId = $product.find('.js-add2basketpid').val();
 
-            if (RSGoPro_OFFERS[element_id]) {
-
-              if (
-                  !!RSGoPro_OFFERS[element_id].OFFERS[iOfferId] &&
-                  !!RSGoPro_OFFERS[element_id].OFFERS[iOfferId].PRICE_MATRIX
-              ) {
+            if (
+                !!RSGoPro_OFFERS[element_id].OFFERS[iOfferId] &&
+                !!RSGoPro_OFFERS[element_id].OFFERS[iOfferId].PRICE_MATRIX
+            ) {
                 RSGoPro_SetPriceMatrix($product, RSGoPro_OFFERS[element_id].OFFERS[iOfferId].PRICE_MATRIX);
-              } else if (!!RSGoPro_OFFERS[element_id].ELEMENT.PRICE_MATRIX) {
+            } else if (!!RSGoPro_OFFERS[element_id].ELEMENT.PRICE_MATRIX) {
                 RSGoPro_SetPriceMatrix($product, RSGoPro_OFFERS[element_id].ELEMENT.PRICE_MATRIX);
-              }
             }
-          },
-          error: function() {
-            console.warn( 'Get element JSON -> fail request' );
-          },
-          complete: function() {
-            RSGoPro_Area2Darken($product);
-						// event
-						$(document).trigger('RSGoProOnChangeQuantity',[$product]);
-          }
-        });
-      }, RSGoPro_ajaxTimeoutTime);
-    }
-  } else {
-    console.warn( 'Get element JSON -> element_id is empty' );
-  }
 
-  return false;
+            // event
+            $(document).trigger('RSGoProOnChangeQuantity', [$product]);
+
+        } else {
+            var url = url_begin + '?AJAX_CALL=Y&' + rsGoProActionVariableName + '=get_element_json&' + rsGoProProductIdVariableName + '=' + element_id;
+
+            RSGoPro_ajaxTimeout = setTimeout(function () {
+                RSGoPro_Area2Darken($product, 'animashka');
+
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    dataType: 'json',
+                    success: function (json) {
+
+                        RSGoPro_OFFERS[element_id] = json;
+
+                        var iOfferId = $product.find('.js-add2basketpid').val();
+
+                        if (RSGoPro_OFFERS[element_id]) {
+
+                            if (
+                                !!RSGoPro_OFFERS[element_id].OFFERS[iOfferId] &&
+                                !!RSGoPro_OFFERS[element_id].OFFERS[iOfferId].PRICE_MATRIX
+                            ) {
+                                RSGoPro_SetPriceMatrix($product, RSGoPro_OFFERS[element_id].OFFERS[iOfferId].PRICE_MATRIX);
+                            } else if (!!RSGoPro_OFFERS[element_id].ELEMENT.PRICE_MATRIX) {
+                                RSGoPro_SetPriceMatrix($product, RSGoPro_OFFERS[element_id].ELEMENT.PRICE_MATRIX);
+                            }
+                        }
+                    },
+                    error: function () {
+                        console.warn('Get element JSON -> fail request');
+                    },
+                    complete: function () {
+                        RSGoPro_Area2Darken($product);
+                        // event
+                        $(document).trigger('RSGoProOnChangeQuantity', [$product]);
+                    }
+                });
+            }, RSGoPro_ajaxTimeoutTime);
+        }
+    } else {
+        console.warn('Get element JSON -> element_id is empty');
+    }
+
+    return false;
 });
 
 $(document).on('click', '.js-attributes__curent-value', function(e) {

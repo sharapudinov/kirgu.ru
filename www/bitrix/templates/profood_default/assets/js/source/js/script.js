@@ -166,7 +166,7 @@ function RSGoPro_SetFavorite() {
 }
 
 // set in basket
-function RSGoPro_SetInBasket() {debugger
+function RSGoPro_SetInBasket() {
 	var selector = '.js-basket-prod-count',
 		count = parseInt(Object.keys(RSGoPro_INBASKET).length);
 	$('.add2basketform').removeClass('in');

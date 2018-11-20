@@ -23,7 +23,7 @@ use \Bitrix\Main\Application;
     }
     ?>
     </span>
-    <span class="detail__brand">
+    <span class="detail__brand hidden-xs">
     <?php
     // brand
     if (file_exists($path = rsGoProGetTemplatePathPart(EXTENDED_PATH_COMPONENTS.'/brand.php', $getTemplatePathPartParams))) {

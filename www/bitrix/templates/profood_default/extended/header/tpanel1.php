@@ -4,7 +4,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 ?>
 
 <!-- tpanel1 -->
-<div id="tpanel" class="tpanel js-tpanel mod-background">
+<div id="tpanel" class="tpanel js-tpanel mod-background hidden-print">
 	<div class="tline"></div>
 
 	<div class="centering">

@@ -15,7 +15,7 @@ Loc::loadMessages(__FILE__);
     ?>
 
 	<?php if ($arParams['ALFA_CHOSE_TEMPLATES_SHOW'] == 'Y' && is_array($arResult['CTEMPLATE']) && count($arResult['CTEMPLATE']) > 1): ?>
-		<div class="b-sorter__template">
+		<div class="b-sorter__template hidden-print">
 			<?php foreach ($arResult['CTEMPLATE'] as $template): ?>
 				<a class="<?=($template['USING'] == 'Y' ? "selected " : "")?>js-sorter__a"<?
                     ?> href="<?=$template['URL']?>" data-fvalue="<?=CUtil::JSEscape($template['VALUE'])?>" title="<?=($template['NAME_LANG'] != '' ? $template['NAME_LANG'] : $template['VALUE']);
@@ -32,7 +32,7 @@ Loc::loadMessages(__FILE__);
     <?php endif; ?>
     
 	<?php if ($arParams['ALFA_SORT_BY_SHOW'] == 'Y' && is_array($arResult['CSORTING']) && count($arResult['CSORTING']) > 1): ?>
-        <div class="b-sorter__sortaou">
+        <div class="b-sorter__sortaou hidden-print">
             <div class="b-sorter__<?if($arParams['ALFA_SHORT_SORTER']=='Y'):?>shortsort js-sorter__shortsort<?else:?>sort js-sorter__sort<?endif;?>">
                 <div class="cool">
                     <div class="b-sorter__title"><?=GetMessage('MSG_SORT')?></div>
@@ -82,7 +82,7 @@ Loc::loadMessages(__FILE__);
     <?php endif;?>
     
     <?php $this->SetViewTarget('catalog_sorter_output_of_show'); ?>
-    <div class="b-sorter js-sorter" <?if(isset($arParams['AJAXPAGESID']) && $arParams['AJAXPAGESID']!=''):?> data-ajaxpagesid="<?=$arParams['AJAXPAGESID']?>"<?endif;?>>
+    <div class="b-sorter js-sorter hidden-print" <?if(isset($arParams['AJAXPAGESID']) && $arParams['AJAXPAGESID']!=''):?> data-ajaxpagesid="<?=$arParams['AJAXPAGESID']?>"<?endif;?>>
         <div class="b-sorter__sortaou">
             <?php if ($arParams['ALFA_OUTPUT_OF_SHOW'] == 'Y' && is_array($arResult['COUTPUT']) && count($arResult['COUTPUT']) > 1): ?>
                 <div class="b-sorter__output">

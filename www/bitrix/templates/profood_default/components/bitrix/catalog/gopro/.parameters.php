@@ -12,6 +12,12 @@ if (!CModule::IncludeModule('redsign.devfunc'))
 $listProp = RSDevFuncParameters::GetTemplateParamsPropertiesList($arCurrentValues['IBLOCK_ID']);
 $arCatalog = CCatalog::GetByID($arCurrentValues['IBLOCK_ID']);
 
+$arIBlock = array();
+$rsIBlock = \CIBlock::GetList(array('sort' => 'asc'), array('ACTIVE' => 'Y'));
+while ($arr = $rsIBlock->Fetch()) {
+	$arIBlock[$arr['ID']] = '['.$arr['ID'].'] '.$arr['NAME'];
+}
+
 $arViewModeList = array(
 	'VIEW_SECTIONS' => GetMessage('RSGOPRO_VIEW_SECTIONS'),
 	'VIEW_ELEMENTS' => GetMessage('RSGOPRO_VIEW_ELEMENTS')
@@ -89,24 +95,6 @@ $arTemplateParameters = array(
 		'VALUE' => 'Y',
 		'DEFAULT' => 'Y',
 	),
-	'USE_SHARE' => array(
-		'NAME' => GetMessage('USE_SHARE'),
-		'TYPE' => 'CHECKBOX',
-		'VALUE' => 'Y',
-		'DEFAULT' => 'Y',
-	),
-	'SOC_SHARE_ICON' => array(
-		'NAME' => GetMessage('SOC_SHARE_ICON'),
-		'TYPE' => 'LIST',
-		'MULTIPLE' => 'Y',
-		'VALUES' => $arShareBlock,
-	),
-	'OFF_MEASURE_RATION' => array(
-		'NAME' => GetMessage('OFF_MEASURE_RATION'),
-		'TYPE' => 'CHECKBOX',
-		'VALUE' => 'Y',
-		'DEFAULT' => 'N',
-	),
 	'STICKERS_PROPS' => array(
 		'NAME' => GetMessage('STICKERS_PROPS'),
 		'TYPE' => 'LIST',
@@ -115,6 +103,14 @@ $arTemplateParameters = array(
 	),
 	'STICKERS_DISCOUNT_VALUE' => array(
 		'NAME' => GetMessage('STICKERS_DISCOUNT_VALUE'),
+		'TYPE' => 'CHECKBOX',
+		'VALUE' => 'Y',
+		'DEFAULT' => 'N',
+	),
+	// price
+	'OFF_MEASURE_RATION' => array(
+		'PARENT' => 'PRICES',
+		'NAME' => GetMessage('OFF_MEASURE_RATION'),
 		'TYPE' => 'CHECKBOX',
 		'VALUE' => 'Y',
 		'DEFAULT' => 'N',
@@ -252,6 +248,7 @@ $arTemplateParameters = array(
 		'NAME' => GetMessage('PROP_BRAND'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp['HL'],
+		'REFRESH' => 'Y',
 	),
 	'PROP_PRICES_NOTE' => array(
         'PARENT' => 'DETAIL_SETTINGS',
@@ -265,6 +262,20 @@ $arTemplateParameters = array(
 		'TYPE' => 'CHECKBOX',
         'VALUE' => 'Y',
         'DEFAULT' => 'N',
+	),
+	'USE_SHARE' => array(
+		'PARENT' => 'DETAIL_SETTINGS',
+		'NAME' => GetMessage('USE_SHARE'),
+		'TYPE' => 'CHECKBOX',
+		'VALUE' => 'Y',
+		'DEFAULT' => 'Y',
+	),
+	'SOC_SHARE_ICON' => array(
+		'PARENT' => 'DETAIL_SETTINGS',
+		'NAME' => GetMessage('SOC_SHARE_ICON'),
+		'TYPE' => 'LIST',
+		'MULTIPLE' => 'Y',
+		'VALUES' => $arShareBlock,
 	),
 	// filter
 	'FILTER_PROP_SCROLL' => array(
@@ -318,6 +329,7 @@ if (IntVal($arCatalog["OFFERS_IBLOCK_ID"])) {
 		'VALUES' => $listProp2['F'],
 	);
 	$arTemplateParameters['PROP_SKU_ARTICLE'] = array(
+		'PARENT' => 'DETAIL_SETTINGS',
 		'NAME' => GetMessage('PROP_SKU_ARTICLE'),
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp2['SNL'],
@@ -399,6 +411,7 @@ if (!isset($arCurrentValues['USE_STORE']) || $arCurrentValues['USE_STORE'] == 'Y
 /* ajaxpages */
 if (empty($arCurrentValues['USE_AUTO_AJAXPAGES']) || $arCurrentValues['USE_AUTO_AJAXPAGES'] != 'Y') {
 	$arTemplateParameters['HIDE_AJAXPAGES_LINK'] = array(
+		'PARENT' => 'LIST_SETTINGS',
 		'NAME' => GetMessage('HIDE_AJAXPAGES_LINK'),
 		'TYPE' => 'CHECKBOX',
 		'VALUE' => 'Y',
@@ -414,9 +427,15 @@ if ($arCurrentValues['USE_BLOCK_MODS'] == 'Y') {
 		'TYPE' => 'LIST',
 		'VALUES' => $listProp2['SNL'],
 	);
+	$arTemplateParameters['MODS_ELEMENT_COUNT'] = array(
+		'PARENT' => 'DETAIL_SETTINGS',
+		'NAME' => GetMessage('MODS_ELEMENT_COUNT'),
+		'TYPE' => 'STRING',
+		'DEFAULT' => '10',
+	);
 }
 
-/* delivery cost */
+/* catalog.element */
 if ($arCurrentValues['USE_DELIVERY_COST_BLOCK'] == 'Y') {
 	$arTemplateParameters['DELIVERY_COST_PAY_LINK'] = array(
 		'PARENT' => 'DETAIL_SETTINGS',
@@ -428,6 +447,36 @@ if ($arCurrentValues['USE_DELIVERY_COST_BLOCK'] == 'Y') {
 		'NAME' => GetMessage('DELIVERY_COST_DELIVERY_LINK'),
 		'TYPE' => 'STRING',
 	);
+}
+if (!empty($arCurrentValues['PROP_BRAND'])) {
+	$arTemplateParameters['BRAND_DETAIL_SHOW_LOGO'] = array(
+		'PARENT' => 'DETAIL_SETTINGS',
+		'NAME' => GetMessage('BRAND_DETAIL_SHOW_LOGO'),
+		'TYPE' => 'CHECKBOX',
+		'VALUE' => 'Y',
+		'DEFAULT' => 'N',
+		'REFRESH' => 'Y',
+	);
+	
+	if ($arCurrentValues['BRAND_DETAIL_SHOW_LOGO'] == 'Y') {
+		$arTemplateParameters['BRAND_IBLOCK_BRANDS'] = array(
+			'PARENT' => 'DETAIL_SETTINGS',
+			'NAME' => GetMessage('BRAND_IBLOCK_BRANDS'),
+			'TYPE' => 'LIST',
+			'VALUES' => $arIBlock,
+			'REFRESH' => 'Y',
+		);
+
+		if (!empty($arCurrentValues['BRAND_IBLOCK_BRANDS'])) {
+			$listPropBrand = RSDevFuncParameters::GetTemplateParamsPropertiesList($arCurrentValues['BRAND_IBLOCK_BRANDS']);
+			$arTemplateParameters['BRAND_IBLOCK_BRANDS_PROP_BRAND'] = array(
+				'PARENT' => 'DETAIL_SETTINGS',
+				'NAME' => GetMessage('BRAND_IBLOCK_BRANDS_PROP_BRAND'),
+				'TYPE' => 'LIST',
+				'VALUES' => $listPropBrand['HL'],
+			);
+		}
+	}
 }
 
 /* review */
@@ -459,5 +508,43 @@ if (!isset($arCurrentValues['USE_BIG_DATA']) || $arCurrentValues['USE_BIG_DATA']
 		'TYPE' => 'LIST',
 		'VALUES' => $rcmTypeList
 	);
+	$arTemplateParameters['BIG_DATA_ELEMENT_COUNT'] = array(
+		'PARENT' => 'BIG_DATA_SETTINGS',
+		'NAME' => GetMessage('BIG_DATA_ELEMENT_COUNT'),
+		'TYPE' => 'STRING',
+		'DEFAULT' => 10,
+	);
 	unset($rcmTypeList);
 }
+
+/* search */
+$arTemplateParameters['SEARCH_PAGE_RESULT_COUNT'] = array(
+	'PARENT' => 'SEARCH_SETTINGS',
+	'NAME' => GetMessage("RS_GOPRO_CP_BC_TPL_SEARCH_PAGE_RESULT_COUNT"),
+	"TYPE" => "STRING",
+	"DEFAULT" => "50",
+);
+$arTemplateParameters['SEARCH_RESTART'] = array(
+	'PARENT' => 'SEARCH_SETTINGS',
+	'NAME' => GetMessage("RS_GOPRO_CP_BC_TPL_SEARCH_RESTART"),
+	"TYPE" => "CHECKBOX",
+	"DEFAULT" => "N",
+);
+$arTemplateParameters['SEARCH_NO_WORD_LOGIC'] = array(
+	'PARENT' => 'SEARCH_SETTINGS',
+	'NAME' => GetMessage("RS_GOPRO_CP_BC_TPL_SEARCH_NO_WORD_LOGIC"),
+	"TYPE" => "CHECKBOX",
+	"DEFAULT" => "Y",
+);
+$arTemplateParameters['SEARCH_USE_LANGUAGE_GUESS'] = array(
+	'PARENT' => 'SEARCH_SETTINGS',
+	'NAME' => GetMessage("RS_GOPRO_CP_BC_TPL_SEARCH_USE_LANGUAGE_GUESS"),
+	"TYPE" => "CHECKBOX",
+	"DEFAULT" => "Y",
+);
+$arTemplateParameters['SEARCH_CHECK_DATES'] = array(
+	'PARENT' => 'SEARCH_SETTINGS',
+	'NAME' => GetMessage("RS_GOPRO_CP_BC_TPL_SEARCH_CHECK_DATES"),
+	"TYPE" => "CHECKBOX",
+	"DEFAULT" => "Y",
+);
