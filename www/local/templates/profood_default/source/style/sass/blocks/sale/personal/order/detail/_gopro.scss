@@ -1,0 +1,92 @@
+.body .sale-order-detail {
+	.sale-order-detail-general,
+	.sale-order-detail-about-order-inner-container,
+	.sale-order-detail-payment-options-inner-container,
+	.sale-order-detail-payment-options-shipment-container,
+	.sale-order-detail-order-section,
+	div.sale-order-detail-payment-options-shipment {
+		border: none;
+	}
+
+	.sale-order-detail-general-head {
+		display: none;
+	}
+
+	.sale-order-detail-about-order-title,
+	.sale-order-detail-payment-options-title,
+	.sale-order-detail-payment-options-order-content-title,
+	.sale-order-detail-payment-options-shipment-composition-title-element {
+		@include mix-table-thead-td($gray-text-color, $default-border-color);
+
+		> h3 {
+			font: inherit;
+			color: inherit;
+			margin: 0;
+		}
+	}
+
+	.sale-order-detail-about-order-inner-container-repeat-cancel {
+		text-decoration: none;
+		color: $default-link-color;
+		
+		&:hover {
+			color: $default-link-color-hover;
+		}
+	}
+
+	.sale-order-detail-about-order-inner-container-details-title {
+		font: inherit;
+		color: $gray-text-color;
+	}
+
+	.sale-order-detail-about-order-inner-container-repeat-button,
+	.sale-order-detail-payment-options-methods-button-element {
+		@include mix-buttons($btn2-text-color, $btn2-bg-color, $btn2-text-color-hover, $btn2-bg-color-hover);
+	}
+
+	.sale-order-detail-order-section {
+		> .sale-order-detail-order-section-content {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.sale-order-detail-order-item-td,
+	.sale-order-detail-order-item-td-title {
+		@include mix-table-tbody-td($default-border-color);
+
+		> div {
+			padding: 0;
+			border: none;
+		}
+	}
+
+	.sale-order-detail-total-payment-list-left-item,
+	.sale-order-detail-payment-options-shipment-composition-title-element {
+		font: inherit;
+		color: $gray-text-color;
+	}
+
+	.sale-order-detail-about-order-title,
+	.sale-order-detail-payment-options-title,
+	.sale-order-detail-payment-options-shipment-composition-title,
+	.sale-order-detail-payment-options-order-content-title,
+	.sale-order-detail-payment-options-order-content-title {
+		background: transparent;
+	}
+
+	.sale-order-detail-order-section {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+	.sale-order-detail-about-order-inner-container-details {
+		margin-top: 15px;
+		border-left: 1px solid $default-border-color;
+	}
+
+	.sale-order-detail-order-item-title {
+		font-weight: normal;
+	}
+
+}

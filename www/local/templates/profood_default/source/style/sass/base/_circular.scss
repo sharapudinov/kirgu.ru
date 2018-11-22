@@ -1,0 +1,120 @@
+body.circular {
+  
+  /* base */
+  a {
+    *.btn1,
+    *.btn2,
+    *.btn2 {
+      -khtml-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+    }
+  }
+  .body input[type="submit"],
+  .body input[type="button"],
+  .body input[type="reset"],
+  input.btn1[type="submit"],
+  input.btn1[type="button"],
+  input.btn1[type="reset"],
+  input.btn2[type="submit"],
+  input.btn2[type="button"],
+  input.btn2[type="reset"],
+  input.btn3[type="submit"],
+  input.btn3[type="button"],
+  input.btn3[type="reset"] {
+    -khtml-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+  }
+  .add2basketform {
+    .add2basket,
+    .inbasket,
+    .buy1click {
+      -khtml-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+    }
+  }
+  .quantity {
+    -khtml-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    .minus {
+      -khtml-border-radius: 3px 0px 0px 3px;
+      -moz-border-radius: 3px 0px 0px 3px;
+      -webkit-border-radius: 3px 0px 0px 3px;
+      border-radius: 3px 0px 0px 3px;
+    }
+    .plus {
+      -khtml-border-radius: 0px 3px 3px 0px;
+      -moz-border-radius: 0px 3px 3px 0px;
+      -webkit-border-radius: 0px 3px 3px 0px;
+      border-radius: 0px 3px 3px 0px;
+    }
+  }
+  .timers {
+    .clock {
+      -khtml-border-radius:3px 0px 0px 3px;
+      -moz-border-radius:3px 0px 0px 3px;
+      -webkit-border-radius:3px 0px 0px 3px;
+      border-radius:3px 0px 0px 3px;
+    }
+    .timer {
+      -khtml-border-radius: 0px 3px 3px 0px;
+      -moz-border-radius: 0px 3px 3px 0px;
+      -webkit-border-radius: 0px 3px 3px 0px;
+      border-radius: 0px 3px 3px 0px;
+    }
+  }
+  
+  /* catalog section */
+  .catalogsorter {
+    .template a,
+    .shortsort a {
+      -khtml-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+    }
+  }
+  .go2detail {
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .set .fullpanel .block span.discount {
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+  
+  /* compare */
+  .comparelist a {
+    -khtml-border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+  }
+  
+  /* catalog element */
+  .detailtabs .headers a {
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+  
+  /* personal */
+  .orderlist .switch a {
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+  }
+}

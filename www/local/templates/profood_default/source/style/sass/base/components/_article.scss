@@ -1,0 +1,16 @@
+$selector-article: '.c-article' !default;
+
+#{$selector-article} {
+	&__title {
+		color: $gray-text-color;
+		margin-right: 7px;
+	}
+
+	&__value {
+		
+	}
+
+	&.js-article-invisible {
+		display: none;
+	}
+}

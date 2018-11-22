@@ -1,0 +1,22 @@
+.footersubscribe {
+	.title {
+		margin-bottom: 6px;
+		text-transform: uppercase;
+	}
+
+	.inp {
+		input {
+			width: 100%;
+			padding: 6px;
+			background-color: #fff;
+		}
+	}
+
+	a {
+		&.btn1 {
+			display: block;
+			margin-top: 6px;
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+/* catalog.element */
+.detailtabs {
+  .headers {
+    a {
+      &.selected {
+        color: $btn3-text-color;
+        background-color: $btn3-bg-color;
+      }
+      
+      &:hover {
+        color: $btn3-text-color-hover;
+        background-color: $btn3-bg-color-hover;
+      }
+    }
+  }
+}

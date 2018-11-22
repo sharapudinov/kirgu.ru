@@ -1,0 +1,18 @@
+.owl {
+    &-preview {
+        display: none;
+    }
+
+    &-dot {
+        .owl {
+            &-preview {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+body .owl-carousel .owl-item .owl-lazy {
+    opacity: 1;
+    transition: all .5s;
+}

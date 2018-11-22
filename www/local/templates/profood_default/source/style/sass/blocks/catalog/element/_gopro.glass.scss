@@ -1,0 +1,17 @@
+.detail__glass {
+	display: inline-block;
+	max-width: 100%;
+	line-height: 1.2;
+    vertical-align: middle;
+    
+    &__zoom {
+        text-align: center;
+
+        .svg-icon {
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            fill: $color1;
+        }
+    }
+}

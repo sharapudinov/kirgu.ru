@@ -1,0 +1,107 @@
+.body {
+
+    // top line
+    .tline {
+        background-color: $btn1-bg-color;
+    }
+
+    // basket
+    .header-basket {
+        .svg-icon {
+            fill: $color1;
+        }
+    }
+
+    // main menu -> horizontal1
+    .b-mmenu {
+        &.navbar-default {
+            background-color: $btn1-bg-color;
+
+            .b-mmenu__toggle,
+            .navbar-nav > li.lvl1 > a,
+            .navbar-nav > li.other > a {
+                color: $btn1-text-color;
+                background-color: $btn1-bg-color;
+            }
+
+            .search-bar .enter.svg-icon:hover,
+            .b-mmenu__toggle:hover,
+            .navbar-nav > li.lvl1:hover > a,
+            .navbar-nav > li.lvl1 > a:hover,
+            .navbar-nav .dropdown-menu > li:hover > a,
+            .navbar-nav .dropdown-menu > li > a:hover,
+            .navbar-nav .open .dropdown-menu > li > a:focus,
+            .navbar-nav .open .dropdown-menu > li > a:hover,
+            .navbar-nav > .open > a:focus,
+            .navbar-nav > .open > a:hover,
+            .navbar-nav li:hover > a {
+                color: $btn1-text-color;
+                background-color: $btn1-bg-color-hover;
+            }
+
+            .dropdown-menu {
+                border-color: $btn1-bg-color-hover;
+            }
+
+            // search.title
+            .searchinhead {
+                border-color: $btn1-bg-color;
+
+                .enter:hover .svg-icon {
+                    fill: $btn1-bg-color-hover;
+                }
+            }
+        }
+    }
+
+    // main banners
+    .gopro-banners {
+        &__text1 {
+            &.product {
+                &:after {
+                    background-color: $btn1-bg-color;
+                }
+            }
+        }
+        &__text2 {
+            color: $color1;
+        }
+    }
+    .owl-dots {
+        .owl-dot {
+            &:hover,
+            &.active:hover {
+                background-color: $btn1-bg-color-hover;
+            }
+            &.active {
+                background-color: $btn1-bg-color;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .body {
+        .b-mmenu {
+            &.navbar-default {
+                .dropdown-menu > li > a {
+                    color: $btn1-text-color;
+                    background-color: $btn1-bg-color;
+                }
+            }
+        }
+    }
+}
+
+body {
+    // search.title -> popup
+    .title-search-result {
+        border-color: $btn1-bg-color;
+        
+        .stitle {
+            .title {
+                color: $color-title;
+            }
+        }
+    }
+}

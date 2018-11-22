@@ -1,0 +1,44 @@
+.footer {
+	.footmenu {
+		margin-bottom: 15px;
+
+		.title {
+			margin-bottom: 6px;
+			text-transform: uppercase;
+		}
+
+		.item {
+			margin: 3px 0;
+		}
+
+		a {
+			color: #0077cb;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body.adaptive {
+		.footer {
+			.footmenu {
+				.title {
+					display: none;
+				}
+
+				.item {
+					float: left;
+					margin-right: 15px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}

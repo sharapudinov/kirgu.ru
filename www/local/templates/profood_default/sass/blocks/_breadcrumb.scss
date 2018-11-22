@@ -1,0 +1,22 @@
+.rsbreadcrumb {
+	padding: 12px 0px;
+    
+  li {
+    display: inline;
+    
+    &.last {
+      a {
+        color:#000;
+        text-decoration:none;
+      }
+    }
+  }
+  
+  a {
+    text-decoration: underline;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

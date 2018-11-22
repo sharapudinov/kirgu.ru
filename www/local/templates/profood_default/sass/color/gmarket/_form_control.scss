@@ -1,0 +1,45 @@
+.body,
+.footer,
+.fancybox-container,
+.popup-window,
+.rsgppopup,
+.rs_easycart,
+.gopro-subscribe-window {
+  
+  input[type="text"],
+  input[type="password"],
+  textarea,
+  select {
+    border-color: $form-control-border-color;
+    
+    &:focus {
+      border-color: $form-control-border-color-focus;
+    }
+  }
+
+  .bx-sls,
+  .bx-slst {
+    .dropdown-block {
+      border-color: 1px solid $form-control-border-color;
+      
+      &.focus {
+        border-color: $form-control-border-color-focus;
+      }
+    }
+  }
+
+  [type="checkbox"]:checked + label:after,
+  a.checkbox.in > label:after {
+    border-color: $color1;
+    background-color: $color1;
+  }
+
+  [type="radio"]:checked + label:before,
+  [type="radio"]:checked + label:after {
+    border-color: $color1;
+  }
+  [type="radio"]:checked + label:after {
+    background-color: $color1;
+  }
+  
+}

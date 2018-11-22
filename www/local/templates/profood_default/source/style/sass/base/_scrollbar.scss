@@ -1,0 +1,39 @@
+.body {
+    .scrollbar-inner {
+        > .scroll-element {
+            &.scroll-x {
+                height: 4px;
+            }
+
+            &.scroll-y {
+                right: 2px;
+                top: 0;
+                width: 4px;
+                height: 100%;
+            }
+
+            &.scroll-draggable {
+                .scroll-bar {
+                    background-color: $color1;
+                }
+            }
+
+            .scroll-element_track {
+                background-color: $default-border-color;
+            }
+
+            .scroll-bar {
+                cursor: pointer;
+                background-color: darken($default-border-color, 15%);
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                opacity: 1;
+                transition: $primary-transition;
+
+                &:hover {
+                    background-color: $color1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+.body,
+.footer,
+.fancybox-container,
+.popup-window,
+.rsgppopup,
+.rs_easycart,
+.gopro-subscribe-window {
+  
+  input[type="text"],
+  input[type="password"],
+  textarea,
+  select {
+    border-color: $form-control-border-color;
+
+    &:hover {
+      border-color: $form-control-border-color-focus;
+    }
+    
+    &:hover:focus,
+    &:focus {
+      border-color: $form-control-border-color-focus;
+    }
+  }
+
+  .bx-sls,
+  .bx-slst {
+    .dropdown-block {
+      border-color: 1px solid $form-control-border-color;
+      
+      &.focus {
+        border-color: $form-control-border-color-focus;
+      }
+    }
+  }
+
+  [type="checkbox"]:checked + label:after,
+  [type="checkbox"]:checked + .label:after,
+  a.checkbox.in > label:after,
+  a.checkbox.in > .label:after,
+  #bx-soa-orderSave [type="checkbox"]:checked + a:after,
+  .form-group .soa-property-container [type="checkbox"]:checked:after,
+  .bx-authform [type="checkbox"]:checked:after {
+    border-color: $color1;
+    background-color: $color1;
+  }
+
+  [type="checkbox"]:not(:checked) + label:hover:after,
+  [type="checkbox"]:not(:checked) + .label:hover:after,
+  a.checkbox > label:hover:after,
+  a.checkbox > .label:hover:after,
+  #bx-soa-orderSave [type="checkbox"]:not(:checked) + a:hover:after,
+  .form-group .soa-property-container [type="checkbox"]:not(:checked):hover:after,
+  .bx-authform [type="checkbox"]:not(:checked):hover:after {
+    border-color: $primary-border-color;
+  }
+
+  [type="radio"]:checked + label:before,
+  [type="radio"]:checked + .label:before,
+  [type="radio"]:checked + label:after,
+  [type="radio"]:checked + .label:after,
+  [type="radio"]:not(:checked) + label:hover:before,
+  [type="radio"]:not(:checked) + .label:hover:before,
+  [type="radio"]:not(:checked) + label:hover:after,
+  [type="radio"]:not(:checked) + .label:hover:after,
+  .bx_soa_location .radio-inline label [type="radio"]:checked:before,
+  .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+  .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:before,
+  .bx_soa_location .radio-inline label [type="radio"]:not(:checked):hover:after,
+  .form-group .soa-property-container label [type="radio"]:checked:before,
+  .form-group .soa-property-container label [type="radio"]:checked:after,
+  .form-group .soa-property-container label [type="radio"]:not(:checked):hover:before,
+  .form-group .soa-property-container label [type="radio"]:not(:checked):hover:after {
+    border-color: $primary-border-color;
+  }
+  [type="radio"]:checked + label:after,
+  [type="radio"]:checked + .label:after,
+  .bx_soa_location .radio-inline label [type="radio"]:checked:after,
+  .form-group .soa-property-container label [type="radio"]:checked:after {
+    background-color: $color1;
+  }
+}

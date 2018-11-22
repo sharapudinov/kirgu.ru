@@ -1,0 +1,8 @@
+@mixin mix-attributes-disabled($color, $border) {
+    cursor: default;
+    border: $border;
+    
+    > span {
+        opacity: .4;
+    }
+}

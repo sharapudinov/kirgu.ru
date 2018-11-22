@@ -1,0 +1,48 @@
+.rsfavorite {
+	text-align: left;
+
+	a {
+		display: block;
+		color: #000;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+			
+			.title {
+				text-decoration: underline;
+			}
+		}
+
+		.title {
+			font-size: 14px;
+		}
+	}
+
+	.icon {
+		display: block;
+		float: left;
+		width: 23px;
+		height: 26px;
+		margin-top: 6px;
+		margin-right: 10px;
+		background-position: 0px -438px;
+	}
+
+	.svg-icon {
+		float: left;
+		width: 28px;
+		height: 28px;
+		margin: 4px 10px 0 0;
+		fill: $color1;
+	}
+
+	.title,
+	.descr {
+		margin-left: 33px;
+	}
+
+	.descr {
+		color: #214496;
+	}
+}

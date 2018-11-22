@@ -1,0 +1,33 @@
+/* main */
+$color1:          #2ea201;
+$color2:          #36acd4;
+$color3:          #899CC7;
+$default-color:   #ebebeb;
+
+$default-border-color:  $default-color;
+$primary-border-color:  $color2;
+
+$color-title: $color2;
+
+$icon-color:            $color2;
+$icon-disabled-color:   darken($default-color, 25%);
+
+/* buttons */
+$btn1-text-color:         #fff;
+$btn1-text-color-hover:   $btn1-text-color;
+$btn1-bg-color:           $color1;
+$btn1-bg-color-hover:     darken($btn1-bg-color, 10%);
+
+$btn2-text-color:         #fff;
+$btn2-text-color-hover:   $btn2-text-color;
+$btn2-bg-color:           $color3;
+$btn2-bg-color-hover:     darken($btn2-bg-color, 10%);
+
+$btn3-text-color:         #fff;
+$btn3-text-color-hover:   $btn3-text-color;
+$btn3-bg-color:           $color2;
+$btn3-bg-color-hover:     darken($btn3-bg-color, 10%);
+
+/* forms */
+$form-control-border-color:       $default-border-color;
+$form-control-border-color-focus: $primary-border-color;

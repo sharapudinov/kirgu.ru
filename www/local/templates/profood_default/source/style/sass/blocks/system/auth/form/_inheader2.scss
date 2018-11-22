@@ -1,0 +1,28 @@
+.authinhead2 {
+	&__icon {
+		display: inline-block;
+		padding: 5px 0;
+		margin-right: 5px;
+		border-radius: 50%;
+	}
+
+	.svg-icon {
+		position: relative;
+		bottom: 2px;
+		width: 16px;
+		height: 16px;
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+	.authinhead2 {
+		.authorized {
+			.authinhead2 {
+				&__icon {
+					padding: 5px 7px;
+					border: 1px solid $color1;
+				}
+			}
+		}
+	}
+}

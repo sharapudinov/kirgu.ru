@@ -24,10 +24,9 @@ $fromSession = Option::get('redsign.tuning', 'fromSession', '', SITE_ID);
 if (!Loader::includeModule('redsign.devfunc')) {
 	$arErrors = 'Not included module redsign.devfunc';
 }
-
 if (empty($arErrors)) {
-	
-	$asset = Asset::getInstance();
+
+    $asset = Asset::getInstance();
 	
 	CJSCore::Init(array('rs_color', 'rs_tuning'));
 

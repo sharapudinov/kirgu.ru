@@ -1,0 +1,34 @@
+/* catalog.sorter */
+.b-sorter {
+  &__block-name {
+    color: $primary-link-color;
+  }
+
+  &__template a.selected,
+  &__shortsort a.selected {
+    color: $btn1-text-color;
+    background-color: $btn1-bg-color;
+    border-color: $btn1-bg-color;
+  }
+  &__template a.selected {
+    border-bottom-color: $btn1-bg-color-hover;
+  }
+
+  &__template a.selected:hover,
+  &__template a:hover,
+  &__shortsort a.selected:hover,
+  &__shortsort a:hover {
+    color: $btn1-text-color-hover;
+    background-color: $btn1-bg-color-hover;
+    border-color: $btn1-bg-color-hover;
+  }
+
+  &__dropdown.hover > a,
+  &__dropdown:hover > a {
+    border-color: $btn1-bg-color-hover;
+  }
+
+  &__dropdown-in {
+    border-bottom-color: $btn1-bg-color-hover;
+  }
+}

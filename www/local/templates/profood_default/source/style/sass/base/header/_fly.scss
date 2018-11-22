@@ -1,0 +1,235 @@
+$flyHeight: 61px !default;
+$tpanel-tline-height: 8px !default;
+$flyHeight-xs: 42px !default;
+
+.header-fly-active {
+    .header-fly {
+        transform: translateY(0);
+    }
+}
+
+.header-fly-active-menu {
+    .header-fly {
+        height: 100%;
+
+        &__menu-shade {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+
+            &.js-fly-menu-subopen {
+                .header-fly__subopen-hide {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    /*
+    .content,
+    .footer,
+    .rs_easycart {
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        filter: blur(5px);
+    }
+    */
+}
+
+.header-fly {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-top: 4px solid $primary-border-color;
+    z-index: 1000;
+    transition: transform .3s;
+    transform: translateY(-105%);
+
+    &__shadow {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    }
+
+    &__white-bg {
+        background-color: #fff;
+    }
+
+    &__panel {
+        display: flex;
+        flex-wrap: nowrap;
+        -webkit-box-pack: start;
+        align-items: center;
+        width: 100%;
+        height: $flyHeight;
+        padding: 11px 0;
+        border-bottom: 2px solid $primary-border-color;
+    }
+
+    &__panel &__block {
+        flex: 0 1 auto;
+        -webkit-box-flex: 0;
+
+        &.logo {
+            min-width: 220px;
+            min-height: 28px;
+            max-height: 100%;
+            height: inherit;
+    
+            &-left {
+                text-align: left;
+            }
+    
+            &-center {
+                flex: 1 0 auto;
+                text-align: center;
+            }
+    
+            img {
+                display: inline-block;
+                width: auto;
+                height: 100%;
+                max-height: 40px;
+            }
+        }
+
+        &.search {
+            li {
+                &:before {
+                    content: none;
+                }
+            }
+        }
+
+        @media (min-width: $screen-sm-min) {
+            &.search {
+                position: relative;
+            }
+        }
+    }
+
+    &__menu {
+        flex: 1 0 auto;
+        -webkit-box-flex: 1;
+    }
+
+    &__menu-shade {
+        position: absolute;
+        display: none;
+        width: 100%;
+        top: $flyHeight;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        padding-bottom: $flyHeight;
+        transition: all 3s;
+        transform: translateY(25px);
+    }
+
+    &__personal {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 7px 16px;
+    }
+
+    &__personal &__block {
+        flex: 0 1 auto;
+        -webkit-box-flex: 0;
+        margin-right: 11px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.auth {
+            flex: 1 0 auto;
+        }
+    }
+
+    &.b-mmenu .navbar-nav {
+        height: auto;
+        max-height: 40px;
+    }
+
+    &__footer {
+        &-block {
+            display: inline-block;
+            width: 100%;
+            padding: 11px 23px 10px;
+        }
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .header-fly {
+        &__panel {
+            border-bottom: none;
+        }
+
+        &__panel &__block {
+            margin-right: 20px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.search {
+                flex: 1 0 auto;
+            }
+        }
+
+        &__catalog-menu {
+            position: absolute;
+            top: -14px;
+        }
+    }
+}
+@media (max-width: $screen-xs-max) {
+    .header_type2 {
+        padding-top: 40px;
+    }
+
+    .header-fly {
+        border-top: none;
+
+        &__body-padding {
+            padding-top: ($flyHeight-xs - $tpanel-tline-height);
+        }
+    
+        &.document-ready {
+            transform: translateY(0);
+        }
+
+        &__menu-shade {
+            top: $flyHeight-xs;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            background-color: #fff;
+            overflow-x: hidden;
+            overflow-y: auto;
+            box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.175), 0 6px 12px rgba(0, 0, 0, 0.175);
+            -webkit-overflow-scrolling: touch;
+        }
+    
+        .centeringin {
+            margin: 0;
+        }
+
+        &__panel  {
+            height: $flyHeight-xs;
+            padding: 0;
+        }
+
+        &__panel &__block {
+            &.logo {
+                min-width: 150px;
+                min-height: 40px;
+                padding: 6px 12px;
+            }
+        }
+
+        &__catalog-menu {
+            overflow: hidden;
+        }
+    }
+}

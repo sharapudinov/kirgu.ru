@@ -1,0 +1,17 @@
+.table {
+    border-left: 1px solid $table-border-color;
+
+    > thead > tr > th {
+        font-weight: normal;
+        font-family: Arial;
+        background-color: #F2F2F2;
+        border-bottom: none;
+    }
+
+    > tbody > tr > td {
+        vertical-align: middle;
+        border-top: none;
+        border-right: 1px solid $table-border-color;
+        border-bottom: 1px solid $table-border-color;
+    }
+}

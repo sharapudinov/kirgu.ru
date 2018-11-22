@@ -1,0 +1,21 @@
+.brandslist .item span,
+.sorter_and_name .name,
+.brandslist.mainstyles .title a,
+.mods h3.title2,
+.bigdata h3.title2,
+.detailcollection h3.title2,
+.detailtabs .contents .content
+.switcher, .sections a.parent,
+.mainsections .title,
+.presscentermainn .title,
+.brandslistimgowl1.mainstyles .title a {
+  color: $color1;
+}
+
+.nice-title {
+  color: $color1;
+  font-size: 24px;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 20px 17px 25px 17px;
+}

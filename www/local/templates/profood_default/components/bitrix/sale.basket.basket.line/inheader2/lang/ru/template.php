@@ -1,0 +1,2 @@
+<?
+$MESS['RSGOPRO.SMALLBASKET_TITLE'] = 'Корзина';

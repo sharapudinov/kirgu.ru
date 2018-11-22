@@ -1,0 +1,210 @@
+/* color scheme */
+
+@import "variables";
+@import "../description";
+
+@import "header";
+@import "footer";
+@import "btn";
+@import "form_control";
+@import "catalog.sorter";
+@import "catalog.section";
+@import "catalog.element";
+@import "product.delivery";
+@import "personal.order.list";
+@import "sale.order.ajax";
+@import "search.title";
+@import "easycart";
+
+/* detail ext_pictures */
+.picslider .scrollinner a:hover,
+.picslider .scrollinner a.selected,
+.body div.sale-order-detail-payment-options-methods-template,
+.body .sale-paysystem-wrapper {
+  border-color: $primary-border-color;
+}
+
+.body .fichi__inner {
+	border-color: $color1;
+}
+
+/* titles */
+.primary-color,
+.brandslist span,
+.sorter_and_name .name,
+.brandslist.mainstyles .title a,
+.brandslistimg.mainstyles .title a,
+.mods h3.title2,
+.bigdata h3.title2,
+.detailcollection h3.title2,
+.detailtabs .contents .content .switcher,
+.sections a.parent,
+.mainsections .title,
+.presscentermainn .title,
+.sorter_and_name .name,
+.brandslistimgowl1.mainstyles .title a,
+.mainsections a.parent,
+.presscentermainn .item .blockname a,
+.presscentermainn .item a.blockname,
+.catalogmenu2 a.sub,
+.price.new,
+.table .full.name,
+.acc_title,
+.sale-personal-account-wallet-currency-item,
+.nice-title {
+  color: $color-title;
+}
+
+/* jScroll */
+.body,
+.fancybox-container,
+.rsgppopup {
+	.jspDrag,
+	.sale-paysystem-yandex-button-item {
+    	background-color: $btn1-bg-color;
+	}
+}
+.body,
+.fancybox-container,
+.rsgppopup {
+	.jspDrag.jspHover,
+	.jspDrag.jspActive {
+    	background-color: $btn1-bg-color-hover;
+	}
+}
+
+/* svg-icons */
+.rsfavorite .svg-icon,
+.searchinhead .enter .svg-icon,
+.artables.view_gallery table.products .add2basketform .submit .svg-icon,
+.artables.view_gallery table.products .add2basketform .inbasket .svg-icon,
+.artables.view_gallery	 .add2basketform .tick,
+.artables.view_table table.products .add2basketform .submit .svg-icon,
+.artables.view_table table.products .add2basketform .inbasket .svg-icon,
+.artables.view_table .add2basketform .tick,
+.footer .line1 .contacts .recall .svg-icon,
+.footer .line1 .contacts .feedback .svg-icon,
+.picslider.horizontal a:hover .svg-icon,
+.elementdetail .prices a:hover .svg-icon,
+.picslider.vertical a:hover .svg-icon,
+.elementdetail .zoom .svg-icon,
+.body .set .js-element .plusik .svg-icon,
+.body .basket a.delete .svg-icon,
+.body .basket a.delay .svg-icon,
+.body .basket a.add .svg-icon {
+	fill: $color1;
+}
+.artables table.products .add2basketform .add2subscribe .svg-icon {
+	fill: $icon-color;
+}
+
+/* smart.filter */
+.filtren .dd .lvl2:not(.selected) div.active label {
+	color: #fff;
+	background-color: $btn1-bg-color;
+}
+.filtren .dd .lvl2:not(.selected) label:hover,
+.filtren .dd .lvl2:not(.selected) div.active label:hover,
+.menu-sidebar li a:hover,
+.shops2 .shops2-panel .btn1.active {
+	color: $btn1-text-color-hover;
+	background-color: $btn1-bg-color-hover;
+}
+/*********************************************/
+
+/* additional styles 
+BORDER COLOR*/
+.profillist .item:hover,
+.set .js-element:hover,
+.light .js-element:hover,
+.picslider .scrollinner a.selected,
+.body .bx-sls .dropdown-block.focus,
+.body .bx-slst .dropdown-block.focus {
+	border-color: #926d66 !important;
+}
+
+/* additional styles 
+BACKGROUND COLOR*/
+.catalogmenu .first li:hover > a,
+.catalogmenu .first li.hover > a,
+.catalogmenu .first li:hover > a.selected,
+.catalogmenu .first li.hover > a.selected,
+.catalogmenu .first a.sub:hover,
+.catalogmenu a.first:hover,
+.catalogmenu a.first.hover,
+.catalogmenu a.sub:hover,
+.catalogmenu a.sub.hover,
+.pmenu a:hover,
+.filtren .showchild:hover,
+.filtren .lvl1.color .lvl2 label:hover,
+.filtren .body li.lvl1 ul.property li.lvl2 label.pic:hover,
+.light .js-element .buy .go2detail,
+.catalogsorter .dropdownin a:hover,
+.comparelist a:hover {
+	color: $btn1-text-color-hover !important;
+	background-color: $btn1-bg-color-hover !important;
+}
+.propvision1 .offer_prop .div_options .div_option.selected,
+.propvision1 .offer_prop .div_options .div_option.selected span,
+.catalogmenu .first li a.selected,
+.catalogmenu .first li.selected > a {
+	color: $btn1-text-color !important;
+	background-color: $btn1-bg-color !important;
+}
+.propvision1 .offer_prop .div_options .div_option:hover:not(.disabled),
+.propvision1 .offer_prop .div_options .div_option:hover:not(.disabled) span {
+  background-color: $btn1-bg-color-hover !important;
+}
+
+.tline {
+	background-color: #ff9900 !important;
+}
+
+/*additional styles 
+ACTIVE BACKGROUND COLOR*/
+.body .catalogmenu a.first:active,
+.body .catalogmenu a.first.hover:active,
+.body .catalogmenu a.sub:active,
+.body .catalogmenu a.sub.hover:active,
+.body .pmenu a:hover {
+	background-color: $btn1-bg-color-hover;
+}
+.body .pmenu a.selected,
+.body .pmenu a.selected:active,
+.body .pmenu a:active {
+	background-color: $btn1-bg-color;
+}
+
+/* slider of filter BACKGROUND LINEAR GRADIENT */
+.ui-slider .ui-slider-range,
+.smartfilter .bx_ui_slider_pricebar_V {
+	background-color: #926d66 !important;
+}
+
+.catalogmenu2 li.first:hover > a,
+.catalogmenu2 li.first.hover > a,
+.catalogmenu2 a.first:hover,
+.catalogmenu2 a.first.hover{
+	background-color: #926D66 !important;
+	color: #fff !important;
+}
+
+.presscentermainn .item .blockname a ,
+.presscentermainn .item a.blockname,
+.catalogmenu2 a.sub {
+	color: #926D66 !important;
+}
+.erorpage .num-404-error {
+  color: #926D66;
+}
+.erorpage .errorbutton a {
+  background: #926D66;
+  color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+	body.adaptive .detailtabs .content.selected .switcher {
+		color: $btn1-text-color !important;
+		background-color: $btn1-bg-color !important;
+	}
+}

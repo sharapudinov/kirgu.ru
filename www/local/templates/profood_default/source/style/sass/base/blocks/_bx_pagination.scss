@@ -1,0 +1,75 @@
+.rsgopro {
+    .bx-pagination {
+        .bx-pagination-container {
+            text-align: right;
+            
+            ul {
+                list-style: none;
+                padding-left: 0px;
+                counter-reset: list 0;
+
+                > li {
+                    padding: 0px 5px;
+                    margin: 0;
+
+                    &:before {
+                        position: static;
+                        left: 0px;
+                        content: '';
+                    }
+
+                    &.bx-pag-prev,
+                    &.bx-pag-next {
+                        display: none;
+                    }
+
+                    &.bx-active {
+                        cursor: default;
+
+                        > a {
+                            color: black;
+                            cursor: default;
+
+                            > span {
+                                color: black;
+                                cursor: default;
+                            }
+                        }
+                    }
+
+                    > a {
+                        display: inline-block;
+                        height: auto;
+                        width: auto;
+                        min-width: auto;
+                        line-height: normal;
+                        color: $default-link-color;
+                        border-radius: 0;
+
+                        &:hover {
+                            background: transparent;
+
+                            > span {
+                                text-decoration: underline;
+                                background: transparent;
+                            }
+                        }
+
+                        > span {
+                            display: inline-block;
+                            height: auto;
+                            width: auto;
+                            min-width: auto;
+                            font-size: 14px;
+                            line-height: normal;
+                            color: $default-link-color;
+                            padding: 0;
+                            background: transparent;
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

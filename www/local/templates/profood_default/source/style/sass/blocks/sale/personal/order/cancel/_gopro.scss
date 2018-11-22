@@ -1,0 +1,15 @@
+.body .bx_my_order_cancel {
+	a {
+		color: $default-link-color;
+
+		&:hover {
+			color: $default-link-color-hover;
+		}
+	}
+
+	input[type="submit"] {
+		@include mix-buttons($btn2-text-color, $btn2-bg-color, $btn2-text-color-hover, $btn2-bg-color-hover);
+
+		color: #fff !important;
+	}
+}

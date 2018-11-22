@@ -1,0 +1,13 @@
+.comparelist {
+	.title {
+		float: left;
+		color: $gray-text-color;
+		padding: 11px 0 11px 0;
+		margin-right: 5px;
+	}
+
+	a {
+		@include mix-buttons-link();
+		padding: 10px 0 11px 0;
+	}
+}

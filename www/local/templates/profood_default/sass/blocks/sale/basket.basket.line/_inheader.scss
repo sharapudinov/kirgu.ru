@@ -1,0 +1,43 @@
+.header-basket {
+	text-align: left;
+
+	&__link {
+		display: block;
+		color: #000;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+
+			.header-basket {
+				&__title {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.svg-icon {
+		float: left;
+		width: 39px;
+		height: 36px;
+		fill: $color1;
+	}
+
+	&__info {
+		margin-left: 49px;
+	}
+
+	&__title {
+		font-size: 14px;
+	}
+
+	&__descr {
+		width: 100%;
+		max-width: 150px;
+		color: #214496;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

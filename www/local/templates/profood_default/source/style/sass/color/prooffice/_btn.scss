@@ -1,0 +1,49 @@
+.body,
+.footer,
+.fancybox-container,
+.popup-window,
+.rsgppopup,
+.rs_easycart {
+  .btn1,
+  .btn2, .btn-default,
+  .btn3 {
+    display: inline-block;
+    padding: 5px 14px;
+    text-decoration: none;
+    text-align: center;
+    color: #FFF;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .btn1 {
+    color: $btn1-text-color;
+    background-color: $btn1-bg-color;
+    
+    &:hover {
+      color: $btn1-text-color-hover;
+      background-color: $btn1-bg-color-hover;
+    }
+  }
+  
+  .btn2, .btn-default {
+    color: $btn2-text-color;
+    background-color: $btn2-bg-color;
+    
+    &:hover {
+      color: $btn2-text-color-hover;
+      background-color: $btn2-bg-color-hover;
+    }
+  }
+  
+  .btn3 {
+    color: $btn3-text-color;
+    background-color: $btn3-bg-color;
+    
+    &:hover {
+      color: $btn3-text-color-hover;
+      background-color: $btn3-bg-color-hover;
+    }
+  }
+}

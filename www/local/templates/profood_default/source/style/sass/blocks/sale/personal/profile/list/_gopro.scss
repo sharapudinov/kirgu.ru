@@ -1,0 +1,28 @@
+.body {
+	.sale-personal-profile-list-container {
+		@include mix-table();
+
+		> tbody > tr {
+			> th {
+				@include mix-table-thead-td($gray-text-color, $default-border-color);
+			}
+
+			> td {
+				@include mix-table-tbody-td($default-border-color);
+
+				> b {
+					font-weight: normal;
+				}
+			}
+		}
+
+		.sale-personal-profile-list-change-button {
+			color: $default-link-color;
+			border: none;
+			
+			&:hover {
+				color: $default-link-color-hover;
+			}
+		}
+	}
+}

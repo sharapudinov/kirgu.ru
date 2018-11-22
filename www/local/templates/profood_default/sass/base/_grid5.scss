@@ -1,0 +1,35 @@
+.col-xs-5rs,
+.col-sm-5rs,
+.col-md-5rs,
+.col-lg-5rs {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-xs-5rs {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: $screen-sm-min) {
+    .col-sm-5rs {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .col-md-5rs {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: $screen-lg-min) {
+    .col-lg-5rs {
+        width: 20%;
+        float: left;
+    }
+}

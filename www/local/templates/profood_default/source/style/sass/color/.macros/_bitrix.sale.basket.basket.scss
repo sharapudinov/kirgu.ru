@@ -1,0 +1,10 @@
+.rsgopro {
+	.body {
+		.bx-basket .basket-item-property-scu-image .basket-item-scu-item:hover,
+		.bx-basket .basket-item-property-scu-image .basket-item-scu-item.selected,
+		.bx-basket .basket-item-property-scu-text .basket-item-scu-item:hover,
+		.bx-basket .basket-item-property-scu-text .basket-item-scu-item.selected {
+			border-color: $color1;
+		}
+	}
+}

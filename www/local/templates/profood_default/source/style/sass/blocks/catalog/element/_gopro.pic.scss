@@ -1,0 +1,134 @@
+$lg-pic-height: 465px !default;
+$xs-pic-height: 265px !default;
+
+.detail__pic {
+    position: relative;
+    min-height: $lg-pic-height;
+    text-align: center;
+    
+    &__inner {
+        margin-bottom: 15px;
+    }
+
+    &__carousel {
+        display: none;
+
+        &.owl-carousel {
+            display: block;
+        }
+    }
+
+    &__zoom {
+        font-size: 12px;
+        color: $gray-text-color;
+        text-align: center;
+        margin-bottom: 15px;
+
+        .svg-icon {
+            position: relative;
+            bottom: 1px;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            fill: $icon-color;
+        }
+    }
+
+    &__preview {
+        max-height: 80px;
+        overflow: hidden;
+    }
+
+    &__dots {
+        display: none;
+        text-align: left;
+        white-space: nowrap;
+        margin-bottom: 15px;
+
+        &.owl-carousel {
+            display: inline-block;
+            width: auto;
+        }
+
+        .owl {
+            &-dot {
+                display: inline-block;
+                width: 65px;
+                height: 65px;
+                padding: 5px;
+                text-align: center;
+                line-height: 53px;
+                cursor: pointer;
+                margin-right: 8px;
+                border: 1px solid #F2F2F2;
+                transition: border-color ease-in-out 0.15s;
+
+                &:hover,
+                &.active {
+                    border-color: $primary-border-color;
+                }
+
+                .owl-preview {
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+
+    .owl {
+        &-stage {
+            height: $lg-pic-height;
+        }
+
+        &-stage-outer {
+            
+        }
+
+        &-item {
+            height: $lg-pic-height;
+
+            .detail__pic {
+                &__a {
+                    position: relative;
+                    display: block;
+                    height: $lg-pic-height;
+                    line-height: $lg-pic-height;
+                    text-align: center;
+                }
+
+                &__img {
+                    display: inline-block;
+                    width: auto;
+                    max-height: 100%;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+	.detail__pic {
+        min-height: $xs-pic-height;
+        
+        .owl {
+            &-stage {
+                height: $xs-pic-height;
+            }
+
+            &-item {
+                height: $xs-pic-height;
+
+                .detail__pic {
+                    &__a {
+                        height: $xs-pic-height;
+                        line-height: $xs-pic-height;
+                    }
+                }
+            }
+        }
+	}
+}

@@ -1,0 +1,89 @@
+/* main */
+$color1:                        #fb00e6 !default;
+$color1-darken:                   darken($color1, 15%) !default;
+$color2:                        #239281 !default;
+$color2-darken:                   darken($color2, 15%) !default;
+$color3:                        #899CC7 !default;
+$color3-darken:                   darken($color3, 15%) !default;
+$default-color:                 #ebebeb !default;
+$stable-color:                  #efefef !default;
+// $link-color:                    #3389c4 !default;
+$link-color:                    #308ac4 !default;
+
+// shadow
+$primary-shadow:                  0px 6px 41px -8px rgba(154,164,166,0.82) !default;
+
+$dropDownShadow:                  $primary-shadow !default;
+
+$primary-transition:              all .15s linear !default;
+
+$default-border-color:            #f2f2f2 !default;
+$primary-border-color:            $color1 !default;
+
+$color-title:                     $color1 !default;
+
+$color-jscroll:                   $color1 !default;
+
+$icon-color:                      $color2 !default;
+$icon-color-hover:                $color2-darken !default;
+$icon-disabled-color:             darken($default-color, 25%) !default;
+
+/* buttons */
+$btn1-text-color:               #fff !default;
+$btn1-text-color-hover:           $btn1-text-color !default;
+$btn1-bg-color:                   $color1 !default;
+$btn1-bg-color-hover:             darken($btn1-bg-color, 15%) !default;
+
+$btn1darken-text-color:         #fff !default;
+$btn1darken-text-color-hover:     $btn1darken-text-color !default;
+$btn1darken-bg-color:             darken($color1, 15%) !default;
+$btn1darken-bg-color-hover:       lighten($btn1darken-bg-color, 15%) !default;
+
+$btn2-text-color:               #fff !default;
+$btn2-text-color-hover:           $btn2-text-color !default;
+$btn2-bg-color:                   $color2 !default;
+$btn2-bg-color-hover:             darken($btn2-bg-color, 15%) !default;
+
+$btn2darken-text-color:         #fff !default;
+$btn2darken-text-color-hover:     $btn2darken-text-color !default;
+$btn2darken-bg-color:             darken($color2, 15%) !default;
+$btn2darken-bg-color-hover:       lighten($btn2darken-bg-color, 15%) !default;
+
+$btn3-text-color:               #fff !default;
+$btn3-text-color-hover:           $btn3-text-color !default;
+$btn3-bg-color:                   $color3 !default;
+$btn3-bg-color-hover:             darken($btn3-bg-color, 15%) !default;
+
+$btn3darken-text-color:         #fff !default;
+$btn3darken-text-color-hover:     $btn3darken-text-color !default;
+$btn3darken-bg-color:             darken($color3, 15%) !default;
+$btn3darken-bg-color-hover:       lighten($btn3darken-bg-color, 15%) !default;
+
+/* forms */
+$form-control-border-color:       $default-border-color !default;
+$form-control-border-color-focus: $primary-border-color !default;
+
+/* links */
+$default-link-color:              $link-color !default;
+// $default-link-color-hover:        lighten($default-link-color, 15%) !default;
+$default-link-color-hover:        #3bacf7 !default;
+$primary-link-color:              $color1 !default;
+$primary-link-color-hover:        darken($primary-link-color, 15%) !default;
+
+/* text */
+$gray-text-color:                 #878787 !default;
+
+/* grid */
+$grid-columns:                    12 !default;
+$grid-gutter-width-base:          30px !default;
+$grid-gutter-widths: (
+  xs: $grid-gutter-width-base,
+  sm: $grid-gutter-width-base,
+  md: $grid-gutter-width-base,
+  lg: $grid-gutter-width-base,
+  xl: $grid-gutter-width-base
+) !default;
+$enable-grid-classes:             true !default;
+
+// table
+$table-thead-text-color:        #878787 !default;

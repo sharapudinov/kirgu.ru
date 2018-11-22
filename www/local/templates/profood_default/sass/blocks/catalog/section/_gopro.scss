@@ -1,0 +1,733 @@
+/******************************* table and gallery *******************************/
+$nameWidth: 240px !default;
+.artables table.names {
+	width: $nameWidth + 7px;
+}
+.artables table th,
+.artables table.products td {
+	padding: 14px 10px;
+}
+.artables table.names td.name,
+.artables table.products td.name {
+	padding: 0;
+}
+.artables table.names .js-position,
+.artables table.products .js-position {
+	width: $nameWidth;
+    max-width: $nameWidth;
+    min-width: $nameWidth;
+    padding: 0;
+}
+.artables table.names div.name,
+.artables table.products div.name {
+	width: $nameWidth;
+    max-width: $nameWidth;
+    min-width: $nameWidth;
+	padding: 0;
+}
+.artables table.names .js-position a,
+.artables table.products .js-position a,
+.artables table.names .js-position span,
+.artables table.products .js-position span {
+	display: inline-block;
+	max-width: 100%;
+    padding: 12px 10px;
+	overflow: hidden;
+}
+.artables table.smpl {
+	width: $nameWidth;
+}
+.artables table.names .pic a,
+.artables table.products .pic a,
+.artables table.names .pic span,
+.artables table.products .pic span {
+	display: inline-block;
+	width: 55px;
+	height: 55px;
+}
+.artables table.names .pic img,
+.artables table.products .pic img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	max-height: 100%;
+	margin: auto;
+}
+/******************************* /table and gallery *******************************/
+
+
+/******************************* table *******************************/
+.artables.view_table .products{
+	width:100%;
+}
+.artables.view_table table.names{
+	display:none;
+	float:left;
+	border-right:none;
+}
+.artables.view_table .arproducts{
+	-webkit-overflow-scrolling:touch;
+	overflow-scrolling:touch;
+}
+.artables.view_table table{
+	border:1px solid #F3F3F3;
+}
+.artables.view_table table tr th{
+	padding:14px 10px;
+	background-color:#F3F3F3;
+	font-weight:normal;
+}
+.artables.view_table table tr th.free,
+.artables.view_table table tr td.free{
+	width:7px;
+	padding:0px;
+}
+.artables.view_table table tr th.free span,
+.artables.view_table table tr td.free span{
+	display:block;
+	width:7px;
+	min-height:48px;
+}
+.artables.view_table table tr.even td{
+	background-color:#fafafa;
+}
+.artables.view_table table.products tr:hover td{
+	color:#FFF;
+	background-color:#899cc7;
+}
+.artables.view_table table.products tr:hover td.name a{
+	color:#FFF;
+}
+.artables.view_table table.products tr:hover td.name a:hover{
+	text-decoration:none;
+}
+.artables.view_table table.products .add2basketform .submit .svg-icon,
+.artables.view_table table.products .add2basketform .inbasket .svg-icon {
+	width:23px;
+	height:20px;
+	margin-left:8px;
+	fill: $color1;
+}
+.artables.view_table table.products tr:hover .add2basketform .submit .svg-icon,
+.artables.view_table table.products tr:hover .add2basketform .inbasket .svg-icon {
+	fill: #fff;
+}
+.artables.view_table table.products tr:hover .add2basketform input,
+.artables.view_table table.products tr:hover .add2basketform .js-measurename {
+	color: #000;
+}
+.artables.view_table table th,
+.artables.view_table table td{
+	text-align:center;
+}
+.artables.view_table table th.name,
+.artables.view_table table td.name{
+	text-align:left;
+}
+
+.artables.view_table .add2basketform.in .inbasket {
+	display: none;
+}
+.artables.view_table .add2basketform .tick {
+	visibility: hidden;
+	width: 13px;
+	height: 10px;
+	margin-left: 8px;
+	fill: $color1;
+}
+.artables.view_table .add2basketform.in .tick {
+	visibility: visible;
+}
+.artables.view_table tr:hover .add2basketform.in .tick {
+	fill: #fff;
+}
+/* /add2basket */
+
+/* js table fix */
+.artables.view_table.adap .arproducts{
+	overflow-x:scroll;
+	overflow-y:hidden;
+}
+.artables.view_table.adap table.products{
+	border-left:none;
+}
+.artables.view_table.adap table.products th.free,
+.artables.view_table.adap table.products td.free,
+.artables.view_table.adap table.products th.name,
+.artables.view_table.adap table.products td.name{
+	width:0px;
+	max-width:0px;
+	padding:0px;
+	margin:0px;
+	overflow:hidden;
+}
+.artables.view_table.adap table.products th.free span,
+.artables.view_table.adap table.products td.free span{
+	width:0px;
+}
+.artables.view_table table td.free span.qb{
+	background-color:#66b132;
+}
+.artables.view_table table td.free span.da2,
+.artables.view_table table td.free span.da2.qb{
+	background-color:#c5007c;
+}
+.artables.view_table.adap table.products div.name{
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	-moz-opacity:0;
+	-khtml-opacity:0;
+	opacity:0;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.artables.view_table.adap table.names{
+	display:block;
+}
+/* /js table fix */
+@media screen and (max-width: 1010px){
+	body.adaptive .artables.view_table .arproducts{
+		overflow-x:scroll;
+		overflow-y:hidden;
+	}
+	body.adaptive .artables.view_table table.products{
+		border-left:none;
+	}
+	body.adaptive .artables.view_table table.products th.free,
+	body.adaptive .artables.view_table table.products td.free,
+	body.adaptive .artables.view_table table.products th.name,
+	body.adaptive .artables.view_table table.products td.name{
+		width:0px;
+		max-width:0px;
+		padding:0px;
+		margin:0px;
+		overflow:hidden;
+	}
+	body.adaptive .artables.view_table table.products th.free span,
+	body.adaptive .artables.view_table table.products td.free span{
+		width:0px;
+	}
+	body.adaptive .artables.view_table table.products div.name {
+		filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+		-moz-opacity:0;
+		-khtml-opacity:0;
+		opacity:0;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	body.adaptive .artables.view_table table.names{
+		display:block;
+	}
+}
+/******************************* /table *******************************/
+
+/******************************* gallery *******************************/
+.artables.view_gallery .products{
+	width:100%;
+}
+.artables.view_gallery table.names{
+	display:none;
+	float:left;
+	border-right:none;
+}
+.artables.view_gallery .arproducts{
+	-webkit-overflow-scrolling:touch;
+	overflow-scrolling:touch;
+}
+.artables.view_gallery table{
+	border:1px solid #F3F3F3;
+}
+.artables.view_gallery table tr th{
+	font-weight:normal;
+	background-color:#F3F3F3;
+}
+.artables.view_gallery table tr th.free,
+.artables.view_gallery table tr td.free{
+	width:7px;
+	padding:0px;
+}
+.artables.view_gallery table tr th.free span,
+.artables.view_gallery table tr td.free span{
+	display:block;
+	width:7px;
+	min-height:48px;
+}
+.artables.view_gallery table tr.even td{
+	background-color:#fafafa;
+}
+.artables.view_gallery table.names tr td.name table.smpl,
+.artables.view_gallery table.names tr td.name table.smpl tr td,
+.artables.view_gallery table.products tr td.name table.smpl,
+.artables.view_gallery table.products tr td.name table.smpl tr td{
+	padding: 0px;
+	border :none;
+}
+.artables.view_gallery table.names tr td.name table.smpl tr td.nm a,
+.artables.view_gallery table.products tr td.name table.smpl tr td.nm a,
+.artables.view_gallery table.names tr td.name table.smpl tr td.nm span,
+.artables.view_gallery table.products tr td.name table.smpl tr td.nm span{
+	display:block;
+	padding-left:7px;
+}
+.artables.view_gallery table.names tr td.name table.smpl tr td.nm a > span,
+.artables.view_gallery table.products tr td.name table.smpl tr td.nm a > span{
+	padding-left: 0px;
+}
+.artables.view_gallery table.names tr td.name table.smpl tr td.nm,
+.artables.view_gallery table.products tr td.name table.smpl tr td.nm{
+	text-align:left;
+}
+.artables.view_gallery table.products tr:hover td{
+	color:#FFF;
+	background-color:#899cc7;
+}
+.artables.view_gallery table.products tr:hover td.name a{
+	color:#FFF;
+}
+.artables.view_gallery table.products tr:hover td.name a:hover{
+	text-decoration:none;
+}
+.artables.view_gallery table.products .add2basketform .submit .svg-icon,
+.artables.view_gallery table.products .add2basketform .inbasket .svg-icon {
+	width: 22px;
+	height: 22px;
+	margin-left: 5px;
+	margin-bottom: 3px;
+	fill: $color1;
+}
+.artables.view_gallery table.products tr:hover .add2basketform .submit .svg-icon,
+.artables.view_gallery table.products tr:hover .add2basketform .inbasket .svg-icon {
+	fill: #fff;
+}
+.artables.view_gallery table.products tr:hover .add2basketform input,
+.artables.view_gallery table.products tr:hover .add2basketform .js-measurename{
+	color: #000;
+}
+.artables.view_gallery table th,
+.artables.view_gallery table td{
+	text-align: center;
+}
+.artables.view_gallery table th.name,
+.artables.view_gallery table td.name{
+    width: auto;
+	text-align: left;
+    text-overflow: ellipsis;
+	overflow: hidden;
+}
+.artables.view_gallery .add2basketform.in .inbasket {
+	display:none;
+}
+.artables.view_gallery .add2basketform .tick {
+	visibility: hidden;
+	width: 13px;
+	height: 10px;
+	margin-left: 5px;
+	fill: $color1;
+}
+.artables.view_gallery .add2basketform.in .tick {
+	visibility: visible;
+}
+.artables.view_gallery tr:hover .add2basketform .tick {
+	fill: #fff;
+}
+/* /add2basket */
+/* js table fix */
+.artables.view_gallery.adap .arproducts{
+	overflow-x:scroll;
+	overflow-y:hidden;
+}
+.artables.view_gallery.adap table.products{
+	border-left:none;
+}
+.artables.view_gallery.adap table.products th.free,
+.artables.view_gallery.adap table.products td.free,
+.artables.view_gallery.adap table.products th.name,
+.artables.view_gallery.adap table.products td.name{
+	width:0px;
+	max-width:0px;
+	padding:0px;
+	margin:0px;
+	overflow:hidden;
+}
+.artables.view_gallery.adap table.products th.free span,
+.artables.view_gallery.adap table.products td.free span{
+	width:0px;
+}
+.artables.view_gallery table td.free.qb,
+.artables.view_gallery table td.free span.qb,
+.artables.view_gallery table.products tr:hover td.free.qb,
+.artables.view_gallery table.products tr:hover td.free span.qb{
+	background-color:#66b132;
+}
+.artables.view_gallery table td.free.da2,
+.artables.view_gallery table td.free.da2.qb,
+.artables.view_gallery table td.free span.da2,
+.artables.view_gallery table td.free span.da2.qb,
+.artables.view_gallery table.products tr:hover td.free.da2,
+.artables.view_gallery table.products tr:hover td.free.da2.qb,
+.artables.view_gallery table.products tr:hover td.free span.da2,
+.artables.view_gallery table.products tr:hover td.free span.da2.qb{
+	background-color:#c5007c;
+}
+.artables.view_gallery.adap table.products div.name{
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	-moz-opacity:0;
+	-khtml-opacity:0;
+	opacity:0;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.artables.view_gallery.adap table.names{
+	display:block;
+}
+.body .artables.view_gallery.adap table.products td.free.qb,
+.body .artables.view_gallery.adap table.products td.free span.qb
+.body .artables.view_gallery.adap table.products td.free.da2,
+.body .artables.view_gallery.adap table.products td.free.da2.qb,
+.body .artables.view_gallery.adap table.products td.free span.da2,
+.body .artables.view_gallery.adap table.products td.free span.da2.qb{
+	background-color:#fff;
+}
+/* /js table fix */
+@media screen and (max-width: 1010px){
+	body.adaptive .artables.view_gallery .arproducts{
+		overflow-x:scroll;
+		overflow-y:hidden;
+	}
+	body.adaptive .artables.view_gallery table.products{
+		border-left:none;
+	}
+	body.adaptive .artables.view_gallery table.products th.free,
+	body.adaptive .artables.view_gallery table.products td.free,
+	body.adaptive .artables.view_gallery table.products th.name,
+	body.adaptive .artables.view_gallery table.products td.name{
+		width:0px;
+		max-width:0px;
+		padding:0px;
+		margin:0px;
+		overflow:hidden;
+	}
+	body.adaptive .artables.view_gallery table.products th.free span,
+	body.adaptive .artables.view_gallery table.products td.free span{
+		width:0px;
+	}
+	body.adaptive .artables.view_gallery table.products div.name{
+		filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+		-moz-opacity:0;
+		-khtml-opacity:0;
+		opacity:0;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	body.adaptive .artables.view_gallery table.names{
+		display:block;
+	}
+	body.adaptive .artables.view_gallery table.products td.free.qb,
+	body.adaptive .artables.view_gallery table.products td.free span.qb
+	body.adaptive .artables.view_gallery table.products td.free.da2,
+	body.adaptive .artables.view_gallery table.products td.free.da2.qb,
+	body.adaptive .artables.view_gallery table.products td.free span.da2,
+	body.adaptive .artables.view_gallery table.products td.free span.da2.qb{
+		background-color:#fff;
+	}
+	body.adaptive .artables.view_gallery table.names tr td.name table.smpl,
+	body.adaptive .artables.view_gallery table.names tr td.name table.smpl tr td,
+	body.adaptive .artables.view_gallery table.products tr td.name table.smpl,
+	body.adaptive .artables.view_gallery table.products tr td.name table.smpl tr td{
+		min-width: 36px;
+	}
+}
+/******************************* /gallery *******************************/
+
+/******************************* showcase *******************************/
+.view_showcase{
+	width:100%;
+}
+.view_showcase .js-element{
+	position:relative;
+	float:left;
+	width:25%;
+}
+.view_showcase.columns5 .js-element{
+	width:20%;
+}
+.view_showcase .js-element .inner{
+	position:absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	min-height:325px;
+	background-color:#fff;
+	border:1px solid #F2F2F2;
+	z-index:100;
+}
+.view_showcase .js-element .padd {
+	padding:10px 10px 4px 10px;
+}
+.view_showcase .stickers {
+	top: 5px;
+}
+.view_showcase .js-element{
+	height:325px;
+}
+.view_showcase.big .js-element{
+	height:378px;
+}
+/* hover */
+.view_showcase .js-element .popup{
+	display:none;
+}
+.view_showcase .js-element:hover .inner,
+.view_showcase .js-element.hover .inner{
+	border:1px solid #cccccc;
+	z-index:110;
+}
+.view_showcase .js-element.shadow:hover .inner,
+.view_showcase .js-element.shadow.hover .inner {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.view_showcase .js-element:hover .popup,
+.view_showcase .js-element.hover .popup{
+	display:block;
+}
+/* /hover */
+
+.view_showcase .name {
+	height: 35px;
+	text-align: center;
+	overflow: hidden;
+}
+.view_showcase div.pic {
+	position: relative;
+	padding: 10px 0px;
+	text-align: center;
+}
+.view_showcase .pic a,
+.view_showcase .pic span.pic {
+	display: block;
+	width: 100%;
+	height: 170px;
+	line-height: 170px;
+	text-align: center;
+}
+.view_showcase .pic a img,
+.view_showcase .pic span.pic img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* prices */
+.view_showcase .prices .prices_jscrollpane{
+	width: 100%;
+    min-height: 102px;
+	overflow: auto;
+}
+.view_showcase .prices .prev,
+.view_showcase .prices .next{
+	display:block;
+	width:100%;
+	text-align:center;
+}
+.view_showcase .prices .prev .svg-icon,
+.view_showcase .prices .next .svg-icon,
+.rsgppopup .prices .prev .svg-icon,
+.rsgppopup .prices .next .svg-icon {
+	width: 15px;
+	height: 15px;
+	margin-bottom: 2px;
+	fill: #6f6f6f;
+}
+.view_showcase .prices .prev:hover .svg-icon,
+.view_showcase .prices .next:hover .svg-icon,
+.rsgppopup .prices .prev:hover .svg-icon,
+.rsgppopup .prices .next:hover .svg-icon {
+	fill: $color1;
+}
+.view_showcase .prices .pricestable{
+	width:100%;
+}
+.view_showcase .prices .pricestable tr td{
+	padding:8px 10px;
+}
+.view_showcase .prices .pricestable tr.even td{
+	background-color:#FAFAFA;
+}
+/* /prices */
+/* prices -> soloprice */
+.view_showcase .soloprice{
+	padding:10px 20px 0px 20px;
+	text-align:center;
+}
+.view_showcase .soloprice span{
+	display:inline-block;
+	margin-bottom:6px;
+}
+.view_showcase .soloprice .price.gen{
+	display:block;
+	font-size:18px;
+	margin-bottom:10px;
+}
+.view_showcase .soloprice .price.old{
+	margin-right: 25px;
+}
+/* /prices -> soloprice */
+.view_showcase .buy,
+.view_showcase .description {
+	margin-top: 12px;
+}
+.view_showcase .buy .quantity .quantity_inner {
+	margin-top: 3px;
+}
+.view_showcase .buy .add2basket,
+.view_showcase .buy .inbasket,
+.view_showcase .buy .add2subscribe {
+	float: right;
+}
+.view_showcase .buy .add2basket,
+.view_showcase .buy .inbasket{
+	padding: 4px 15px;
+}
+.view_showcase .buy .add2subscribe {
+	padding: 4px 10px;
+}
+.view_showcase .buy .add2subscribe.in {
+	padding: 4px 0;
+}
+/* compare & quantity */
+.view_showcase .compare_and_stores {
+	margin-top: 12px;
+}
+.view_showcase .compare_and_stores .compare {
+	float: left;
+}
+.view_showcase .compare_and_stores .stores {
+	float: right
+}
+.view_showcase .stores .genamount.cantopen .icon{
+	display: none;
+}
+/* /compare & quantity */
+/* favorite & share */
+.view_showcase .favorishare{
+	margin-top:5px;
+}
+.view_showcase .add2favorite{
+	color:#666666;
+	font-size:11px;
+	text-decoration:none;
+}
+.view_showcase .add2favorite:hover{
+	color:#214496;
+	text-decoration:underline;
+}
+.add2favorite .svg-icon,
+.view_showcase .add2favorite .counter{
+	margin-right: 3px;
+}
+.add2favorite .svg-icon {
+	width: 11px;
+	height: 11px;
+	margin-bottom: 2px;
+	fill: #bcbcbc;
+}
+.add2favorite.in .svg-icon{
+	fill: #f00;
+}
+.share {
+	float: right;
+}
+.share .b-share a .svg-icon{
+	margin: 0 4px 3px 2px;
+}
+.share .ya-share2__item_service_vkontakte .svg-icon {
+	width: 16px;
+	height: 16px;
+	margin: 1px 0px 0px 0px;
+}
+.share .ya-share2__item_service_facebook .svg-icon {
+	width: 10px;
+	height: 10px;
+	margin: 2px 0px 0px 0px;
+}
+.share .ya-share2__item_service_twitter .svg-icon {
+	width: 12px;
+	height: 12px;
+	margin: 3px 0px 0px 0px;
+}
+.share .b-share,
+.share .ya-share2 {
+	display: inline-block;
+}
+.share a .svg-icon{
+	width: 14px;
+	height: 14px;
+	fill: #bcbcbc;
+}
+.share a:hover .svg-icon{
+	fill: #214496;
+}
+
+.view_showcase .favorite{
+	float:left;
+}
+/* /favorite & share */
+/* 605px - small filter */
+@media screen and (max-width:1280px) and (min-width:1001px){
+	body.adaptive .view_showcase.columns5 .js-element{
+		width:25%;
+	}
+	body.adaptive .view_showcase .js-element{
+		width:33%;
+	}
+}
+@media screen and (max-width:1000px) and (min-width:761px){
+	body.adaptive .view_showcase.columns5 .js-element{
+		width:33%;
+	}
+	body.adaptive .view_showcase .js-element{
+		width:50%;
+	}
+}
+@media screen and (max-width:760px) and (min-width:606px){
+	body.adaptive .view_showcase.columns5 .js-element{
+		width:50%;
+	}
+	body.adaptive .view_showcase .js-element{
+		width:100%;
+	}
+}
+@media screen and (max-width:605px) and (min-width:541px){
+	body.adaptive .view_showcase.columns5 .js-element,
+	body.adaptive .view_showcase .js-element{
+		width:50%;
+	}
+}
+@media screen and (max-width:540px){
+	body.adaptive .view_showcase.columns5 .js-element,
+	body.adaptive .view_showcase .js-element{
+		width:100%;
+	}
+}
+/******************************* /showcase *******************************/
+
+/* subscribe */
+.artables table.products .add2basketform .add2subscribe .svg-icon {
+  width: 18px;
+  height: 18px;
+  fill: $icon-color;
+  cursor: pointer;
+  margin: 0 0 4px 7px;
+}
+.artables table.products .stores{
+	text-align: center;
+}
+.artables table.products .add2basketform .add2subscribe.in .svg-icon {
+  cursor: default;
+  fill: $icon-disabled-color;
+}
+.artables table.products tr:hover .add2basketform .add2subscribe .svg-icon {
+  fill: #fff;
+}

@@ -1,0 +1,21 @@
+.comparelist {
+	.title {
+		float: left;
+		margin-right: 5px;
+		padding: 5px 0px;
+	}
+
+	a {
+		display: block;
+		float: left;
+		padding: 5px 14px;
+		margin-left: 2px;
+		text-decoration: none;
+
+		&:hover {
+			color: $btn1-text-color-hover;
+			text-decoration: none;
+			background-color: $btn1-bg-color-hover;
+		}
+	}
+}

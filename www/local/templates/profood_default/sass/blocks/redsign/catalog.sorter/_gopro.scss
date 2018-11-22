@@ -1,0 +1,195 @@
+.sorter_and_name .catalogsorter{
+	position:relative;
+	top:-5px;
+}
+
+.catalogsorter{
+	padding-left:17px;
+}
+.catalogsorter .sortaou{
+	float:left;
+}
+.bottom  .catalogsorter{
+	padding-top:12px;
+}
+.bottom  .catalogsorter .sortaou{
+	float:right;
+}
+.catalogsorter .sort,
+.catalogsorter .shortsort{
+	float:left;
+	margin-right:25px;
+}
+.catalogsorter .output{
+	float:right;
+}
+.catalogsorter .template{
+	float:right;
+}
+.catalogsorter .dropdown{
+	position:relative;
+	float:left;
+}
+.catalogsorter .title{
+	float:left;
+	margin-right:5px;
+	padding:5px 0px;
+}
+.catalogsorter .dropdownin{
+	position: absolute;
+	left: -14px;
+	display: none;
+	min-width: 50px;
+	background-color: #FFF;
+	border: 1px solid $default-border-color;
+	border-bottom: none;
+	z-index: 991;
+	box-shadow: 0 5px 5px rgba(80, 83, 93, 0.3);
+}
+.catalogsorter .dropdown.hover .dropdownin{
+	display:block;
+}
+.catalogsorter .dropdown a.select,
+.catalogsorter .dropdown a.select:hover{
+	color:#000;
+	text-decoration:none;
+}
+.catalogsorter .dropdownin a{
+	display:block;
+	padding:5px 14px;
+	text-decoration:none;
+}
+.catalogsorter .dropdownin a:hover{
+	color: $btn1-text-color-hover;
+	background-color: $btn1-bg-color-hover;
+}
+.catalogsorter .dropdownin a.selected{
+	color: $btn1-text-color-hover;
+	background-color: $color1;
+}
+.catalogsorter .dropdownin a.selected .svg-icon {
+
+}
+/* shortsort & sort */
+.catalogsorter .shortsort .svg-icon,
+.catalogsorter .sort .svg-icon {
+	width: 8px;
+	height: 8px;
+	margin-left: 6px;
+	margin-bottom: 2px;
+	fill: #000;
+}
+.catalogsorter .shortsort .svg-icon.asc,
+.catalogsorter .sort .svg-icon.asc {
+	transform: scale(1, -1);
+}
+.catalogsorter .shortsort a:hover .svg-icon,
+.catalogsorter .shortsort a.selected .svg-icon,
+.catalogsorter .sort .dropdownin a:hover .svg-icon,
+.catalogsorter .sort .dropdownin a.selected .svg-icon {
+	fill: #fff;
+}
+/* output */
+.catalogsorter .output .svg-icon {
+	width: 8px;
+	height: 8px;
+	margin-left: 6px;
+	margin-bottom: 2px;
+	fill: #000;
+}
+.catalogsorter .output .dropdownin a .svg-icon {
+	display: none;
+}
+.catalogsorter .sort .dropdown,
+.catalogsorter .output .dropdown{
+	padding: 5px 0px;
+}
+/* template & shortsort */
+.catalogsorter .template a{
+	float:right;
+}
+.catalogsorter .shortsort a{
+	float:left;
+}
+.catalogsorter .template a,
+.catalogsorter .shortsort a{
+	display:block;
+	padding:5px 14px;
+	margin-left:2px;
+	text-decoration:none;
+}
+.catalogsorter .template a.selected,
+.catalogsorter .shortsort a.selected{
+	color: $btn1-text-color;
+	background-color: $btn1-bg-color;
+}
+.catalogsorter .template a:hover,
+.catalogsorter .shortsort a:hover{
+	color: $btn1-text-color-hover;
+	background-color: $btn1-bg-color-hover;
+}
+.catalogsorter .template .svg-icon {
+	width: 11px;
+	height: 11px;
+	margin-right: 4px;
+	margin-bottom: 1px;
+	fill: #214496;
+
+	&.icon-showcase {
+		margin-bottom: 2px;
+	}
+}
+.catalogsorter .template .svg-icon.icon-showcase {
+	width: 11px;
+	height: 11px;
+}
+.catalogsorter .template .svg-icon.icon-gallery {
+	width: 14px;
+	height: 14px;
+}
+.catalogsorter .template .svg-icon.icon-table {
+	width: 14px;
+	height: 14px;
+}
+.catalogsorter .template a:hover .svg-icon,
+.catalogsorter .template a.selected .svg-icon,
+.catalogsorter .template a:active .svg-icon,
+.catalogsorter .template a.selected:active .svg-icon {
+	fill: #fff;
+}
+
+.catalogsorter span.drop{
+	display:none;
+}
+
+
+@media screen and (max-width:850px){
+	body.adaptive .catalogsorter .template a i{
+		margin-right:0px;
+	}
+	body.adaptive .catalogsorter .template a span{
+		display:none;
+	}
+}
+@media screen and (max-width:665px) and (min-width:606px){
+	body.adaptive .catalogsorter .title{
+		display:none;
+	}
+}
+@media screen and (max-width:390px){
+	body.adaptive .catalogsorter .sort .title{
+		display:none;
+	}
+}
+@media screen and (max-width:650px){
+	body.adaptive .catalogsorter .sort,
+	body.adaptive .catalogsorter .shortsort,
+	body.adaptive .catalogsorter .output{
+		margin-right:10px;
+	}
+}
+@media screen and (max-width:605px){
+	body.adaptive .catalogsorter{
+		padding-left:0px;
+	}
+}

@@ -3481,9 +3481,11 @@ abstract class CAllMain
 		}
 	}
 
-	public static function FinalActions()
+	public static function FinalActions($response = "")
 	{
 		global $DB;
+
+		\Bitrix\Main\Context::getCurrent()->getResponse()->flush($response);
 
 		self::EpilogActions();
 

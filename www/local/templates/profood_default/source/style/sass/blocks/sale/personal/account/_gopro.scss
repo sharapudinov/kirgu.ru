@@ -1,0 +1,63 @@
+.body {
+	// wallet
+	.sale-personal-account-wallet-title {
+		@include mix-table-thead-td($gray-text-color, $default-border-color);
+
+		text-transform: lowercase;
+		
+		&:first-letter {
+			text-transform: uppercase;
+		}
+	}
+
+	.sale-personal-account-wallet-list-container {
+		@include mix-table-tbody-td($default-border-color);
+	}
+
+	.sale-personal-account-wallet-list-item {
+		padding: 0;
+	}
+
+	.sale-personal-account-wallet-currency-item {
+		color: $color1;
+	}
+
+	// title
+	.sale-personal-section-account-sub-header {
+		@include mix-table-thead-td($gray-text-color, $default-border-color);
+	}
+
+	// content
+	.bx-sap {
+		@include mix-table-tbody-td($default-border-color);
+	}
+
+	.sale-acountpay-block {
+		padding-left: 0;
+	}
+
+	.sale-acountpay-fixedpay-item {
+		@include mix-buttons($btn1-text-color, $btn1-bg-color, $btn1-text-color-hover, $btn1-bg-color-hover);
+	}
+
+	.sale-acountpay-input {
+		max-width: 100%;
+	}
+
+	.bx-sap .control-label.input-lg {
+		line-height: 20px;
+	}
+
+	.sale-acountpay-pp-company.bx-selected .sale-acountpay-pp-company-graf-container {
+		border-color: $primary-border-color;
+	}
+
+	.sale-acountpay-title {
+		font-size: 13px;
+		color: $gray-text-color;
+	}
+
+	.sale-account-pay-button {
+		@include mix-buttons($btn2-text-color, $btn2-bg-color, $btn2-text-color-hover, $btn2-bg-color-hover);
+	}
+}

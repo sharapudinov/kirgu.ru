@@ -5939,7 +5939,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"USE_STORE" => "Y",
 		"USE_STORE_PHONE" => "N",
 		"USE_STORE_SCHEDULE" => "N",
-		"USE_MIN_AMOUNT" => "N",
+		"USE_MIN_AMOUNT" => "Y",
 		"MIN_AMOUNT" => "10",
 		"STORE_PATH" => "/store/#store_id#",
 		"MAIN_TITLE" => "Наличие",
@@ -5964,7 +5964,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"PROP_SKU_MORE_PHOTO" => "MORE_PHOTO",
 		"PROP_SKU_ARTICLE" => "CML2_ARTICLE",
 		"PROPS_ATTRIBUTES" => array(
-/*			0 => "OSNOVANIE_ORTOPEDICHESKOE",*/
+			0 => "OSNOVANIE_ORTOPEDICHESKOE",
 			1 => "RAZMER",
 			2 => "TSVET",
 			3 => "TSVET_1",

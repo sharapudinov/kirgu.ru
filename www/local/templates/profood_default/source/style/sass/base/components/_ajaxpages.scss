@@ -1,0 +1,47 @@
+$selector-ajaxpages: '.c-ajaxpages' !default;
+
+#{$selector-ajaxpages} {
+	height: 65px;
+	text-align: center;
+	line-height: 65px;
+	padding: 0;
+
+	&.animation {
+		#{$selector-ajaxpages} {
+			&__animashka {
+				display: block;
+			}
+
+			&__link {
+				cursor: default;
+			}
+
+			&__text {
+				visibility: hidden;
+			}
+		}
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		line-height: 31px;
+		text-decoration: none;
+	}
+
+	&__animashka {
+		position: absolute;
+		top: 1px;
+		left: 23px;
+		display: none;
+		width: 31px;
+		height: 31px;
+		line-height: 31px;
+		vertical-align: middle;
+		
+	}
+
+	&__text {
+		visibility: visible;
+	}
+}

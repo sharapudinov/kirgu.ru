@@ -1,0 +1,33 @@
+.c-gruppedprops {
+	&__group {
+		
+	}
+
+	&__group-name {
+		font-weight: bold;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	&__group-props {
+
+	}
+
+	&__prop {
+		display: block;
+		margin-bottom: 8px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&__prop-name {
+		color: $gray-text-color;
+		margin-right: 7px;
+	}
+
+	&__prop-value {
+
+	}
+}

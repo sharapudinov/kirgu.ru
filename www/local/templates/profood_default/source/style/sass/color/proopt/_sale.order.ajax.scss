@@ -1,0 +1,41 @@
+.body #bx-soa-order {
+  .bx-soa-section.bx-selected,
+  .bx-soa-pp-company.bx-selected .bx-soa-pp-company-graf-container,
+  .bx-sls .form-control.dropdown-block.focus,
+  .form-group .form-control:focus:focus,
+  .bx-soa-coupon-input input[type=text].form-control:focus {
+    border-color: $primary-border-color;
+  }
+
+  .bx-soa-more-btn .btn.btn-default {
+    color: $btn1-text-color;
+    background-color: $btn1-bg-color;
+    border: none;
+    transition: none;
+
+    &:hover {
+      color: $btn1-text-color-hover;
+      background-color: $btn1-bg-color-hover;
+    }
+
+    &::first-child {
+      color: $btn2-text-color;
+      background-color: $btn2-bg-color;
+
+      &:hover {
+        color: $btn2-text-color-hover;
+        background-color: $btn2-bg-color-hover;
+      }
+    }
+  }
+
+  #bx-soa-orderSave .btn.btn-default {
+    color: $btn1-text-color;
+    background-color: $btn1-bg-color;
+
+    &:hover {
+      color: $btn1-text-color-hover;
+      background-color: $btn1-bg-color-hover;
+    }
+  }
+}

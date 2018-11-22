@@ -1,0 +1,81 @@
+.fichi {
+    line-height: 18px;
+    text-align: center;
+    margin: 12px 0 4px 0;
+
+    &__inner {
+        padding: 8px 0 0 0;
+        border-top: 2px solid $color1;
+        border-bottom: 2px solid $color1;
+    }
+
+    &__link {
+        display: inline-block;
+        width: 100%;
+        max-width: 220px;
+        color: #333;
+        text-align: left;
+        line-height: 16px;
+        text-decoration: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        margin-right: auto;
+        margin-bottom: 8px;
+        margin-left: auto;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__img {
+        width: 44px;
+        line-height: 44px;
+        text-align: center;
+
+        img {
+            height: auto;
+            max-height: 44px;
+        }
+    }
+
+    &__name {
+        padding-left: 12px;
+        margin-right: 56px;
+        max-height: 32px;
+        overflow: hidden;
+    }
+
+    &__img,
+    &__name {
+        display: inline-block;
+        height: 44px;
+        font-size: 12px;
+        vertical-align: middle;
+        white-space: normal;
+    }
+}
+
+@media(max-width: 480px) {
+    .fichi {
+        &__link {
+            text-align: center;
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__img {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        &__img,
+        &__name {
+            display: block;
+            width: 100%;
+            padding-left: 0;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.body {
+	.sale-profile-detail-link-list {
+
+	}
+
+	.sale-profile-detail-form {
+		.sale-personal-profile-detail-form-title-row {
+			> h4 {
+				@include mix-table-thead-td($gray-text-color, $default-border-color);
+				
+				border-top: none;
+				border-bottom: none;
+
+				> b {
+					font-weight: normal;
+				}
+			}
+		}
+
+		.form-group {
+			label {
+				color: $gray-text-color;
+			}
+		}
+
+		.bx-sls .dropdown-icon {
+			top: 11px;
+		}
+		.dropdown-block.bx-ui-sls-input-block {
+			min-height: 37px;
+			border-radius: 0;
+		}
+		.bx-ui-sls-fake {
+			width: 100%;
+		}
+		.bx-sls .bx-ui-sls-clear {
+			top: 2px;
+		}
+
+		.form-control {
+			&:hover {
+				border-color: $form-control-border-color;
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+
+			&:hover:focus {
+				border-color: $form-control-border-color-focus;
+			}
+		}
+
+		.btn-md {
+			@include mix-buttons($btn2-text-color, $btn2-bg-color, $btn2-text-color-hover, $btn2-bg-color-hover);
+
+			&:first-of-type {
+				@include mix-buttons($btn1-text-color, $btn1-bg-color, $btn1-text-color-hover, $btn1-bg-color-hover);
+			}
+		}
+	}
+}
