@@ -147,7 +147,7 @@ if(!$product['PRICES']["СпецЦена"]) {
     $arPrice=$product['PRICES']["СпецЦена"];
     $arPrice['PRINT_VALUE']=$product['PRICES']["Розничная"]['PRINT_VALUE'];
     $arPrice['DISCOUNT_DIFF']=$product['PRICES']["Розничная"]['VALUE']-$arPrice['VALUE'];
-    $arPrice['PRINT_DISCOUNT_DIFF']=CCurrencyLang::CurrencyFormat( $arPrice['DISCOUNT_DIFF'],'RUB',false);
+    $arPrice['PRINT_DISCOUNT_DIFF']=CCurrencyLang::CurrencyFormat( $arPrice['DISCOUNT_DIFF'],'RUB',true);
 
     rsGoProShowPrice($arPrice, $params);
 
