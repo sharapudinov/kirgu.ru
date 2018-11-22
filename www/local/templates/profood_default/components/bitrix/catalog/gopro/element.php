@@ -409,7 +409,9 @@ if ($_REQUEST['ajaxpages'] == 'Y' && $_REQUEST['ajaxpagesid'] == 'ajaxpages_mods
 				'bitrix:catalog.section',
 				'gopro',
 				array(
-					'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],
+                    'HIDE_NOT_AVAILABLE' => $arParams['HIDE_NOT_AVAILABLE'],
+                    'HIDE_NOT_AVAILABLE_OFFERS' => $arParams["HIDE_NOT_AVAILABLE_OFFERS"],
+                    'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],
 					'IBLOCK_ID' => $arCurIBlock['OFFERS_IBLOCK_ID'],
 					'ELEMENT_SORT_FIELD' => $arParams['OFFERS_SORT_FIELD'],
 					'ELEMENT_SORT_ORDER' => $arParams['OFFERS_SORT_ORDER'],
