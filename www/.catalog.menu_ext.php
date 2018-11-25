@@ -32,6 +32,7 @@ if (CModule::IncludeModule('iblock')) {
 				"IBLOCK_ID" => $arIBlock['ID'],
 				"DEPTH_LEVEL" => "5",
 				"CACHE_TYPE" => "A",
+				"CACHE_TIME" => "3600000",
 			), false, Array('HIDE_ICONS' => 'Y'));
       
 		}

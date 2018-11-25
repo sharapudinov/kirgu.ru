@@ -18,10 +18,7 @@ $svgSocialTw = '<svg viewBox="0 0 20 17" xmlns="http://www.w3.org/2000/svg"><pat
 $preloader = '<div class="preloader-wrapper big active"><div class="spinner-layer"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>';
 ?>
 
-<?php if (!empty($arResult['OPTIONS'])):
-    test_dump("test");
-
-    ?>
+<?php if (!empty($arResult['OPTIONS'])):?>
 
 <div class="rstuning__overlay js-rstuning__main-overlay<?=($arResult['COOKIE_OPEN'] == 'Y' ? ' open' : '')?>"></div>
 <div id="rstuning" class="rstuning <?=(!empty($arResult['TABS']) && count($arResult['TABS']['ITEMS']) > 1 ? 'mod-tabs' : '')?> <?=($arResult['COOKIE_OPEN'] == 'Y' ? 'open' : 'closed')?> js-rstuning" <?

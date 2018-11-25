@@ -5964,7 +5964,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"PROP_SKU_MORE_PHOTO" => "MORE_PHOTO",
 		"PROP_SKU_ARTICLE" => "CML2_ARTICLE",
 		"PROPS_ATTRIBUTES" => array(
-			0 => "OSNOVANIE_ORTOPEDICHESKOE",
+/*			0 => "OSNOVANIE_ORTOPEDICHESKOE",*/
 			1 => "RAZMER",
 			2 => "TSVET",
 			3 => "TSVET_1",
@@ -6117,7 +6117,8 @@ $APPLICATION->SetTitle("Каталог товаров");
 			"compare" => array(
 				"ACTION_CODE" => "action",
 			),
-		)
+		),
+        'PRODUCT_SUBSCRIPTION' => 'N'
 	),
 	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

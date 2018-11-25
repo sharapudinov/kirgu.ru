@@ -26,7 +26,7 @@ if (\Bitrix\Main\Loader::includeModule('iblock')) {
 			$arFilter['=CODE'] = $arResult['VARIABLES']['SECTION_CODE'];
 		}
 		$obCache = new CPHPCache();
-		if ($obCache->InitCache(36000, serialize($arFilter) ,'/iblock/catalog')) {
+		if ($obCache->InitCache(360000, serialize($arFilter) ,'/iblock/catalog')) {
 			$arCurSection = $obCache->GetVars();
 		} elseif ($obCache->StartDataCache()) {
 			$arCurSection = array();
@@ -374,6 +374,7 @@ $intSectionID = 0;
                         "FILE_404" => $arParams["FILE_404"],"FILE_404" => "Y",
 						// multiregionality
 						'SITE_LOCATION_ID' => SITE_LOCATION_ID,
+                        'PRODUCT_SUBSCRIPTION' => $arParams['PRODUCT_SUBSCRIPTION']
 					),
 					$component
 				);?>

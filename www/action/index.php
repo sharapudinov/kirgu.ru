@@ -26,7 +26,7 @@ $APPLICATION->IncludeComponent(
 		"AJAX_OPTION_STYLE" => "Y",
 		"AJAX_OPTION_HISTORY" => "N",
 		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "36000000",
+		"CACHE_TIME" => "360000",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
 		"SET_STATUS_404" => "N",
@@ -71,7 +71,7 @@ $APPLICATION->IncludeComponent(
 		"PAGER_TITLE" => "Акции",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "360000",
 		"PAGER_SHOW_ALL" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"COMPONENT_TEMPLATE" => "actions",
@@ -144,6 +144,7 @@ $APPLICATION->IncludeComponent(
 		"PROPS_ATTRIBUTES" => array(
 		),
 		"PROPS_ATTRIBUTES_COLOR" => array(
+			0 => "TSVET_2",
 		),
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SHOW_DEACTIVATED" => "N",

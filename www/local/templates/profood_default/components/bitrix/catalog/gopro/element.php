@@ -279,7 +279,8 @@ if (is_array($arParams['PRICE_CODE']) && count($arParams['PRICE_CODE']) > 1)
 			'ADD_PROPERTIES_TO_BASKET' => (isset($arParams['ADD_PROPERTIES_TO_BASKET']) ? $arParams['ADD_PROPERTIES_TO_BASKET'] : ''),
 			'PARTIAL_PRODUCT_PROPERTIES' => (isset($arParams['PARTIAL_PRODUCT_PROPERTIES']) ? $arParams['PARTIAL_PRODUCT_PROPERTIES'] : ''),
 			'OFFERS_CART_PROPERTIES' => $arParams['OFFERS_CART_PROPERTIES'],
-		);
+            'PRODUCT_SUBSCRIPTION' => $arParams['PRODUCT_SUBSCRIPTION']
+        );
         unset($_REQUEST[$arParams['ACTION_VARIABLE']]);
 		$restat = RSDF_EasyAdd2Basket($ProductID, $QUANTITY, $params);
 		if ($ex = $APPLICATION->GetException())
@@ -358,7 +359,7 @@ if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/element.tabs.conten
 <?php if($arParams['USE_BLOCK_MODS'] == 'Y'): ?>
     <?php
 	$obCache = new CPHPCache();
-	if ($obCache->InitCache(36000, serialize($arFilter) ,'/iblock/catalog')) {
+	if ($obCache->InitCache(360000, serialize($arFilter) ,'/iblock/catalog')) {
 		$arCurIBlock = $obCache->GetVars();
 	} elseif ($obCache->StartDataCache()) {
 		$arCurIBlock = CIBlockPriceTools::GetOffersIBlock($arParams['IBLOCK_ID']);
@@ -502,7 +503,8 @@ if ($_REQUEST['ajaxpages'] == 'Y' && $_REQUEST['ajaxpagesid'] == 'ajaxpages_mods
 					'COLUMNS5' => 'Y',
 					// multiregionality
 					'SITE_LOCATION_ID' => SITE_LOCATION_ID,
-				),
+                    'PRODUCT_SUBSCRIPTION' => $arParams['PRODUCT_SUBSCRIPTION'],
+                ),
 				$component,
 				array('HIDE_ICONS'=>'Y')
 			);?>
@@ -552,7 +554,7 @@ if( $('#ajaxpages_mods').find('.js-element').length<1 ) {
     $cacheId  = serialize($cacheId);
     $cacheDir = "/iblock/catalog.element";
     
-    if ($obCache->InitCache(3600, $cacheId, $cacheDir)) {
+    if ($obCache->InitCache(360000, $cacheId, $cacheDir)) {
         $vars = $obCache->GetVars();
         $collectionElementsIds = $vars['COLLECTION_ELEMENTS_IDS'];
         $collectionIblockId = $vars['COLLECTION_IBLOCK_ID'];
@@ -704,6 +706,7 @@ require_once (Application::getDocumentRoot().SITE_DIR."include/sorter/catalog_el
                         'COLUMNS5' => 'Y',
 						// multiregionality
 						'SITE_LOCATION_ID' => SITE_LOCATION_ID,
+                        'PRODUCT_SUBSCRIPTION' => $arParams['PRODUCT_SUBSCRIPTION'],
                     ),
                     $component,
                     array('HIDE_ICONS'=>'Y')

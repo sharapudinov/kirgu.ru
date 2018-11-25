@@ -35,7 +35,7 @@ foreach ($arResult['ITEMS'] as $key1 => $arItem):
 	else
 		$product = &$arItem;
 	
-	if($arItem['CATALOG_SUBSCRIBE'] == 'Y')
+	if($arItem['CATALOG_SUBSCRIBE'] == 'Y' && $arParams['PRODUCT_SUBSCRIPTION'] === 'Y' )
 		$showSubscribeBtn = true;
 	else
 		$showSubscribeBtn = false;

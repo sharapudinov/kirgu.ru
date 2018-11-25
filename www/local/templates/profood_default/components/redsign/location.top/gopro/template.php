@@ -72,7 +72,7 @@ if (!window.RSLocationChange) {
         "FILTER_BY_SITE" => "Y",
         "SHOW_DEFAULT_LOCATIONS" => "Y",
         "CACHE_TYPE" => "A",
-        "CACHE_TIME" => "36000000",
+        "CACHE_TIME" => "360000",
         "FILTER_SITE_ID" => SITE_ID,
         "INITIALIZE_BY_GLOBAL_EVENT" => "",
         "SUPPRESS_ERRORS" => "N"

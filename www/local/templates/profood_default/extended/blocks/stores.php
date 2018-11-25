@@ -24,7 +24,7 @@ if($params['PAGE'] == 'detail'){
         "ELEMENT_ID" => $arItem['ID'],
         "STORE_PATH" => $arParams['STORE_PATH'],
         "CACHE_TYPE" => "A",
-        "CACHE_TIME" => "36000",
+        "CACHE_TIME" => "360000",
         "MAIN_TITLE" => GetMessage('GOPRO_TH_QUANTITY'),
         "USE_STORE_PHONE" => $arParams['USE_STORE_PHONE'],
         "SCHEDULE" => $arParams['USE_STORE_SCHEDULE'],

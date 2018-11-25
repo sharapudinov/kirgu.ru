@@ -104,7 +104,7 @@ if ($arResult['TABS']['DISPLAY_PROPERTIES']) {
                     'gopro',
                     array(
                         'DISPLAY_PROPERTIES' => array_diff_key($arResult['DISPLAY_PROPERTIES'], $arDiff),
-                        'CACHE_TIME' => 36000,
+                        'CACHE_TIME' => 360000,
                     ),
                     $component,
                     array('HIDE_ICONS' => 'Y')

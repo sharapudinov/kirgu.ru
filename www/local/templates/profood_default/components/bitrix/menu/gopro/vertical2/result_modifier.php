@@ -1,5 +1,5 @@
 <?php
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
+/*if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 	die();
 
 if (!CModule::IncludeModule('iblock'))
@@ -62,12 +62,12 @@ if (is_array($arResult) && count($arResult) > 0) {
 	////////////////////////////////// element in menu //////////////////////////////////
 	if(CModule::IncludeModule('iblock') && IntVal($arParams['IBLOCK_ID'])>0 && $arParams['RSGOPRO_PROPCODE_ELEMENT_IN_MENU']!=''){
 		foreach($arResult as $key1 => $arItem1){
-			if($arItem1['DEPTH_LEVEL']==1 && $arItem1['LINK']!=''){	
+			if($arItem1['DEPTH_LEVEL']==1 && $arItem1['LINK']!=''){
 				$arResult[$key1]['PARAMS']['ELEMENT'] = 'N';
 				$arOrder = array('SORT'=>'ASC','ID'=>'ASC');
 				$arFilter = array(
 					'IBLOCK_ID'=>IntVal($arParams['IBLOCK_ID'][0]),
-					'ACTIVE' => 'Y', 
+					'ACTIVE' => 'Y',
 					'INCLUDE_SUBSECTIONS' => 'Y',
 					'PROPERTY_'.$arParams['RSGOPRO_PROPCODE_ELEMENT_IN_MENU'] => $arItem1['LINK'],
 				);
@@ -82,4 +82,4 @@ if (is_array($arResult) && count($arResult) > 0) {
 			}
 		}
 	}
-}
+}*/

@@ -28,7 +28,7 @@ $(document).on('rsGoPro.document.ready', function(){
 	});
 
 	// AJAXPAGES
-	$(document).on('click', '.js-ajaxpages__link', function(){
+	$(document).on('click', '.js-ajaxpages__link', function(){debugger
 		var $linkObj = $(this),
 			ajaxurl = $linkObj.data('ajaxurl'),
 			ajaxpagesid = $linkObj.data('ajaxpagesid'),

@@ -49,6 +49,7 @@ if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/start.php', $getTem
 	if (isset($arItem['DAYSARTICLE2']) || isset($product['DAYSARTICLE2'])) { echo 'da2 '; }
 	if (isset($arItem['QUICKBUY']) || isset($product['QUICKBUY'])) { echo 'qb '; }
     ?>detail <?
+    ?>b-product-detail <?
     ?>clearfix " <?
 	?>data-elementid="<?=$arItem['ID']?>" <?
 	?>id="<?=$areaIds?>" <?
@@ -71,7 +72,7 @@ if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/start.php', $getTem
         ?>
 
         <div class="row">
-            <div class="<?=$detailParams['GRID']['BIG_LEFT']?>">
+            <div class="<?=$detailParams['GRID']['BIG_LEFT']?> b-print__product-page__pictures">
 
                 <?php
                 if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/big-left.start.php', $getTemplatePathPartParams))) {
@@ -89,7 +90,7 @@ if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/start.php', $getTem
                 ?>
 
             </div>
-            <div class="<?=$detailParams['GRID']['BIG_RIGHT']?>">
+            <div class="<?=$detailParams['GRID']['BIG_RIGHT']?> b-print__product-page__info">
 
                 <?php
                 if (file_exists($path = rsGoProGetTemplatePathPart(__DIR__.'/big-right.start.php', $getTemplatePathPartParams))) {

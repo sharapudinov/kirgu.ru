@@ -11,3 +11,5 @@ if (!is_array(${$filterName})) {
 }
 ${$filterName} = array_merge(${$filterName}, $arResult['CATALOG_FILTER']);
 
+
+
