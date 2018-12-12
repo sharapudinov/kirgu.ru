@@ -54,7 +54,7 @@ $this->setFrameMode(true);
 						}
 						?><div class="lvl1<?if($isScrolable):?> scrolable<?endif;?><?if($isSearchable):?> searcheble<?endif;?>" data-propid="<?=$arItem['ID']?>" data-propcode="<?=$arItem['CODE']?>"><?
 							?><a href="#" class="showchild"><?
-								?><?=$arItem['NAME']?><?
+								?><?/*=$arItem['NAME']*/?>Цена<?
 								?><svg class="svg-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-linear-down"></use></svg><?
 							?></a><?
 							?><div class="property number"><?
