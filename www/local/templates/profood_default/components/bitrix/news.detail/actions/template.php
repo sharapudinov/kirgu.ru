@@ -6,8 +6,8 @@ $this->setFrameMode(true);
 
 <?
 $show_sections = false;
-if( $arParams['SECTIONS_CODE']!='' && is_array($arResult['SECTIONS']) && count($arResult['PROPERTIES'][$arParams['SECTIONS_CODE']]['VALUE'])>0 && IntVal($arResult['SECOND_IBLOCK_ID'])>0)
-{
+if( count( $arResult['SECTIONS']>0))
+        {
 	$show_sections = true;
 	?><?$APPLICATION->IncludeComponent(
 		'bitrix:catalog.section.list',
@@ -49,7 +49,6 @@ if( $arParams['SECTIONS_CODE']!='' && is_array($arResult['SECTIONS']) && count($
 			?></div><?
 		?></div><?
 	?></div><?
-	
 if($show_sections) {
 	if($arParams['SHOW_BOTTOM_SECTIONS']=='Y') {
 		?><?$APPLICATION->IncludeComponent(

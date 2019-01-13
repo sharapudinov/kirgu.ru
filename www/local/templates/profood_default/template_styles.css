@@ -4,3 +4,23 @@
 .c-stickers a {
     color: white;
 }
+.multyprice-yes {
+    margin-top: -5px;
+}
+
+.multyprice-yes .js-prices_pdv_Розничная {
+    font-size: 18px;
+    display: block;
+}
+
+.multyprice-yes  .list-showcase__prices {
+    margin-bottom: 12px;
+}
+.section-element-count {
+    float: right;
+    font-size: 18px;
+}
+
+a.hot {
+    color: red;
+}

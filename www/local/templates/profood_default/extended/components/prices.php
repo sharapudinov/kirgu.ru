@@ -70,7 +70,7 @@ if (!function_exists('rsGoProShowPrice')) {
             }
             ?><span class="c-prices__value js-prices_pdv_<?=$params['PRICE_CODE']?>"><?=($issetPrice ? $arPrice["PRINT_DISCOUNT_VALUE"] : ' &nbsp; ')?></span><?
             if ($params['SHOW_OLD_PRICE']) {
-                ?><span class="c-prices__value-old-before"><span class="c-prices__value-old js-prices_pv_<?=$params['PRICE_CODE']?>_hide js-prices_pv_<?=$params['PRICE_CODE']?><?=($arPrice['DISCOUNT_DIFF'] > 0 ? '' : ' c-prices__hide')?>"><?=($issetPrice ? $arPrice['PRINT_VALUE'] : '')?></span></span><?
+                ?><span class="c-prices__value-old-before <?=($arPrice['DISCOUNT_DIFF'] > 0 ? '' : ' c-prices__hide')?>"><span class="c-prices__value-old js-prices_pv_<?=$params['PRICE_CODE']?>_hide js-prices_pv_<?=$params['PRICE_CODE']?><?=($arPrice['DISCOUNT_DIFF'] > 0 ? '' : ' c-prices__hide')?>"><?=($issetPrice ? $arPrice['PRINT_VALUE'] : '')?></span></span><?
             }
             if ($params['SHOW_DISCOUNT_DIFF']) {
                 if (empty($arPrice['PRINT_DISCOUNT']) && !empty($arPrice['PRINT_DISCOUNT_DIFF'])) {
@@ -107,7 +107,7 @@ if (!function_exists('rsGoProShowPrice')) {
     ?>data-multiprice="<?=($bMultyPrice ? 'Y' : 'N')?>" <?
     ?>data-productmultiprice="<?=($bProductMultyPrice ? 'Y' : 'N')?>" <?
     ?>>
-<?php
+<?php /*test_dump($product['PRICES']);*/
 if(!$product['PRICES']["СпецЦена"]) {
     foreach ($prices as $priceCode => $arPriceInfo) {
         if (!$arPriceInfo['CAN_VIEW']) {
@@ -135,6 +135,8 @@ if(!$product['PRICES']["СпецЦена"]) {
         } else {
             $arPrice = $product['PRICES'][$priceCode];
         }
+/*        test_dump($arPrice);*/
+
         if (rsGoProShowPrice($arPrice, $params)) {
             $priceCountShowed++;
         }
@@ -149,6 +151,7 @@ if(!$product['PRICES']["СпецЦена"]) {
     $arPrice['DISCOUNT_DIFF']=$product['PRICES']["Розничная"]['VALUE']-$arPrice['VALUE'];
     $arPrice['PRINT_DISCOUNT_DIFF']=CCurrencyLang::CurrencyFormat( $arPrice['DISCOUNT_DIFF'],'RUB',true);
 
+/*    test_dump($arPrice);*/
     rsGoProShowPrice($arPrice, $params);
 
 }

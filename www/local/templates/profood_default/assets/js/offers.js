@@ -78,7 +78,7 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 				priceCount = 0,
 				priceCountShowed = 0;
 
-			$prices.removeClass('product-multiple product-alone');debugger
+			$prices.removeClass('product-multiple product-alone');
 			$prices.find('.js-prices__price').addClass('c-prices__hide c-prices__empty');
 			$prices.find('.js-prices__more').addClass('c-prices__hide');
 

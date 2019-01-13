@@ -39,7 +39,9 @@ $name_length=strlen($arItem['NAME']);
     <? $counter = 0 ?>
     <div class="c-attributes__prop js-attributes__prop  close">
         <span class="c-attributes__select js-attributes__select">
-    <? foreach ($arItem['OFFERS_EXT']['KEYS'] as $key => $offer): ?>
+
+    <?
+    foreach ($arItem['OFFERS_EXT']['KEYS'] as $key => $offer): ?>
             <?
             if ($counter == 0):
             $counter++ ?>

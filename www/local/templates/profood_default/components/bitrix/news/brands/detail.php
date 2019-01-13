@@ -139,7 +139,6 @@ $intSectionID = 0;
         'CACHE_FILTER' => $arParams['CACHE_FILTER'],
         'CACHE_GROUPS' => $arParams['CACHE_GROUPS'],
         'SET_TITLE' => $arParams['SET_TITLE'],
-        'SET_STATUS_404' => $arParams['SET_STATUS_404'],
         'DISPLAY_COMPARE' => $arParams['USE_COMPARE'],
         'PAGE_ELEMENT_COUNT' => (!empty($alfaCOutput) ? $alfaCOutput : $arParams['PAGE_ELEMENT_COUNT']),
         // 'LINE_ELEMENT_COUNT' => $arParams['LINE_ELEMENT_COUNT'],
@@ -218,7 +217,8 @@ $intSectionID = 0;
         "SHOW_404" => "N",
         "MESSAGE_404" => "",
         "FILE_404" => "",
-        "SHOW_ALL_WO_SECTION" => "Y", // set smart.filter + INCLUDE_SUBSECTIONS=Y = bug
+        "SHOW_ALL_WO_SECTION" => "Y", // set smart.filter + INCLUDE_SUBSECTIONS=Y = bug,
+        "STICKERS_DISCOUNT_VALUE" => $arParams["STICKERS_DISCOUNT_VALUE"],
     ),
     $component
 );?>

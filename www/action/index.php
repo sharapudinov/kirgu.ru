@@ -7,7 +7,7 @@ $APPLICATION->IncludeComponent(
 	array(
 		"IBLOCK_TYPE" => "presscenter",
 		"IBLOCK_ID" => "18",
-		"NEWS_COUNT" => "2",
+		"NEWS_COUNT" => "10",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
 		"USE_RATING" => "N",
@@ -17,7 +17,7 @@ $APPLICATION->IncludeComponent(
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
-		"SORT_ORDER2" => "ASC",
+		"SORT_ORDER2" => "DESC",
 		"CHECK_DATES" => "Y",
 		"SEF_MODE" => "Y",
 		"SEF_FOLDER" => "/action/",
@@ -57,8 +57,9 @@ $APPLICATION->IncludeComponent(
 		),
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "ACTION",
-			1 => "SECTIONS",
-			2 => "",
+			1 => "",
+			2 => "SECTIONS",
+			3 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
@@ -89,7 +90,7 @@ $APPLICATION->IncludeComponent(
 		),
 		"OFF_MEASURE_RATION" => "N",
 		"ADD_STYLES_FOR_MAIN" => "N",
-		"SHOW_BOTTOM_SECTIONS" => "N",
+		"SHOW_BOTTOM_SECTIONS" => "Y",
 		"COUNT_ITEMS" => "0",
 		"CONVERT_CURRENCY" => "N",
 		"COMPOSITE_FRAME_MODE" => "A",
@@ -116,8 +117,8 @@ $APPLICATION->IncludeComponent(
 		),
 		"CATALOG_OFFERS_LIMIT" => "5",
 		"PRICE_CODE" => array(
-			0 => "РРЦ",
-			1 => "Розничная",
+			0 => "Розничная",
+			1 => "РРЦ",
 			2 => "СпецЦена",
 		),
 		"USE_PRICE_COUNT" => "N",
@@ -135,7 +136,7 @@ $APPLICATION->IncludeComponent(
 		"SECTION_TOP_DEPTH" => "2",
 		"USE_MAIN_ELEMENT_SECTION" => "Y",
 		"OFFERS_SORT_FIELD" => "sort",
-		"OFFERS_SORT_ORDER" => "asc",
+		"OFFERS_SORT_ORDER" => "desc",
 		"OFFERS_SORT_FIELD2" => "id",
 		"OFFERS_SORT_ORDER2" => "desc",
 		"PROP_SKU_MORE_PHOTO" => "-",
@@ -144,7 +145,6 @@ $APPLICATION->IncludeComponent(
 		"PROPS_ATTRIBUTES" => array(
 		),
 		"PROPS_ATTRIBUTES_COLOR" => array(
-			0 => "TSVET_2",
 		),
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SHOW_DEACTIVATED" => "N",
@@ -153,14 +153,17 @@ $APPLICATION->IncludeComponent(
 		"ACTION_CODE" => "ACTION",
 		"CATALOG_ACTION_CODE" => "AKTSII",
 		"COMPARE_NAME" => "CATALOG_COMPARE_LIST",
-		"RASSROCHKA_CODE" => "RASSROCHKA",
+		"RASSROCHKA_CODE" => "13572",
 		"CATALOG_RASSROCHKA_CODE" => "RASSROCHKA",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
 			"detail" => "#ELEMENT_CODE#/",
-		)
-	),
+		),
+        'USE_AUTO_AJAXPAGES'=>'Y',
+        "STICKERS_DISCOUNT_VALUE" => "Y",
+
+    ),
 	false
 );
 ?><?

@@ -212,7 +212,7 @@ $intSectionID = 0;
         'MAIN_TITLE' => $arParams['MAIN_TITLE'],
         'HIDE_IN_LIST' => $arParams['HIDE_IN_LIST'],
         "PROP_STORE_REPLACE_SECTION" => $arParams['PROP_STORE_REPLACE_SECTION'],
-		"PROP_STORE_REPLACE_DETAIL" => $arParams['PROP_STORE_REPLACE_DETAIL'],
+		"PROP_STORE_REPLACE_DETAIL" => ['PROP_STORE_REPLACE_DETAIL'],
         // view
         'VIEW' => $alfaCTemplate,
         // columns
@@ -223,6 +223,8 @@ $intSectionID = 0;
         "MESSAGE_404" => "",
         "FILE_404" => "",
         "SHOW_ALL_WO_SECTION" => "Y", // set smart.filter + INCLUDE_SUBSECTIONS=Y = bug
+        "STICKERS_DISCOUNT_VALUE" => $arParams["STICKERS_DISCOUNT_VALUE"],
+
     ),
     $component
 );?>

@@ -43,11 +43,28 @@ if (\Bitrix\Main\Loader::includeModule('iblock')) {
 					$arCurSection = array();
 				}
 			}
+            $obEl=CIBlockElement::GetList(
+                    array(),
+                    array(
+                            'IBLOCK_ID'=>  $arParams['IBLOCK_ID'],
+                            'SECTION_ID'=>$arCurSection['ID'],
+                            'CATALOG_AVAILABLE'=>'Y',
+                            'ACTIVE' => 'Y',
+                            'INCLUDE_SUBSECTIONS' => 'Y'
+                    ),
+			        false,
+			        false,
+			        array('ID')
+            );
+/*            $obEl->NavStart();*/
+            $arCurSection['ELEMENT_CNT']=$obEl->SelectedRowsCount();
+
 			$obCache->EndDataCache($arCurSection);
-		}
+        }
 	}
 	// /take data about curent section
 }
+$APPLICATION->SetPageProperty('SectionElementCount',$arCurSection["ELEMENT_CNT"].' шт.');
 ?>
 
 <div class="catalog clearfix" id="catalog">

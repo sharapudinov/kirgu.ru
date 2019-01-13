@@ -4,6 +4,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
 $this->setFrameMode(true);
 
+
 if(!empty($arResult))
 {
 	?><div class="tpanel_menu clearfix mobile_hide"><?
@@ -11,13 +12,10 @@ if(!empty($arResult))
 		{
 			if($arParams["MAX_LEVEL"] == 1 && $arItem["DEPTH_LEVEL"] > 1) 
 				continue;
-			
-			if($arItem["SELECTED"])
-			{
-				?><a href="<?=$arItem["LINK"]?>" class="selected"><?=$arItem["TEXT"]?></a><?
-			} else {
-				?><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a><?
-			}
+			$selected=$arItem["SELECTED"]?'selected':'';
+			$hot=$arItem['PARAMS']['HOT']?'hot':'';
+
+				?><a href="<?=$arItem["LINK"]?>" class="<?=$selected?> <?=$hot?>"><?=$arItem["TEXT"]?></a><?
 		}
 	?></div><?
 }

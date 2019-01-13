@@ -4444,7 +4444,8 @@ __name {
 }
 
 .c-prices__more-link {
-    color: #aabf6b
+    color: #aabf6b;
+    display: none;
 }
 
 .c-prices__more-link:hover {
@@ -8339,7 +8340,9 @@ body .popup-window-close-icon:hover:after {
 .list-showcase__prices {
     height: 60px;
     margin-bottom: 7px;
+    /*
     overflow: hidden
+    */
 }
 
 .list-showcase__prices .c-prices.product-alone {
@@ -14536,7 +14539,7 @@ div.search-popup-el-cnt {
     text-transform: lowercase
 }
 
-.b-locations-top__title, .b-sorter__block-name, .body .sale-personal-account-wallet-title:first-letter, .footersubscribe .title, .sorter_and_name .name, h1.pagetitle {
+.b-locations-top__title, .b-sorter__block-name, .body .sale-personal-account-wallet-title:first-letter, .footersubscribe .title, .sorter_and_name .name /*h1.pagetitle*/ {
     text-transform: uppercase
 }
 

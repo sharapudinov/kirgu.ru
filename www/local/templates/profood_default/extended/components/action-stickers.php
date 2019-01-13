@@ -29,7 +29,7 @@ Loc::loadMessages(__FILE__);
                 $val = 0;
             }
         }
-        ?><?
+        ?><? /*test_dump($val);*/
         ?><span
         class="c-stickers__sticker c-stickers__sticker-standart c-stickers__discount js-discount-value" <?php if ($val < 1): ?> style="display: none;"<?php endif; ?>>
         <?=Loc::getMessage('STICKERS.DP')?><span class="js-discount-value"> <?= $val ?></span>%</span><?

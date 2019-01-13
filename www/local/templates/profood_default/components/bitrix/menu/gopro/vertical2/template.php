@@ -51,7 +51,7 @@ if(is_array($arResult) && count($arResult)>0){
 					}
 				} else {
 					if($arItem['DEPTH_LEVEL']==1){
-						?><li class="first<?if($index>$max):?> more<?endif;?><?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>"><a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?>" title="<?=$arItem['TEXT']?>"><?=$arItem['TEXT']?></a></li><?
+						?><li class="first<?if($index>$max):?> more<?endif;?><?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>"><a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?><?if($arItem['PARAMS']['HOT']):?> hot<?endif;?>" title="<?=$arItem['TEXT']?>"><?=$arItem['TEXT']?></a></li><?
 						$index++;
 					} else {
 						if($arItem['DEPTH_LEVEL']==2){
@@ -76,7 +76,7 @@ if(is_array($arResult) && count($arResult)>0){
 			?><ul class="first clearfix lvl1 noned"><?
 				foreach($arResult as $arItem){
 					if($arItem['DEPTH_LEVEL'] == 1){
-						?><li class="first<?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>"><a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?>"><?=$arItem['TEXT']?></a></li><?
+						?><li class="first<?if($arItem['IS_LAST_LVL1']=='Y'):?> lastchild<?endif;?>"><a href="<?=$arItem['LINK']?>" class="first<?if($arItem['SELECTED']):?> selected<?endif?><?if($arItem['PARAMS']['HOT']):?> hot<?endif;?>"><?=$arItem['TEXT']?></a></li><?
 					}
 				}
 			?></ul><?

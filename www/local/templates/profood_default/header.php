@@ -99,7 +99,13 @@ $licenseWorkLinkFull.= '</div>';
 $asset = Asset::getInstance();
 
 // add strings
-$asset->addString('<link href="'.SITE_DIR.'favicon.png" rel="shortcut icon"  type="image/x-icon">');
+$asset->addString('<link href="'.SITE_DIR.'favicon.png" rel="shortcut icon"  type="image/png">');
+$asset->addString('<link href="'.SITE_DIR.'apple-touch-icon.png" rel="apple-touch-icon""  sizes="180x180" type="image/png">');
+$asset->addString('<link href="'.SITE_DIR.'favicon-32x32.png" rel="shortcut icon" sizes="32x32" type="image/png">');
+$asset->addString('<link href="'.SITE_DIR.'favicon-16x16.png" rel="shortcut icon" sizes="16x16" type="image/png">');
+$asset->addString('<link href="'.SITE_DIR.'safari-pinned-tab.svg" rel="mask-icon"  color="#5bbad5">');
+$asset->addString('<meta name="msapplication-TileColor" content="#da532c">');
+$asset->addString('<link href="'.SITE_DIR.'site.webmanifest"  rel="manifest" type="image/x-icon">');
 $asset->addString('<meta http-equiv="X-UA-Compatible" content="IE=edge" />');
 $asset->addString('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 if ($offYandex != 'Y') {
@@ -263,7 +269,9 @@ if (!empty($arModuleVersion['VERSION'])) {
 							array(),
 							array('MODE' => 'html')
 						);?>
-						<h1 class="pagetitle"><?php $APPLICATION->ShowTitle(false); ?></h1>
+						<h1 class="pagetitle"><?php $APPLICATION->ShowTitle(false); ?>
+                        <span class="section-element-count"><?$APPLICATION->ShowProperty("SectionElementCount")?></span>
+                        </h1>
 					</div>
 				</div>
 			</div><!-- /title -->

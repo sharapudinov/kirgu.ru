@@ -6,14 +6,34 @@ if (!CModule::IncludeModule('iblock'))
 	return;
 
 $arResult['SECTIONS'] = array();
+if($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'])
+    $filter= array(
+        'IBLOCK_ID'=> $arParams['CATALOG_IBLOCK_ID'],
+            'PROPERTY_'.$arParams['CATALOG_ACTION_CODE']=>$arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'],
+        'ACTIVE' =>'Y',
+        'CATALOG_AVAILABLE' =>'Y'
+    );
+elseif($arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE'])
+    $filter= array(
+        'IBLOCK_ID'=> $arParams['CATALOG_IBLOCK_ID'],
+        'PROPERTY_'.$arParams['CATALOG_RASSROCHKA_CODE']=>$arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE'],
+        'ACTIVE' =>'Y',
+        'CATALOG_AVAILABLE' =>'Y'
+    );
 
-if ($arResult['PROPERTIES'][$arParams['SECTIONS_CODE']]['VALUE'] && is_array($arResult['PROPERTIES'][$arParams['SECTIONS_CODE']]['VALUE'])) {
-	foreach ($arResult['PROPERTIES'][$arParams['SECTIONS_CODE']]['VALUE'] as $sect) {
-		$arResult['SECTIONS'][] = $sect;
-	}
-} elseif ($arResult['PROPERTIES'][$arParams['SECTIONS_CODE']]['VALUE']) {
-	$arResult['SECTIONS'][] = $arResult['PROPERTIES'][$arParams['SECTIONS_CODE']]['VALUE'];
+
+$obEl=CIBlockElement::GetList(
+    array(),
+   $filter,
+    false,
+    false,
+    array('ID','IBLOCK_ID','IBLOCK_SECTION_ID', 'PROPERTY_'.$arParams['CATALOG_ACTION_CODE'],'NAME')
+);
+while($el=$obEl->GetNext()){
+    $arResult['SECTIONS'][] = $el['IBLOCK_SECTION_ID'];
 }
+$arResult['SECTIONS']=array_unique($arResult['SECTIONS']);
+
 
 if ($arParams['SECTIONS_CODE'] != '' && is_array($arResult['SECTIONS']) && count($arResult['PROPERTIES'][$arParams['SECTIONS_CODE']]['VALUE']) > 0) {
 	$sectionId = $arResult['SECTIONS'][0];
@@ -41,31 +61,15 @@ if (($arParams['CATALOG_IBLOCK_ID']) > 0 && $arParams['CATALOG_RASSROCHKA_CODE']
 		$arResult['RASSROCHKA_PROP'] = $arFields;
 	}
 }
-/*if ($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['MULTIPLE'] != 'Y') {
-	$arResult['FILTER_CONTROL_NAME'] = htmlspecialcharsbx($arParams['CATALOG_FILTER_NAME'].'_'.$arResult['PROP']['ID'].'_'.abs(crc32($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE']))).'=Y&set_filter=YYY';
-} else {
-	if (is_array($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE']) && count($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE']) > 0) {
-		$arResult['FILTER_CONTROL_NAME'] = '';
-		foreach ($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'] as $value) {
-			$arResult['FILTER_CONTROL_NAME'] = $arResult['FILTER_CONTROL_NAME'].htmlspecialcharsbx($arParams['CATALOG_FILTER_NAME'].'_'.$arResult['PROP']['ID'].'_'.abs(crc32($value))).'=Y&';
-		}
-		$arResult['FILTER_CONTROL_NAME'] = $arResult['FILTER_CONTROL_NAME'].'set_filter=YYY';
-	}
-}*/
-if ($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['MULTIPLE'] != 'Y') {
-    $arResult['FILTER_CONTROL_NAME'] = htmlspecialcharsbx('filter/'.strtolower($arResult['PROP']['CODE']).'-is-'.$arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE']).'/apply/';
-} else {
-    if (is_array($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE']) && count($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE']) > 0) {
-        $arResult['FILTER_CONTROL_NAME'] .= 'filter/'.htmlspecialcharsbx(strtolower($arParams['ACTION_CODE']).'-is-'.implode('-or-',$arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'])).'/apply/';
+
+    if ($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'] ) {
+        $arResult['FILTER_CONTROL_NAME'] = htmlspecialcharsbx('filter/'.strtolower($arResult['ACTION_PROP']['CODE']).'-is-'.$arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE']).'/apply/';
     }
-}
-if ($arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['MULTIPLE'] != 'Y') {
-    $arResult['FILTER_CONTROL_NAME'] = htmlspecialcharsbx('filter/'.strtolower($arResult['PROP']['CODE']).'-is-'.$arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']).'/apply/';
-} else {
-    if (is_array($arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']) && count($arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']) > 0) {
-        $arResult['FILTER_CONTROL_NAME'] .= 'filter/'.htmlspecialcharsbx(strtolower($arParams['RASSROCHKA_CODE']).'-is-'.implode('-or-',$arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE'])).'/apply/';
+
+    if ($arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']) {
+        $arResult['FILTER_CONTROL_NAME'] = htmlspecialcharsbx('filter/'.strtolower($arResult['RASSROCHKA_PROP']['CODE']).'-is-'.$arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']).'/apply/';
     }
-}
+
 if (!empty($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'])||$arResult['PROPERTIES'][$arParams['RASSROCHKA_CODE']]['VALUE']) {
     $arResult['CATALOG_FILTER'] = array();
 
@@ -76,5 +80,7 @@ if (!empty($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE'])||$arResul
     );
     $this->__component->arResult["CATALOG_FILTER"] =array_merge($arResult['CATALOG_FILTER'],$arrrfilter);
 }
+
+
 
 $this->__component->SetResultCacheKeys(array("CATALOG_FILTER"));

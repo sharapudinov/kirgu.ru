@@ -17,8 +17,8 @@ $aMenuLinks = Array(
 	Array(
 		"Акции", 
 		"/action/", 
-		Array(), 
-		Array(), 
+		Array(),
+        Array("FROM_IBLOCK"=>"1", "HOT"=>"1"),
 		"" 
 	),
 	Array(
@@ -45,6 +45,20 @@ $aMenuLinks = Array(
 	Array(
 		"Контакты", 
 		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Работа в Киргу", 
+		"/job/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Старая версия сайта", 
+		"http://kirgu.ru/", 
 		Array(), 
 		Array(), 
 		"" 
