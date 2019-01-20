@@ -47,7 +47,9 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 		} else if ($product.find('.js-article').data('prodarticle') ) {
 			$article.find('.js-article__value').html($product.find('.js-article').data('prodarticle')).parent('.js-article').removeClass('js-article-invisible');
 		} else {
+/*
 			$article.find('.js-article__value').parent('.js-article').addClass('js-article-invisible');
+*/
 		}
 	}
 
@@ -77,6 +79,15 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 				},
 				priceCount = 0,
 				priceCountShowed = 0;
+
+			if(!!PRICES['СпецЦена']['VALUE']){
+
+				PRICES['СпецЦена']['VALUE']=PRICES['Розничная']['VALUE'];
+				PRICES['СпецЦена']['PRINT_VALUE']=PRICES['Розничная']['PRINT_VALUE'];
+				PRICES['СпецЦена']['DISCOUNT_DIFF']=(PRICES['СпецЦена']['VALUE']-PRICES['СпецЦена']['DISCOUNT_VALUE']);
+				PRICES['СпецЦена']['PRINT_DISCOUNT']=PRICES['СпецЦена']['DISCOUNT_DIFF']+' руб.';
+
+			}
 
 			$prices.removeClass('product-multiple product-alone');
 			$prices.find('.js-prices__price').addClass('c-prices__hide c-prices__empty');
@@ -124,7 +135,7 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 					if (parseInt(PRICES[PRICE_CODE].DISCOUNT_DIFF) > 0) {
 						$prices.find('.js-prices_pv_' + PRICE_CODE + '_hide').removeClass('c-prices__hide');
 						$prices.find('.js-prices_pv_' + PRICE_CODE).removeClass('c-prices__hide').html(PRICES[PRICE_CODE].PRINT_VALUE);
-					} else {
+					} else {debugger
 						$prices.find('.js-prices_pv_' + PRICE_CODE + '_hide').addClass('c-prices__hide');
 					}
 				}

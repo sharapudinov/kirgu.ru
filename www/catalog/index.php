@@ -5919,7 +5919,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"SHOW_ERROR_EMPTY_ITEMS" => "Y",
 		"SHORT_SORTER" => "Y",
 		"PROP_SKU_MORE_PHOTO" => "MORE_PHOTO",
-		"PROP_SKU_ARTICLE" => "CML2_ARTICLE",
+		"PROP_SKU_ARTICLE" => "ARTIKUL",
 		"PROPS_ATTRIBUTES" => array(
 			0 => "OSNOVANIE_ORTOPEDICHESKOE",
 			1 => "RAZMER",
@@ -5927,7 +5927,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 			3 => "TSVET_1",
 			4 => "TSVET_2",
             5 => "VARIANT_ISPOLNENIYA",
-            6 => "VOZRAST"
+/*            6 => "VOZRAST"*/
 		),
 		"PROPS_ATTRIBUTES_COLOR" => array(
 /*			0 => "TSVET_2",*/
@@ -5981,7 +5981,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"PROP_PRICES_NOTE" => "-",
 		"OFF_BUY1CLICK" => "N",
 		"CUSTOM_COLLECTION_PROPERTY" => "-",
-		"PROP_MODS_ARTICLE" => "CML2_ARTICLE",
+		"PROP_MODS_ARTICLE" => "ARTIKUL",
 		"USE_GIFTS_DETAIL" => "Y",
 		"USE_GIFTS_SECTION" => "Y",
 		"USE_GIFTS_MAIN_PR_SECTION_LIST" => "Y",
@@ -6055,7 +6055,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"SEARCH_NO_WORD_LOGIC" => "Y",
 		"SEARCH_USE_LANGUAGE_GUESS" => "Y",
 		"SEARCH_CHECK_DATES" => "Y",
-		"MODS_ELEMENT_COUNT" => "10",
+		"MODS_ELEMENT_COUNT" => '',
 		"BRAND_DETAIL_SHOW_LOGO" => "N",
 		"BIG_DATA_ELEMENT_COUNT" => "5",
 		"COMPOSITE_FRAME_MODE" => "A",
