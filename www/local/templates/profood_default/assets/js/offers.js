@@ -80,13 +80,25 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 				priceCount = 0,
 				priceCountShowed = 0;
 
-			if(!!PRICES['СпецЦена']['VALUE']){
-
-				PRICES['СпецЦена']['VALUE']=PRICES['Розничная']['VALUE'];
-				PRICES['СпецЦена']['PRINT_VALUE']=PRICES['Розничная']['PRINT_VALUE'];
-				PRICES['СпецЦена']['DISCOUNT_DIFF']=(PRICES['СпецЦена']['VALUE']-PRICES['СпецЦена']['DISCOUNT_VALUE']);
-				PRICES['СпецЦена']['PRINT_DISCOUNT']=PRICES['СпецЦена']['DISCOUNT_DIFF']+' руб.';
-
+			if(!!PRICES['СпецЦена']) {
+				if (!!PRICES['СпецЦена']['VALUE']) {
+					PRICES['СпецЦена']['VALUE'] = PRICES['Розничная']['VALUE'];
+					PRICES['СпецЦена']['PRINT_VALUE'] = PRICES['Розничная']['PRINT_VALUE'];
+					PRICES['СпецЦена']['DISCOUNT_DIFF'] = (PRICES['СпецЦена']['VALUE'] - PRICES['СпецЦена']['DISCOUNT_VALUE']);
+					PRICES['СпецЦена']['PRINT_DISCOUNT'] = PRICES['СпецЦена']['DISCOUNT_DIFF'] + ' руб.';
+				}
+			} else {
+				PRICES['СпецЦена']=PRICES['Розничная'];
+			}
+			if(!!PRICES['РРЦ']) {
+				if (!!PRICES['РРЦ']['VALUE']) {
+					PRICES['Розничная']['VALUE'] = PRICES['РРЦ']['DISCOUNT_VALUE'];
+					PRICES['Розничная']['PRINT_VALUE'] = PRICES['РРЦ']['PRINT_DISCOUNT_VALUE'];
+					PRICES['Розничная']['DISCOUNT_DIFF'] = (PRICES['Розничная']['VALUE'] - PRICES['Розничная']['DISCOUNT_VALUE']);
+					PRICES['Розничная']['PRINT_DISCOUNT'] = PRICES['Розничная']['DISCOUNT_DIFF'] + ' руб.';
+				}
+			} else {
+				PRICES['РРЦ']=PRICES['Розничная'];
 			}
 
 			$prices.removeClass('product-multiple product-alone');
@@ -135,7 +147,7 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 					if (parseInt(PRICES[PRICE_CODE].DISCOUNT_DIFF) > 0) {
 						$prices.find('.js-prices_pv_' + PRICE_CODE + '_hide').removeClass('c-prices__hide');
 						$prices.find('.js-prices_pv_' + PRICE_CODE).removeClass('c-prices__hide').html(PRICES[PRICE_CODE].PRINT_VALUE);
-					} else {debugger
+					} else {
 						$prices.find('.js-prices_pv_' + PRICE_CODE + '_hide').addClass('c-prices__hide');
 					}
 				}
