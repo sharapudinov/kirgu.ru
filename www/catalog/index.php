@@ -5880,7 +5880,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 			206 => "OTOPLENIE",
 			207 => "USTANOVKA",
 			208 => "CML2_BAR_CODE",
-			209 => "",
+			209 => "MATERIAL_PODKLADY",
 		),
 		"PROPS_TABS" => array(
 		),
