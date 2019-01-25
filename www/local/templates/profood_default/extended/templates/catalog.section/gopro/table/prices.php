@@ -10,7 +10,7 @@ use \Bitrix\Main\Application,
 <?php
 // prices
 $params = $pricesParams;
-if (file_exists($path = rsGoProGetTemplatePathPart(EXTENDED_PATH_COMPONENTS.'/prices.php', $getTemplatePathPartParams))) {
+if (file_exists($path = rsGoProGetTemplatePathPart(EXTENDED_PATH_COMPONENTS.'/table_prices.php', $getTemplatePathPartParams))) {
 	include($path);
 }
 ?>

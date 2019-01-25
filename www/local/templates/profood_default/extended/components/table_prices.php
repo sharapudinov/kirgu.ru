@@ -3,6 +3,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     die();
 
 use \Bitrix\Main\localization\Loc;
+
 Loc::loadMessages(__FILE__);
 
 $priceCanViewCount = 1;
@@ -14,16 +15,16 @@ if (is_array($arResult['PRICES']) && count($arResult['PRICES']) > 0) {
         $priceCanViewCount++;
     }
 }
+
 $priceCount = 0;
 $priceCountShowed = 0;
 if (!empty($product['PRICE_MATRIX']['COLS'])) {
-    $bMultyPrice = ($priceCanViewCount && is_array($product['PRICE_MATRIX']['COLS']) && count($product['PRICE_MATRIX']['COLS'] ) > 1 && (!$product['PRICES']["СпецЦена"]) ? true : false);
-    $bProductMultyPrice = (is_array($product['PRICE_MATRIX']['COLS']) && count($product['PRICE_MATRIX']['COLS']) > 1 && (!$product['PRICES']["СпецЦена"])? true : false);
+    $bMultyPrice = ($priceCanViewCount && is_array($product['PRICE_MATRIX']['COLS']) && count($product['PRICE_MATRIX']['COLS']) > 1 ? true : false);
+    $bProductMultyPrice = (is_array($product['PRICE_MATRIX']['COLS']) && count($product['PRICE_MATRIX']['COLS']) > 1 ? true : false);
 } else {
-    $bMultyPrice = ($priceCanViewCount && is_array($product['PRICES']) && count($product['PRICES']) > 1 && (!$product['PRICES']["СпецЦена"])? true : false);
-    $bProductMultyPrice = (is_array($product['PRICES']) && count($product['PRICES']) > 1 && (!$product['PRICES']["СпецЦена"])? true : false);
+    $bMultyPrice = ($priceCanViewCount && is_array($product['PRICES']) && count($product['PRICES']) > 1 ? true : false);
+    $bProductMultyPrice = (is_array($product['PRICES']) && count($product['PRICES']) > 1 ? true : false);
 }
-
 
 $params = array(
     'SHOW_NAME' => true,
@@ -52,7 +53,6 @@ if (empty($prices)) {
 }
 
 if (!function_exists('rsGoProShowPrice')) {
-
     function rsGoProShowPrice($arPrice = array(), $params = array()) {
         $issetPrice = (!empty($arPrice) && is_array($arPrice)) ? true : false;
         $flag = ($params['PAGE'] == 'list' && $params['VIEW'] == 'line' ?: false);
@@ -70,7 +70,7 @@ if (!function_exists('rsGoProShowPrice')) {
             }
             ?><span class="c-prices__value js-prices_pdv_<?=$params['PRICE_CODE']?>"><?=($issetPrice ? $arPrice["PRINT_DISCOUNT_VALUE"] : ' &nbsp; ')?></span><?
             if ($params['SHOW_OLD_PRICE']) {
-                ?><span class="c-prices__value-old-before <?=($arPrice['DISCOUNT_DIFF'] > 0 ? '' : ' c-prices__hide')?>"><span class="c-prices__value-old js-prices_pv_<?=$params['PRICE_CODE']?>_hide js-prices_pv_<?=$params['PRICE_CODE']?><?=($arPrice['DISCOUNT_DIFF'] > 0 ? '' : ' c-prices__hide')?>"><?=($issetPrice ? $arPrice['PRINT_VALUE'] : '')?></span></span><?
+                ?><span class="c-prices__value-old js-prices_pv_<?=$params['PRICE_CODE']?>_hide js-prices_pv_<?=$params['PRICE_CODE']?><?=($arPrice['DISCOUNT_DIFF'] > 0 ? '' : ' c-prices__hide')?>"><?=($issetPrice ? $arPrice['PRINT_VALUE'] : '')?></span><?
             }
             if ($params['SHOW_DISCOUNT_DIFF']) {
                 if (empty($arPrice['PRINT_DISCOUNT']) && !empty($arPrice['PRINT_DISCOUNT_DIFF'])) {
@@ -98,7 +98,7 @@ if (!function_exists('rsGoProShowPrice')) {
 ?>
 
 <div <?
-    ?>class="c-prices js-prices view-<?=$params['VIEW']?> page-<?=$params['PAGE']?> product-<?=($bProductMultyPrice ? 'multiple' : 'alone')?> multyprice-<?=($bMultyPrice ? 'yes' : 'no')?>" <?
+    ?>class="c-prices js-prices view-<?=$params['VIEW']?> page-<?=$params['PAGE']?> product-<?=($bProductMultyPrice ? 'multiple' : 'alone')?>" <?
     ?>data-page="<?=$params['PAGE']?>" <?
     ?>data-view="<?=$params['VIEW']?>" <?
     ?>data-maxshow="<?=$params['MAX_SHOW']?>" <?
@@ -107,29 +107,40 @@ if (!function_exists('rsGoProShowPrice')) {
     ?>data-multiprice="<?=($bMultyPrice ? 'Y' : 'N')?>" <?
     ?>data-productmultiprice="<?=($bProductMultyPrice ? 'Y' : 'N')?>" <?
     ?>>
-<?php /*test_dump($product['PRICES']);*/
-if(!is_set($product['PRICES']["СпецЦена"])) {
-    if(is_set($product['PRICES']["РРЦ"])) {
-        $params['PRICE_CODE'] = "РРЦ";
-        $params['PRICE_NAME'] = $prices["РРЦ"]['TITLE'];
-        rsGoProShowPrice($product['PRICES']["РРЦ"], $params);
+<?php
+foreach ($prices as $priceCode => $arPriceInfo) {
+    if (!$arPriceInfo['CAN_VIEW']) {
+        continue;
     }
-    $params['PRICE_CODE'] = "Розничная";
-    $params['PRICE_NAME'] = $prices["Розничная"]['TITLE'];
-    rsGoProShowPrice($product['PRICES']["Розничная"], $params);
 
+    if ($priceCount >= $params['MAX_SHOW'] && $params['PAGE'] == 'list' && $params['VIEW'] == 'line') {
+        break;
+    }
 
-} else {
-           $params['PRICE_CODE'] ='СпецЦена';
-        $params['PRICE_NAME'] =  $prices['СпецЦена']['TITLE'];
-    $arPrice=$product['PRICES']["СпецЦена"];
-    $arPrice['PRINT_VALUE']=$product['PRICES']["Розничная"]['PRINT_VALUE'];
-    $arPrice['DISCOUNT_DIFF']=$product['PRICES']["Розничная"]['VALUE']-$arPrice['VALUE'];
-    $arPrice['PRINT_DISCOUNT_DIFF']=CCurrencyLang::CurrencyFormat( $arPrice['DISCOUNT_DIFF'],'RUB',true);
-    rsGoProShowPrice($arPrice, $params);
+    if ($priceCountShowed >= $params['MAX_SHOW']) {
+        $params['HIDE_PRICE'] = true;
+    }
 
+    $priceTypeId = $arPriceInfo['ID'];
+    $params['PRICE_CODE'] = $arPriceInfo['CODE'];
+    $params['PRICE_NAME'] = $arPriceInfo['TITLE'];
+
+    if ($arParams['USE_PRICE_COUNT'] == 'Y' && !empty($product['PRICE_MATRIX']['COLS'])) {
+        if (!empty($product['PRICE_MATRIX']['MATRIX'][$priceTypeId])) {
+            $arPrice = reset($product['PRICE_MATRIX']['MATRIX'][$priceTypeId]);
+        } else {
+            $arPrice = array();
+        }
+    } else {
+        $arPrice = $product['PRICES'][$priceCode];
+    }
+
+    if (rsGoProShowPrice($arPrice, $params)) {
+        $priceCountShowed++;
+    }
+
+    $priceCount++;
 }
-
 
 ////////////////// more part //////////////////
 if ($arParams['USE_PRICE_COUNT'] == 'Y' && !empty($product['PRICE_MATRIX']['COLS'])) {

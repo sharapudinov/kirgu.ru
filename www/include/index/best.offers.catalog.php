@@ -67,7 +67,7 @@ global $APPLICATION, $JSON, $isSorterChange, $isAjaxPages, $alfaCTemplate, $alfa
 			2 => "INTERNET",
 			3 => "VIP1",
 		),
-		"USE_PRICE_COUNT" => "Y",
+		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
 		"PRICE_VAT_INCLUDE" => "Y",
 		"CONVERT_CURRENCY" => "N",

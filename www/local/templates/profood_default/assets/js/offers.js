@@ -87,9 +87,9 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 					PRICES['СпецЦена']['DISCOUNT_DIFF'] = (PRICES['СпецЦена']['VALUE'] - PRICES['СпецЦена']['DISCOUNT_VALUE']);
 					PRICES['СпецЦена']['PRINT_DISCOUNT'] = PRICES['СпецЦена']['DISCOUNT_DIFF'] + ' руб.';
 				}
-			} /*else {
+			} else {
 				PRICES['СпецЦена']=PRICES['Розничная'];
-			}*/
+			}
 			if(!!PRICES['РРЦ']) {
 				if (!!PRICES['РРЦ']['VALUE']) {
 					PRICES['Розничная']['VALUE'] = PRICES['РРЦ']['DISCOUNT_VALUE'];

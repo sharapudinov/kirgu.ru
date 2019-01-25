@@ -440,7 +440,7 @@ if ($_REQUEST['ajaxpages'] == 'Y' && $_REQUEST['ajaxpagesid'] == 'ajaxpages_mods
 					'PAGE_ELEMENT_COUNT' => (intval($arParams['MODS_ELEMENT_COUNT']) > 0 ? intval($arParams['MODS_ELEMENT_COUNT']) : 100),
 					'LINE_ELEMENT_COUNT' => $arParams['LINE_ELEMENT_COUNT'],
 					'PRICE_CODE' => $arParams['PRICE_CODE'],
-					'USE_PRICE_COUNT' => /*$arParams['USE_PRICE_COUNT']*/'Y',
+					'USE_PRICE_COUNT' => $arParams['USE_PRICE_COUNT'],
 					'SHOW_PRICE_COUNT' => $arParams['SHOW_PRICE_COUNT'],
 
 					'PRICE_VAT_INCLUDE' => $arParams['PRICE_VAT_INCLUDE'],
