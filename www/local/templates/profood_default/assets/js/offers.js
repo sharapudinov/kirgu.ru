@@ -223,13 +223,11 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 		$product.find('.js-product-subscribe').attr('data-item', finedOfferID);
 		$product.find('.js-product-subscribe').data('item', finedOfferID);
 		// /change product subscribe
-
 		// stores
 		if ($product.find('.js-stores').length > 0 && finedOfferID > 0) {
 			if (RSGoPro_STOCK[element_id]) {
 				// change stores
 				for (storeID in RSGoPro_STOCK[element_id].JS.SKU[finedOfferID]) {
-
 					var stores = RSGoPro_STOCK[element_id].JS.SKU[finedOfferID],
 						quantity = stores[storeID],
 						$store = $('#popupstores_' + element_id).find('.js-stores__store' + storeID);
@@ -253,25 +251,33 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 						$store.show();
 					}
 				}
-
 				// change general
-				if (RSGoPro_STOCK[element_id].QUANTITY[element_id]) {
+				debugger
 
-					var quantity = parseInt( RSGoPro_STOCK[element_id].QUANTITY[finedOfferID] );
-					if (RSGoPro_STOCK[element_id].USE_MIN_AMOUNT == true) {
-						if (quantity < 1) {
-							$product.find('.js-stores__value').html(RSGoPro_STOCK[element_id].MESSAGE_EMPTY);
-						} else if (quantity < RSGoPro_STOCK[element_id].MIN_AMOUNT) {
-							$product.find('.js-stores__value').html(RSGoPro_STOCK[element_id].MESSAGE_LOW);
+				if (RSGoPro_STOCK[element_id].JS.SKU[finedOfferID].IS_VITRINA) {
+					$product.find('.js-stores__value').html(RSGoPro_STOCK[element_id].MESSAGE_DISPLAY);
+					$product.find('.js-stores__value').addClass('vitrina');
+				} else {
+					$product.find('.js-stores__value').removeClass('vitrina');
+
+					if (RSGoPro_STOCK[element_id].QUANTITY[finedOfferID]) {
+
+						var quantity = parseInt(RSGoPro_STOCK[element_id].QUANTITY[finedOfferID]);
+						if (RSGoPro_STOCK[element_id].USE_MIN_AMOUNT == true) {
+							if (quantity < 1) {
+								$product.find('.js-stores__value').html(RSGoPro_STOCK[element_id].MESSAGE_EMPTY);
+							} else if (quantity < RSGoPro_STOCK[element_id].MIN_AMOUNT) {
+								$product.find('.js-stores__value').html(RSGoPro_STOCK[element_id].MESSAGE_LOW);
+							} else {
+								$product.find('.js-stores__value').html(RSGoPro_STOCK[element_id].MESSAGE_ISSET);
+							}
+
 						} else {
-							$product.find('.js-stores__value').html(RSGoPro_STOCK[element_id].MESSAGE_ISSET);
-						}
-
-					} else {
-						if (quantity < 1){
-							$product.find('.js-stores__value').html('0');
-						}  else{
-							$product.find('.js-stores__value').html(quantity);
+							if (quantity < 1) {
+								$product.find('.js-stores__value').html('0');
+							} else {
+								$product.find('.js-stores__value').html(quantity);
+							}
 						}
 					}
 				}

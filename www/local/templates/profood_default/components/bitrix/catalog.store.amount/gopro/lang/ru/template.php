@@ -7,8 +7,10 @@ $MESS["GOPRO.STORES.QUANTITY"] = "В наличии";
 $MESS["GOPRO.STORES.QUANTITY.ISSET"] = "В наличии#ICON#";
 $MESS["GOPRO.STORES.QUANTITY.LOW"] = "Мало#ICON#";
 $MESS["GOPRO.STORES.QUANTITY.EMPTY"] = "Нет в наличии#ICON#";
+$MESS["GOPRO.STORES.QUANTITY.DISPLAY"] = "На витрине#ICON#";
 
 $MESS["GOPRO.STORES.QUANTITY.DETAIL"] = "В наличии";
 $MESS["GOPRO.STORES.QUANTITY.ISSET.DETAIL"] = "#ICON#<span class=\"sub\">много</span>";
 $MESS["GOPRO.STORES.QUANTITY.LOW.DETAIL"] = "#ICON#<span class=\"sub\">мало</span>";
+$MESS["GOPRO.STORES.QUANTITY.DISPLAY.DETAIL"] = "#ICON#<span class=\"sub\">на витрине</span>";
 $MESS["GOPRO.STORES.QUANTITY.EMPTY.DETAIL"] = "#ICON#<span class=\"sub\">нет</span>";

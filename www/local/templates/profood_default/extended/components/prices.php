@@ -107,7 +107,7 @@ if (!function_exists('rsGoProShowPrice')) {
     ?>data-multiprice="<?=($bMultyPrice ? 'Y' : 'N')?>" <?
     ?>data-productmultiprice="<?=($bProductMultyPrice ? 'Y' : 'N')?>" <?
     ?>>
-<?php /*test_dump($product['PRICES']);*/
+<?php
 if(!is_set($product['PRICES']["СпецЦена"])) {
     if(is_set($product['PRICES']["РРЦ"])) {
         $params['PRICE_CODE'] = "РРЦ";

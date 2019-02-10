@@ -95,10 +95,10 @@ $APPLICATION->SetTitle("Персональный раздел");
 			"account" => "account/",
 			"subscribe" => "subscribe/",
 			"profile" => "profiles/",
-			"profile_detail" => "profiles/#ID#",
+			"profile_detail" => "profiles/#ID#/",
 			"private" => "private/",
-			"order_detail" => "orders/#ID#",
-			"order_cancel" => "cancel/#ID#",
+			"order_detail" => "order/#ID#/",
+			"order_cancel" => "cancel/#ID#/",
 		)
 	),
 	false

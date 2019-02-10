@@ -24,7 +24,6 @@ while ($arSection = $dbRes->GetNext()) {
     if (isset($arSection['UF_VIEW_SKU_SELECTOR']) && $arSection['UF_VIEW_SKU_SELECTOR'] == 1)
         $select_offer_by_name = true;
 }
-/*test_dump($arItem['OFFERS_EXT']);*/
 $params = array(
     'VIEW' => ($params['VIEW'] == 'list' ? 'list' : 'buttons'),
     'HIDE_NAME' => ($params['HIDE_NAME'] != 'Y' ? false : true),

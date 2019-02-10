@@ -196,8 +196,6 @@ if (is_array($arResult['ITEMS']) && count($arResult['ITEMS']) > 0) {
         $HLiB_name=$arItem['PROPERTIES']['RASSROCHKA']['USER_TYPE_SETTINGS']['TABLE_NAME'];
         $XML_ID=$arItem['PROPERTIES']['RASSROCHKA']['VALUE'];
 
-/*test_dump($arItem['PROPERTIES']['RASSROCHKA']['VALUE']);*/
-
         if(CModule::IncludeModule('highloadblock')) {
             $rsData = \Bitrix\Highloadblock\HighloadBlockTable::getList(array('filter' => array('TABLE_NAME' => $HLiB_name)));
             if (!($hldata = $rsData->fetch())) {

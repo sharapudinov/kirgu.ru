@@ -7,7 +7,6 @@ $params = array(
     'PAGE' => ($params['PAGE'] == 'detail' ? 'detail' : 'list'),
 );
 if($params['PAGE'] == 'detail'){
-/*    test_dump($arResult);*/
 }
 ?>
 

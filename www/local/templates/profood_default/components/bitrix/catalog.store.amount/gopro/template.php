@@ -55,8 +55,14 @@ $postfix = ($arParams['PAGE'] == 'detail' ? '.DETAIL' : '');
 				?><?php endif;
 			}
 			?><<?=$tag?> class="b-stores__genamount<?=($tag == 'a' ? ' js-easy-scroll' : '')?>" <?=($tag == 'a' ? 'href="#stocks"' : 'data-href="#stocks"')?> title="" data-es-offset="-135" data-src="#stores_<?=$arParams['~ELEMENT_ID']?>"><?
-				?><?php if ($arParams['GOPRO_USE_MIN_AMOUNT'] == 'Y'): ?><?
-					?><?php if ($arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']] < 1): ?><?
+				?>
+
+                    <?if($arResult['STORES']['VITRINA']=='Y'):?>
+                        <span class="js-stores__value vitrina"><?=Loc::getMessage('GOPRO.STORES.QUANTITY.DISPLAY'.$postfix, array('#ICON#' => $arParams['ICONS']['LOW']))?></span><?
+                        ?>
+                    <?elseif($arParams['GOPRO_USE_MIN_AMOUNT'] == 'Y'): ?><?
+
+                    ?><?php if ($arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']] < 1): ?><?
 						?><span class="js-stores__value"><?=Loc::getMessage('GOPRO.STORES.QUANTITY.EMPTY'.$postfix, array('#ICON#' => $arParams['ICONS']['EMPTY']))?></span><?
 					?><?php elseif ($arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']] < $arParams['MIN_AMOUNT']): ?><?
 						?><span class="js-stores__value"><?=Loc::getMessage('GOPRO.STORES.QUANTITY.LOW'.$postfix, array('#ICON#' => $arParams['ICONS']['LOW']))?></span><?
@@ -70,8 +76,8 @@ $postfix = ($arParams['PAGE'] == 'detail' ? '.DETAIL' : '');
 					?> - <span class="js-stores__value sub"><?=$arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']]?></span><?
 				?><?php endif; ?><?
 			?></<?=$tag?>><?
-		?><?php else: ?><?
-			if ($arParams['PAGE'] == 'detail') {
+		?><?php else: ?>
+    <? if($arParams['PAGE'] == 'detail') {
 				if ($arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']] < 1): ?><?
 					?><span class="js-stores__title"><?=Loc::getMessage('GOPRO.STORES.QUANTITY'.$postfix)?></span><?
 				?><?php elseif ($arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']] < $arParams['MIN_AMOUNT']): ?><?
@@ -81,7 +87,11 @@ $postfix = ($arParams['PAGE'] == 'detail' ? '.DETAIL' : '');
 				?><?php endif;
 			}
 			?><<?=$tag?> class="b-stores__genamount<?=($tag == 'a' ? ' js-easy-scroll' : '')?>" <?=($tag == 'a' ? 'href="#stocks"' : 'data-href="#stocks"')?> title="" data-es-offset="-135"><?
-				?><?php if ($arParams['GOPRO_USE_MIN_AMOUNT'] == 'Y'): ?><?
+				?>
+    <?
+    if($arResult['STORES']['VITRINA']=='Y'):?>
+    <span class="js-stores__value vitrina"><?=Loc::getMessage('GOPRO.STORES.QUANTITY.DISPLAY'.$postfix, array('#ICON#' => $arParams['ICONS']['LOW']))?></span><?
+    elseif ($arParams['GOPRO_USE_MIN_AMOUNT'] == 'Y'): ?><?
 					?><?php if ($arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']] < 1): ?><?
 						?><span class="js-stores__value"><?=Loc::getMessage('GOPRO.STORES.QUANTITY.EMPTY'.$postfix, array('#ICON#' => $arParams['ICONS']['EMPTY']))?></span><?
 					?><?php elseif ($arParams['DATA_QUANTITY'][$arParams['FIRST_ELEMENT_ID']] < $arParams['MIN_AMOUNT']): ?><?
@@ -161,7 +171,15 @@ ob_start();
 $stocks['DATA'] = ob_get_clean();
 ?>
 <?php endif; ?>
-
+<?
+array_walk(
+        $arResult['JS']['SKU'],
+        function (&$item, $key) {
+            $amount = new StoreAmount($key);
+            $item['IS_VITRINA'] =$amount->isVitrina();
+            return $item;
+        });
+?>
 <script>
 if (RSGoPro_STOCK == 'undefined')
     RSGoPro_STOCK = {};
@@ -173,11 +191,13 @@ RSGoPro_STOCK[<?=$arParams['~ELEMENT_ID']?>] = {
     'MIN_AMOUNT' : <?=(IntVal($arParams['MIN_AMOUNT']) > 0 ? $arParams['MIN_AMOUNT'] : 0)?>,
     'MESSAGE_ISSET' : <?=CUtil::PhpToJSObject(Loc::getMessage('GOPRO.STORES.QUANTITY.ISSET'.$postfix, array('#ICON#' => $arParams['ICONS']['ISSET'])))?>,
     'MESSAGE_LOW' : <?=CUtil::PhpToJSObject(Loc::getMessage('GOPRO.STORES.QUANTITY.LOW'.$postfix, array('#ICON#' => $arParams['ICONS']['LOW'])))?>,
+    'MESSAGE_DISPLAY' : <?=CUtil::PhpToJSObject(Loc::getMessage('GOPRO.STORES.QUANTITY.DISPLAY'.$postfix, array('#ICON#' => $arParams['ICONS']['LOW'])))?>,
     'MESSAGE_EMPTY' : <?=CUtil::PhpToJSObject(Loc::getMessage('GOPRO.STORES.QUANTITY.EMPTY'.$postfix, array('#ICON#' => $arParams['ICONS']['EMPTY'])))?>,
     'SHOW_EMPTY_STORE' : <?=($arParams['SHOW_EMPTY_STORE']=='Y' ? 'true' : 'false')?>
 };
 
 $(document).on('rsGoPro.document.ready', function(){
+
 	var html = <?=CUtil::PhpToJSObject($stocks)?>;
 	$('#stocks_detail_tab').html(html.DATA);
 });
