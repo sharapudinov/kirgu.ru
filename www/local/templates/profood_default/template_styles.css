@@ -27,3 +27,11 @@ a.hot {
 .vitrina {
     color: #dd3f51;
 }
+
+.credit {
+    margin-bottom: 10px;
+}
+
+.filtren .lvl2 .smartf-div .disabled {
+    display: none;
+}

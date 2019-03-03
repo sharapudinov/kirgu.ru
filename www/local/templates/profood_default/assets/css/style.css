@@ -9443,7 +9443,9 @@ body .popup-window-close-icon:hover:after {
 }
 
 .filtren .lvl2 .smartf-div {
+    /*
     display: inline-block;
+    */
     cursor: pointer;
     width: 100%
 }
