@@ -35,3 +35,13 @@ a.hot {
 .filtren .lvl2 .smartf-div .disabled {
     display: none;
 }
+
+.collapse-button {
+    padding: 5px;
+    display: block;
+    border-color: #0eb23b;
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+
+}
