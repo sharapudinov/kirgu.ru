@@ -2,7 +2,7 @@
 /******************************* custom ********************************/
 /***********************************************************************/
 var RSGoPro_tamautID = 0,
-	RSGoPro_timeoutDelay = 1200,
+	RSGoPro_timeoutDelay = 500,
 	RSGoPro_inputter,
 	RSGoPro_modef_delay_hide = 4000,
 	RSGoPro_modef_posFix = 0;
@@ -255,7 +255,7 @@ JCSmartFilter.prototype.reload = function(input)
 		
 		var lvl1 = BX.pos(BX.findParent(input, {'class':'property'}), true);
 		RSGoPro_Area2Darken( $(input).closest('.filtren'), 'animashka', {'progressTop': lvl1.top + lvl1.height/2});
-		
+
 		var values = [];
 		this.position = BX.pos(input, true);
 		this.form = BX.findParent(input, {'tag':'form'});
@@ -383,7 +383,7 @@ JCSmartFilter.prototype.postHandler = function (result)
 		}
 
 		if (/*!!modef && */!!modef_num)
-		{debugger
+		{
 			modef_num.innerHTML = result.ELEMENT_COUNT;
 			hrefFILTER = BX.findChildren(modef, {tag: 'A'}, true);
 
