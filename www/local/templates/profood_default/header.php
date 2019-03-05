@@ -270,7 +270,7 @@ if (!empty($arModuleVersion['VERSION'])) {
 							array('MODE' => 'html')
 						);?>
 						<h1 class="pagetitle"><?php $APPLICATION->ShowTitle(false); ?>
-                        <span class="section-element-count"><?$APPLICATION->ShowProperty("SectionElementCount")?></span>
+                        <span id="modef_num" class="section-element-count"><?$APPLICATION->ShowProperty("SectionElementCount")?></span>
                         </h1>
 					</div>
 				</div>

@@ -9,7 +9,6 @@ if (Loader::includeModule('redsign.devfunc')) {
 	\Redsign\DevFunc\Sale\Location\Region::editSmartFilterResult($arResult);
 }
 
-
 if (intval($this->__component->SECTION_ID) < 1)
 {
     $FILTER_NAME = (string)$arParams["FILTER_NAME"];

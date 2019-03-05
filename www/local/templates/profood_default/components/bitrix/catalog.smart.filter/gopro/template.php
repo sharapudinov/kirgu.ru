@@ -657,13 +657,13 @@ $this->setFrameMode(true);
                     ><span><?=GetMessage("CT_BCSF_DEL_FILTER")?></span></button>
 				</div>
 			</div>
-			<div class="modef" id="modef" <?if(!isset($arResult['ELEMENT_COUNT'])) echo 'style="display:none"';?>>
+			<!--<div class="modef" id="modef" <?/*if(!isset($arResult['ELEMENT_COUNT'])) echo 'style="display:none"';*/?>>
 				<span class="arrow">&nbsp;</span>
 				<span class="data">
-					<?=GetMessage('CT_BCSF_FILTER_COUNT', array('#ELEMENT_COUNT#' => ' <span id="modef_num">'.intval($arResult['ELEMENT_COUNT']).'</span>'));?>
-					<a href="<?echo $arResult['FILTER_URL']?>"><?=GetMessage('CT_BCSF_FILTER_SHOW')?></a>
+					<?/*=GetMessage('CT_BCSF_FILTER_COUNT', array('#ELEMENT_COUNT#' => ' <span id="modef_num">'.intval($arResult['ELEMENT_COUNT']).'</span>'));*/?>
+					<a href="<?/*echo $arResult['FILTER_URL']*/?>"><?/*=GetMessage('CT_BCSF_FILTER_SHOW')*/?></a>
 				</span>
-			</div>
+			</div>-->
 		</div>
 	</div>
 </form>

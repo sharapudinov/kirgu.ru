@@ -216,15 +216,13 @@ JCSmartFilter.prototype.keyup = function(input)
 {
 	$(input).toggleClass('active');
 	$(input).parents('div').toggleClass('active');
-	if( $('.filtren').hasClass('ajaxfilter') ) {
-		RSGoPro_FilterAjax();
-	} else {
+
 		if(this.timer)
 			clearTimeout(this.timer);
 		this.timer = setTimeout(BX.delegate(function(){
 			this.reload(input);
 		}, this), RSGoPro_timeoutDelay);
-	}
+
 }
 
 JCSmartFilter.prototype.click = function(checkbox)
@@ -241,16 +239,12 @@ JCSmartFilter.prototype.click = function(checkbox)
 			}
 		}
 	}
-	if( $('.filtren').hasClass('ajaxfilter') )
-	{
-		RSGoPro_FilterAjax();
-	} else {
 		if(this.timer)
 			clearTimeout(this.timer);
 		this.timer = setTimeout(BX.delegate(function(){
 			this.reload(checkbox);
 		}, this), RSGoPro_timeoutDelay);
-	}
+
 }
 
 JCSmartFilter.prototype.reload = function(input)
@@ -360,6 +354,10 @@ JCSmartFilter.prototype.postHandler = function (result)
 	clearInterval(RSGoPro_tamautID);
 	RSGoPro_Area2Darken( $('.filtren') );
 	/* /custom */
+
+	if( $('.filtren').hasClass('ajaxfilter') )
+		RSGoPro_FilterAjax();
+
   
   var hrefFILTER, url, curProp;
 	var modef = BX('modef');
@@ -384,8 +382,8 @@ JCSmartFilter.prototype.postHandler = function (result)
 			}
 		}
 
-		if (!!modef && !!modef_num)
-		{
+		if (/*!!modef && */!!modef_num)
+		{debugger
 			modef_num.innerHTML = result.ELEMENT_COUNT;
 			hrefFILTER = BX.findChildren(modef, {tag: 'A'}, true);
 
