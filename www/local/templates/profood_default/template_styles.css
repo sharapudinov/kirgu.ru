@@ -45,3 +45,20 @@ a.hot {
     border-style: solid;
 
 }
+
+div.bx-authform-input-container input[type="text"],
+div.bx-authform-input-container input[type="password"] {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    height: 38px;
+    margin: 0;
+    padding: 0 4px;
+    border: 1px solid #CCD5DB;
+    border-radius: 2px;
+    background: #f8fafc;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

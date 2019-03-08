@@ -25,7 +25,8 @@ $APPLICATION->SetTitle("Хотите дешевле?");
 		"AJAX_OPTION_HISTORY" => "N",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "3600",
-		"AJAX_OPTION_ADDITIONAL" => ""
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"ALFA_EMAIL_TO" =>"online@kirgu.ru"
 	),
 	false
 );?>
