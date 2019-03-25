@@ -52,10 +52,7 @@ class Vitrina
 
     public function isVitrina($store_id)
     {
-        if (in_array($store_id, self::getInstance()->vitrina))
-            return true;
-        else
-            return false;
+        return in_array($store_id, self::getInstance()->vitrina);
     }
 }
 class StoreAmount
@@ -87,11 +84,10 @@ class StoreAmount
     public function isVitrina()
     {
         foreach ($this->amount as $store_amount) {
-            if ($store_amount['AMOUNT'] > 2 || !Vitrina::getInstance()->isVitrina($store_amount['STORE_ID']) && $store_amount['AMOUNT'] == 2) {
+            if ($store_amount['AMOUNT'] > 2 || !Vitrina::getInstance()->isVitrina($store_amount['STORE_ID']) && $store_amount['AMOUNT'] == 2)
                 return false;
-            }
         }
-        return true;
+        return count($this->amount)>0;
     }
 }
 

@@ -4997,7 +4997,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		"BIG_DATA_ELEMENT_COUNT" => "5",
 		"COMPOSITE_FRAME_MODE" => "A",
 		"COMPOSITE_FRAME_TYPE" => "AUTO",
-		"PRODUCT_SUBSCRIPTION" => "N",
+		"PRODUCT_SUBSCRIPTION" => "Y",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",
