@@ -3,7 +3,20 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 ?>
 
-<div class="tline"></div>
+<!--<div class="tline"></div>
+--><?$APPLICATION->IncludeComponent(
+    "bitrix:advertising.banner",
+    "",
+    Array(
+        "CACHE_TIME" => "0",
+        "CACHE_TYPE" => "A",
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO",
+        "NOINDEX" => "N",
+        "QUANTITY" => "1",
+        "TYPE" => "MAIN"
+    )
+);?>
 
 <div id="tpanel" class="tpanel">
     <div class="centering">

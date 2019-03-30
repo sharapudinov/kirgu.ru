@@ -62,3 +62,11 @@ div.bx-authform-input-container input[type="password"] {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+a.hot {
+    padding: 5px;
+    background-color: #dd3f50;
+    color: white;
+    margin-top: 9px;
+    font-weight: bold;
+}

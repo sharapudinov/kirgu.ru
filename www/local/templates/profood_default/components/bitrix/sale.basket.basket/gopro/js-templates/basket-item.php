@@ -1,5 +1,5 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
-test_dump($arParams['PRODUCT_BLOCKS_ORDER']);
+
 use Bitrix\Main\Localization\Loc;
 /**
  * @var array $mobileColumns

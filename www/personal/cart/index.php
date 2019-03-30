@@ -32,7 +32,7 @@ $APPLICATION->SetTitle("Корзина");
 <div class="pcontent">
 <?$APPLICATION->IncludeComponent(
 	"bitrix:sale.basket.basket", 
-	".default", 
+	"gopro", 
 	array(
 		"COLUMNS_LIST" => array(
 			0 => "NAME",
@@ -47,7 +47,7 @@ $APPLICATION->SetTitle("Корзина");
 			9 => "PROPERTY_YEAR",
 		),
 		"PATH_TO_ORDER" => "/personal/order/make/",
-		"HIDE_COUPON" => "Y",
+		"HIDE_COUPON" => "N",
 		"PRICE_VAT_SHOW_VALUE" => "N",
 		"COUNT_DISCOUNT_4_ALL_QUANTITY" => "N",
 		"USE_PREPAYMENT" => "N",
@@ -55,15 +55,11 @@ $APPLICATION->SetTitle("Корзина");
 		"SET_TITLE" => "Y",
 		"ACTION_VARIABLE" => "action",
 		"OFFERS_PROPS" => array(
-			0 => "RAZMER",
-			1 => "TSVET",
-			2 => "TSVET_1",
-			3 => "TSVET_2",
 		),
 		"PROP_ARTICLE" => "CML2_ARTICLE",
 		"PROP_SKU_ARTICLE" => "CML2_ARTICLE",
 		"AJAX_MODE" => "Y",
-		"COMPONENT_TEMPLATE" => ".default",
+		"COMPONENT_TEMPLATE" => "gopro",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
 		"AJAX_OPTION_HISTORY" => "N",
@@ -95,10 +91,19 @@ $APPLICATION->SetTitle("Корзина");
 		"SHOW_RESTORE" => "Y",
 		"COLUMNS_LIST_EXT" => array(
 			0 => "PREVIEW_PICTURE",
-			1 => "DELETE",
-			2 => "DELAY",
+			1 => "DISCOUNT",
+			2 => "DELETE",
+			3 => "DELAY",
+			4 => "TYPE",
+			5 => "SUM",
 		),
 		"COLUMNS_LIST_MOBILE" => array(
+			0 => "PREVIEW_PICTURE",
+			1 => "DISCOUNT",
+			2 => "DELETE",
+			3 => "DELAY",
+			4 => "TYPE",
+			5 => "SUM",
 		),
 		"TEMPLATE_THEME" => "blue",
 		"TOTAL_BLOCK_DISPLAY" => array(
@@ -112,7 +117,7 @@ $APPLICATION->SetTitle("Корзина");
 		"USE_PRICE_ANIMATION" => "Y",
 		"LABEL_PROP" => array(
 		),
-		"COMPATIBLE_MODE" => "Y",
+		"COMPATIBLE_MODE" => "N",
 		"LABEL_PROP_MOBILE" => "",
 		"LABEL_PROP_POSITION" => "",
 		"ADDITIONAL_PICT_PROP_4" => "-",

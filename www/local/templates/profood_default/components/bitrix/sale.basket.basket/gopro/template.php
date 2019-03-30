@@ -126,7 +126,7 @@ if ($arParams['USE_GIFTS'] === 'Y')
 		'DATA_LAYER_NAME' => $arParams['DATA_LAYER_NAME'],
 		'BRAND_PROPERTY' => $arParams['BRAND_PROPERTY']
 	);
-}
+}test_dump($giftParameters);
 
 \CJSCore::Init(array('fx', 'popup', 'ajax'));
 
