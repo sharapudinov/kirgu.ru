@@ -87,7 +87,7 @@ $APPLICATION->SetTitle("Корзина");
 		"CATALOG_LINK" => "/catalog/",
 		"DEFERRED_REFRESH" => "N",
 		"USE_DYNAMIC_SCROLL" => "Y",
-		"SHOW_FILTER" => "Y",
+		"SHOW_FILTER" => "N",
 		"SHOW_RESTORE" => "Y",
 		"COLUMNS_LIST_EXT" => array(
 			0 => "PREVIEW_PICTURE",

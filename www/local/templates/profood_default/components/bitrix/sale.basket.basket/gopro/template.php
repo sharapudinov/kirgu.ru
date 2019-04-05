@@ -78,8 +78,9 @@ if ($arParams['USE_GIFTS'] === 'Y')
 		'PRODUCT_ID_VARIABLE' => 'id',
 		'USE_PRODUCT_QUANTITY' => 'N',
 		'ACTION_VARIABLE' => 'actionGift',
-		'ADD_PROPERTIES_TO_BASKET' => 'Y',
+		'ADD_PROPERTIES_TO_BASKET' => 'N',
 		'PARTIAL_PRODUCT_PROPERTIES' => 'Y',
+		"PRODUCT_PROPERTIES" => array(),
 
 		'BASKET_URL' => $APPLICATION->GetCurPage(),
 		'APPLIED_DISCOUNT_LIST' => $arResult['APPLIED_DISCOUNT_LIST'],
@@ -126,7 +127,7 @@ if ($arParams['USE_GIFTS'] === 'Y')
 		'DATA_LAYER_NAME' => $arParams['DATA_LAYER_NAME'],
 		'BRAND_PROPERTY' => $arParams['BRAND_PROPERTY']
 	);
-}test_dump($giftParameters);
+}
 
 \CJSCore::Init(array('fx', 'popup', 'ajax'));
 
