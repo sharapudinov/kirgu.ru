@@ -4677,7 +4677,7 @@ $APPLICATION->SetTitle("Каталог товаров");
 		),
 		"PROPS_TABS" => array(
 		),
-		"USE_CHEAPER" => "Y",
+            "USE_CHEAPER" => "Y",
 		"USE_BLOCK_MODS" => "Y",
 		"LINK_IBLOCK_TYPE" => "system",
 		"LINK_IBLOCK_ID" => "2",

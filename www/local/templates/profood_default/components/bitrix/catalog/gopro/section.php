@@ -30,7 +30,7 @@ if (\Bitrix\Main\Loader::includeModule('iblock')) {
 			$arCurSection = $obCache->GetVars();
 		} elseif ($obCache->StartDataCache()) {
 			$arCurSection = array();
-			$dbRes = CIBlockSection::GetList(array(), $arFilter, false, array('ID','LEFT_MARGIN','RIGHT_MARGIN'));
+			$dbRes = CIBlockSection::GetList(array(), $arFilter, false, array('ID','LEFT_MARGIN','RIGHT_MARGIN','UF_*'));
 			if (defined('BX_COMP_MANAGED_CACHE')) {
 				global $CACHE_MANAGER;
 				$CACHE_MANAGER->StartTagCache('/iblock/catalog');

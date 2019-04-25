@@ -91,4 +91,8 @@ class StoreAmount
     }
 }
 
+class IblockSection {
+    public static function wantCheaperPermittedForParent($section_id){
 
+    }
+}

@@ -71,6 +71,7 @@ global $mainMenuType, $headerType;
 $color = $instanceOptionManager->get('COLOR');
 
 $mainMenuType = $instanceOptionManager->get('MAIN_MENU_TYPE');
+$mainMenuType = $instanceOptionManager->get('MAIN_MENU_TYPE');
 $headerType = $instanceOptionManager->get('HEADER_TYPE');
 $useHeaderFly = $instanceOptionManager->get('SWITCH_USE_HEADER_FLY');
 $tpanelType = $headerType == 'type1' ? 'tpanel1' : 'tpanel2';
