@@ -74,7 +74,6 @@ if (($arParams['CATALOG_IBLOCK_ID']) > 0 && $arParams['CATALOG_RASSROCHKA_CODE']
 }
 if ($arParams['isRassrochka']) {
     $strFilter = implode('-or-', $vse_rassrochki['PROPERTY_AKTSII']);
-    test_dump($strFilter);
     $arResult['FILTER_CONTROL_NAME'] = htmlspecialcharsbx('filter/' . strtolower($arResult['ACTION_PROP']['CODE']) . '-is-' . $strFilter) . '/apply/';
 } elseif ($arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE']) {
     $arResult['FILTER_CONTROL_NAME'] = htmlspecialcharsbx('filter/' . strtolower($arResult['ACTION_PROP']['CODE']) . '-is-' . $arResult['PROPERTIES'][$arParams['ACTION_CODE']]['VALUE']) . '/apply/';
