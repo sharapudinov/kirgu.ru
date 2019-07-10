@@ -9,7 +9,7 @@ $vse_rassrochki= [
     "PROPERTY_AKTSII" => [
         '1eafd29f-9b38-11e9-a9e0-0050568b168f',
         '4d854d17-9b34-11e9-a9e0-0050568b168f',
-        '9d7eaf29-5486-11e9-a9d0-0050568b168f'
+        'd7eef32b-a20f-11e9-a9e2-0050568b168f'
     ]
 ];
 
