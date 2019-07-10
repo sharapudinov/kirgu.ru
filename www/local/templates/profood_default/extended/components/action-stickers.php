@@ -7,9 +7,9 @@ use \Bitrix\Main\Localization\Loc;
 if(is_array($product['PRICES']["СпецЦена"])){
    $product['MIN_PRICE']['DISCOUNT_DIFF_PERCENT']= round((1-$product['PRICES']["СпецЦена"]['VALUE']/$product['PRICES']["Розничная"]['VALUE'])*100);
 }
-if(is_array($product['PRICES']["РРЦ"])){
+/*if(is_array($product['PRICES']["РРЦ"])){
    $product['MIN_PRICE']['DISCOUNT_DIFF_PERCENT']= round((1-$product['PRICES']["Розничная"]['VALUE']/$product['PRICES']["РРЦ"]['VALUE'])*100);
-}
+}*/
 $aktsii=array_merge($arItem['PROPERTIES']['AKTSII']['VALUE_EXT'],$arItem['PROPERTIES']['RASSROCHKA']['VALUE_EXT']);
 
 

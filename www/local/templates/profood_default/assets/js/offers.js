@@ -252,7 +252,6 @@ function RSGoPro_OffersExt_ChangeHTML($product,$optionObj=null) {
 					}
 				}
 				// change general
-				debugger
 
 				if (RSGoPro_STOCK[element_id].JS.SKU[finedOfferID].IS_VITRINA) {
 					$product.find('.js-stores__value').html(RSGoPro_STOCK[element_id].MESSAGE_DISPLAY);

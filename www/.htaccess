@@ -1,4 +1,4 @@
-Options -Indexes 
+Options -Indexes
 ErrorDocument 404 /404.php
 
 <IfModule mod_php5.c>
@@ -10,9 +10,6 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
   Options +FollowSymLinks
   RewriteEngine On
-
-RewriteCond %{HTTP_HOST} ^new.kirgu\.ru$ [NC]
-RewriteRule ^(.*)$ https://kirgu.ru/$1 [R=301,L]
 
    RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
     RewriteCond %{REQUEST_URI} !/system/.* [NC]
